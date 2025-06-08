@@ -98,11 +98,11 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
       <h3 className="mb-3 text-sm font-light">
         Voor welke behandeling wilt u een afspraak maken?
       </h3>
-      <div className="relative overflow-y-auto rounded bg-gray-50 border border-gray-200">
+      <div className="relative overflow-y-auto rounded bg-white border border-gray-200">
         <div ref={listRef} className="overflow-y-auto max-h-96">
           {/* Knippen */}
           <div>
-            <h4 className="px-4 py-2 font-semibold text-gray-500 mt-3 border-b border-gray-200 flex justify-center">
+            <h4 className="px-4 py-2 font-semibold mt-3 border-b border-gray-200 flex justify-center">
               Knippen
             </h4>
             {knippen.map((service) => (
@@ -110,10 +110,10 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                 key={service.name}
                 onClick={() => onChange(service.name)}
                 className={clsx(
-                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-gray-700 text-sm font-medium",
+                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
-                    : "hover:bg-pink-50"
+                    : "hover:bg-pink-100"
                 )}
               >
                 <span>{service.name}</span>
@@ -126,7 +126,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
 
           {/* Huidverzorging */}
           <div>
-            <h4 className="px-4 py-2 font-semibold text-gray-500 border-b border-gray-200 flex justify-center">
+            <h4 className="px-4 py-2 font-semibold border-b border-gray-200 flex justify-center">
               Huidverzorging
             </h4>
             {huidverzorging.map((service) => (
@@ -134,7 +134,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                 key={service.name}
                 onClick={() => onChange(service.name)}
                 className={clsx(
-                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-gray-700 text-sm font-medium",
+                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
                     : "hover:bg-pink-50"
@@ -150,7 +150,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
 
           {/* Manicure */}
           <div>
-            <h4 className="px-4 py-2 font-semibold text-gray-500 border-b border-gray-200 flex justify-center">
+            <h4 className="px-4 py-2 font-semibold border-b border-gray-200 flex justify-center">
               Manicure
             </h4>
             {manicure.map((service) => (
@@ -158,7 +158,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                 key={service.name}
                 onClick={() => onChange(service.name)}
                 className={clsx(
-                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-gray-700 text-sm font-medium",
+                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
                     : "hover:bg-pink-50"
@@ -172,11 +172,11 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
         </div>
 
         {!atTop && (
-          <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-gray-200 to-transparent pointer-events-none z-10" />
+          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-200 to-transparent pointer-events-none z-10" />
         )}
 
         {!atBottom && (
-          <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-gray-200 to-transparent pointer-events-none z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-gray-200 to-transparent pointer-events-none z-10" />
         )}
       </div>
 

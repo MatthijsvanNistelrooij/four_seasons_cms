@@ -156,10 +156,10 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
         </div>
         {/* Shadows */}
         {showTopShadow && (
-          <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-gray-200 to-transparent pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-200 to-transparent pointer-events-none" />
         )}
         {showBottomShadow && (
-          <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-gray-200 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-gray-200 to-transparent pointer-events-none" />
         )}
       </div>
 

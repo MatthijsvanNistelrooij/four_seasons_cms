@@ -16,9 +16,10 @@ import {
 } from "@/components/ui/table"
 import SignOutButton from "./SignOutButton"
 import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight, Edit, Trash } from "lucide-react"
+import { Edit, Trash } from "lucide-react"
 import { EditAppointmentDialog } from "./EditAppointmentDialog"
 import { DeleteAppointmentDialog } from "./DeleteAppointmentDialog"
+import Pagination from "./Pagination"
 
 const Appointments = () => {
   const [appointments, setAppointments] = useState<Appointment[]>([])
@@ -78,6 +79,16 @@ const Appointments = () => {
     }
   }
 
+  const itemsPerPage = 10
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const paginatedAppointments = filteredAppointments.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  )
+
+  const totalPages = Math.ceil(filteredAppointments.length / itemsPerPage)
+
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
       <aside className="w-full lg:w-48 bg-gray-100 p-4 border-b lg:border-b-0 lg:border-r sticky top-0 z-10">
@@ -130,7 +141,7 @@ const Appointments = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {filteredAppointments.map((appt) => (
+              {paginatedAppointments.map((appt) => (
                 <TableRow key={appt.$id}>
                   <TableCell>{appt.name}</TableCell>
                   <TableCell>{appt.service}</TableCell>
@@ -151,7 +162,7 @@ const Appointments = () => {
                       <Edit size={12} />
                     </Button>
                     <Button
-                      className="p-0 bg-transparent text-orange-800 hover:bg-white cursor-pointer m-0"
+                      className="p-0 bg-transparent text-red-500 hover:bg-white cursor-pointer m-0"
                       onClick={() => {
                         setDeletingAppointment(appt)
                         setIsDeleteDialogOpen(true)
@@ -165,14 +176,15 @@ const Appointments = () => {
             </TableBody>
           </Table>
         </div>
-        <div className="flex justify-center m-3">
-          <Button className="p-0 bg-transparent text-gray-800 hover:bg-gray-100 cursor-pointer m-0">
-            <ChevronLeft />
-          </Button>
-          <Button className="p-0 bg-transparent text-gray-800 hover:bg-gray-100 cursor-pointer m-0">
-            <ChevronRight />
-          </Button>
-        </div>
+        {filteredAppointments.length > itemsPerPage && (
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPrev={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+            onNext={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+            disabled={filteredAppointments.length <= itemsPerPage}
+          />
+        )}
       </main>
       <EditAppointmentDialog
         appointment={editingAppointment}

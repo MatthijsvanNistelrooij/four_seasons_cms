@@ -33,41 +33,49 @@ export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
 
   return (
     <div>
-      <h3 className="text-sm font-light text-gray-800 mb-3">
-        Bevestig uw afspraak
-      </h3>
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-xl md:text-2xl font-semibold mb-6 text-neutral-900">
+          Bevestig uw afspraak
+        </h2>
 
-      <div className="rounded-xl bg-white shadow-sm border border-gray-200 p-6 min-h-96">
-        <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-sm text-gray-700">
-          <div>
-            <dt className="font-light text-gray-400">Type afspraak</dt>
-            <dd className="mt-1 text-gray-900">{service || "-"}</dd>
-          </div>
-          <div>
-            <dt className="font-light text-gray-400">Medewerker</dt>
-            <dd className="mt-1 text-gray-900">{barber || "-"}</dd>
-          </div>
-          <div>
-            <dt className="font-light text-gray-400">Datum & tijd</dt>
-            <dd className="mt-1 text-gray-900">
-              {date ? date.toLocaleDateString("nl-NL") : "-"} {time || "-"}
-            </dd>
-          </div>
-          <div>
-            <dt className="font-light text-gray-400">Naam</dt>
-            <dd className="mt-1 text-gray-900">{name || "-"}</dd>
-          </div>
-          <div>
-            <dt className="font-light text-gray-400">E-mail</dt>
-            <dd className="mt-1 text-gray-900">{email || "-"}</dd>
-          </div>
-          <div>
-            <dt className="font-light text-gray-400">Telefoonnummer</dt>
-            <dd className="mt-1 text-gray-900">{phone || "-"}</dd>
-          </div>
-        </dl>
+        <div className="rounded bg-white p-8 space-y-6">
+          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 text-base text-neutral-800">
+            <div>
+              <dt className="text-sm font-medium text-neutral-500">
+                Type afspraak
+              </dt>
+              <dd className="mt-1 font-medium">{service || "-"}</dd>
+            </div>
+            <div>
+              <dt className="text-sm font-medium text-neutral-500">
+                Medewerker
+              </dt>
+              <dd className="mt-1 font-medium">{barber || "-"}</dd>
+            </div>
+            <div>
+              <dt className="text-sm font-medium text-neutral-500">
+                Datum & tijd
+              </dt>
+              <dd className="mt-1 font-medium">
+                {date ? date.toLocaleDateString("nl-NL") : "-"} {time || "-"}
+              </dd>
+            </div>
+            <div>
+              <dt className="text-sm font-medium text-neutral-500">Naam</dt>
+              <dd className="mt-1  font-medium">{name || "-"}</dd>
+            </div>
+            <div>
+              <dt className="text-sm font-medium text-neutral-500">E-mail</dt>
+              <dd className="mt-1 font-medium">{email || "-"}</dd>
+  
+              <dt className="text-sm font-medium text-neutral-500 mt-4">
+                Telefoonnummer
+              </dt>
+              <dd className="mt-1 font-medium mb-12">{phone || "-"}</dd>
+            </div>
+          </dl>
+        </div>
       </div>
-
       <div className="flex justify-between mt-6">
         <Button
           variant="secondary"
