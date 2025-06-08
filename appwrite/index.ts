@@ -6,7 +6,6 @@ import emailjs from "@emailjs/browser"
 const client = new Client()
   .setEndpoint(appwriteConfig.endpointUrl)
   .setProject(appwriteConfig.projectId)
-  
 
 const account = new Account(client)
 const databases = new Databases(client)
@@ -61,13 +60,13 @@ export const createAppointment = async (appointmentData: {
         email: appointmentData.email,
         phone: appointmentData.phone,
         time: appointmentData.time,
-        barber: appointmentData.barber
+        barber: appointmentData.barber,
       }
     )
 
     await emailjs.send(
-      "service_kcevcgt",
-      "template_gci2hfu",
+      process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
+      process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE!,
       {
         name: appointmentData.name,
         service: appointmentData.service,
@@ -75,23 +74,23 @@ export const createAppointment = async (appointmentData: {
         time: appointmentData.time,
         email: appointmentData.email,
         phone: appointmentData.phone,
-        barber: appointmentData.barber
+        barber: appointmentData.barber,
       },
 
       process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
     )
 
     await emailjs.send(
-      "service_kcevcgt",
-      "template_gci2hfu", // create this in EmailJS
+      process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
+      process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE!,
       {
         name: appointmentData.name,
         service: appointmentData.service,
         date: appointmentData.date,
         time: appointmentData.time,
-        email: "matthijs.vannistelrooy@gmail.com",
+        email: process.env.NEXT_PUBLIC_EMAIL_ADDRESS,
         phone: appointmentData.phone,
-        barber: appointmentData.barber
+        barber: appointmentData.barber,
       },
       process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
     )
@@ -115,4 +114,3 @@ export const deleteAppointment = async (id: string) => {
     throw error
   }
 }
-
