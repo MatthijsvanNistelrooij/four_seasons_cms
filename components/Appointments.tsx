@@ -47,7 +47,7 @@ const Appointments = () => {
             email: item.email,
             phone: item.phone,
             time: item.time,
-            barber: item.barber, // <- assuming 'barber' is a field in your Appwrite collection
+            barber: item.barber,
           })
         )
         setAppointments(allAppointments)

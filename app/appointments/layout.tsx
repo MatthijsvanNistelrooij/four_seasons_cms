@@ -11,9 +11,9 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     if (!loading) {
       if (!user) {
-        router.replace("/sign-in") // redirect if no user
+        router.replace("/sign-in") 
       } else if (user.emailVerification === false) {
-        router.replace("/pending-approval") // redirect if email not verified
+        router.replace("/pending-approval") 
       }
     }
   }, [loading, user, router])

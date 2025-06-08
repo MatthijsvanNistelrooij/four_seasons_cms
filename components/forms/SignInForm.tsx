@@ -17,8 +17,6 @@ export default function SignInForm() {
   const router = useRouter()
   const { user, setUser } = useAuth()
 
-  console.log(user)
-
   useEffect(() => {
     if (user) router.push("/appointments")
   }, [user, router])
