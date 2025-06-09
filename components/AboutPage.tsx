@@ -5,6 +5,7 @@ import hero from "../public/assets/hero_1.jpg"
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
 import { useState } from "react"
+import { CalendarRange } from "lucide-react"
 
 export default function AboutPage() {
   const [openDialog, setOpenDialog] = useState(false)
@@ -42,7 +43,7 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="container mx-auto px-8 md:px-20 flex flex-col gap-12 py-24">
           {" "}
-          <h2 className="text-2xl lg:text-3xl font-semibold text-black">
+          <h2 className="text-xl lg:text-3xl font-semibold text-black">
             Ons geheim? De perfecte combinatie van haar- en
             schoonheidsbehandelingen
           </h2>
@@ -66,7 +67,7 @@ export default function AboutPage() {
 
       {/* Section 2: Gray background with images */}
       <section className="bg-[#eaeaea] text-white py-24">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
           <div className="flex flex-col xl:flex-row gap-4 w-full">
             {/* Image 1 */}
             <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
@@ -89,7 +90,7 @@ export default function AboutPage() {
           </div>
           {/* Right: Text */}
           <div className="w-full flex flex-col justify-start">
-            <h2 className="text-3xl font-semibold text-neutral-900 mb-4">
+            <h2 className="text-xl lg:text-3xl font-semibold text-black mb-4">
               Ons team
             </h2>
             <p className="text-base text-neutral-700 leading-relaxed">
@@ -104,10 +105,10 @@ export default function AboutPage() {
 
       {/* Section 3: White background */}
       <section className="bg-white text-white py-24 mb-56">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
           {" "}
           <div className="space-y-6 w-full max-w-xl mr-22">
-            <h2 className="text-3xl font-semibold text-neutral-900">
+            <h2 className="text-xl lg:text-3xl font-semibold text-black">
               Gebruik van kwaliteitsproducten voor gezond en glanzend haar
             </h2>
             <p className="text-base text-neutral-700 leading-relaxed">
@@ -124,13 +125,14 @@ export default function AboutPage() {
               is in de gezondheid en schoonheid van je haar. Wil je ook mooi
               glanzend haar hebben? Maak snel een afspraak hieronder.
             </p>
-            <>
+            <div className="bg-[#e9207e] flex w-64 p-1 rounded-xl hover:bg-pink-600">
+              <CalendarRange  className="mt-1 ml-3" />
               <AppointmentDialog
                 title="Maak een afspraak"
                 open={openDialog}
                 onOpenChange={setOpenDialog}
               />
-            </>
+            </div>
           </div>
           <div className="bg-[#e9207e] text-white p-5 w-full py-24 rounded-xl flex text-center justify-center">
             <OpeningHours text="white" />

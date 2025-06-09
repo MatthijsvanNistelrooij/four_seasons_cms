@@ -11,6 +11,7 @@ import hero1 from "../public/assets/hero_1.jpg"
 import hero2 from "../public/assets/hero_2.jpg"
 import hero3 from "../public/assets/hero_3.jpg"
 import hero4 from "../public/assets/hero_4.jpg"
+import Link from "next/link"
 
 const slides = [
   {
@@ -153,9 +154,11 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                   >
                     <CalendarRange className="w-4 h-4" /> {appointmentText}
                   </Button>
-                  <Button className="bg-[#e9207e] hover:bg-[#e9207e] transition-transform duration-200 rounded-full lg:p-6 lg:text-lg tracking-widest cursor-pointer">
-                    <Phone className="w-4 h-4" /> {contactText}
-                  </Button>
+                  <Link href={"/contact"}>
+                    <Button className="bg-[#e9207e] hover:bg-[#e9207e] transition-transform duration-200 rounded-full lg:p-6 lg:text-lg tracking-widest cursor-pointer">
+                      <Phone className="w-4 h-4" /> {contactText}
+                    </Button>
+                  </Link>
                 </div>
               </motion.div>
             </div>

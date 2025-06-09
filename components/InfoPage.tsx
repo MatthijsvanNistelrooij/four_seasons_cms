@@ -22,7 +22,7 @@ export default function InfoPage() {
         <div className="relative z-10 flex items-center h-full">
           <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
             {" "}
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            <h2 className="text-xl lg:text-2xl md:text-3xl font-bold mb-4">
               Welkom bij Four Seasons:
               <br />
               De kapper in Groningen die weet wat je nodig hebt!
@@ -42,7 +42,7 @@ export default function InfoPage() {
       <section className="bg-white">
         <div className="container mx-auto px-8 md:px-20 flex flex-col gap-12 py-24">
           {" "}
-          <h2 className="text-2xl lg:text-3xl font-semibold text-black">
+          <h2 className="text-xl lg:text-3xl font-semibold text-black">
             Ons geheim? De perfecte combinatie van haar- en
             schoonheidsbehandelingen
           </h2>
@@ -89,7 +89,7 @@ export default function InfoPage() {
           </div>
           {/* Right: Text */}
           <div className="w-full flex flex-col justify-start">
-            <h2 className="text-3xl font-semibold text-neutral-900 mb-4">
+            <h2 className="text-xl lg:text-3xl font-semibold text-neutral-900 mb-4">
               Ons team
             </h2>
             <p className="text-base text-neutral-700 leading-relaxed">
@@ -107,7 +107,7 @@ export default function InfoPage() {
         <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
           {" "}
           <div className="space-y-6 w-full max-w-xl mr-22">
-            <h2 className="text-3xl font-semibold text-neutral-900">
+            <h2 className="text-xl lg:text-3xl font-semibold text-neutral-900">
               Gebruik van kwaliteitsproducten voor gezond en glanzend haar
             </h2>
             <p className="text-base text-neutral-700 leading-relaxed">
