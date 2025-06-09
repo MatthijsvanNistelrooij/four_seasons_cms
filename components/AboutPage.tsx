@@ -10,7 +10,7 @@ export default function AboutPage() {
   const [openDialog, setOpenDialog] = useState(false)
 
   return (
-    <main className="space-y-16">
+    <main className="py-24">
       <section
         className="relative w-full h-[60vh] md:h-[70vh] bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
@@ -20,7 +20,8 @@ export default function AboutPage() {
 
         {/* Text container */}
         <div className="relative z-10 flex items-center h-full">
-          <div className="container mx-auto flex flex-col gap-2 px-8 md:px-20 py-24 items-start text-white">
+          <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
+            {" "}
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Welkom bij Four Seasons:
               <br />
@@ -39,7 +40,8 @@ export default function AboutPage() {
       </section>
       {/* Section 1: White background */}
       <section className="bg-white">
-        <div className="container mx-auto flex flex-col gap-12 px-8 md:px-20 py-24 items-start">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col gap-12 py-24">
+          {" "}
           <h2 className="text-2xl lg:text-3xl font-semibold text-black">
             Ons geheim? De perfecte combinatie van haar- en
             schoonheidsbehandelingen
@@ -64,7 +66,8 @@ export default function AboutPage() {
 
       {/* Section 2: Gray background with images */}
       <section className="bg-[#eaeaea] py-16 px-6 md:px-12">
-        <div className="container mx-auto flex flex-col lg:flex-row gap-12 px-8 md:px-20 py-24 items-start">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12 py-24">
+          {" "}
           {/* Left: Two responsive images */}
           <div className="flex flex-col xl:flex-row gap-4 w-full">
             {/* Image 1 */}
@@ -86,9 +89,8 @@ export default function AboutPage() {
               />
             </div>
           </div>
-
           {/* Right: Text */}
-          <div className="w-full flex flex-col justify-center">
+          <div className="w-full flex flex-col justify-start">
             <h2 className="text-3xl font-semibold text-neutral-900 mb-4">
               Ons team
             </h2>
@@ -104,7 +106,8 @@ export default function AboutPage() {
 
       {/* Section 3: White background */}
       <section className="bg-white py-16 px-6 md:px-12">
-        <div className="container mx-auto flex flex-col md:flex-row gap-12 px-8 md:px-20 py-24 items-start text-white mb-40">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
+          {" "}
           <div className="space-y-6 w-full max-w-xl mr-22">
             <h2 className="text-3xl font-semibold text-neutral-900">
               Gebruik van kwaliteitsproducten voor gezond en glanzend haar
