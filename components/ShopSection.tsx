@@ -18,12 +18,12 @@ const ShopSection = () => {
           </div>
 
           <div className="w-full">
-            <div className="max-w-xl md:mb-40">
+            <div className="max-w-xl md:mb-40 ">
               <h2 className="text-2xl lg:text-3xl font-bold mb-4">
                 Verven, knippen, in model brengen en meer!
               </h2>
               <p
-                className="lg:text-lg text-black"
+                className="lg:text-lg text-black leading-7"
                 style={{ fontFamily: "sans-serif" }}
               >
                 Bij onze kapsalon in het hart van Groningen zijn wij specialist

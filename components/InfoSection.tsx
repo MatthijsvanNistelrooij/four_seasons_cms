@@ -20,11 +20,11 @@ const InfoSection = () => {
           </div>
           {/* Right: Text */}
           <div className="w-full flex flex-col justify-start">
-            <h2 className="text-3xl font-semibold text-neutral-900 mb-4">
+            <h2 className="text-xl lg:text-3xl font-semibold text-black mb-4">
               Ervaren dames & herenkapper in Groningen
             </h2>
             <p
-              className="text-black lg:text-lg leading-relaxed"
+              className="text-black lg:text-lg leading-7"
               style={{ fontFamily: "sans-serif" }}
             >
               Bij ons kun je terecht voor een professionele en betaalbare

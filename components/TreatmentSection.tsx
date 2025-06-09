@@ -25,7 +25,7 @@ const TreatmentSection = () => {
                 Ook voor beauty behandelingen
               </h2>
               <p
-                className="lg:text-lg text-black"
+                className="lg:text-lg text-black leading-7"
                 style={{ fontFamily: "sans-serif" }}
               >
                 Je gezicht weer laten stralen? Wees klaar voor elke gelegenheid

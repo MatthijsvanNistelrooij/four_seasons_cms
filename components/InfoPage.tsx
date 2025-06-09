@@ -61,10 +61,10 @@ export default function InfoPage() {
         <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
           {" "}
           <div className="space-y-6 w-full max-w-xl mt-15">
-            <h2 className="text-xl lg:text-2xl font-semibold text-neutral-900">
+            <h2 className="text-xl lg:text-2xl font-semibold text-black">
               Ervaren kapper bij Reitemakersrijge
             </h2>
-            <p className="text-base flex flex-col text-black leading-relaxed">
+            <p className="text-base flex flex-col text-black leading-7">
               <p>Dames kort haar knippen € 28,50</p>
               <p>Dames half-lang haar knippen € 32,50</p>
               <p>Dames lang haar knippen € 37,50</p>
