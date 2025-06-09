@@ -137,8 +137,7 @@ export default function AboutPage() {
               is in de gezondheid en schoonheid van je haar. Wil je ook mooi
               glanzend haar hebben? Maak snel een afspraak hieronder.
             </p>
-            <div className="bg-[#e9207e] flex w-64 p-1 rounded-xl hover:bg-pink-600">
-              <CalendarRange className="mt-1 ml-3" />
+            <div>
               <AppointmentDialog
                 title="Maak een afspraak"
                 open={openDialog}

@@ -64,12 +64,12 @@ export default function InfoPage() {
             <h2 className="text-xl lg:text-2xl font-semibold text-black">
               Ervaren kapper bij Reitemakersrijge
             </h2>
-            <p className="text-base flex flex-col text-black leading-7">
+            <div className="text-base flex flex-col text-black leading-7">
               <p>Dames kort haar knippen € 28,50</p>
               <p>Dames half-lang haar knippen € 32,50</p>
               <p>Dames lang haar knippen € 37,50</p>
               <p>Heren knippen € 28,50</p>
-            </p>
+            </div>
             <div>
               <AppointmentDialog
                 title="Maak een afspraak"
