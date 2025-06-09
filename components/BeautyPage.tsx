@@ -8,7 +8,7 @@ export default function BeatyPage() {
   return (
     <main className="">
       <section
-        className="relative w-full h-[60vh] md:h-[60vh] bg-center bg-cover"
+        className="relative w-full bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
         <div className="absolute inset-0 bg-black opacity-70"></div>
@@ -16,7 +16,7 @@ export default function BeatyPage() {
         <div className="relative z-10 flex items-center h-full">
           <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-8">
             {" "}
-            <h2 className="text-sm md:text-2xl lg:text-3xl font-bold">
+            <h2 className="text-lg md:text-2xl lg:text-3xl font-bold">
               Je gezicht weer laten stralen met schoonheidsbehandelingen in
               Groningen
               <br />
@@ -33,7 +33,7 @@ export default function BeatyPage() {
             </p>
             <p
               style={{ fontFamily: "sans-serif", fontWeight: "bolder" }}
-              className="text-lg"
+              className="text-sm"
             >
               Onze diensten: Huidverzorging, vacuüm gezichtsreiniging, SOS
               schoonheidsprocedures, darsonval, liftende gezichtsmassage,
@@ -50,12 +50,12 @@ export default function BeatyPage() {
         <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
           {" "}
           <div className="space-y-12 w-full max-w-xl">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-black">
+            <h2 className="text-sm md:text-2xl lg:text-3xl font-semibold text-black">
               Ontspan en geniet van een luxueuze gezichtsbehandeling in
               Groningen
             </h2>
             <p
-              className="text-base flex flex-col text-black leading-relaxed"
+              className="text-sm flex flex-col text-black leading-relaxed"
               style={{ fontFamily: "sans-serif" }}
             >
               Wij bieden professionele gezichtsbehandelingen aan om jouw huid te
@@ -68,7 +68,7 @@ export default function BeatyPage() {
               ontspannende en effectieve gezichtsbehandeling die jouw huid weer
               doet stralen.
             </p>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-black">
+            <h2 className="text-sm md:text-2xl lg:text-3xl font-semibold text-black">
               Perfect gevormde wenkbrauwen in Groningen: laat je natuurlijke
               schoonheid naar voren brengen
             </h2>
