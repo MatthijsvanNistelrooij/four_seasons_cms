@@ -42,7 +42,7 @@ export const Step5_Contact = ({
 
   return (
     <div className="">
-      <h3 className="text-sm font-light mb-3">Uw contactgegevens</h3>
+      <h3 className="text-sm mb-3">Uw contactgegevens</h3>
       <div className="flex flex-col p-5 gap-1 bg-white border rounded">
         <label className="font-bold text-gray-700 text-sm ml-1">Naam</label>
         <Input

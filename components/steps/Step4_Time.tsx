@@ -46,7 +46,7 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
 
   return (
     <div>
-      <h3 className="text-sm font-light mb-3">Kies een tijd</h3>
+      <h3 className="text-sm mb-3">Kies een tijd</h3>
       <div className="relative">
         <div
           ref={scrollRef}
@@ -56,7 +56,7 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
           {timeSlots.map((slot) => (
             <div
               key={slot}
-              className={`w-full border-b text-gray-700 rounded-md px-4 py-3 cursor-pointer transition ${
+              className={`w-full border-b text-gray-700 px-4 py-3 cursor-pointer transition ${
                 time === slot ? "bg-[#e9207e] text-white" : "hover:bg-pink-50"
               }`}
               onClick={() => onTimeChange(slot)}

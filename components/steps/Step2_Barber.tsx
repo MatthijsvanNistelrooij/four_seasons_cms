@@ -32,9 +32,9 @@ export const Step2_Barber = ({ value, onChange, onNext, onBack }: Props) => {
   return (
     <div className="">
       <div>
-        <h3 className="text-sm font-light text-gray-700 mb-3">
+        <h2 className="text-sm mb-3 text-neutral-900">
           Heeft u een voorkeur voor een medewerker?
-        </h3>
+        </h2>
 
         <RadioGroup
           value={value}
@@ -45,7 +45,7 @@ export const Step2_Barber = ({ value, onChange, onNext, onBack }: Props) => {
             <div
               key={barber.name}
               className={clsx(
-                "w-full border-b border-gray-200 rounded-md px-4 py-2 flex items-center justify-start text-sm font-medium cursor-pointer transition",
+                "w-full border-b border-gray-200 px-4 py-2 flex items-center justify-start text-sm font-medium cursor-pointer transition",
                 value === barber.name
                   ? "bg-[#e9207e] text-white border-pink-100"
                   : "hover:bg-pink-50"

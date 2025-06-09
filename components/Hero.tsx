@@ -149,13 +149,18 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
               >
                 <div className="flex flex-col md:flex-row gap-2">
                   <Button
+                    style={{ fontFamily: "sans-serif" }}
                     onClick={onOpenDialog}
-                    className="bg-[#e9207e] hover:bg-pink-600 p-6 rounded-full text-white font-bold shadow-none text-md cursor-pointer transition transform hover:-translate-y-1"
+                    className="bg-[#e9207e] hover:bg-pink-600 w-72 p-6 tracking-widest rounded-full text-white 
+                    font-bold shadow-none text-md cursor-pointer transition transform hover:-translate-y-1"
                   >
                     <CalendarRange className="w-4 h-4" /> {appointmentText}
                   </Button>
                   <Link href={"/contact"}>
-                    <Button className="bg-[#e9207e] hover:bg-pink-600 transition-transform duration-200 rounded-full lg:p-6 lg:text-lg tracking-widest cursor-pointer hover:-translate-y-1">
+                    <Button
+                      style={{ fontFamily: "sans-serif" }}
+                      className="bg-[#e9207e] hover:bg-pink-600 p-6 transition-transform w-48 font-bold duration-200 rounded-full text-md tracking-widest cursor-pointer hover:-translate-y-1"
+                    >
                       <Phone className="w-4 h-4" /> {contactText}
                     </Button>
                   </Link>

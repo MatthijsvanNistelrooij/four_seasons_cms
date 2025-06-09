@@ -73,7 +73,9 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
 
   return (
     <div>
-      <h3 className="text-sm font-light mb-3">Wanneer wilt u langskomen?</h3>
+      <h2 className="text-sm mb-3 text-neutral-900">
+        Wanneer wilt u langskomen?
+      </h2>
       <div className="relative">
         <div
           ref={scrollRef}
@@ -82,18 +84,18 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
         >
           {/* DEZE WEEK */}
           <div>
-            <h4 className="text-xs pl-2 text-gray-500 font-light mb-3 mt-5">
+            <h4 className="text-xs pl-2 text-gray-800 font-light mb-3 mt-5">
               DEZE WEEK
             </h4>
 
-            <div className="rounded-md overflow-hidden">
+            <div className="overflow-hidden">
               {groupedDates.dezeWeek.length === 0 && (
-                <p className="text-gray-400 ">Geen beschikbare dagen</p>
+                <p className="text-gray-800 ">Geen beschikbare dagen</p>
               )}
               {groupedDates.dezeWeek.map((d) => (
                 <div
                   key={d.toDateString()}
-                  className={`w-full border-b pl-4 text-gray-700 rounded-md py-3 cursor-pointer transition ${
+                  className={`w-full border-b pl-4 text-gray-900 py-3 cursor-pointer transition ${
                     date && isSameDay(date, d)
                       ? "bg-[#e9207e] text-white"
                       : "hover:bg-pink-50"
@@ -107,17 +109,17 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
           </div>
 
           <div>
-            <h4 className="text-xs pl-2 text-gray-500 font-light mb-3 mt-5">
+            <h4 className="text-xs pl-2 text-gray-800 font-light mb-3 mt-5">
               VOLGENDE WEEK
             </h4>
-            <div className="rounded-md overflow-hidden">
+            <div className="overflow-hidden">
               {groupedDates.komendeWeek.length === 0 && (
-                <p className="text-gray-400">Geen beschikbare dagen</p>
+                <p className="text-gray-800">Geen beschikbare dagen</p>
               )}
               {groupedDates.komendeWeek.map((d) => (
                 <div
                   key={d.toDateString()}
-                  className={`w-full pl-4 border-b text-gray-700 rounded-md py-3 cursor-pointer transition ${
+                  className={`w-full pl-4 border-b text-gray-900 py-3 cursor-pointer transition ${
                     date && isSameDay(date, d)
                       ? "bg-[#e9207e] text-white"
                       : "hover:bg-pink-50"
@@ -131,17 +133,17 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
           </div>
 
           <div>
-            <h4 className="text-xs pl-2 text-gray-500 font-light mb-3 mt-5">
+            <h4 className="text-xs pl-2 text-gray-800 font-light mb-3 mt-5">
               OVER TWEE WEKEN
             </h4>
             {groupedDates.overTweeWeek.length === 0 && (
-              <p className="text-gray-400">Geen beschikbare dagen</p>
+              <p className="text-gray-800">Geen beschikbare dagen</p>
             )}
-            <div className="rounded-md overflow-hidden">
+            <div className="overflow-hidden">
               {groupedDates.overTweeWeek.map((d) => (
                 <div
                   key={d.toDateString()}
-                  className={`w-full pl-4 border-b text-gray-700 rounded-md py-3 cursor-pointer transition ${
+                  className={`w-full pl-4 border-b text-gray-900 py-3 cursor-pointer transition ${
                     date && isSameDay(date, d)
                       ? "bg-[#e9207e] text-white"
                       : "hover:bg-pink-50"

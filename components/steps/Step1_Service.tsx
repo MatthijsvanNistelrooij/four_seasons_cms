@@ -95,7 +95,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
 
   return (
     <div>
-      <h3 className="mb-3 text-sm font-light">
+      <h3 className="text-sm mb-3 text-neutral-900">
         Voor welke behandeling wilt u een afspraak maken?
       </h3>
       <div className="relative overflow-y-auto rounded bg-white border border-gray-200">
