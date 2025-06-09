@@ -70,7 +70,7 @@ const ContactPage = () => {
               <label className="block text-sm mb-1">Bericht</label>
               <textarea
                 name="message"
-                rows={8}
+                rows={5}
                 required
                 className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
