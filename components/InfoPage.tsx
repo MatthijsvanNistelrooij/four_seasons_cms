@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import hero from "../public/assets/hero_1.jpg"
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
@@ -16,25 +15,18 @@ export default function InfoPage() {
         style={{ backgroundImage: `url(${hero.src})` }}
       >
         {/* Optional dark overlay for better text contrast */}
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black opacity-50"></div>
 
         {/* Text container */}
         <div className="relative z-10 flex items-center h-full">
           <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
             {" "}
-            <h2 className="text-xl lg:text-2xl md:text-3xl font-bold mb-4">
-              Welkom bij Four Seasons:
+            <h2 className="text-xl lg:text-3xl md:text-3xl font-bold mb-4">
+              Klaar om te stralen? Boek nu een afspraak bij onze kapsalon met
               <br />
-              De kapper in Groningen die weet wat je nodig hebt!
+              schoonheidsspecialiste in Groningen en ontdek onze exclusieve
+              behandelingen
             </h2>
-            <p className="md:text-md leading-relaxed">
-              Wij zitten al meer dan 35 jaar in het vak en hebben veel ervaring
-              met het knippen, kleuren en stijlen van haar. Daarnaast bieden we
-              ook tal van schoonheidsbehandelingen aan.
-              <br />
-              Wil jij helemaal herboren weer naar buiten lopen? Dan ben je bij
-              ons aan het juiste adres! Kom je snel een keer langs?
-            </p>
           </div>
         </div>
       </section>
@@ -43,86 +35,37 @@ export default function InfoPage() {
         <div className="container mx-auto px-8 md:px-20 flex flex-col gap-12 py-24">
           {" "}
           <h2 className="text-xl lg:text-3xl font-semibold text-black">
-            Ons geheim? De perfecte combinatie van haar- en
-            schoonheidsbehandelingen
+            Ervaren kapper bij Reitemakersrijge Groningen
           </h2>
-          <p className="text-base text-neutral-700 leading-relaxed">
-            Het geheim van Four Seasons in Groningen is onze perfecte combinatie
-            van haar- en schoonheidsbehandelingen. Bij ons kun je niet alleen
-            terecht voor professionele haar behandelingen, maar ook voor
-            schoonheidsbehandelingen die gericht zijn op het verbeteren van je
-            huid en het versterken van je natuurlijke schoonheid. Door deze
-            combinatie van diensten bieden wij onze klanten een totaalpakket aan
-            haar- en schoonheidsverzorging, waardoor je bij ons terecht kunt
-            voor al je beauty wensen. Ons ervaren team van haarstylisten en
-            schoonheidsspecialisten werkt nauw met elkaar samen om een unieke en
-            persoonlijke service te bieden, die jouw natuurlijke schoonheid naar
-            voren brengt. Bij Kapsalon Four Seasons streven we ernaar om jou te
-            laten stralen van top tot teen. Daarom blijven we ons continu
-            ontwikkelen om de beste diensten en behandelingen aan te bieden.
+          <p className="text-base text-black leading-relaxed">
+            Welkom bij Four Seasons in Groningen gelegen aan het
+            Reitemakersrijge! Onze kapsalon biedt een breed scala aan
+            haarbehandelingen voor zowel mannen als vrouwen. Of je nu op zoek
+            bent naar een frisse knipbeurt, of een speciale kleurbehandeling,
+            bij ons ben je aan het juiste adres. Ons ervaren team van
+            haarstylisten staat klaar om je te adviseren en te helpen bij het
+            kiezen van de perfecte behandeling die bij jouw wensen past. Naast
+            de haarbehandelingen binnen onze kapsalon bieden we ook nog
+            gezichtsbehandelingen, het plaatsen van wimperextensions,
+            wenkbrauwbehandelingen en visagie aan. Ontdek hieronder onze
+            behandelingen en maak vandaag nog een afspraak om te genieten van
+            een professionele kapperservaring bij Four Seasons.
           </p>
         </div>
       </section>
 
-      {/* Section 2: Gray background with images */}
-      <section className="bg-[#eaeaea] text-white py-24">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
-          <div className="flex flex-col xl:flex-row gap-4 w-full">
-            {/* Image 1 */}
-            <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src={hero}
-                alt="Team member 1"
-                fill
-                className="object-cover"
-              />
-            </div>
-            {/* Image 2 */}
-            <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
-              <Image
-                src={hero}
-                alt="Team member 2"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-          {/* Right: Text */}
-          <div className="w-full flex flex-col justify-start">
-            <h2 className="text-xl lg:text-3xl font-semibold text-neutral-900 mb-4">
-              Ons team
-            </h2>
-            <p className="text-base text-neutral-700 leading-relaxed">
-              Maak kennis met ons team van kappers, schoonheidsspecialisten en
-              visagisten die voor je klaar staan om je weer te laten stralen.
-              Wij hebben allemaal passie voor het vak en behandelen elke klant
-              als koning(in). Kom je gezellig langs?
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 3: White background */}
       <section className="bg-white text-white py-24 mb-56">
         <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
           {" "}
-          <div className="space-y-6 w-full max-w-xl mr-22">
-            <h2 className="text-xl lg:text-3xl font-semibold text-neutral-900">
-              Gebruik van kwaliteitsproducten voor gezond en glanzend haar
+          <div className="space-y-6 w-full max-w-xl mt-15">
+            <h2 className="text-xl lg:text-2xl font-semibold text-neutral-900">
+              Ervaren kapper bij Reitemakersrijge
             </h2>
-            <p className="text-base text-neutral-700 leading-relaxed">
-              Het gebruik van goede haarproducten is essentieel voor gezond en
-              glanzend haar. Daarom werken wij uitsluitend met hoogwaardige
-              producten van gerenommeerde merken, die zorgvuldig zijn
-              geselecteerd op basis van kwaliteit en effectiviteit. We zijn
-              getraind om te werken met deze producten en kunnen je adviseren
-              over welke producten het beste passen bij jouw haartype en
-              behoeften. Door het gebruik van de juiste producten, kun je niet
-              alleen de gezondheid en glans van je haar verbeteren, maar ook de
-              levensduur van je kapsel verlengen. Bij Kapsalon Four Seasons
-              geloven we dat investeren in goede haarproducten een investering
-              is in de gezondheid en schoonheid van je haar. Wil je ook mooi
-              glanzend haar hebben? Maak snel een afspraak hieronder.
+            <p className="text-base flex flex-col text-black leading-relaxed">
+              <p>Dames kort haar knippen € 28,50</p>
+              <p>Dames half-lang haar knippen € 32,50</p>
+              <p>Dames lang haar knippen € 37,50</p>
+              <p>Heren knippen € 28,50</p>
             </p>
             <>
               <AppointmentDialog
@@ -134,6 +77,30 @@ export default function InfoPage() {
           </div>
           <div className="bg-[#e9207e] text-white p-5 w-full py-24 rounded-xl flex text-center justify-center">
             <OpeningHours text="white" />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#6d6d6a] text-white py-24">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
+          <div className="space-y-6 w-full mt-15 flex justfy-center flex-col">
+            <h2 className="text-xl lg:text-2xl font-semibold text-white text-center">
+              De ultieme beauty ervaring bij kapsalon Four Seasons
+            </h2>
+            <p className="text-base flex flex-col text-white leading-relaxed text-center">
+              Bij Kapsalon Four Seasons in Groningen geloven we dat de perfecte
+              beauty behandeling begint bij een gezonde basis. Daarom bieden we
+              naast onze haarbehandelingen ook een scala aan
+              schoonheidsbehandelingen aan. Of je nu op zoek bent naar een
+              ontspannende gezichtsbehandeling, een verjongende huidbehandeling
+              of een professionele make-up sessie, wij hebben alles in huis om
+              jouw schoonheid naar een hoger niveau te tillen. Onze
+              schoonheidsspecialiste is getraind in de nieuwste technieken en
+              werkt uitsluitend met hoogwaardige producten. Bij Kapsalon Four
+              Seasons kun je rekenen op een professionele en persoonlijke
+              service, zodat jij je na elke behandeling stralend en vol
+              zelfvertrouwen voelt.
+            </p>
           </div>
         </div>
       </section>

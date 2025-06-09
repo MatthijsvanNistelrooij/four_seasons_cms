@@ -94,7 +94,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
           src={slides[index].image}
           alt="Slide"
           fill
-          className="object-cover opacity-70"
+          className="object-cover opacity-30"
           priority
         />
       </motion.div>

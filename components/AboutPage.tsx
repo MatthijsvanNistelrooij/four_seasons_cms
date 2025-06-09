@@ -17,7 +17,7 @@ export default function AboutPage() {
         style={{ backgroundImage: `url(${hero.src})` }}
       >
         {/* Optional dark overlay for better text contrast */}
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black opacity-50"></div>
 
         {/* Text container */}
         <div className="relative z-10 flex items-center h-full">
@@ -126,7 +126,7 @@ export default function AboutPage() {
               glanzend haar hebben? Maak snel een afspraak hieronder.
             </p>
             <div className="bg-[#e9207e] flex w-64 p-1 rounded-xl hover:bg-pink-600">
-              <CalendarRange  className="mt-1 ml-3" />
+              <CalendarRange className="mt-1 ml-3" />
               <AppointmentDialog
                 title="Maak een afspraak"
                 open={openDialog}
