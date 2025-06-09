@@ -1,4 +1,5 @@
 "use client"
+import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import TopNav from "@/components/TopNav"
 
@@ -13,6 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <Navbar />
 
         <div className="wrapper">{children}</div>
+        <Footer />
       </div>
     </main>
   )

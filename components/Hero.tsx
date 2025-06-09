@@ -86,7 +86,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
         key={`image-${index}`}
         initial={{ opacity: 0, scale: 1 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeIn" }}
         className="absolute inset-0 z-0"
       >
         <Image
@@ -132,19 +132,19 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="text-left text-xl lg:text-2xl max-w-xl"
             >
-              <h1 className="leading-[1.8rem] md:leading-[2.6rem] md:mt-4">
+              <h1 className="leading-[2.2rem] md:leading-[2.6rem] md:mt-4">
                 <span className="bg-[rgba(0,0,0,0.3)] inline p-1">
                   {slides[index].subtext}
                 </span>
               </h1>
             </motion.div>
 
-            <div className="mt-6 md:mt-12">
+            <div className="mt-6 md:mt-2">
               <motion.div
                 key={`contact-${index}`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.9 }}
+                transition={{ duration: 0.8, delay: 1 }}
               >
                 <div className="flex flex-col md:flex-row gap-2">
                   <Button

@@ -1,7 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import logo from "../public/logo.png"
-// import matp from "../public/matp.png"
+import OpeningHours from "./OpeningHours"
+import matp from "../public/matp.png"
 
 const Footer = () => {
   return (
@@ -46,7 +47,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/behandelingen" className="hover:underline">
+                  <Link href="/info" className="hover:underline">
                     Behandelingen
                   </Link>
                 </li>
@@ -57,50 +58,13 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-
-            {/* Contact & Openingstijden */}
-            <div>
-              <h3 className="font-semibold mb-4 text-[#e9207e]">
-                Openingstijden & contact
-              </h3>
-              <ul className="space-y-1 text-sm">
-                <li>Ma: 12:00 – 18:00</li>
-                <li>Di: 10:00 – 19:00</li>
-                <li>Wo: 10:00 – 19:00</li>
-                <li>Do: 10:00 – 20:00</li>
-                <li>Vr: 10:00 – 19:00</li>
-                <li>Za: 10:00 – 18:00</li>
-                <li>Zo: Gesloten</li>
-                <li className="mt-4">
-                  Tel:{" "}
-                  <a href="tel:0630717774" className="underline">
-                    06 307 17774
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:nl.butterfly@hotmail.com"
-                    className="underline"
-                  >
-                    nl.butterfly@hotmail.com
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="mailto:nl.fourseasons@gmail.com"
-                    className="underline"
-                  >
-                    nl.fourseasons@gmail.com
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <OpeningHours />
           </div>
         </div>
       </footer>
-      {/* <div className="flex text-xs text-gray-500 w-full justify-end bg-black p-5">
-        Powered by
-        <Link href={"/"}>
+      <div className="flex w-full justify-end bg-black p-5">
+        <Link href={"/"} className="flex text-xs text-black hover:text-gray-500">
+          Powered by
           <Image
             src={matp}
             width={18}
@@ -109,7 +73,7 @@ const Footer = () => {
             className="ml-2"
           />
         </Link>
-      </div> */}
+      </div>
     </>
   )
 }

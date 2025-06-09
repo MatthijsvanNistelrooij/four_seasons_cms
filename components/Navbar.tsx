@@ -62,7 +62,7 @@ const Navbar = () => {
           <Link href="/about" className="py-2 text-lg font-bold w-full">
             Over
           </Link>
-          <Link href="/behandelingen" className="py-2 text-lg font-bold w-full">
+          <Link href="/info" className="py-2 text-lg font-bold w-full">
             Behandelingen
           </Link>
           <Link href="/beauty" className="py-2 text-lg font-bold w-full">
