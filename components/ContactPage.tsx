@@ -34,9 +34,9 @@ const ContactPage = () => {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-[#eaeaea] py-40">
-      <div className="container mx-auto px-8 md:px-20 flex justify-center flex-col lg:flex-row gap-12">
-        <div className="md:col-span-2 bg-white rounded-xl shadow-md p-8 w-full max-w-xl">
+    <section className="min-h-screen flex items-center justify-center bg-[#eaeaea] py-10">
+      <div className="container mx-auto px-8 md:px-20 flex justify-center flex-col lg:flex-row gap-5 max-w-4xl">
+        <div className="md:col-span-2 bg-white rounded-xl shadow-md p-8 w-full">
           <h2 className="text-2xl font-semibold mb-6">Neem contact op</h2>
 
           <form ref={form} onSubmit={sendEmail} className="space-y-5">
