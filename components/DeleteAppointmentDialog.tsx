@@ -27,12 +27,12 @@ export const DeleteAppointmentDialog = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-gray-900 text-gray-400 border-none">
+      <DialogContent className="bg-gray-900 text-gray-400 border-none space">
         <DialogHeader>
           <DialogTitle className="text-white">Weet je het zeker?</DialogTitle>
         </DialogHeader>
 
-        <p className="text-sm text-gray-400 mb-4">
+        <p className="text-sm text-gray-400 mt-5 mb-4">
           Wil je deze afspraak van{" "}
           <strong className="text-white">{appointment.name}</strong> op{" "}
           <strong className="text-white">{" "}

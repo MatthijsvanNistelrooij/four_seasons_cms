@@ -67,7 +67,7 @@ const Footer = () => {
       </footer>
       <div className="flex w-full justify-end bg-black p-5">
         <Link
-          href={"/"}
+          href={"https://www.matthijsvannistelrooij.nl"}
           className="flex text-xs text-black hover:text-gray-500"
         >
           Powered by
