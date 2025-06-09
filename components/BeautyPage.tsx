@@ -8,20 +8,24 @@ export default function BeatyPage() {
   return (
     <main className="">
       <section
-        className="relative w-full bg-center bg-cover"
-        style={{ backgroundImage: `url(${hero.src})` }}
+        className="relative w-full h-[60vh] md:h-[70vh] bg-center bg-cover"
+        style={{ backgroundImage: `url(${hero2.src})` }}
       >
-        <div className="absolute inset-0 bg-black opacity-70"></div>
+        {/* Optional dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
 
+        {/* Text container */}
         <div className="relative z-10 flex items-center h-full">
-          <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-8 py-20">
+          <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
             {" "}
-            <h2 className="text-lg md:text-2xl lg:text-3xl font-bold">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Je gezicht weer laten stralen met schoonheidsbehandelingen in
               Groningen
-              <br />
             </h2>
-            <p style={{ fontFamily: "sans-serif" }} className="leading-7">
+            <p
+              className="md:text-md leading-relaxed"
+              style={{ fontFamily: "sans-serif" }}
+            >
               Wij bieden onder andere professionele wimperextensions aan voor
               wie op zoek is naar vollere en langere wimpers. Onze getrainde
               wimperstylisten gebruiken alleen hoogwaardige materialen en
@@ -31,17 +35,6 @@ export default function BeatyPage() {
               Kom langs bij Four Seasons in Groningen en ontdek hoe wij jouw
               wimpers kunnen laten stralen!
             </p>
-            <p
-              style={{ fontFamily: "sans-serif", fontWeight: "bolder" }}
-              className="text-sm"
-            >
-              Onze diensten: Huidverzorging, vacuüm gezichtsreiniging, SOS
-              schoonheidsprocedures, darsonval, liftende gezichtsmassage,
-              sculpturale gezichtsmassage, anti-aging gezichtsmassage, pellen,
-              manicuristische diensten, correctie van nagelcoating,
-              basismanicure, Franse manicure, spa manicure, lak en biab-coating,
-              nagel ontwerp
-            </p>
           </div>
         </div>
       </section>
@@ -50,12 +43,12 @@ export default function BeatyPage() {
         <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
           {" "}
           <div className="space-y-12 w-full max-w-xl">
-            <h2 className="text-sm md:text-2xl lg:text-3xl font-semibold text-black">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-black">
               Ontspan en geniet van een luxueuze gezichtsbehandeling in
               Groningen
             </h2>
             <p
-              className="text-sm flex flex-col text-black leading-relaxed"
+              className="flex flex-col text-black leading-relaxed"
               style={{ fontFamily: "sans-serif" }}
             >
               Wij bieden professionele gezichtsbehandelingen aan om jouw huid te
@@ -68,7 +61,7 @@ export default function BeatyPage() {
               ontspannende en effectieve gezichtsbehandeling die jouw huid weer
               doet stralen.
             </p>
-            <h2 className="text-sm md:text-2xl lg:text-3xl font-semibold text-black">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-black">
               Perfect gevormde wenkbrauwen in Groningen: laat je natuurlijke
               schoonheid naar voren brengen
             </h2>
@@ -92,33 +85,45 @@ export default function BeatyPage() {
         </div>
       </section>
       <section
-        className="relative w-full h-[60vh] md:h-[70vh] bg-center bg-cover"
+        className="relative w-full bg-center bg-cover"
         style={{
           backgroundImage: `url(${hero2.src})`,
-          fontFamily: "sans-serif",
         }}
       >
         {/* Optional dark overlay for better text contrast */}
         <div className="absolute inset-0 bg-black opacity-70"></div>
 
         {/* Text container */}
-        <div className="relative z-10 flex items-center h-full">
-          <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
-            {" "}
-            <h2 className="text-2xl md:text-2xl font-bold mb-4 text-center">
-              Stralend voor de dag met onze visagie service in Groningen: <br />
-              Laat ons je beste features benadrukken
-            </h2>
-            <p className="md:text-md leading-relaxed text-center">
-              Heb je een speciale gelegenheid waarvoor je er stralend wil
-              uitzien? Onze visagiste staat klaar om een prachtige make-up look
-              te maken die volledig is afgestemd op jouw wensen. Je kan kiezen
-              om langs te komen in onze zaak aan het Reitemakersrijge of laat
-              onze visagiste bij je thuis komen. Benieuwd wat we voor jou kunnen
-              betekenen? Neem vandaag nog contact met ons op!
-            </p>
+
+        <section
+          className="relative w-full h-[60vh] md:h-[70vh] bg-center bg-cover"
+          style={{ backgroundImage: `url(${hero.src})` }}
+        >
+          {/* Optional dark overlay for better text contrast */}
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+
+          {/* Text container */}
+          <div className="relative z-10 flex items-center h-full">
+            <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
+              {" "}
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                Stralend voor de dag met onze visagie service in Groningen: Laat
+                ons je beste features benadrukken
+              </h2>
+              <p
+                className="md:text-md leading-relaxed"
+                style={{ fontFamily: "sans-serif" }}
+              >
+                Heb je een speciale gelegenheid waarvoor je er stralend wil
+                uitzien? Onze visagiste staat klaar om een prachtige make-up
+                look te maken die volledig is afgestemd op jouw wensen. Je kan
+                kiezen om langs te komen in onze zaak aan het Reitemakersrijge
+                of laat onze visagiste bij je thuis komen. Benieuwd wat we voor
+                jou kunnen betekenen? Neem vandaag nog contact met ons op!
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
       </section>
     </main>
   )

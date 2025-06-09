@@ -7,7 +7,10 @@ import matp from "../public/matp.png"
 const Footer = () => {
   return (
     <>
-      <footer className="bg-black text-white py-24">
+      <footer
+        className="bg-black text-white py-24"
+        style={{ fontFamily: "sans-serif" }}
+      >
         <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
           <div className="flex-shrink-0 flex flex-col">
             <div className="bg-[#e9207e] p-10 py-20 max-w-xs flex justify-center">

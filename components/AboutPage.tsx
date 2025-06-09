@@ -28,7 +28,10 @@ export default function AboutPage() {
               <br />
               De kapper in Groningen die weet wat je nodig hebt!
             </h2>
-            <p className="md:text-md leading-relaxed">
+            <p
+              className="md:text-md leading-relaxed"
+              style={{ fontFamily: "sans-serif" }}
+            >
               Wij zitten al meer dan 35 jaar in het vak en hebben veel ervaring
               met het knippen, kleuren en stijlen van haar. Daarnaast bieden we
               ook tal van schoonheidsbehandelingen aan.
@@ -47,7 +50,10 @@ export default function AboutPage() {
             Ons geheim? De perfecte combinatie van haar- en
             schoonheidsbehandelingen
           </h2>
-          <p className="text-base text-neutral-700 leading-relaxed">
+          <p
+            className="text-base text-neutral-700 leading-relaxed"
+            style={{ fontFamily: "sans-serif" }}
+          >
             Het geheim van Four Seasons in Groningen is onze perfecte combinatie
             van haar- en schoonheidsbehandelingen. Bij ons kun je niet alleen
             terecht voor professionele haar behandelingen, maar ook voor
@@ -93,7 +99,10 @@ export default function AboutPage() {
             <h2 className="text-xl lg:text-3xl font-semibold text-black mb-4">
               Ons team
             </h2>
-            <p className="text-base text-neutral-700 leading-relaxed">
+            <p
+              className="text-base text-neutral-700 leading-relaxed"
+              style={{ fontFamily: "sans-serif" }}
+            >
               Maak kennis met ons team van kappers, schoonheidsspecialisten en
               visagisten die voor je klaar staan om je weer te laten stralen.
               Wij hebben allemaal passie voor het vak en behandelen elke klant
@@ -111,7 +120,10 @@ export default function AboutPage() {
             <h2 className="text-xl lg:text-3xl font-semibold text-black">
               Gebruik van kwaliteitsproducten voor gezond en glanzend haar
             </h2>
-            <p className="text-base text-neutral-700 leading-relaxed">
+            <p
+              className="text-base text-neutral-700 leading-relaxed"
+              style={{ fontFamily: "sans-serif" }}
+            >
               Het gebruik van goede haarproducten is essentieel voor gezond en
               glanzend haar. Daarom werken wij uitsluitend met hoogwaardige
               producten van gerenommeerde merken, die zorgvuldig zijn

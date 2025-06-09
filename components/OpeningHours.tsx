@@ -9,7 +9,7 @@ const OpeningHours: React.FC<OpeningHoursProps> = ({ text }) => {
 
   return (
     <div>
-      <div>
+      <div style={{ fontFamily: "sans-serif" }}>
         <h3 className={`font-semibold mb-4 ${colorClass} `}>
           Openingstijden & contact
         </h3>

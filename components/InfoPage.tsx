@@ -21,7 +21,7 @@ export default function InfoPage() {
         <div className="relative z-10 flex items-center h-full">
           <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
             {" "}
-            <h2 className="text-xl lg:text-3xl md:text-3xl font-bold mb-4">
+            <h2 className="text-2xl lg:text-3xl md:text-3xl text-center font-bold mb-4">
               Klaar om te stralen? Boek nu een afspraak bij onze kapsalon met
               <br />
               schoonheidsspecialiste in Groningen en ontdek onze exclusieve
@@ -37,7 +37,10 @@ export default function InfoPage() {
           <h2 className="text-xl lg:text-3xl font-semibold text-black">
             Ervaren kapper bij Reitemakersrijge Groningen
           </h2>
-          <p className="text-base text-black leading-relaxed">
+          <p
+            className="text-base text-black leading-relaxed"
+            style={{ fontFamily: "sans-serif" }}
+          >
             Welkom bij Four Seasons in Groningen gelegen aan het
             Reitemakersrijge! Onze kapsalon biedt een breed scala aan
             haarbehandelingen voor zowel mannen als vrouwen. Of je nu op zoek
@@ -87,7 +90,10 @@ export default function InfoPage() {
             <h2 className="text-xl lg:text-2xl font-semibold text-white text-center">
               De ultieme beauty ervaring bij kapsalon Four Seasons
             </h2>
-            <p className="text-base flex flex-col text-white leading-relaxed text-center">
+            <p
+              className="text-base flex flex-col text-white leading-relaxed text-center"
+              style={{ fontFamily: "sans-serif" }}
+            >
               Bij Kapsalon Four Seasons in Groningen geloven we dat de perfecte
               beauty behandeling begint bij een gezonde basis. Daarom bieden we
               naast onze haarbehandelingen ook een scala aan
