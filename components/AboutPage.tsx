@@ -10,7 +10,7 @@ export default function AboutPage() {
   const [openDialog, setOpenDialog] = useState(false)
 
   return (
-    <main className="py-24">
+    <main className="">
       <section
         className="relative w-full h-[60vh] md:h-[70vh] bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
@@ -106,7 +106,7 @@ export default function AboutPage() {
 
       {/* Section 3: White background */}
       <section className="bg-white py-16 px-6 md:px-12">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12 mb-56">
           {" "}
           <div className="space-y-6 w-full max-w-xl mr-22">
             <h2 className="text-3xl font-semibold text-neutral-900">
