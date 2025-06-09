@@ -36,42 +36,45 @@ export default function InfoPage() {
           </div>
         </div>
       </section>
-      {/* Section 1: White background */}
+
       <section className="bg-white">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.5 }}
-          className="w-full h-full"
-        >
-          <div className="container mx-auto px-8 md:px-20 flex flex-col gap-12 py-24">
-            <h2 className="text-xl lg:text-3xl font-semibold text-black">
-              Ervaren kapper bij Reitemakersrijge Groningen
-            </h2>
-            <p
-              className="text-base text-black leading-relaxed"
-              style={{ fontFamily: "sans-serif" }}
-            >
-              Welkom bij Four Seasons in Groningen gelegen aan het
-              Reitemakersrijge! Onze kapsalon biedt een breed scala aan
-              haarbehandelingen voor zowel mannen als vrouwen. Of je nu op zoek
-              bent naar een frisse knipbeurt, of een speciale kleurbehandeling,
-              bij ons ben je aan het juiste adres. Ons ervaren team van
-              haarstylisten staat klaar om je te adviseren en te helpen bij het
-              kiezen van de perfecte behandeling die bij jouw wensen past. Naast
-              de haarbehandelingen binnen onze kapsalon bieden we ook nog
-              gezichtsbehandelingen, het plaatsen van wimperextensions,
-              wenkbrauwbehandelingen en visagie aan. Ontdek hieronder onze
-              behandelingen en maak vandaag nog een afspraak om te genieten van
-              een professionele kapperservaring bij Four Seasons.
-            </p>
-          </div>
-        </motion.div>
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="w-full h-full"
+          >
+            <div className="container mx-auto px-8 md:px-20 flex flex-col gap-12 py-24">
+              <h2 className="text-xl lg:text-3xl font-semibold text-black">
+                Ervaren kapper bij Reitemakersrijge Groningen
+              </h2>
+              <p
+                className="text-base text-black leading-relaxed"
+                style={{ fontFamily: "sans-serif" }}
+              >
+                Welkom bij Four Seasons in Groningen gelegen aan het
+                Reitemakersrijge! Onze kapsalon biedt een breed scala aan
+                haarbehandelingen voor zowel mannen als vrouwen. Of je nu op
+                zoek bent naar een frisse knipbeurt, of een speciale
+                kleurbehandeling, bij ons ben je aan het juiste adres. Ons
+                ervaren team van haarstylisten staat klaar om je te adviseren en
+                te helpen bij het kiezen van de perfecte behandeling die bij
+                jouw wensen past. Naast de haarbehandelingen binnen onze
+                kapsalon bieden we ook nog gezichtsbehandelingen, het plaatsen
+                van wimperextensions, wenkbrauwbehandelingen en visagie aan.
+                Ontdek hieronder onze behandelingen en maak vandaag nog een
+                afspraak om te genieten van een professionele kapperservaring
+                bij Four Seasons.
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       <section className="bg-white text-white py-24 mb-56">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -117,7 +120,7 @@ export default function InfoPage() {
       </section>
 
       <section className="bg-[#6d6d6a] text-white py-24">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}

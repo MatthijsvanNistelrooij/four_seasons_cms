@@ -18,10 +18,7 @@ export default function AboutPage() {
         className="relative w-full h-[60vh] md:h-[70vh] bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
-        {/* Optional dark overlay for better text contrast */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
-
-        {/* Text container */}
 
         <div className="relative z-10 flex items-center h-full">
           <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
@@ -29,7 +26,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }} // Trigger once when 50% in view
+              viewport={{ once: true, amount: 0.5 }}
               className="w-full h-full"
             >
               {" "}
@@ -55,43 +52,45 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-white">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.5 }}
-          className="w-full h-full"
-        >
-          <div className="container mx-auto px-8 md:px-20 flex flex-col text-center gap-12 py-24">
-            <h2 className="text-xl lg:text-3xl font-semibold text-black">
-              Ons geheim? De perfecte combinatie van haar- en
-              schoonheidsbehandelingen
-            </h2>
-            <p
-              className="text-base text-black leading-8"
-              style={{ fontFamily: "sans-serif" }}
-            >
-              Het geheim van Four Seasons in Groningen is onze perfecte
-              combinatie van haar- en schoonheidsbehandelingen. Bij ons kun je
-              niet alleen terecht voor professionele haar behandelingen, maar
-              ook voor schoonheidsbehandelingen die gericht zijn op het
-              verbeteren van je huid en het versterken van je natuurlijke
-              schoonheid. Door deze combinatie van diensten bieden wij onze
-              klanten een totaalpakket aan haar- en schoonheidsverzorging,
-              waardoor je bij ons terecht kunt voor al je beauty wensen. Ons
-              ervaren team van haarstylisten en schoonheidsspecialisten werkt
-              nauw met elkaar samen om een unieke en persoonlijke service te
-              bieden, die jouw natuurlijke schoonheid naar voren brengt. Bij
-              Kapsalon Four Seasons streven we ernaar om jou te laten stralen
-              van top tot teen. Daarom blijven we ons continu ontwikkelen om de
-              beste diensten en behandelingen aan te bieden.
-            </p>
-          </div>
-        </motion.div>
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="w-full h-full"
+          >
+            <div className="container mx-auto px-8 md:px-20 flex flex-col text-center gap-12 py-24">
+              <h2 className="text-xl lg:text-3xl font-semibold text-black">
+                Ons geheim? De perfecte combinatie van haar- en
+                schoonheidsbehandelingen
+              </h2>
+              <p
+                className="text-base text-black leading-8"
+                style={{ fontFamily: "sans-serif" }}
+              >
+                Het geheim van Four Seasons in Groningen is onze perfecte
+                combinatie van haar- en schoonheidsbehandelingen. Bij ons kun je
+                niet alleen terecht voor professionele haar behandelingen, maar
+                ook voor schoonheidsbehandelingen die gericht zijn op het
+                verbeteren van je huid en het versterken van je natuurlijke
+                schoonheid. Door deze combinatie van diensten bieden wij onze
+                klanten een totaalpakket aan haar- en schoonheidsverzorging,
+                waardoor je bij ons terecht kunt voor al je beauty wensen. Ons
+                ervaren team van haarstylisten en schoonheidsspecialisten werkt
+                nauw met elkaar samen om een unieke en persoonlijke service te
+                bieden, die jouw natuurlijke schoonheid naar voren brengt. Bij
+                Kapsalon Four Seasons streven we ernaar om jou te laten stralen
+                van top tot teen. Daarom blijven we ons continu ontwikkelen om
+                de beste diensten en behandelingen aan te bieden.
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       <section className="bg-[#eaeaea] text-white py-24">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
           <div className="flex flex-col xl:flex-row gap-4 w-full">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -152,7 +151,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-white text-white py-24 mb-56">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
