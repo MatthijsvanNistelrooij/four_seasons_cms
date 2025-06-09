@@ -46,29 +46,26 @@ export default function InfoPage() {
             viewport={{ once: true, amount: 0.5 }}
             className="w-full h-full"
           >
-            <div className="container mx-auto px-8 md:px-20 flex flex-col gap-12 py-24">
-              <h2 className="text-xl lg:text-3xl font-semibold text-black">
-                Ervaren kapper bij Reitemakersrijge Groningen
-              </h2>
-              <p
-                className="text-base text-black leading-relaxed"
-                style={{ fontFamily: "sans-serif" }}
-              >
-                Welkom bij Four Seasons in Groningen gelegen aan het
-                Reitemakersrijge! Onze kapsalon biedt een breed scala aan
-                haarbehandelingen voor zowel mannen als vrouwen. Of je nu op
-                zoek bent naar een frisse knipbeurt, of een speciale
-                kleurbehandeling, bij ons ben je aan het juiste adres. Ons
-                ervaren team van haarstylisten staat klaar om je te adviseren en
-                te helpen bij het kiezen van de perfecte behandeling die bij
-                jouw wensen past. Naast de haarbehandelingen binnen onze
-                kapsalon bieden we ook nog gezichtsbehandelingen, het plaatsen
-                van wimperextensions, wenkbrauwbehandelingen en visagie aan.
-                Ontdek hieronder onze behandelingen en maak vandaag nog een
-                afspraak om te genieten van een professionele kapperservaring
-                bij Four Seasons.
-              </p>
-            </div>
+            <h2 className="text-xl lg:text-3xl font-semibold text-black">
+              Ervaren kapper bij Reitemakersrijge Groningen
+            </h2>
+            <p
+              className="text-base text-black leading-relaxed mt-5"
+              style={{ fontFamily: "sans-serif" }}
+            >
+              Welkom bij Four Seasons in Groningen gelegen aan het
+              Reitemakersrijge! Onze kapsalon biedt een breed scala aan
+              haarbehandelingen voor zowel mannen als vrouwen. Of je nu op zoek
+              bent naar een frisse knipbeurt, of een speciale kleurbehandeling,
+              bij ons ben je aan het juiste adres. Ons ervaren team van
+              haarstylisten staat klaar om je te adviseren en te helpen bij het
+              kiezen van de perfecte behandeling die bij jouw wensen past. Naast
+              de haarbehandelingen binnen onze kapsalon bieden we ook nog
+              gezichtsbehandelingen, het plaatsen van wimperextensions,
+              wenkbrauwbehandelingen en visagie aan. Ontdek hieronder onze
+              behandelingen en maak vandaag nog een afspraak om te genieten van
+              een professionele kapperservaring bij Four Seasons.
+            </p>
           </motion.div>
         </div>
       </section>
