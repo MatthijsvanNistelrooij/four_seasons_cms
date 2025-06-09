@@ -65,10 +65,8 @@ export default function AboutPage() {
       </section>
 
       {/* Section 2: Gray background with images */}
-      <section className="bg-[#eaeaea] py-16 px-6 md:px-12">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12 py-24">
-          {" "}
-          {/* Left: Two responsive images */}
+      <section className="bg-[#eaeaea] text-white py-24">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
           <div className="flex flex-col xl:flex-row gap-4 w-full">
             {/* Image 1 */}
             <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
@@ -105,8 +103,8 @@ export default function AboutPage() {
       </section>
 
       {/* Section 3: White background */}
-      <section className="bg-white py-16 px-6 md:px-12">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12 mb-56">
+      <section className="bg-white text-white py-24 mb-56">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
           {" "}
           <div className="space-y-6 w-full max-w-xl mr-22">
             <h2 className="text-3xl font-semibold text-neutral-900">
