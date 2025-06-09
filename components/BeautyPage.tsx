@@ -8,23 +8,20 @@ export default function BeatyPage() {
   return (
     <main className="">
       <section
-        className="relative w-full h-[60vh] md:h-[70vh] bg-center bg-cover"
+        className="relative w-full h-[60vh] md:h-[60vh] bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
-        {/* Optional dark overlay for better text contrast */}
-
         <div className="absolute inset-0 bg-black opacity-70"></div>
 
-        {/* Text container */}
         <div className="relative z-10 flex items-center h-full">
-          <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
+          <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-8">
             {" "}
-            <h2 className="text-xl lg:text-3xl font-bold">
+            <h2 className="text-sm md:text-2xl lg:text-3xl font-bold">
               Je gezicht weer laten stralen met schoonheidsbehandelingen in
               Groningen
               <br />
             </h2>
-            <p >
+            <p style={{ fontFamily: "sans-serif" }} className="leading-7">
               Wij bieden onder andere professionele wimperextensions aan voor
               wie op zoek is naar vollere en langere wimpers. Onze getrainde
               wimperstylisten gebruiken alleen hoogwaardige materialen en
@@ -35,8 +32,8 @@ export default function BeatyPage() {
               wimpers kunnen laten stralen!
             </p>
             <p
-              style={{  fontWeight: "bolder" }}
-              className="text-sm"
+              style={{ fontFamily: "sans-serif", fontWeight: "bolder" }}
+              className="text-lg"
             >
               Onze diensten: Huidverzorging, vacuüm gezichtsreiniging, SOS
               schoonheidsprocedures, darsonval, liftende gezichtsmassage,
@@ -50,14 +47,17 @@ export default function BeatyPage() {
       </section>
 
       <section className="bg-white text-white py-24 mb-56">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
           {" "}
-          <div className="space-y-6 w-full max-w-xl">
-            <h2 className="text-xl lg:text-2xl font-semibold text-neutral-900">
+          <div className="space-y-12 w-full max-w-xl">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-black">
               Ontspan en geniet van een luxueuze gezichtsbehandeling in
               Groningen
             </h2>
-            <p className="text-base flex flex-col text-black leading-relaxed">
+            <p
+              className="text-base flex flex-col text-black leading-relaxed"
+              style={{ fontFamily: "sans-serif" }}
+            >
               Wij bieden professionele gezichtsbehandelingen aan om jouw huid te
               laten stralen. Onze ervaren schoonheidsspecialisten gebruiken
               alleen hoogwaardige producten en technieken om ervoor te zorgen
@@ -68,11 +68,14 @@ export default function BeatyPage() {
               ontspannende en effectieve gezichtsbehandeling die jouw huid weer
               doet stralen.
             </p>
-            <h2 className="text-xl lg:text-2xl font-semibold text-neutral-900">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-black">
               Perfect gevormde wenkbrauwen in Groningen: laat je natuurlijke
               schoonheid naar voren brengen
             </h2>
-            <p className="text-base flex flex-col text-black leading-relaxed">
+            <p
+              className="text-base flex flex-col text-black leading-relaxed"
+              style={{ fontFamily: "sans-serif" }}
+            >
               Wij weten als geen ander dat perfect gevormde wenkbrauwen de
               sleutel zijn tot een verzorgde uitstraling. Onze getrainde
               schoonheidsspecialisten bieden een breed scala aan wenkbrauw
@@ -83,14 +86,17 @@ export default function BeatyPage() {
               staat klaar om jouw wenkbrauwen perfect te vormen.
             </p>
           </div>
-          <div className="bg-[#e9207e] text-white p-5 w-full py-24 rounded-xl flex text-center justify-center">
+          <div className="bg-[#e9207e] text-white p-5 w-full py-24 rounded-xl flex text-center justify-center text-xl">
             <OpeningHours text="white" />
           </div>
         </div>
       </section>
       <section
         className="relative w-full h-[60vh] md:h-[70vh] bg-center bg-cover"
-        style={{ backgroundImage: `url(${hero2.src})` }}
+        style={{
+          backgroundImage: `url(${hero2.src})`,
+          fontFamily: "sans-serif",
+        }}
       >
         {/* Optional dark overlay for better text contrast */}
         <div className="absolute inset-0 bg-black opacity-70"></div>

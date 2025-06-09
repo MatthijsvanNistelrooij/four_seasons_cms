@@ -13,7 +13,7 @@ const OpeningHours: React.FC<OpeningHoursProps> = ({ text }) => {
         <h3 className={`font-semibold mb-4 ${colorClass} `}>
           Openingstijden & contact
         </h3>
-        <ul className="space-y-1 text-sm">
+        <ul className="space-y-1">
           <li>Ma: 12:00 – 18:00</li>
           <li>Di: 10:00 – 19:00</li>
           <li>Wo: 10:00 – 19:00</li>
