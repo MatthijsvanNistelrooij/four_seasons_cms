@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <div className="flex sticky top-0 shadow-lg z-50 bg-white">
-      <div className="container mx-auto relative flex items-center justify-between py-1 lg:py-7 md:px-20 px-8 min-h-12">
+      <div className="container mx-auto relative flex items-center justify-between py-1 lg:py-7 md:px-20 px-8 min-h-18">
         <div className="flex items-center min-w-[300px] lg:min-w-[420px] max-w-[300px] lg:max-w-[420px]">
           <Link href="/">
             <Image src={logo} alt="Logo" className="" priority />
