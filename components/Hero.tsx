@@ -58,7 +58,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
 
     intervalRef.current = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length)
-    }, 7000)
+    }, 6000)
   }
 
   useEffect(() => {
