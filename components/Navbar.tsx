@@ -51,7 +51,7 @@ const Navbar = () => {
             {isOpen ? (
               <X size={20} className="mt-2" />
             ) : (
-              <Menu className="mt-1 ml-3" />
+              <Menu className="mt-1" />
             )}
           </button>
         </div>
