@@ -14,7 +14,7 @@ export default function BeatyPage() {
         <div className="absolute inset-0 bg-black opacity-70"></div>
 
         <div className="relative z-10 flex items-center h-full">
-          <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-8">
+          <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-8 py-20">
             {" "}
             <h2 className="text-lg md:text-2xl lg:text-3xl font-bold">
               Je gezicht weer laten stralen met schoonheidsbehandelingen in
