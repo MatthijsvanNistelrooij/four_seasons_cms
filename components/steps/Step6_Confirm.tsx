@@ -60,7 +60,7 @@ export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
               <dt className="text-sm text-neutral-500">E-mail</dt>
               <dd className="font-medium">{email || "-"}</dd>
 
-              <dt className="text-sm text-neutral-500 mt-4 mb-10">Telefoonnummer</dt>
+              <dt className="text-sm text-neutral-500 mt-4 ">Telefoonnummer</dt>
               <dd className="font-medium mb-1">{phone || "-"}</dd>
             </div>
           </dl>
