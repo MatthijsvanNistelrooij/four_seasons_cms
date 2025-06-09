@@ -3,6 +3,7 @@ import React from "react"
 import treatment_1 from "../public/assets/treatment_1.png"
 import { Button } from "./ui/button"
 import { ArrowRight, Minus } from "lucide-react"
+import Link from "next/link"
 
 const TreatmentSection = () => {
   return (
@@ -34,17 +35,19 @@ const TreatmentSection = () => {
                 gezichtmassages, gezichtsverzorgingen en wenkbrauw ontwerpen.
               </p>
 
-              <Button className="group cursor-pointer bg-black hover:bg-gray-900 text-white flex items-center gap-2 rounded-full mt-5 overflow-hidden relative px-4 py-2">
-                <span className="relative h-5 w-5 overflow-hidden">
-                  <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-6">
-                    <Minus />
+              <Link href={"/info"}>
+                <Button className="group cursor-pointer bg-black hover:bg-gray-900 text-white flex items-center gap-2 rounded-full mt-5 overflow-hidden relative px-4 py-2">
+                  <span className="relative h-5 w-5 overflow-hidden">
+                    <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-6">
+                      <Minus />
+                    </span>
+                    <span className="absolute inset-0 flex items-center justify-center translate-y-6 transition-transform duration-300 group-hover:translate-y-0 delay-350">
+                      <ArrowRight />
+                    </span>
                   </span>
-                  <span className="absolute inset-0 flex items-center justify-center translate-y-6 transition-transform duration-300 group-hover:translate-y-0 delay-350">
-                    <ArrowRight />
-                  </span>
-                </span>
-                Meer Lezen
-              </Button>
+                  Meer Lezen
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
