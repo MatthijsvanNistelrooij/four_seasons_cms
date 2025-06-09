@@ -1,7 +1,8 @@
+import InfoPage from "@/components/InfoPage"
 import React from "react"
 
 const Beauty = () => {
-  return <div>Beauty</div>
+  return <InfoPage />
 }
 
 export default Beauty

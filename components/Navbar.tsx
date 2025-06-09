@@ -48,7 +48,11 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="text-3xl cursor-pointer"
           >
-            {isOpen ? <X size={20} className="mt-2" /> : <Menu className="mt-1 ml-3" />}
+            {isOpen ? (
+              <X size={20} className="mt-2" />
+            ) : (
+              <Menu className="mt-1 ml-3" />
+            )}
           </button>
         </div>
 

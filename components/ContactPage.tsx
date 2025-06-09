@@ -34,9 +34,9 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-neutral-100 px-4 py-10">
-      <div className="max-w-3xl w-full grid md:grid-cols-3 gap-10">
-        <div className="md:col-span-2 bg-white rounded-xl shadow-md p-8">
+    <section className="min-h-screen flex items-center justify-center bg-[#eaeaea] py-40">
+      <div className="container mx-auto px-8 md:px-20 flex justify-center flex-col lg:flex-row gap-12">
+        <div className="md:col-span-2 bg-white rounded-xl shadow-md p-8 w-full max-w-xl">
           <h2 className="text-2xl font-semibold mb-6">Neem contact op</h2>
 
           <form ref={form} onSubmit={sendEmail} className="space-y-5">
@@ -70,7 +70,7 @@ const ContactPage = () => {
               <label className="block text-sm mb-1">Bericht</label>
               <textarea
                 name="message"
-                rows={5}
+                rows={8}
                 required
                 className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
@@ -107,7 +107,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
