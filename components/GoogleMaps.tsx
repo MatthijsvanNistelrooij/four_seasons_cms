@@ -18,8 +18,8 @@ const GoogleMaps = () => {
             ></iframe>
           </div>
 
-          <div className="text-white w-full space-y-8">
-            <h1 className="text-3xl font-medium font-sans">
+          <div className="text-white w-full space-y-4">
+            <h1 className="text-xl lg:text-3xl font-medium font-sans">
               Openingstijden & Contact
             </h1>
             <OpeningHours />
