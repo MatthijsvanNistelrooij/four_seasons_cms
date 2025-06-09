@@ -6,8 +6,9 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { CalendarRange, Phone, ChevronLeft, ChevronRight } from "lucide-react"
 
-import hero1 from "../public/assets/hero_1.jpg"
-import hero2 from "../public/photos/face_massage_1.jpeg"
+import hero1 from "../public/assets/barber4.jpg"
+import hero2 from "../public/assets/hero_4.jpg"
+
 import hero3 from "../public/photos/skin_care_1.jpeg"
 import manicure from "../public/photos/nails_1.jpeg"
 import naildesigns from "../public/photos/nails_2.jpeg"
@@ -94,7 +95,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
           src={slides[index].image}
           alt="Slide"
           fill
-          className="object-contain opacity-50"
+          className="object-cover opacity-50"
           priority
         />
       </motion.div>

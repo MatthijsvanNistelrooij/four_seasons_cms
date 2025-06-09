@@ -38,7 +38,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/over-ons" className="hover:underline">
+                  <Link href="/about" className="hover:underline">
                     Over ons
                   </Link>
                 </li>
@@ -48,7 +48,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/info" className="hover:underline">
+                  <Link href="/behandelingen" className="hover:underline">
                     Behandelingen
                   </Link>
                 </li>

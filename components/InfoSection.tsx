@@ -5,40 +5,39 @@ import { motion } from "framer-motion"
 
 const InfoSection = () => {
   return (
-    <div>
-      <section className="bg-white text-white py-24">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
-          <div className="flex flex-col xl:flex-row gap-4 w-full">
-            <div className="bg-transparent relative w-full h-64 lg:h-80 rounded-xl overflow-hidden ">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.5 }}
-                className="w-full h-full shadow-2xl rounded-lg"
-              >
-                <Image
-                  src={logo_header}
-                  alt="Team member 1"
-                  fill
-                  className="object-cover rounded-xl"
-                />
-              </motion.div>
-            </div>
-          </div>
+    <section className="w-full bg-white">
+      <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
+        <div className="w-full h-[220px]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="w-full h-full"
+          >
+            <Image
+              src={logo_header}
+              alt="logo"
+              width={1400}
+              height={1400}
+              className="object-cover h-[250px] lg:h-[350px] rounded-xl shadow-2xl"
+            />
+          </motion.div>
+        </div>
 
+        <div className="w-full">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
-            className="w-full flex flex-col justify-start"
+            className="max-w-xl md:mb-40"
           >
-            <h2 className="text-xl lg:text-3xl font-semibold text-black mb-4">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-4">
               Ervaren dames & herenkapper in Groningen
             </h2>
             <p
-              className="text-black lg:text-lg leading-7"
+              className="lg:text-lg text-black leading-7"
               style={{ fontFamily: "sans-serif" }}
             >
               Bij ons kun je terecht voor een professionele en betaalbare
@@ -53,8 +52,8 @@ const InfoSection = () => {
             </p>
           </motion.div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
 

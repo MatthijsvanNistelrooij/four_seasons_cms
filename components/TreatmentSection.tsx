@@ -10,13 +10,13 @@ const TreatmentSection = () => {
   return (
     <div>
       <section className="w-full bg-[#eaeaea]">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-24 gap-5 lg:gap-12">
-          <div className="w-full h-[220px] mb-10">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
+          <div className="w-full h-[220px] ">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }} // Trigger once when 50% in view
+              viewport={{ once: true, amount: 0.5 }}
               className="w-full h-full"
             >
               <Image
@@ -28,6 +28,7 @@ const TreatmentSection = () => {
               />
             </motion.div>
           </div>
+
           <div className="w-full">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -50,7 +51,7 @@ const TreatmentSection = () => {
                 gezichtmassages, gezichtsverzorgingen en wenkbrauw ontwerpen.
               </p>
 
-              <Link href={"/info"}>
+              <Link href={"/behandelingen"}>
                 <Button
                   style={{ fontFamily: "sans-serif" }}
                   className="group cursor-pointer bg-black hover:bg-gray-900 text-white flex items-center gap-2 rounded-full mt-5 overflow-hidden relative px-4 py-2"
@@ -63,7 +64,7 @@ const TreatmentSection = () => {
                       <ArrowRight />
                     </span>
                   </span>
-                  Meer Lezen
+                  Meer lezen
                 </Button>
               </Link>
             </motion.div>

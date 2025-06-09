@@ -63,32 +63,32 @@ const Navbar = () => {
 
       </div>
       {isOpen && (
-        <div className="absolute top-[100%] left-0 w-full bg-[#e9207e]  shadow-pink-600 shadow-2xl border-t z-40 flex flex-col items-start px-8 py-4 lg:hidden space-y-7">
+        <div className="absolute top-[100%] left-0 w-full bg-white  shadow-pink-400 shadow-xl border-t z-40 flex flex-col items-start px-8 py-4 lg:hidden space-y-7">
           <Link
             onClick={() => setIsOpen(false)}
             href="/"
-            className="py-2 text-lg font-bold w-full text-white hover:text-black"
+            className="py-2 text-lg font-bold w-full text-pink-600 hover:text-black"
           >
             Home
           </Link>
           <Link
             onClick={() => setIsOpen(false)}
             href="/about"
-            className="py-2 text-lg font-bold w-full text-white hover:text-black"
+            className="py-2 text-lg font-bold w-full text-pink-600 hover:text-black"
           >
             Over
           </Link>
           <Link
             onClick={() => setIsOpen(false)}
-            href="/info"
-            className="py-2 text-lg font-bold w-full text-white hover:text-black"
+            href="/behandelingen"
+            className="py-2 text-lg font-bold w-full text-pink-600 hover:text-black"
           >
             Behandelingen
           </Link>
           <Link
             onClick={() => setIsOpen(false)}
             href="/beauty"
-            className="py-2 text-lg font-bold w-full text-white hover:text-black"
+            className="py-2 text-lg font-bold w-full text-pink-600 hover:text-black"
           >
             Beauty
           </Link>

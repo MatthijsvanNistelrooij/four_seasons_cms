@@ -7,13 +7,13 @@ const ShopSection = () => {
   return (
     <div>
       <section className="w-full bg-white">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 py-24 md:px-20 gap-5 lg:gap-20">
-          <div className="w-full h-[220px] mb-10">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
+          <div className="w-full h-[220px]">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }} // Trigger once when 50% in view
+              viewport={{ once: true, amount: 0.5 }} 
               className="w-full h-full"
             >
               <Image

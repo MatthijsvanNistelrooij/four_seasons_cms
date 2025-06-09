@@ -1,15 +1,12 @@
 "use client"
 
-import Image from "next/image"
 import hero from "../public/assets/hero_1.jpg"
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
 import { useState } from "react"
-import petros from "../public/assets/petros.png"
-import olga from "../public/assets/olga.png"
 import { motion } from "framer-motion"
 
-export default function AboutPage() {
+const BeautyPage = () => {
   const [openDialog, setOpenDialog] = useState(false)
 
   return (
@@ -90,66 +87,20 @@ export default function AboutPage() {
         </motion.div>
       </section>
 
-      <section className="bg-[#eaeaea] text-white py-24">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
-          <div className="flex flex-col xl:flex-row gap-4 w-full">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }}
-              className="w-full h-full"
-            >
-              <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
-                <Image
-                  src={petros}
-                  alt="Team member 1"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }}
-              className="w-full h-full"
-            >
-              <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
-                <Image
-                  src={olga}
-                  alt="Team member 2"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </motion.div>
+      {/* <section className="w-screen h-screen bg-black">
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="w-full max-w-xl mx-auto aspect-[16/9]">
+            <Video
+              muted
+              autoPlay
+              loop
+              playsInline
+              src="/videos/video_1.mp4"
+              className="w-full h-full object-cover rounded-lg shadow-xl"
+            />
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.5 }}
-            className="w-full flex flex-col justify-start"
-          >
-            <div className="w-full flex flex-col justify-start">
-              <h2 className="text-xl lg:text-3xl font-semibold text-black mb-4">
-                Ons team
-              </h2>
-              <p
-                className="text-base text-black leading-7"
-                style={{ fontFamily: "sans-serif" }}
-              >
-                Maak kennis met ons team van kappers, schoonheidsspecialisten en
-                visagisten die voor je klaar staan om je weer te laten stralen.
-                Wij hebben allemaal passie voor het vak en behandelen elke klant
-                als koning(in). Kom je gezellig langs?
-              </p>
-            </div>
-          </motion.div>
         </div>
-      </section>
+      </section> */}
 
       <section className="bg-white text-white py-24 mb-56">
         <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
@@ -206,3 +157,5 @@ export default function AboutPage() {
     </main>
   )
 }
+
+export default BeautyPage

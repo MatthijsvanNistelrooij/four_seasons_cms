@@ -6,7 +6,7 @@ const GoogleMaps = () => {
   return (
     <div>
       <section className="w-full bg-[#e9207e]">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch md:px-20 px-8 py-24 gap-12">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
