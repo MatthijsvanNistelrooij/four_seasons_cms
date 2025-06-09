@@ -23,7 +23,10 @@ const InfoSection = () => {
             <h2 className="text-3xl font-semibold text-neutral-900 mb-4">
               Ervaren dames & herenkapper in Groningen
             </h2>
-            <p className="text-base text-neutral-700 leading-relaxed">
+            <p
+              className="text-black lg:text-lg leading-relaxed"
+              style={{ fontFamily: "sans-serif" }}
+            >
               Bij ons kun je terecht voor een professionele en betaalbare
               knipbeurt. Wil je een nieuwe look uitproberen? Wij staan voor je
               klaar met een passend advies. Ook als je jouw haar wil laten

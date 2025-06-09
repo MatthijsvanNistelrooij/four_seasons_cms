@@ -146,7 +146,7 @@ export default function AboutPage() {
               />
             </div>
           </div>
-          <div className="bg-[#e9207e] text-white p-5 w-full py-24 rounded-xl flex text-center justify-center">
+          <div className="bg-[#e9207e] text-white p-5 w-full py-24 rounded-xl flex flex-col text-center justify-center">
             <OpeningHours text="white" />
           </div>
         </div>

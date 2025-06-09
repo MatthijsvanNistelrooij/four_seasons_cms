@@ -23,7 +23,10 @@ const TreatmentSection = () => {
               <h2 className="text-2xl lg:text-3xl font-bold mb-4">
                 Ook voor beauty behandelingen
               </h2>
-              <p className="lg:text-lg text-gray-600">
+              <p
+                className="lg:text-lg text-black"
+                style={{ fontFamily: "sans-serif" }}
+              >
                 Je gezicht weer laten stralen? Wees klaar voor elke gelegenheid
                 met onze beauty behandelingen. U bent bij ons aan het juiste
                 adres voor harsen, wimpers kleuren, tijdelijke wimpers,

@@ -1,4 +1,5 @@
 import React from "react"
+import OpeningHours from "./OpeningHours"
 
 const GoogleMaps = () => {
   return (
@@ -21,49 +22,7 @@ const GoogleMaps = () => {
             <h1 className="text-3xl font-medium font-sans">
               Openingstijden & Contact
             </h1>
-
-            <div className="space-y-1 lg:text-xl">
-              <p>
-                <span className="font-bold">Ma</span> : 12:00 – 18:00
-              </p>
-              <p>
-                <span className="font-bold">Di</span> : 10:00 – 19:00
-              </p>
-              <p>
-                <span className="font-bold">Wo</span> : 10:00 – 19:00
-              </p>
-              <p>
-                <span className="font-bold">Do</span> : 10:00 – 20:00
-              </p>
-              <p>
-                <span className="font-bold">Vr</span> : 10:00 – 19:00
-              </p>
-              <p>
-                <span className="font-bold">Za</span> : 10:00 – 18:00
-              </p>
-              <p>
-                <span className="font-bold">Zo</span> : Gesloten
-              </p>
-            </div>
-
-            <div className="text-sm md:text-base space-y-3">
-              <p className="mb-12">
-                <strong>tel.</strong>{" "}
-                <a href="tel:0630717774" className="">
-                  06 307 17774
-                </a>
-              </p>
-              <p>
-                <a href="mailto:nl.butterfly@hotmail.com" className="">
-                  nl.butterfly@hotmail.com
-                </a>
-              </p>
-              <p>
-                <a href="mailto:nl.fourseasons@gmail.com" className="">
-                  nl.fourseasons@gmail.com
-                </a>
-              </p>
-            </div>
+            <OpeningHours />
           </div>
         </div>
       </section>
