@@ -65,7 +65,7 @@ export const Step2_Barber = ({ value, onChange, onNext, onBack }: Props) => {
         <Button
           variant="secondary"
           onClick={onBack}
-          className="bg-white border hover:bg-gray-200 hover:border-gray-300 rounded"
+          className="bg-white border hover:bg-gray-200 hover:border-gray-300 rounded cursor-pointer"
         >
           <ChevronLeft />
           Terug

@@ -39,21 +39,15 @@ export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
         <div className="rounded bg-white p-4 space-y-6">
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 text-base text-neutral-800">
             <div>
-              <dt className="text-sm text-neutral-500">
-                Type afspraak
-              </dt>
+              <dt className="text-sm text-neutral-500">Type afspraak</dt>
               <dd className="font-medium">{service || "-"}</dd>
             </div>
             <div>
-              <dt className="text-sm text-neutral-500">
-                Medewerker
-              </dt>
+              <dt className="text-sm text-neutral-500">Medewerker</dt>
               <dd className="font-medium">{barber || "-"}</dd>
             </div>
             <div>
-              <dt className="text-sm text-neutral-500">
-                Datum & tijd
-              </dt>
+              <dt className="text-sm text-neutral-500">Datum & tijd</dt>
               <dd className="font-medium">
                 {date ? date.toLocaleDateString("nl-NL") : "-"} {time || "-"}
               </dd>
@@ -66,9 +60,7 @@ export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
               <dt className="text-sm text-neutral-500">E-mail</dt>
               <dd className="font-medium">{email || "-"}</dd>
 
-              <dt className="text-sm text-neutral-500 mt-4">
-                Telefoonnummer
-              </dt>
+              <dt className="text-sm text-neutral-500 mt-4 mb-10">Telefoonnummer</dt>
               <dd className="font-medium mb-1">{phone || "-"}</dd>
             </div>
           </dl>
@@ -78,7 +70,7 @@ export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
         <Button
           variant="secondary"
           onClick={onBack}
-          className="bg-white border hover:bg-gray-100 rounded"
+          className="bg-white border hover:bg-gray-200 hover:border-gray-300 rounded cursor-pointer"
         >
           <ChevronLeft className="mr-1" />
           Wijzigen

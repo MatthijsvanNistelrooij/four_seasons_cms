@@ -94,7 +94,7 @@ export const Step5_Contact = ({
         <Button
           variant="secondary"
           onClick={onBack}
-          className="bg-white border hover:bg-gray-200 hover:border-gray-300 rounded"
+          className="bg-white border hover:bg-gray-200 hover:border-gray-300 rounded cursor-pointer"
         >
           <ChevronLeft />
           Terug
