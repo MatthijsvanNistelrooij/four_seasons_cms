@@ -5,7 +5,6 @@ import hero from "../public/assets/hero_1.jpg"
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
 import { useState } from "react"
-import { CalendarRange } from "lucide-react"
 
 export default function AboutPage() {
   const [openDialog, setOpenDialog] = useState(false)

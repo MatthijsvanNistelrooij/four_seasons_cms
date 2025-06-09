@@ -58,7 +58,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
 
     intervalRef.current = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length)
-    }, 6000)
+    }, 16000)
   }
 
   useEffect(() => {
@@ -94,7 +94,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
           src={slides[index].image}
           alt="Slide"
           fill
-          className="object-cover opacity-40"
+          className="object-cover opacity-50"
           priority
         />
       </motion.div>
@@ -150,12 +150,12 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                 <div className="flex flex-col md:flex-row gap-2">
                   <Button
                     onClick={onOpenDialog}
-                    className="bg-[#e9207e] hover:bg-[#e9207e] transition-transform duration-200 rounded-full lg:p-6 lg:text-lg tracking-widest cursor-pointer"
+                    className="bg-[#e9207e] hover:bg-pink-600 p-6 rounded-full text-white font-bold shadow-none text-md cursor-pointer transition transform hover:-translate-y-1"
                   >
                     <CalendarRange className="w-4 h-4" /> {appointmentText}
                   </Button>
                   <Link href={"/contact"}>
-                    <Button className="bg-[#e9207e] hover:bg-[#e9207e] transition-transform duration-200 rounded-full lg:p-6 lg:text-lg tracking-widest cursor-pointer">
+                    <Button className="bg-[#e9207e] hover:bg-pink-600 transition-transform duration-200 rounded-full lg:p-6 lg:text-lg tracking-widest cursor-pointer hover:-translate-y-1">
                       <Phone className="w-4 h-4" /> {contactText}
                     </Button>
                   </Link>
