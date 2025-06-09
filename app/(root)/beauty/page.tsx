@@ -1,8 +1,8 @@
-import BeatyPage from "@/components/BeautyPage"
+import AboutPage from "@/components/AboutPage"
 import React from "react"
 
 const Beauty = () => {
-  return <BeatyPage />
+  return <AboutPage />
 }
 
 export default Beauty
