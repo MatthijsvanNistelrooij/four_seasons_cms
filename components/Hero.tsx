@@ -6,11 +6,11 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { CalendarRange, Phone, ChevronLeft, ChevronRight } from "lucide-react"
 
-import hero from "../public/assets/hero.jpg"
 import hero1 from "../public/assets/hero_1.jpg"
-import hero2 from "../public/assets/hero_2.jpg"
-import hero3 from "../public/assets/hero_3.jpg"
-import hero4 from "../public/assets/hero_4.jpg"
+import hero2 from "../public/photos/face_massage_1.jpeg"
+import hero3 from "../public/photos/skin_care_1.jpeg"
+import manicure from "../public/photos/nails_1.jpeg"
+import naildesigns from "../public/photos/nails_2.jpeg"
 import Link from "next/link"
 
 const slides = [
@@ -33,13 +33,13 @@ const slides = [
       "Ontspan en geniet van een luxueuze gezichtsbehandeling in Groningen",
   },
   {
-    image: hero4,
+    image: manicure,
     heading: "Manicure behandelingen",
     subtext:
       "Ontspan en geniet van een luxueuze manicure behandeling in Groningen",
   },
   {
-    image: hero,
+    image: naildesigns,
     heading: "Nagel ontwerpen",
     subtext: "Verwen jezelf met de mooiste nagel ontwerpen",
   },
@@ -94,7 +94,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
           src={slides[index].image}
           alt="Slide"
           fill
-          className="object-cover opacity-50"
+          className="object-contain opacity-50"
           priority
         />
       </motion.div>

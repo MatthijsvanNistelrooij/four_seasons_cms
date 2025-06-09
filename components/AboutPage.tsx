@@ -5,6 +5,8 @@ import hero from "../public/assets/hero_1.jpg"
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
 import { useState } from "react"
+import petros from "../public/assets/petros.png"
+import olga from "../public/assets/olga.png"
 
 export default function AboutPage() {
   const [openDialog, setOpenDialog] = useState(false)
@@ -77,7 +79,7 @@ export default function AboutPage() {
             {/* Image 1 */}
             <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src={hero}
+                src={petros}
                 alt="Team member 1"
                 fill
                 className="object-cover"
@@ -86,7 +88,7 @@ export default function AboutPage() {
             {/* Image 2 */}
             <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src={hero}
+                src={olga}
                 alt="Team member 2"
                 fill
                 className="object-cover"

@@ -3,6 +3,10 @@ import { RadioGroup } from "@/components/ui/radio-group"
 import { useState } from "react"
 import clsx from "clsx"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
+import petros from "../../public/assets/petros.png"
+import avatar from "../../public/assets/avatar.png"
+import olga from "../../public/assets/olga.png"
 
 type Props = {
   value: string
@@ -12,9 +16,9 @@ type Props = {
 }
 
 const barbers = [
-  { name: "Geen voorkeur" },
-  { name: "Botros" },
-  { name: "Olga" },
+  { name: "Geen voorkeur", img: avatar },
+  { name: "Botros", img: petros },
+  { name: "Olga", img: olga },
 ]
 
 export const Step2_Barber = ({ value, onChange, onNext, onBack }: Props) => {
@@ -52,7 +56,9 @@ export const Step2_Barber = ({ value, onChange, onNext, onBack }: Props) => {
               )}
               onClick={() => onChange(barber.name)}
             >
-              <div className="p-5 bg-gray-200 rounded mr-4" />
+              <div className="bg-gray-200 rounded mr-4">
+                <Image className="rounded-xl" src={barber.img} width={80} height={80} alt="barber" />
+              </div>
               <span className="mb-5">{barber.name}</span>
             </div>
           ))}

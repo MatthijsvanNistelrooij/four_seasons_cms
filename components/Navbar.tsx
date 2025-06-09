@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const linkClass = (path: string) =>
-    `relative font-bold pb-1 border-b-2 transition-all transition-l-to-r duration-300 
+    `relative font-bold pb-0 border-b-2 transition-all transition-l-to-r duration-300 
    ${
      pathname === path
        ? "border-[#e9207e]"
@@ -56,39 +56,39 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div className="hidden w-full text-sm xl:flex flex-col justify-end items-end text-right">
+        <div className="hidden w-full text-sm 2xl:flex flex-col justify-end items-end text-right">
           <div className="font-bold">Reitemakersrijge 3, </div>
           <div>Groningen</div>
         </div>
-        {/* <div className="w-full hidden lg:flex" /> */}
+
       </div>
       {isOpen && (
-        <div className="absolute top-[100%] left-0 w-full bg-white shadow-md border-t z-40 flex flex-col items-start px-8 py-4 lg:hidden space-y-7">
+        <div className="absolute top-[100%] left-0 w-full bg-[#e9207e]  shadow-pink-600 shadow-2xl border-t z-40 flex flex-col items-start px-8 py-4 lg:hidden space-y-7">
           <Link
             onClick={() => setIsOpen(false)}
             href="/"
-            className="py-2 text-lg font-bold w-full"
+            className="py-2 text-lg font-bold w-full text-white hover:text-black"
           >
             Home
           </Link>
           <Link
             onClick={() => setIsOpen(false)}
             href="/about"
-            className="py-2 text-lg font-bold w-full"
+            className="py-2 text-lg font-bold w-full text-white hover:text-black"
           >
             Over
           </Link>
           <Link
             onClick={() => setIsOpen(false)}
             href="/info"
-            className="py-2 text-lg font-bold w-full"
+            className="py-2 text-lg font-bold w-full text-white hover:text-black"
           >
             Behandelingen
           </Link>
           <Link
             onClick={() => setIsOpen(false)}
             href="/beauty"
-            className="py-2 text-lg font-bold w-full"
+            className="py-2 text-lg font-bold w-full text-white hover:text-black"
           >
             Beauty
           </Link>
