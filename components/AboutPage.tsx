@@ -51,7 +51,7 @@ export default function AboutPage() {
             schoonheidsbehandelingen
           </h2>
           <p
-            className="text-base text-neutral-700 leading-relaxed"
+            className="text-base text-black leading-8"
             style={{ fontFamily: "sans-serif" }}
           >
             Het geheim van Four Seasons in Groningen is onze perfecte combinatie
@@ -100,7 +100,7 @@ export default function AboutPage() {
               Ons team
             </h2>
             <p
-              className="text-base text-neutral-700 leading-relaxed"
+              className="text-base text-black leading-7"
               style={{ fontFamily: "sans-serif" }}
             >
               Maak kennis met ons team van kappers, schoonheidsspecialisten en
@@ -121,7 +121,7 @@ export default function AboutPage() {
               Gebruik van kwaliteitsproducten voor gezond en glanzend haar
             </h2>
             <p
-              className="text-base text-neutral-700 leading-relaxed"
+              className="text-base text-black leading-7"
               style={{ fontFamily: "sans-serif" }}
             >
               Het gebruik van goede haarproducten is essentieel voor gezond en
