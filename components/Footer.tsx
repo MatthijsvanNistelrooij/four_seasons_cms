@@ -9,15 +9,18 @@ const Footer = () => {
     <>
       <footer className="bg-black text-white py-24">
         <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
-          <div className="flex-shrink-0">
-            <Image
-              src={logo}
-              alt="Logo"
-              width={250}
-              height={250}
-              className="object-contain"
-            />
-            <div className="flex w-44 mt-5">
+          <div className="flex-shrink-0 ">
+            <div className="bg-[#e9207e] p-10 py-20">
+              <Image
+                src={logo}
+                alt="Logo"
+                width={250}
+                height={250}
+                className="object-contain"
+              />
+            </div>
+
+            <div className="flex w-44 mt-12">
               Copyright © 2025 Kapsalon Four Seasons All rights reserved.
             </div>
           </div>
@@ -63,7 +66,10 @@ const Footer = () => {
         </div>
       </footer>
       <div className="flex w-full justify-end bg-black p-5">
-        <Link href={"/"} className="flex text-xs text-black hover:text-gray-500">
+        <Link
+          href={"/"}
+          className="flex text-xs text-black hover:text-gray-500"
+        >
           Powered by
           <Image
             src={matp}
