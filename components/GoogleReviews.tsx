@@ -11,7 +11,7 @@ const GoogleReviews = () => {
   }, [])
 
   return (
-    <section className=" mx-auto flex flex-col justify-center py-40 md:px-20 p-8">
+    <section className="mx-auto flex flex-col justify-center py-40 md:px-20 p-8">
       <div
         className="elfsight-app-f77e08e6-daaf-4860-9cf2-edac151cca1e"
         data-elfsight-app-lazy

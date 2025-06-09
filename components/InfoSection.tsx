@@ -9,7 +9,7 @@ const InfoSection = () => {
         <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
           <div className="flex flex-col xl:flex-row gap-4 w-full">
             {/* Image 1 */}
-            <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
+            <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-2xl">
               <Image
                 src={logo_header}
                 alt="Team member 1"

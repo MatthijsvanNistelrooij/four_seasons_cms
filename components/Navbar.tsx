@@ -26,7 +26,7 @@ const Navbar = () => {
             <Image src={logo} alt="Logo" className="" priority />
           </Link>
         </div>
-        <div className="hidden lg:flex gap-11 items-center w-full ml-15">
+        <div className="hidden lg:flex gap-11 items-center justify-end w-full ml-10 ">
           {navLinks.map((link, idx) => (
             <Link
               key={idx}
@@ -56,7 +56,11 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div className="w-full hidden lg:flex" />
+        <div className="hidden w-full text-sm xl:flex flex-col justify-end items-end text-right">
+          <div className="font-bold">Reitemakersrijge 3, </div>
+          <div>Groningen</div>
+        </div>
+        {/* <div className="w-full hidden lg:flex" /> */}
       </div>
       {isOpen && (
         <div className="absolute top-[100%] left-0 w-full bg-white shadow-md border-t z-40 flex flex-col items-start px-8 py-4 lg:hidden space-y-7">
