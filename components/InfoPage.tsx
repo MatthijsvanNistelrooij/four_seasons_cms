@@ -58,7 +58,7 @@ export default function InfoPage() {
       </section>
 
       <section className="bg-white text-white py-24 mb-56">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
           {" "}
           <div className="space-y-6 w-full max-w-xl mt-15">
             <h2 className="text-xl lg:text-2xl font-semibold text-neutral-900">
@@ -70,13 +70,13 @@ export default function InfoPage() {
               <p>Dames lang haar knippen € 37,50</p>
               <p>Heren knippen € 28,50</p>
             </p>
-            <>
+            <div>
               <AppointmentDialog
                 title="Maak een afspraak"
                 open={openDialog}
                 onOpenChange={setOpenDialog}
               />
-            </>
+            </div>
           </div>
           <div className="bg-[#e9207e] text-white p-5 w-full py-24 rounded-xl flex text-center justify-center">
             <OpeningHours text="white" />
