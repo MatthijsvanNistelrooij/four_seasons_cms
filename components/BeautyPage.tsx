@@ -124,16 +124,19 @@ const BeautyPage = () => {
             className="w-full h-full"
           >
             <div className="bg-[#e9207e] text-white space-y-5 pb-20 w-full rounded-xl flex flex-col text-center justify-center">
-              <div className="flex flex-col gap-4 p-1 lg:p-5">
-                <Video
-                  muted
-                  autoPlay
-                  loop
-                  playsInline
-                  src={video_3}
-                  className="object-cover rounded-xl shadow-xl"
-                />
+              <div className="p-2">
+                <div className="rounded-xl overflow-hidden shadow-xl">
+                  <Video
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    src={video_3}
+                    className="object-cover shadow-xl"
+                  />
+                </div>
               </div>
+
               <h3 className="font-semibold text-2xl lg:text-3xl mb-5 text-white">
                 Openingstijden & contact
               </h3>
