@@ -1,6 +1,6 @@
 import Image from "next/image"
 import React from "react"
-import treatment_1 from "../public/assets/treatment_1.png"
+import treatment_1 from "../public/photos/face_massage_1.jpeg"
 import { Button } from "./ui/button"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
