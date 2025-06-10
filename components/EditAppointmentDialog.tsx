@@ -25,6 +25,13 @@ export const EditAppointmentDialog = ({
     setFormData(appointment)
   }, [appointment])
 
+  useEffect(() => {
+    if (appointment) {
+      const formattedDate = appointment.date.split("T")[0]
+      setFormData({ ...appointment, date: formattedDate })
+    }
+  }, [appointment])
+
   if (!formData) return null
 
   return (
