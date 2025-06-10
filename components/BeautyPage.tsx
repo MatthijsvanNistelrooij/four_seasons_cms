@@ -1,10 +1,14 @@
 "use client"
 
-import hero from "../public/assets/hero_1.jpg"
+import hero from "../public/assets/hero_4.jpg"
+import eyes from "../public/photos/eyes_1.jpeg"
+import eyes2 from "../public/photos/eyes_2.jpeg"
+
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const BeautyPage = () => {
   const [openDialog, setOpenDialog] = useState(false)
@@ -12,74 +16,47 @@ const BeautyPage = () => {
   return (
     <main className="">
       <section
-        className="relative w-full h-[60vh] md:h-[70vh] bg-center bg-cover"
+        className="relative w-full min-h-[30vh] md:h-[80vh] flex justify-center bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-70"></div>
 
         <div className="relative z-10 flex items-center h-full">
-          <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
+          <div className="container mx-auto px-8 md:px-20 flex flex-col py-20 text-white gap-12">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 1 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.5 }}
-              className="w-full h-full"
+              className="w-full h-full space-y-5"
             >
               <h2
                 className="text-2xl md:text-3xl font-bold mb-4"
                 style={{ fontFamily: "var(--font-roboto-slab)" }}
               >
-                Welkom bij Four Seasons:
-                <br />
-                De kapper in Groningen die weet wat je nodig hebt!
+                Je gezicht weer laten stralen met schoonheidsbehandelingen in
+                Groningen
               </h2>
-              <p className="md:text-md leading-relaxed">
-                Wij zitten al meer dan 35 jaar in het vak en hebben veel
-                ervaring met het knippen, kleuren en stijlen van haar. Daarnaast
-                bieden we ook tal van schoonheidsbehandelingen aan.
-                <br />
-                Wil jij helemaal herboren weer naar buiten lopen? Dan ben je bij
-                ons aan het juiste adres! Kom je snel een keer langs?
+              <p className="md:text-md leading-relaxed max-w-6xl">
+                Wij bieden onder andere professionele wimperextensions aan voor
+                wie op zoek is naar vollere en langere wimpers. Onze getrainde
+                wimperstylisten gebruiken alleen hoogwaardige materialen en
+                technieken om ervoor te zorgen dat de extensions op de juiste
+                manier worden geplaatst. Of je nu op zoek bent naar subtiele
+                wimpers of volle wimpers, ons team staat klaar om jou te helpen.
+                Kom langs bij Four Seasons in Groningen en ontdek hoe wij jouw
+                wimpers kunnen laten stralen!
+              </p>
+              <p className="md:text-md leading-relaxed max-w-6xl font-bold">
+                Onze diensten: Huidverzorging, vacuüm gezichtsreiniging, SOS
+                schoonheidsprocedures, darsonval, liftende gezichtsmassage,
+                sculpturale gezichtsmassage, anti-aging gezichtsmassage, pellen,
+                manicuristische diensten, correctie van nagelcoating,
+                basismanicure, Franse manicure, spa manicure, lak en
+                biab-coating, nagel ontwerp
               </p>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      <section className="bg-white min-h-[30vh] flex flex-col justify-center">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-20 gap-12 lg:gap-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.5 }}
-            className="w-full h-full"
-          >
-            <h2
-              className="text-xl lg:text-3xl font-semibold text-black mb-5"
-              style={{ fontFamily: "var(--font-roboto-slab)" }}
-            >
-              Ons geheim? De perfecte combinatie van haar- en
-              schoonheidsbehandelingen
-            </h2>
-            <p className="text-base text-gray-800 leading-8">
-              Het geheim van Four Seasons in Groningen is onze perfecte
-              combinatie van haar- en schoonheidsbehandelingen. Bij ons kun je
-              niet alleen terecht voor professionele haar behandelingen, maar
-              ook voor schoonheidsbehandelingen die gericht zijn op het
-              verbeteren van je huid en het versterken van je natuurlijke
-              schoonheid. Door deze combinatie van diensten bieden wij onze
-              klanten een totaalpakket aan haar- en schoonheidsverzorging,
-              waardoor je bij ons terecht kunt voor al je beauty wensen. Ons
-              ervaren team van haarstylisten en schoonheidsspecialisten werkt
-              nauw met elkaar samen om een unieke en persoonlijke service te
-              bieden, die jouw natuurlijke schoonheid naar voren brengt. Bij
-              Kapsalon Four Seasons streven we ernaar om jou te laten stralen
-              van top tot teen. Daarom blijven we ons continu ontwikkelen om de
-              beste diensten en behandelingen aan te bieden.
-            </p>
-          </motion.div>
         </div>
       </section>
 
@@ -101,7 +78,7 @@ const BeautyPage = () => {
       <section className="bg-white min-h-[30vh] flex flex-col justify-center mb-20">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
@@ -112,7 +89,8 @@ const BeautyPage = () => {
                 className="text-xl lg:text-3xl font-semibold text-black"
                 style={{ fontFamily: "var(--font-roboto-slab)" }}
               >
-                Gebruik van kwaliteitsproducten voor gezond en glanzend haar
+                Ontspan en geniet van een luxueuze gezichtsbehandeling in
+                Groningen
               </h2>
               <p className="text-base text-gray-800 leading-7 mb-15">
                 Het gebruik van goede haarproducten is essentieel voor gezond en
@@ -128,6 +106,23 @@ const BeautyPage = () => {
                 is in de gezondheid en schoonheid van je haar. Wil je ook mooi
                 glanzend haar hebben? Maak snel een afspraak hieronder.
               </p>
+              <h2
+                className="text-xl lg:text-3xl font-semibold text-black"
+                style={{ fontFamily: "var(--font-roboto-slab)" }}
+              >
+                Perfect gevormde wenkbrauwen in Groningen: laat je natuurlijke
+                schoonheid naar voren brengen
+              </h2>
+              <p className="text-base text-gray-800 leading-7 mb-15">
+                Wij weten als geen ander dat perfect gevormde wenkbrauwen de
+                sleutel zijn tot een verzorgde uitstraling. Onze getrainde
+                schoonheidsspecialisten bieden een breed scala aan wenkbrauw
+                behandelingen aan, waaronder waxen, threading en verven. Wij
+                accentueren de natuurlijke vorm van jouw wenkbrauwen om jouw
+                gezicht perfect te complementeren en te laten stralen. Of je nu
+                op zoek bent naar een subtiele of dramatische verandering, ons
+                team staat klaar om jouw wenkbrauwen perfect te vormen.
+              </p>
               <div>
                 <AppointmentDialog
                   title="Maak een afspraak"
@@ -138,7 +133,7 @@ const BeautyPage = () => {
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 1 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
@@ -149,6 +144,10 @@ const BeautyPage = () => {
                 Openingstijden & contact
               </h3>
               <OpeningHours text="white" />
+              <div className="flex flex-col gap-4 p-5">
+                <Image src={eyes} alt="eyes" className="rounded-xl shadow-xl"/>
+                <Image src={eyes2} alt="eyes" className="rounded-xl shadow-xl"/>
+              </div>
             </div>
           </motion.div>
         </div>
