@@ -27,7 +27,7 @@ const BeautyPage = () => {
               initial={{ opacity: 0, scale: 1 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.25 }}
               className="w-full h-full space-y-5"
             >
               <h2
@@ -78,7 +78,7 @@ const BeautyPage = () => {
       <section className="bg-white min-h-[20vh] flex flex-col justify-center mb-20">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
           <motion.div
-            initial={{ opacity: 0, y: 0 }}
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.25 }}
