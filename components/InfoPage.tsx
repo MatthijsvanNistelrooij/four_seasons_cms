@@ -46,7 +46,7 @@ export default function InfoPage() {
             initial={{ opacity: 0, scale: 1 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.15 }}
             className="w-full h-full"
           >
             <h2
