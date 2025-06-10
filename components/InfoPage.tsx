@@ -112,7 +112,7 @@ export default function InfoPage() {
             viewport={{ once: true, amount: 0.5 }}
             className="w-full h-full"
           >
-            <div className="bg-[#e9207e] text-white p-5 w-full py-24 rounded-xl flex flex-col text-center justify-center mb-20">
+            <div className="bg-[#e9207e] text-white p-5 w-full py-14 lg:py-24 rounded-xl flex flex-col text-center justify-center mb-20">
               <h3 className="font-semibold mb-6 text-white text-xl">
                 Openingstijden & contact
               </h3>

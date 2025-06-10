@@ -43,7 +43,7 @@ const TreatmentSection = () => {
               >
                 Ook voor beauty behandelingen
               </h2>
-              <p className=" text-black leading-7 tracking-wider">
+              <p className=" text-black leading-7">
                 Je gezicht weer laten stralen? Wees klaar voor elke gelegenheid
                 met onze beauty behandelingen. U bent bij ons aan het juiste
                 adres voor harsen, wimpers kleuren, tijdelijke wimpers,

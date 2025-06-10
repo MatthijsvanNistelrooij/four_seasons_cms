@@ -102,7 +102,7 @@ const BeautyPage = () => {
         </div>
       </section> */}
 
-      <section className="bg-white text-white py-24 mb-56">
+      <section className="bg-white text-white mb-20">
         <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -148,7 +148,7 @@ const BeautyPage = () => {
             viewport={{ once: true, amount: 0.5 }}
             className="w-full h-full"
           >
-            <div className="bg-[#e9207e] text-white p-5 w-full py-24 rounded-xl flex flex-col text-center justify-center">
+            <div className="bg-[#e9207e] text-white p-5 w-full py-14 lg:py-24 rounded-xl flex flex-col text-center justify-center">
               <h3 className="font-semibold mb-4 text-white">
                 Openingstijden & contact
               </h3>
