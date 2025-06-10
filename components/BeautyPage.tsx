@@ -47,7 +47,7 @@ const BeautyPage = () => {
                 Kom langs bij Four Seasons in Groningen en ontdek hoe wij jouw
                 wimpers kunnen laten stralen!
               </p>
-              <p className="md:text-md leading-relaxed text-lg font-bold">
+              <p className="md:text-md leading-relaxed tracking-wide font-bold">
                 Onze diensten: Huidverzorging, vacuüm gezichtsreiniging, SOS
                 schoonheidsprocedures, darsonval, liftende gezichtsmassage,
                 sculpturale gezichtsmassage, anti-aging gezichtsmassage, pellen,
