@@ -88,7 +88,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#eaeaea] text-white py-24">
+      <section className="bg-[#eaeaea] text-white">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
           <div className="flex flex-col xl:flex-row gap-4 w-full">
             <motion.div
@@ -151,7 +151,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white text-white py-24 mb-56">
+      <section className="bg-white text-white">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
