@@ -17,9 +17,9 @@ type Props = {
 }
 
 const barberOptions = [
+  { name: "Geen voorkeur", img: avatar },
   { name: "Botros", img: petros, categories: ["knippen"] },
   { name: "Olga", img: olga, categories: ["manicure", "huidverzorging"] },
-  { name: "Geen voorkeur", img: avatar },
 ]
 
 export const Step2_Barber = ({
@@ -32,17 +32,13 @@ export const Step2_Barber = ({
   const [error, setError] = useState("")
 
   const filteredBarbers = barberOptions.filter((barber) => {
-    // Always show "Geen voorkeur"
     if (barber.name === "Geen voorkeur") return true
 
-    // Check if category contains "knippen" (case-insensitive)
     const isKnippen = category.toLowerCase().includes("knippen")
 
-    // If category includes knippen, show barbers with "knippen" in categories
     if (isKnippen) {
       return barber.categories?.includes("knippen")
     } else {
-      // Otherwise, show barbers without "knippen" category (like Olga)
       return barber.categories && !barber.categories.includes("knippen")
     }
   })
@@ -79,9 +75,9 @@ export const Step2_Barber = ({
               )}
               onClick={() => onChange(barber.name)}
             >
-              <div className="bg-gray-200 mr-4">
+              <div className="bg-gray-200 mr-4 h-full">
                 <Image
-                  className=""
+                  className="object-cover"
                   src={barber.img}
                   width={80}
                   height={80}
