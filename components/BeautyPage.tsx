@@ -38,9 +38,7 @@ const BeautyPage = () => {
                 <br />
                 De kapper in Groningen die weet wat je nodig hebt!
               </h2>
-              <p
-                className="md:text-md leading-relaxed"
-                  >
+              <p className="md:text-md leading-relaxed">
                 Wij zitten al meer dan 35 jaar in het vak en hebben veel
                 ervaring met het knippen, kleuren en stijlen van haar. Daarnaast
                 bieden we ook tal van schoonheidsbehandelingen aan.
@@ -69,9 +67,7 @@ const BeautyPage = () => {
               Ons geheim? De perfecte combinatie van haar- en
               schoonheidsbehandelingen
             </h2>
-            <p
-              className="text-base text-black leading-8"
-                >
+            <p className="text-base text-black leading-8">
               Het geheim van Four Seasons in Groningen is onze perfecte
               combinatie van haar- en schoonheidsbehandelingen. Bij ons kun je
               niet alleen terecht voor professionele haar behandelingen, maar
@@ -153,6 +149,9 @@ const BeautyPage = () => {
             className="w-full h-full"
           >
             <div className="bg-[#e9207e] text-white p-5 w-full py-24 rounded-xl flex flex-col text-center justify-center">
+              <h3 className="font-semibold mb-4 text-white">
+                Openingstijden & contact
+              </h3>
               <OpeningHours text="white" />
             </div>
           </motion.div>

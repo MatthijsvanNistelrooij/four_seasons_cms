@@ -37,9 +37,7 @@ export default function AboutPage() {
                 <br />
                 De kapper in Groningen die weet wat je nodig hebt!
               </h2>
-              <p
-                className="md:text-md leading-relaxed"
-              >
+              <p className="md:text-md leading-relaxed">
                 Wij zitten al meer dan 35 jaar in het vak en hebben veel
                 ervaring met het knippen, kleuren en stijlen van haar. Daarnaast
                 bieden we ook tal van schoonheidsbehandelingen aan.
@@ -138,9 +136,7 @@ export default function AboutPage() {
               >
                 Ons team
               </h2>
-              <p
-                className="text-base text-black leading-7"
-              >
+              <p className="text-base text-black leading-7">
                 Maak kennis met ons team van kappers, schoonheidsspecialisten en
                 visagisten die voor je klaar staan om je weer te laten stralen.
                 Wij hebben allemaal passie voor het vak en behandelen elke klant
@@ -198,6 +194,9 @@ export default function AboutPage() {
             className="w-full h-full"
           >
             <div className="bg-[#e9207e] text-white p-5 w-full py-24 rounded-xl flex flex-col text-center justify-center">
+              <h3 className="font-semibold mb-6 text-white text-xl">
+                Openingstijden & contact
+              </h3>
               <OpeningHours text="white" />
             </div>
           </motion.div>
