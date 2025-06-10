@@ -1,6 +1,7 @@
 "use client"
 
 import hero from "../public/assets/hero_4.jpg"
+import skincare from "../public/photos/skin_care_2.jpeg"
 
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
@@ -15,7 +16,7 @@ const BeautyPage = () => {
   return (
     <main className="">
       <section
-        className="relative w-full min-h-[30vh] md:h-[80vh] flex justify-center bg-center bg-cover"
+        className="relative w-full min-h-[30vh] md:h-[60vh] flex justify-center bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
         <div className="absolute inset-0 bg-black opacity-70"></div>
@@ -30,7 +31,7 @@ const BeautyPage = () => {
               className="w-full h-full space-y-5"
             >
               <h2
-                className="text-2xl md:text-3xl font-bold mb-4"
+                className="text-xl md:text-2xl lg:md:text-3xl font-bold mb-4"
                 style={{ fontFamily: "var(--font-roboto-slab)" }}
               >
                 Je gezicht weer laten stralen met schoonheidsbehandelingen in
@@ -70,7 +71,7 @@ const BeautyPage = () => {
           >
             <div className="space-y-6 w-full max-w-xl mr-22">
               <h2
-                className="text-xl lg:text-3xl font-semibold text-black"
+                className="text-xl md:text-2xl lg:text-3xl font-semibold text-black"
                 style={{ fontFamily: "var(--font-roboto-slab)" }}
               >
                 Ontspan en geniet van een luxueuze gezichtsbehandeling in
@@ -91,7 +92,7 @@ const BeautyPage = () => {
                 glanzend haar hebben? Maak snel een afspraak hieronder.
               </p>
               <h2
-                className="text-xl lg:text-3xl font-semibold text-black"
+                className="text-xl md:text-2xl lg:text-3xl font-semibold text-black"
                 style={{ fontFamily: "var(--font-roboto-slab)" }}
               >
                 Perfect gevormde wenkbrauwen in Groningen: laat je natuurlijke
@@ -123,7 +124,7 @@ const BeautyPage = () => {
             viewport={{ once: true, amount: 0.25 }}
             className="w-full h-full"
           >
-            <div className="bg-[#e9207e] text-white space-y-5 pb-20 w-full rounded-xl flex flex-col text-center justify-center">
+            <div className="bg-[#e9207e] text-white space-y-5 pb-20 w-full rounded-xl flex flex-col text-center justify-center gap-10">
               <div className="p-1">
                 <div className="rounded-md overflow-hidden shadow-xl">
                   <Video
@@ -137,12 +138,49 @@ const BeautyPage = () => {
                 </div>
               </div>
 
-              <h3 className="font-semibold text-2xl lg:text-3xl mb-5 text-white">
+              <h3
+                className="font-semibold text-xl md:text-2xl mb-5 text-white"
+                style={{ fontFamily: "var(--font-roboto-slab)" }}
+              >
                 Openingstijden & contact
               </h3>
               <OpeningHours text="white" />
             </div>
           </motion.div>
+        </div>
+      </section>
+      <section
+        className="relative w-full min-h-[30vh] md:h-[60vh] flex justify-center bg-center bg-cover"
+        style={{ backgroundImage: `url(${skincare.src})` }}
+      >
+        <div className="absolute inset-0 bg-black opacity-70"></div>
+
+        <div className="relative z-10 flex items-center h-full">
+          <div className="container mx-auto px-8 md:px-20 flex flex-col py-20 text-white gap-20">
+            <motion.div
+              initial={{ opacity: 0, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.25 }}
+              className="w-full h-full space-y-5"
+            >
+              <h2
+                className="text-xl md:text-2xl font-bold text-center"
+                style={{ fontFamily: "var(--font-roboto-slab)" }}
+              >
+                Stralend voor de dag met onze visagie service in Groningen: Laat
+                ons je beste features benadrukken
+              </h2>
+              <p className="md:text-md leading-relaxed text-center">
+                Heb je een speciale gelegenheid waarvoor je er stralend wil
+                uitzien? Onze visagiste staat klaar om een prachtige make-up
+                look te maken die volledig is afgestemd op jouw wensen. Je kan
+                kiezen om langs te komen in onze zaak aan het Reitemakersrijge
+                of laat onze visagiste bij je thuis komen. Benieuwd wat we voor
+                jou kunnen betekenen? Neem vandaag nog contact met ons op!
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
     </main>

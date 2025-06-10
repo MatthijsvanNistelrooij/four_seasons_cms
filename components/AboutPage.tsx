@@ -15,7 +15,7 @@ export default function AboutPage() {
   return (
     <main className="">
       <section
-        className="relative w-full min-h-[40vh] md:h-[80vh] bg-center bg-cover"
+        className="relative w-full min-h-[40vh] md:h-[50vh] bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
