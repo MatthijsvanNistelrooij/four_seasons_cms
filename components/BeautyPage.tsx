@@ -144,7 +144,7 @@ const BeautyPage = () => {
                 Openingstijden & contact
               </h3>
               <OpeningHours text="white" />
-              <div className="flex flex-col gap-4 p-5">
+              <div className="flex flex-col gap-4 p-1 lg:p-5">
                 <Image src={eyes} alt="eyes" className="rounded-xl shadow-xl"/>
                 <Image src={eyes2} alt="eyes" className="rounded-xl shadow-xl"/>
               </div>
