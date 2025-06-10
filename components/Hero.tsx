@@ -83,7 +83,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
   const contactText = "CONTACT"
 
   return (
-    <section className="relative bg-black overflow-hidden w-full min-h-[60vh] xl:h-[80vh]">
+    <section className="relative bg-black overflow-hidden w-full flex flex-col justify-center min-h-[60vh] xl:h-[80vh]">
       <motion.div
         key={`image-${index}`}
         initial={{ opacity: 0, scale: 1 }}
