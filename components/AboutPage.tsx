@@ -148,7 +148,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-white min-h-[25vh] flex flex-col justify-center py-10 lg:py-20">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-2 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -193,7 +193,7 @@ export default function AboutPage() {
             viewport={{ once: true, amount: 0.5 }}
             className="w-full h-full"
           >
-            <div className="bg-[#e9207e] text-white p-5 w-full mb-20 py-14 lg:py-24 rounded-xl flex flex-col text-center justify-center">
+            <div className="bg-[#e9207e] text-white p-5 w-full mb-10 lg:mb-20 py-14 lg:py-24 rounded-xl flex flex-col text-center justify-center">
               <h3 className="font-semibold mb-6 text-white text-xl">
                 Openingstijden & contact
               </h3>
