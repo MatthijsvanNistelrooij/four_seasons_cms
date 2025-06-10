@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 const PricingSection = () => {
   return (
     <div>
-      <section className="bg-[#e9207e] min-h-[20vh] flex flex-col justify-center py-10 lg:py-40">
+      <section className="bg-[#e9207e] min-h-[30vh] flex flex-col justify-center py-10 lg:py-40">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
           <div className="w-full">
             <motion.div
