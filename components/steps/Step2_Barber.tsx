@@ -79,8 +79,8 @@ export const Step2_Barber = ({
                 <Image
                   className="object-cover"
                   src={barber.img}
-                  width={80}
-                  height={80}
+                  width={60}
+                  height={60}
                   alt="barber"
                 />
               </div>
