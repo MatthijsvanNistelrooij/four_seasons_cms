@@ -26,7 +26,10 @@ export default function InfoPage() {
               viewport={{ once: true, amount: 0.5 }}
               className="w-full h-full"
             >
-              <h2 className="text-2xl lg:text-3xl md:text-3xl text-start font-bold mb-4">
+              <h2
+                className="text-2xl lg:text-3xl md:text-3xl text-start font-bold mb-4"
+                style={{ fontFamily: "var(--font-roboto-slab)" }}
+              >
                 Klaar om te stralen? Boek nu een afspraak bij onze kapsalon met
                 <br />
                 schoonheidsspecialiste in Groningen en ontdek onze exclusieve
@@ -46,7 +49,10 @@ export default function InfoPage() {
             viewport={{ once: true, amount: 0.5 }}
             className="w-full h-full"
           >
-            <h2 className="text-xl lg:text-3xl font-semibold text-black">
+            <h2
+              className="text-xl lg:text-3xl font-semibold text-black"
+              style={{ fontFamily: "var(--font-roboto-slab)" }}
+            >
               Ervaren kapper bij Reitemakersrijge Groningen
             </h2>
             <p

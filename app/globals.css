@@ -20,9 +20,9 @@
   }
 }
 
-:root {
-  --font-roboto-slab: "Roboto Slab", serif; /* This fallback is optional */
-}
+/* :root {
+  --font-roboto-slab: "Roboto Slab", serif;
+} */
 
 body {
   @apply antialiased;

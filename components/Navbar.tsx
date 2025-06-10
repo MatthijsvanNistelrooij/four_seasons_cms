@@ -19,7 +19,10 @@ const Navbar = () => {
    }`
 
   return (
-    <div className="flex sticky top-0 shadow-lg z-50 bg-white">
+    <div
+      className="flex sticky top-0 shadow-lg z-50 bg-white"
+      style={{ fontFamily: "var(--font-roboto-slab)" }}
+    >
       <div className="container mx-auto relative flex items-center justify-between py-1 lg:py-7 md:px-20 px-8 min-h-18">
         <div className="flex items-center mr-5 min-w-[300px] lg:min-w-[420px] max-w-[300px] lg:max-w-[420px]">
           <Link href="/">
@@ -56,11 +59,13 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div className="hidden w-full text-sm 2xl:flex flex-col justify-end items-end text-right">
+        <div
+          className="hidden w-full text-sm 2xl:flex flex-col justify-end items-end text-right"
+          style={{ fontFamily: "sans-serif" }}
+        >
           <div className="font-bold">Reitemakersrijge 3, </div>
           <div>Groningen</div>
         </div>
-
       </div>
       {isOpen && (
         <div className="absolute top-[100%] left-0 w-full bg-white  shadow-pink-400 shadow-xl border-t z-40 flex flex-col items-start px-8 py-4 lg:hidden space-y-7">

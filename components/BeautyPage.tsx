@@ -30,7 +30,10 @@ const BeautyPage = () => {
               className="w-full h-full"
             >
               {" "}
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              <h2
+                className="text-2xl md:text-3xl font-bold mb-4"
+                style={{ fontFamily: "var(--font-roboto-slab)" }}
+              >
                 Welkom bij Four Seasons:
                 <br />
                 De kapper in Groningen die weet wat je nodig hebt!
@@ -60,7 +63,10 @@ const BeautyPage = () => {
           className="w-full h-full"
         >
           <div className="container mx-auto px-8 md:px-20 flex flex-col text-center gap-12 py-24">
-            <h2 className="text-xl lg:text-3xl font-semibold text-black">
+            <h2
+              className="text-xl lg:text-3xl font-semibold text-black"
+              style={{ fontFamily: "var(--font-roboto-slab)" }}
+            >
               Ons geheim? De perfecte combinatie van haar- en
               schoonheidsbehandelingen
             </h2>
@@ -112,13 +118,13 @@ const BeautyPage = () => {
             className="w-full flex flex-col justify-start"
           >
             <div className="space-y-6 w-full max-w-xl mr-22">
-              <h2 className="text-xl lg:text-3xl font-semibold text-black">
+              <h2
+                className="text-xl lg:text-3xl font-semibold text-black"
+                style={{ fontFamily: "var(--font-roboto-slab)" }}
+              >
                 Gebruik van kwaliteitsproducten voor gezond en glanzend haar
               </h2>
-              <p
-                className="text-base text-black leading-7"
-                style={{ fontFamily: "sans-serif" }}
-              >
+              <p className="text-base text-black leading-7 mb-15">
                 Het gebruik van goede haarproducten is essentieel voor gezond en
                 glanzend haar. Daarom werken wij uitsluitend met hoogwaardige
                 producten van gerenommeerde merken, die zorgvuldig zijn

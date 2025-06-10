@@ -6,10 +6,7 @@ import TopNav from "@/components/TopNav"
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="root">
-      <div
-        className="root-container font-roboto-slab"
-        style={{ fontFamily: "var(--font-roboto-slab)" }}
-      >
+      <div className="root-container font-roboto-slab">
         <TopNav />
         <Navbar />
 

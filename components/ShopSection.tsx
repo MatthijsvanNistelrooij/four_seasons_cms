@@ -13,7 +13,7 @@ const ShopSection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }} 
+              viewport={{ once: true, amount: 0.5 }}
               className="w-full h-full"
             >
               <Image
@@ -34,13 +34,13 @@ const ShopSection = () => {
               viewport={{ once: true, amount: 0.5 }}
               className="max-w-xl md:mb-40"
             >
-              <h2 className="text-2xl lg:text-3xl font-bold mb-4">
+              <h2
+                className="text-2xl lg:text-3xl font-bold mb-4"
+                style={{ fontFamily: "var(--font-roboto-slab)" }}
+              >
                 Verven, knippen, in model brengen en meer!
               </h2>
-              <p
-                className="lg:text-lg text-black leading-7"
-                style={{ fontFamily: "sans-serif" }}
-              >
+              <p className=" text-black leading-7">
                 Bij onze kapsalon in het hart van Groningen zijn wij specialist
                 in verven, knippen, in model brengen en nog veel meer! Wij staan
                 voor je klaar om aan jouw wensen te voldoen. We gebruiken alleen
