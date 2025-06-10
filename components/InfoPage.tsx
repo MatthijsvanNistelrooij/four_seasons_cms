@@ -23,7 +23,7 @@ export default function InfoPage() {
               initial={{ opacity: 0, scale: 1 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.25 }}
               className="w-full h-full"
             >
               <h2
@@ -46,7 +46,7 @@ export default function InfoPage() {
             initial={{ opacity: 0, scale: 1 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ once: true, amount: 0.25 }}
             className="w-full h-full"
           >
             <h2
@@ -79,7 +79,7 @@ export default function InfoPage() {
             initial={{ opacity: 0, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.25 }}
             className="w-full h-full"
           >
             <div className="space-y-6 w-full max-w-xl mt-15">
@@ -109,7 +109,7 @@ export default function InfoPage() {
             initial={{ opacity: 0, scale: 1 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.25 }}
             className="w-full h-full"
           >
             <div className="bg-[#e9207e] text-white p-5 w-full py-14 lg:py-24 rounded-xl flex flex-col text-center justify-center mb-20">
@@ -128,7 +128,7 @@ export default function InfoPage() {
             initial={{ opacity: 0, scale: 1 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.25 }}
             className="w-full h-full"
           >
             <div className="space-y-6 w-full flex justfy-center text-center flex-col py-18">
