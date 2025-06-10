@@ -1,14 +1,13 @@
 "use client"
 
 import hero from "../public/assets/hero_4.jpg"
-import eyes from "../public/photos/eyes_1.jpeg"
-import eyes2 from "../public/photos/eyes_2.jpeg"
 
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import Image from "next/image"
+import video_3 from "../videos/video_3.mp4"
+import Video from "next-video"
 
 const BeautyPage = () => {
   const [openDialog, setOpenDialog] = useState(false)
@@ -59,21 +58,6 @@ const BeautyPage = () => {
           </div>
         </div>
       </section>
-
-      {/* <section className="w-screen h-screen bg-black">
-        <div className="w-full h-full flex items-center justify-center">
-          <div className="w-full max-w-xl mx-auto aspect-[16/9]">
-            <Video
-              muted
-              autoPlay
-              loop
-              playsInline
-              src="/videos/video_1.mp4"
-              className="w-full h-full object-cover rounded-lg shadow-xl"
-            />
-          </div>
-        </div>
-      </section> */}
 
       <section className="bg-white min-h-[20vh] flex flex-col justify-center mb-20">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
@@ -145,8 +129,14 @@ const BeautyPage = () => {
               </h3>
               <OpeningHours text="white" />
               <div className="flex flex-col gap-4 p-1 lg:p-5">
-                <Image src={eyes} alt="eyes" className="rounded-xl shadow-xl"/>
-                <Image src={eyes2} alt="eyes" className="rounded-xl shadow-xl"/>
+                <Video
+                  muted
+                  autoPlay
+                  loop
+                  playsInline
+                  src={video_3}
+                  className="object-cover rounded-lg shadow-xl"
+                />
               </div>
             </div>
           </motion.div>

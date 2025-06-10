@@ -116,7 +116,7 @@ export function AppointmentDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogTrigger asChild>
-        <Button className="bg-[#e9207e] hover:bg-pink-600 p-8 rounded-full text-white font-bold shadow-none text-md cursor-pointer transition transform hover:-translate-y-1">
+        <Button className="bg-[#e9207e] hover:bg-pink-600 p-8 rounded-full text-white font-bold shadow-none text-md cursor-pointer">
           {title}
         </Button>
       </DialogTrigger>
@@ -140,6 +140,7 @@ export function AppointmentDialog({
               onNext={next}
               onBack={back}
               onChange={(v) => updateFormData("barber", v)}
+              category={formData.service}
             />
           )}
           {step === 3 && (

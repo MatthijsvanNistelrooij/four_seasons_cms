@@ -38,30 +38,29 @@ export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
 
         <div className="rounded bg-white p-4 space-y-6">
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 text-base text-neutral-800">
-            <div>
-              <dt className="text-sm text-neutral-500">Type afspraak</dt>
-              <dd className="font-medium">{service || "-"}</dd>
-            </div>
-            <div>
-              <dt className="text-sm text-neutral-500">Medewerker</dt>
-              <dd className="font-medium">{barber || "-"}</dd>
-            </div>
-            <div>
-              <dt className="text-sm text-neutral-500">Datum & tijd</dt>
-              <dd className="font-medium">
+            <div className="space-y-5 pb-12">
+              <label className="font-bold text-gray-700 text-sm ml-1">
+                Type afspraak
+              </label>
+              <div className="ml-1 text-xs">{service || "-"}</div>
+              <label className="font-bold text-gray-700 text-sm ml-1 mt-2">
+                Medewerker
+              </label>
+              <div className="ml-1 text-xs">{barber || "-"}</div>
+              <label className="font-bold text-gray-700 text-sm ml-1">
+                Datum & tijd
+              </label>
+              <div className="ml-1 text-xs">
                 {date ? date.toLocaleDateString("nl-NL") : "-"} {time || "-"}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-sm text-neutral-500">Naam</dt>
-              <dd className=" font-medium">{name || "-"}</dd>
-            </div>
-            <div>
-              <dt className="text-sm text-neutral-500">E-mail</dt>
-              <dd className="font-medium">{email || "-"}</dd>
-
-              <dt className="text-sm text-neutral-500 mt-4 ">Telefoonnummer</dt>
-              <dd className="font-medium mb-1">{phone || "-"}</dd>
+              </div>
+              <label className="font-bold text-gray-700 text-sm ml-1 mt-2">
+                E-mail
+              </label>
+              <div className="ml-1 text-xs">{email || "-"}</div>
+              <label className="font-bold text-gray-700 text-sm ml-1 mt-2">
+                Telefoonnummer
+              </label>
+              <div className="ml-1 text-xs">{phone || "-"}</div>
             </div>
           </dl>
         </div>

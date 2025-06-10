@@ -162,7 +162,7 @@ const Appointments = () => {
                       <Edit size={12} />
                     </Button>
                     <Button
-                      className="p-0 bg-transparent text-red-500 hover:bg-white cursor-pointer m-0"
+                      className="p-0 bg-transparent text-red-400 hover:bg-white cursor-pointer m-0"
                       onClick={() => {
                         setDeletingAppointment(appt)
                         setIsDeleteDialogOpen(true)

@@ -6,7 +6,7 @@ import { ChevronRight } from "lucide-react"
 type Props = {
   value: string
   onChange: (value: string) => void
-  onNext: () => void
+  onNext: (category: string) => void
 }
 
 const services = [
@@ -85,7 +85,9 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
       return
     }
     setError("")
-    onNext()
+    const selectedService = services.find((s) => s.name === value)
+    const category = selectedService?.category || ""
+    onNext(category)
   }
 
   // Filter services per categorie

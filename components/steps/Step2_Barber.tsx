@@ -13,17 +13,40 @@ type Props = {
   onChange: (value: string) => void
   onNext: () => void
   onBack: () => void
+  category: string
 }
 
-const barbers = [
+const barberOptions = [
   { name: "Geen voorkeur", img: avatar },
-  { name: "Botros", img: petros },
-  { name: "Olga", img: olga },
+  { name: "Botros", img: petros, categories: ["knippen"] },
+  { name: "Olga", img: olga, categories: ["manicure", "huidverzorging"] },
 ]
 
-export const Step2_Barber = ({ value, onChange, onNext, onBack }: Props) => {
+export const Step2_Barber = ({
+  value,
+  onChange,
+  onNext,
+  onBack,
+  category,
+}: Props) => {
   const [error, setError] = useState("")
 
+  const filteredBarbers = barberOptions.filter((barber) => {
+    // Always show "Geen voorkeur"
+    if (barber.name === "Geen voorkeur") return true
+
+    // Check if category contains "knippen" (case-insensitive)
+    const isKnippen = category.toLowerCase().includes("knippen")
+
+    // If category includes knippen, show barbers with "knippen" in categories
+    if (isKnippen) {
+      return barber.categories?.includes("knippen")
+    } else {
+      // Otherwise, show barbers without "knippen" category (like Olga)
+      return barber.categories && !barber.categories.includes("knippen")
+    }
+  })
+  console.log(category)
   const handleNext = () => {
     if (!value) {
       setError("Selecteer een barbier om verder te gaan.")
@@ -45,7 +68,7 @@ export const Step2_Barber = ({ value, onChange, onNext, onBack }: Props) => {
           onValueChange={onChange}
           className="flex flex-col overflow-y-auto bg-gray-50 min-h-96 gap-0 text-sm font-bold border border-gray-200"
         >
-          {barbers.map((barber) => (
+          {filteredBarbers.map((barber) => (
             <div
               key={barber.name}
               className={clsx(
@@ -57,7 +80,13 @@ export const Step2_Barber = ({ value, onChange, onNext, onBack }: Props) => {
               onClick={() => onChange(barber.name)}
             >
               <div className="bg-gray-200 rounded mr-4">
-                <Image className="rounded-xl" src={barber.img} width={80} height={80} alt="barber" />
+                <Image
+                  className="rounded-xl"
+                  src={barber.img}
+                  width={80}
+                  height={80}
+                  alt="barber"
+                />
               </div>
               <span className="mb-5">{barber.name}</span>
             </div>
