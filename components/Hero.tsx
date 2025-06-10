@@ -155,16 +155,16 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                   <Button
                     style={{ fontFamily: "sans-serif" }}
                     onClick={onOpenDialog}
-                    className="bg-[#e9207e] hover:bg-pink-600 w-72 p-6 tracking-widest rounded-full text-white 
-                    font-bold shadow-none text-md cursor-pointer transition transform hover:-translate-y-0.5"
+                    className="bg-[#e9207e] hover:bg-pink-600 w-full md:w-2/3 px-20 p-1 md:p-6 tracking-widest rounded-full text-white 
+                    font-bold shadow-none text-xs md:text-lg cursor-pointer transition transform hover:-translate-y-0.5"
                   >
                     <CalendarRange className="w-4 h-4" /> {appointmentText}
                   </Button>
                   <Link href={"/contact"}>
                     <Button
                       style={{ fontFamily: "sans-serif" }}
-                      className="bg-[#e9207e] hover:bg-pink-600 p-6 transition-transform w-48 font-bold duration-200 
-                      rounded-full text-md tracking-widest cursor-pointer hover:-translate-y-0.5"
+                      className="bg-[#e9207e] hover:bg-pink-600 p-1 md:p-6 transition-transform w-48 md:w-64 font-bold duration-200 
+                      rounded-full text-xs md:text-lg tracking-widest cursor-pointer hover:-translate-y-0.5"
                     >
                       <Phone className="w-4 h-4" /> {contactText}
                     </Button>
