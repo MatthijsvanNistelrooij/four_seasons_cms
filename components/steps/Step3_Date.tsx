@@ -85,7 +85,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
         >
           {/* DEZE WEEK */}
           <div>
-            <h4 className="text-xs pl-2 text-gray-800 font-light mb-3 mt-5">
+            <h4 className="px-4 py-2 font-light mt-3 border-b border-gray-200 flex justify-center">
               DEZE WEEK
             </h4>
 
@@ -110,7 +110,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
           </div>
 
           <div>
-            <h4 className="text-xs pl-2 text-gray-800 font-light mb-3 mt-5">
+            <h4 className="px-4 py-2 mt-3 font-light border-b border-gray-200 flex justify-center">
               VOLGENDE WEEK
             </h4>
             <div className="overflow-hidden">
@@ -134,7 +134,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
           </div>
 
           <div>
-            <h4 className="text-xs pl-2 text-gray-800 font-light mb-3 mt-5">
+            <h4 className="px-4 py-2 mt-3 font-light border-b border-gray-200 flex justify-center">
               OVER TWEE WEKEN
             </h4>
             {groupedDates.overTweeWeek.length === 0 && (
