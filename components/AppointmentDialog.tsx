@@ -120,7 +120,7 @@ export function AppointmentDialog({
           {title}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-lg !bg-[#f6f6f6] !rounded-xl p-3 border-none min-h-[620px] select-none text-[#aaaaaa]">
+      <DialogContent className="sm:max-w-lg !bg-[#f6f6f6] !rounded-xl p-3 lg:p-5 border-none min-h-[620px] select-none text-[#aaaaaa]">
         <DialogHeader className="">
           <DialogTitle>Afspraak boeken</DialogTitle>
           <DialogDescription>Stap {step} van 6</DialogDescription>
