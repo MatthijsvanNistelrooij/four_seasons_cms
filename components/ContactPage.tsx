@@ -117,6 +117,9 @@ const ContactPage = () => {
         </div>
 
         <div className="bg-[#e9207e] text-white p-5 w-full lg:w-1/2 rounded-xl">
+          <h3 className="font-semibold mb-6 text-white text-xl">
+            Openingstijden & contact
+          </h3>
           <OpeningHours text="white" />
           <div className="w-full h-[400px] lg:h-[200px] mt-15">
             <iframe
