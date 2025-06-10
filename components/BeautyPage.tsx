@@ -15,10 +15,7 @@ const BeautyPage = () => {
         className="relative w-full h-[60vh] md:h-[70vh] bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
-        {/* Optional dark overlay for better text contrast */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
-
-        {/* Text container */}
 
         <div className="relative z-10 flex items-center h-full">
           <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
@@ -26,10 +23,9 @@ const BeautyPage = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }} // Trigger once when 50% in view
+              viewport={{ once: true, amount: 0.5 }}
               className="w-full h-full"
             >
-              {" "}
               <h2
                 className="text-2xl md:text-3xl font-bold mb-4"
                 style={{ fontFamily: "var(--font-roboto-slab)" }}
@@ -52,14 +48,14 @@ const BeautyPage = () => {
       </section>
 
       <section className="bg-white">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.5 }}
-          className="w-full h-full"
-        >
-          <div className="container mx-auto px-8 md:px-20 flex flex-col text-center gap-12 py-24">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-24 gap-12 lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.5 }}
+            className="w-full h-full"
+          >
             <h2
               className="text-xl lg:text-3xl font-semibold text-black"
               style={{ fontFamily: "var(--font-roboto-slab)" }}
@@ -67,7 +63,7 @@ const BeautyPage = () => {
               Ons geheim? De perfecte combinatie van haar- en
               schoonheidsbehandelingen
             </h2>
-            <p className="text-base text-black leading-8">
+            <p className="text-base text-gray-800 leading-8">
               Het geheim van Four Seasons in Groningen is onze perfecte
               combinatie van haar- en schoonheidsbehandelingen. Bij ons kun je
               niet alleen terecht voor professionele haar behandelingen, maar
@@ -83,8 +79,8 @@ const BeautyPage = () => {
               van top tot teen. Daarom blijven we ons continu ontwikkelen om de
               beste diensten en behandelingen aan te bieden.
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* <section className="w-screen h-screen bg-black">
@@ -103,7 +99,7 @@ const BeautyPage = () => {
       </section> */}
 
       <section className="bg-white text-white mb-20">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-24 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -118,7 +114,7 @@ const BeautyPage = () => {
               >
                 Gebruik van kwaliteitsproducten voor gezond en glanzend haar
               </h2>
-              <p className="text-base text-black leading-7 mb-15">
+              <p className="text-base text-gray-800 leading-7 mb-15">
                 Het gebruik van goede haarproducten is essentieel voor gezond en
                 glanzend haar. Daarom werken wij uitsluitend met hoogwaardige
                 producten van gerenommeerde merken, die zorgvuldig zijn

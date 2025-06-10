@@ -35,12 +35,12 @@ const ShopSection = () => {
               className="max-w-xl md:mb-40"
             >
               <h2
-                className="text-2xl lg:text-3xl font-bold mb-4"
+                className="text-2xl lg:text-3xl font-bold mb-4 "
                 style={{ fontFamily: "var(--font-roboto-slab)" }}
               >
                 Verven, knippen, in model brengen en meer!
               </h2>
-              <p className=" text-black leading-7">
+              <p className="text-gray-800 leading-7">
                 Bij onze kapsalon in het hart van Groningen zijn wij specialist
                 in verven, knippen, in model brengen en nog veel meer! Wij staan
                 voor je klaar om aan jouw wensen te voldoen. We gebruiken alleen

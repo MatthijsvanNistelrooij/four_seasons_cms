@@ -66,7 +66,7 @@ export default function AboutPage() {
               Ons geheim? De perfecte combinatie van haar- en
               schoonheidsbehandelingen
             </h2>
-            <p className="text-base text-black leading-8">
+            <p className="text-base text-gray-800 leading-8">
               Het geheim van Four Seasons in Groningen is onze perfecte
               combinatie van haar- en schoonheidsbehandelingen. Bij ons kun je
               niet alleen terecht voor professionele haar behandelingen, maar
@@ -163,7 +163,7 @@ export default function AboutPage() {
               >
                 Gebruik van kwaliteitsproducten voor gezond en glanzend haar
               </h2>
-              <p className="text-base text-black leading-7">
+              <p className="text-base text-gray-800 leading-7">
                 Het gebruik van goede haarproducten is essentieel voor gezond en
                 glanzend haar. Daarom werken wij uitsluitend met hoogwaardige
                 producten van gerenommeerde merken, die zorgvuldig zijn
