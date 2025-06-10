@@ -34,33 +34,35 @@ export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
   return (
     <div>
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-sm mb-3 text-neutral-900 font-light">Bevestig uw afspraak</h2>
+        <h2 className="text-sm mb-3 text-neutral-800 font-light">
+          Bevestig uw afspraak
+        </h2>
 
         <div className="rounded bg-white p-4 space-y-6">
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 text-base text-neutral-800">
             <div className="space-y-5 pb-12">
-              <label className="font-bold text-gray-700 text-sm ml-1">
+              <label className="font-bold text-sm ml-1">
                 Type afspraak
               </label>
-              <div className="ml-1 text-xs">{service || "-"}</div>
-              <label className="font-bold text-gray-700 text-sm ml-1 mt-2">
+              <div className="ml-1 text-sm">{service || "-"}</div>
+              <label className="font-bold text-sm ml-1 mt-2">
                 Medewerker
               </label>
-              <div className="ml-1 text-xs">{barber || "-"}</div>
-              <label className="font-bold text-gray-700 text-sm ml-1">
+              <div className="ml-1 text-sm">{barber || "-"}</div>
+              <label className="font-bold text-sm ml-1">
                 Datum & tijd
               </label>
-              <div className="ml-1 text-xs">
+              <div className="ml-1 text-sm">
                 {date ? date.toLocaleDateString("nl-NL") : "-"} {time || "-"}
               </div>
-              <label className="font-bold text-gray-700 text-sm ml-1 mt-2">
+              <label className="font-bold text-sm ml-1 mt-2">
                 E-mail
               </label>
-              <div className="ml-1 text-xs">{email || "-"}</div>
-              <label className="font-bold text-gray-700 text-sm ml-1 mt-2">
+              <div className="ml-1 text-sm">{email || "-"}</div>
+              <label className="font-bold text-sm ml-1 mt-2">
                 Telefoonnummer
               </label>
-              <div className="ml-1 text-xs">{phone || "-"}</div>
+              <div className="ml-1 text-sm">{phone || "-"}</div>
             </div>
           </dl>
         </div>

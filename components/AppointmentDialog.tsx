@@ -72,7 +72,7 @@ export function AppointmentDialog({
         phone: formData.phone,
         time: formData.time,
         barber: formData.barber,
-        date: fullDate.toISOString(), // ✅ Correct format here
+        date: fullDate.toISOString(), 
       })
 
       console.log("Afspraak bevestigd ✅", newAppointment)
@@ -86,7 +86,7 @@ export function AppointmentDialog({
         email: "",
         phone: "",
       })
-      onOpenChange(false) // close the dialog controlled by parent
+      onOpenChange(false) 
       setStep(1)
     } catch (error) {
       console.error("Failed to submit appointment", error)
@@ -100,7 +100,7 @@ export function AppointmentDialog({
     if (saved) {
       const { name, email, phone } = JSON.parse(saved)
       setFormData((prev) => ({ ...prev, name, email, phone }))
-      setRememberData(true) // Zet hier meteen true als er data is
+      setRememberData(true)
     }
   }, [])
 
@@ -120,10 +120,10 @@ export function AppointmentDialog({
           {title}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-lg !bg-[#f6f6f6] !rounded-xl border-none min-h-[620px] select-none">
+      <DialogContent className="sm:max-w-lg !bg-[#f6f6f6] !rounded-xl border-none min-h-[620px] select-none text-[#aaaaaa]">
         <DialogHeader className="">
           <DialogTitle>Afspraak boeken</DialogTitle>
-          <DialogDescription className="text-[#e9207e]">Stap {step} van 6</DialogDescription>
+          <DialogDescription>Stap {step} van 6</DialogDescription>
         </DialogHeader>
 
         <div className="py-1">

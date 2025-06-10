@@ -42,14 +42,16 @@ export const Step5_Contact = ({
 
   return (
     <div className="">
-      <h3 className="text-sm mb-3 font-light">Uw contactgegevens</h3>
+      <h2 className="text-sm mb-3 text-neutral-800 font-light">
+        Uw contactgegevens
+      </h2>
       <div className="flex flex-col p-5 gap-1 bg-white border rounded">
         <label className="font-bold text-gray-700 text-sm ml-1">Naam</label>
         <Input
           type="text"
           value={name}
           onChange={(e) => onNameChange(e.target.value)}
-          className="input input-bordered rounded border-gray-200"
+          className="input input-bordered rounded border-gray-200 text-black"
         />
         <label className="font-bold text-gray-700 text-sm ml-1 mt-2">
           E-mail
@@ -58,7 +60,7 @@ export const Step5_Contact = ({
           type="email"
           value={email}
           onChange={(e) => onEmailChange(e.target.value)}
-          className="input input-bordered rounded border-gray-200"
+          className="input input-bordered rounded border-gray-200 text-black"
         />
         <label className="font-bold text-gray-700 text-sm ml-1 mt-2">
           Tel.
@@ -67,7 +69,7 @@ export const Step5_Contact = ({
           type="tel"
           value={phone}
           onChange={(e) => onPhoneChange(e.target.value)}
-          className="input input-bordered rounded border-gray-200"
+          className="input input-bordered rounded border-gray-200 text-black"
         />
         <label className="text-xs text-gray-700 mt-8 flex items-center gap-2 cursor-pointer">
           <Checkbox
