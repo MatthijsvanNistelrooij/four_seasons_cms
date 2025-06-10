@@ -46,7 +46,7 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
 
   return (
     <div>
-      <h3 className="text-sm mb-3">Kies een tijd</h3>
+      <h3 className="text-sm mb-3 font-light">Kies een tijd</h3>
       <div className="relative">
         <div
           ref={scrollRef}

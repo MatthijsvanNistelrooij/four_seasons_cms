@@ -90,14 +90,13 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
     onNext(category)
   }
 
-  // Filter services per categorie
   const knippen = services.filter((s) => s.category === "knippen")
   const huidverzorging = services.filter((s) => s.category === "huidverzorging")
   const manicure = services.filter((s) => s.category === "manicure")
 
   return (
     <div>
-      <h3 className="text-sm mb-3 text-neutral-900">
+      <h3 className="text-sm mb-3 text-neutral-900 font-light">
         Voor welke behandeling wilt u een afspraak maken?
       </h3>
       <div className="relative overflow-y-auto rounded bg-white border border-gray-200">

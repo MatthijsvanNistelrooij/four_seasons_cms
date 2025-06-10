@@ -73,7 +73,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
 
   return (
     <div>
-      <h2 className="text-sm mb-3 text-neutral-900">
+      <h2 className="text-sm mb-3 text-neutral-900 font-light">
         Wanneer wilt u langskomen?
       </h2>
       <div className="relative">

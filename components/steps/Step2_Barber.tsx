@@ -55,7 +55,7 @@ export const Step2_Barber = ({
   return (
     <div className="">
       <div>
-        <h2 className="text-sm mb-3 text-neutral-900">
+        <h2 className="text-sm mb-3 text-neutral-900 font-light">
           Heeft u een voorkeur voor een medewerker?
         </h2>
 
