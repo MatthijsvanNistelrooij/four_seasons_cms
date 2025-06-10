@@ -40,7 +40,7 @@ export default function InfoPage() {
         </div>
       </section>
 
-      <section className="bg-white min-h-[30vh] flex flex-col justify-center py-10 lg:py-20">
+      <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, scale: 1 }}
@@ -52,8 +52,8 @@ export default function InfoPage() {
             <h2
               className="text-xl lg:text-3xl font-semibold text-black"
               style={{ fontFamily: "var(--font-roboto-slab)" }}
-            >
-              Ervaren kapper bij Reitemakersrijge Groningen
+            > 
+              Ervaren kapper bij Reitemakersrijge Groningen 
             </h2>
             <p className="text-base text-gray-800 leading-relaxed mt-5">
               Welkom bij Four Seasons in Groningen gelegen aan het
@@ -73,7 +73,7 @@ export default function InfoPage() {
         </div>
       </section>
 
-      <section className="bg-white min-h-[30vh] flex flex-col justify-center py-10 lg:py-20">
+      <section className="bg-white min-h-[20vh] flex flex-col justify-center py-10 lg:py-20">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 0 }}
@@ -122,7 +122,7 @@ export default function InfoPage() {
         </div>
       </section>
 
-      <section className="bg-[#6d6d6a] min-h-[30vh] flex flex-col justify-center py-10 lg:py-20">
+      <section className="bg-[#6d6d6a] min-h-[20vh] flex flex-col justify-center py-10 lg:py-20">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, scale: 1 }}

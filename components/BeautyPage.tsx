@@ -75,7 +75,7 @@ const BeautyPage = () => {
         </div>
       </section> */}
 
-      <section className="bg-white min-h-[30vh] flex flex-col justify-center mb-20">
+      <section className="bg-white min-h-[20vh] flex flex-col justify-center mb-20">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 0 }}

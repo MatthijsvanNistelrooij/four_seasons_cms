@@ -50,7 +50,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white min-h-[30vh] flex flex-col justify-center py-10 lg:py-20">
+      <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, scale: 1 }}
@@ -86,7 +86,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#eaeaea] min-h-[30vh] flex flex-col justify-center py-10 lg:py-20">
+      <section className="bg-[#eaeaea] min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
           <div className="flex flex-col xl:flex-row gap-4 w-full">
             <motion.div
@@ -147,7 +147,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white min-h-[30vh] flex flex-col justify-center py-10 lg:py-20">
+      <section className="bg-white min-h-[25vh] flex flex-col justify-center py-10 lg:py-20">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 0 }}

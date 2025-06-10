@@ -5,8 +5,8 @@ import { motion } from "framer-motion"
 const GoogleMaps = () => {
   return (
     <div>
-      <section className="bg-[#e9207e] min-h-[30vh] flex flex-col justify-center py-10 lg:py-20">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
+      <section className="bg-[#e9207e] min-h-[25vh] flex flex-col justify-center py-10 lg:py-20">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-5 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -30,7 +30,7 @@ const GoogleMaps = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
-            className="text-white w-full space-y-4"
+            className="text-white w-full space-y-4 mb-20"
           >
             <h1
               className="text-xl lg:text-3xl font-medium font-sans"

@@ -6,8 +6,8 @@ import { motion } from "framer-motion"
 const ShopSection = () => {
   return (
     <div>
-      <section className="bg-white min-h-[30vh] flex flex-col justify-center py-10 lg:py-20">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
+      <section className="bg-white min-h-[20vh] flex flex-col justify-center py-10 lg:py-20">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-5 lg:gap-12">
           <div className="w-full h-[220px] mb-5">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -21,7 +21,7 @@ const ShopSection = () => {
                 alt="logo"
                 width={1400}
                 height={1400}
-                className="object-cover h-[250px] lg:h-[350px] rounded-xl shadow-2xl"
+                className="object-cover h-[250px] lg:h-[350px] rounded-md shadow-xl"
               />
             </motion.div>
           </div>
