@@ -19,7 +19,7 @@ interface Props {
 }
 
 export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
-  const { service, barber, date, time, email, phone, name } = data
+  const { service, barber, date, time, email, phone } = data
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = async () => {

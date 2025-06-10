@@ -59,8 +59,8 @@ const BeautyPage = () => {
         </div>
       </section>
 
-      <section className="bg-white min-h-[20vh] flex flex-col justify-center mb-20">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
+      <section className="bg-white min-h-[70vh] flex flex-col justify-center mb-20">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-20 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +128,7 @@ const BeautyPage = () => {
                 Openingstijden & contact
               </h3>
               <OpeningHours text="white" />
-              <div className="flex flex-col gap-4 p-1 lg:p-5">
+              <div className="flex flex-col gap-4 p-1 lg:p-5 mt-10">
                 <Video
                   muted
                   autoPlay
