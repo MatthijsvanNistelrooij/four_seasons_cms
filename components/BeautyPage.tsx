@@ -123,7 +123,7 @@ const BeautyPage = () => {
             viewport={{ once: true, amount: 0.25 }}
             className="w-full h-full"
           >
-            <div className="bg-[#e9207e] text-white space-y-15 p-5 pb-20 w-full rounded-xl flex flex-col text-center justify-center">
+            <div className="bg-[#e9207e] text-white space-y-5 p-5 pb-20 w-full rounded-xl flex flex-col text-center justify-center">
               <div className="flex flex-col gap-4 p-1 lg:p-5">
                 <Video
                   muted
@@ -134,7 +134,7 @@ const BeautyPage = () => {
                   className="object-cover rounded-xl shadow-xl"
                 />
               </div>
-              <h3 className="font-semibold lg:text-2xl mb-5 text-white">
+              <h3 className="font-semibold text-2xl lg:text-3xl mb-5 text-white">
                 Openingstijden & contact
               </h3>
               <OpeningHours text="white" />
