@@ -55,10 +55,7 @@ export default function InfoPage() {
             >
               Ervaren kapper bij Reitemakersrijge Groningen
             </h2>
-            <p
-              className="text-base text-black leading-relaxed mt-5"
-              style={{ fontFamily: "sans-serif" }}
-            >
+            <p className="text-base text-black leading-relaxed mt-5">
               Welkom bij Four Seasons in Groningen gelegen aan het
               Reitemakersrijge! Onze kapsalon biedt een breed scala aan
               haarbehandelingen voor zowel mannen als vrouwen. Of je nu op zoek
@@ -86,20 +83,20 @@ export default function InfoPage() {
             className="w-full h-full"
           >
             <div className="space-y-6 w-full max-w-xl mt-15">
-              <h2 className="text-xl lg:text-2xl font-semibold text-black">
+              <h2
+                className="text-xl lg:text-2xl font-semibold text-black"
+                style={{ fontFamily: "var(--font-roboto-slab)" }}
+              >
                 Ervaren kapper bij Reitemakersrijge
               </h2>
-              <div
-                className="text-base flex flex-col text-black leading-7"
-                style={{ fontFamily: "sans-serif" }}
-              >
+              <div className="text-base flex flex-col text-black leading-7">
                 <p>Dames kort haar knippen € 28,50</p>
                 <p>Dames half-lang haar knippen € 32,50</p>
                 <p>Dames lang haar knippen € 37,50</p>
                 <p>Heren knippen € 28,50</p>
               </div>
 
-              <div>
+              <div className="my-10">
                 <AppointmentDialog
                   title="Maak een afspraak"
                   open={openDialog}
@@ -132,13 +129,15 @@ export default function InfoPage() {
             className="w-full h-full"
           >
             <div className="space-y-6 w-full flex justfy-center text-center flex-col py-18">
-              <h2 className="text-xl lg:text-2xl font-semibold text-white text-center text-shadow-lg">
+              <h2
+                className="text-xl lg:text-4xl font-semibold text-white text-center text-shadow-lg"
+                style={{ fontFamily: "var(--font-roboto-slab)" }}
+              >
                 De ultieme beauty ervaring bij kapsalon Four Seasons
               </h2>
               <p
                 className="text-base flex flex-col text-white leading-relaxed text-center text-shadow-lg"
                 style={{
-                  fontFamily: "sans-serif",
                   textShadow: "2px 2px 4px rgba(0, 0, 0, 0.45)",
                 }}
               >

@@ -39,7 +39,6 @@ export default function AboutPage() {
               </h2>
               <p
                 className="md:text-md leading-relaxed"
-                style={{ fontFamily: "sans-serif" }}
               >
                 Wij zitten al meer dan 35 jaar in het vak en hebben veel
                 ervaring met het knippen, kleuren en stijlen van haar. Daarnaast
@@ -62,34 +61,29 @@ export default function AboutPage() {
             viewport={{ once: true, amount: 0.5 }}
             className="w-full h-full"
           >
-            <div className="container mx-auto px-8 md:px-20 flex flex-col text-center gap-12 py-24">
-              <h2
-                className="text-xl lg:text-3xl font-semibold text-black"
-                style={{ fontFamily: "var(--font-roboto-slab)" }}
-              >
-                Ons geheim? De perfecte combinatie van haar- en
-                schoonheidsbehandelingen
-              </h2>
-              <p
-                className="text-base text-black leading-8"
-                style={{ fontFamily: "sans-serif" }}
-              >
-                Het geheim van Four Seasons in Groningen is onze perfecte
-                combinatie van haar- en schoonheidsbehandelingen. Bij ons kun je
-                niet alleen terecht voor professionele haar behandelingen, maar
-                ook voor schoonheidsbehandelingen die gericht zijn op het
-                verbeteren van je huid en het versterken van je natuurlijke
-                schoonheid. Door deze combinatie van diensten bieden wij onze
-                klanten een totaalpakket aan haar- en schoonheidsverzorging,
-                waardoor je bij ons terecht kunt voor al je beauty wensen. Ons
-                ervaren team van haarstylisten en schoonheidsspecialisten werkt
-                nauw met elkaar samen om een unieke en persoonlijke service te
-                bieden, die jouw natuurlijke schoonheid naar voren brengt. Bij
-                Kapsalon Four Seasons streven we ernaar om jou te laten stralen
-                van top tot teen. Daarom blijven we ons continu ontwikkelen om
-                de beste diensten en behandelingen aan te bieden.
-              </p>
-            </div>
+            <h2
+              className="text-xl lg:text-3xl font-semibold text-black mb-10"
+              style={{ fontFamily: "var(--font-roboto-slab)" }}
+            >
+              Ons geheim? De perfecte combinatie van haar- en
+              schoonheidsbehandelingen
+            </h2>
+            <p className="text-base text-black leading-8">
+              Het geheim van Four Seasons in Groningen is onze perfecte
+              combinatie van haar- en schoonheidsbehandelingen. Bij ons kun je
+              niet alleen terecht voor professionele haar behandelingen, maar
+              ook voor schoonheidsbehandelingen die gericht zijn op het
+              verbeteren van je huid en het versterken van je natuurlijke
+              schoonheid. Door deze combinatie van diensten bieden wij onze
+              klanten een totaalpakket aan haar- en schoonheidsverzorging,
+              waardoor je bij ons terecht kunt voor al je beauty wensen. Ons
+              ervaren team van haarstylisten en schoonheidsspecialisten werkt
+              nauw met elkaar samen om een unieke en persoonlijke service te
+              bieden, die jouw natuurlijke schoonheid naar voren brengt. Bij
+              Kapsalon Four Seasons streven we ernaar om jou te laten stralen
+              van top tot teen. Daarom blijven we ons continu ontwikkelen om de
+              beste diensten en behandelingen aan te bieden.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -146,7 +140,6 @@ export default function AboutPage() {
               </h2>
               <p
                 className="text-base text-black leading-7"
-                style={{ fontFamily: "sans-serif" }}
               >
                 Maak kennis met ons team van kappers, schoonheidsspecialisten en
                 visagisten die voor je klaar staan om je weer te laten stralen.
@@ -188,7 +181,7 @@ export default function AboutPage() {
                 is in de gezondheid en schoonheid van je haar. Wil je ook mooi
                 glanzend haar hebben? Maak snel een afspraak hieronder.
               </p>
-              <div>
+              <div className="my-10">
                 <AppointmentDialog
                   title="Maak een afspraak"
                   open={openDialog}

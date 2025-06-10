@@ -40,8 +40,7 @@ const BeautyPage = () => {
               </h2>
               <p
                 className="md:text-md leading-relaxed"
-                style={{ fontFamily: "sans-serif" }}
-              >
+                  >
                 Wij zitten al meer dan 35 jaar in het vak en hebben veel
                 ervaring met het knippen, kleuren en stijlen van haar. Daarnaast
                 bieden we ook tal van schoonheidsbehandelingen aan.
@@ -72,8 +71,7 @@ const BeautyPage = () => {
             </h2>
             <p
               className="text-base text-black leading-8"
-              style={{ fontFamily: "sans-serif" }}
-            >
+                >
               Het geheim van Four Seasons in Groningen is onze perfecte
               combinatie van haar- en schoonheidsbehandelingen. Bij ons kun je
               niet alleen terecht voor professionele haar behandelingen, maar
