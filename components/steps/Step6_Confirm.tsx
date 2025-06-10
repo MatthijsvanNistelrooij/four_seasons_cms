@@ -35,7 +35,7 @@ export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
   return (
     <div>
       <div className="max-w-3xl mx-auto">
-        <DialogDescription className="m-2 text-sm">
+        <DialogDescription className="m-2 text-sm font-light">
           Bevestig uw afspraak
         </DialogDescription>
 

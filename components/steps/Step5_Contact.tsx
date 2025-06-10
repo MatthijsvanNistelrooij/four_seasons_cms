@@ -43,7 +43,7 @@ export const Step5_Contact = ({
 
   return (
     <div className="">
-      <DialogDescription className="m-2 text-sm">
+      <DialogDescription className="m-2 text-sm font-light">
         Uw contactgegevens
       </DialogDescription>
       <div className="flex flex-col p-5 gap-1 bg-white border rounded">

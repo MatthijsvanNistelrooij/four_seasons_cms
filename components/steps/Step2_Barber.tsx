@@ -56,7 +56,7 @@ export const Step2_Barber = ({
   return (
     <div className="">
       <div>
-      <DialogDescription className="m-2 text-sm">
+      <DialogDescription className="m-2 text-sm font-light">
           Heeft u een voorkeur voor een medewerker?
         </DialogDescription>
 

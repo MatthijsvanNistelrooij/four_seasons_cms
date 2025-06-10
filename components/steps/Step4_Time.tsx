@@ -47,7 +47,7 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
 
   return (
     <div>
-      <DialogDescription className="m-2 text-sm">
+      <DialogDescription className="m-2 text-sm font-light">
         Kies een tijd
       </DialogDescription>
       <div className="relative">

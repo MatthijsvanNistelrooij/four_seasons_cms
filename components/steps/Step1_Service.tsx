@@ -97,7 +97,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
 
   return (
     <div>
-      <DialogDescription className="m-2 text-sm">
+      <DialogDescription className="m-2 text-sm font-light">
         Voor welke behandeling wilt u een afspraak maken?
       </DialogDescription>
       <div className="relative overflow-y-auto rounded bg-white border border-gray-200">

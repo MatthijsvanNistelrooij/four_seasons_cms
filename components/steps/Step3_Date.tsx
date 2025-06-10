@@ -74,7 +74,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
 
   return (
     <div>
-      <DialogDescription className="m-2 text-sm">
+      <DialogDescription className="m-2 text-sm font-light">
         Wanneer wilt u langskomen?
       </DialogDescription>
       <div className="relative">
