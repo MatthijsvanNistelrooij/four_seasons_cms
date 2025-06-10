@@ -36,7 +36,7 @@ const ContactPage = () => {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center bg-[#eaeaea] py-10 lg:py-40 px-8 md:px-20">
-      <div className="mb-14 space-y-5">
+      <div className="mb-24 space-y-5">
         <h2
           className="text-2xl lg:text-4xl text-gray-800 font-semibold text-center max-w-2xl"
           style={{ fontFamily: "var(--font-roboto-slab)" }}
