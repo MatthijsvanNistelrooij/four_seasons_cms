@@ -124,8 +124,8 @@ const BeautyPage = () => {
             className="w-full h-full"
           >
             <div className="bg-[#e9207e] text-white space-y-5 pb-20 w-full rounded-xl flex flex-col text-center justify-center">
-              <div className="p-2">
-                <div className="rounded-xl overflow-hidden shadow-xl">
+              <div className="p-1">
+                <div className="rounded-md overflow-hidden shadow-xl">
                   <Video
                     muted
                     autoPlay
