@@ -1,6 +1,6 @@
 "use client"
 
-import hero from "../public/assets/hero_1.jpg"
+import hero from "../public/photos/face_massage_2.jpeg"
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
 import { useState } from "react"

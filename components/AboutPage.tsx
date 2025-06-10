@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import hero from "../public/assets/hero_1.jpg"
+import hero from "../public/assets/barber3.jpg"
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
 import { useState } from "react"
