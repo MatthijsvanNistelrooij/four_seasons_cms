@@ -96,14 +96,14 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
 
   return (
     <div>
-      <h2 className="text-sm mb-3 text-neutral-800 font-light">
+      <h2 className="text-sm font-light mb-2">
         Voor welke behandeling wilt u een afspraak maken?
       </h2>
       <div className="relative overflow-y-auto rounded bg-white border border-gray-200">
         <div ref={listRef} className="overflow-y-auto max-h-96">
           {/* Knippen */}
           <div>
-            <h4 className="px-4 text-black py-2 font-semibold mt-3 border-b border-gray-200 flex justify-center">
+            <h4 className="px-4 py-2 font-semibold mt-3 border-b border-gray-200 flex justify-center">
               Knippen
             </h4>
             {knippen.map((service) => (
@@ -111,7 +111,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                 key={service.name}
                 onClick={() => onChange(service.name)}
                 className={clsx(
-                  "w-full border-b border-gray-200 px-4 text-black py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
+                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
                     : "hover:bg-pink-100"
@@ -127,7 +127,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
 
           {/* Huidverzorging */}
           <div>
-            <h4 className="px-4 py-2 text-black font-semibold border-b border-gray-200 flex justify-center">
+            <h4 className="px-4 py-2 font-semibold border-b border-gray-200 flex justify-center">
               Huidverzorging
             </h4>
             {huidverzorging.map((service) => (
@@ -135,7 +135,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                 key={service.name}
                 onClick={() => onChange(service.name)}
                 className={clsx(
-                  "w-full border-b border-gray-200 px-4 py-3 text-black flex justify-between items-center cursor-pointer transition text-sm font-medium",
+                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
                     : "hover:bg-pink-50"
@@ -151,7 +151,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
 
           {/* Manicure */}
           <div>
-            <h4 className="px-4 py-2 text-black font-semibold border-b border-gray-200 flex justify-center">
+            <h4 className="px-4 py-2 font-semibold border-b border-gray-200 flex justify-center">
               Manicure
             </h4>
             {manicure.map((service) => (
@@ -159,7 +159,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                 key={service.name}
                 onClick={() => onChange(service.name)}
                 className={clsx(
-                  "w-full border-b border-gray-200 px-4 py-3 flex text-black justify-between items-center cursor-pointer transition text-sm font-medium",
+                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
                     : "hover:bg-pink-50"

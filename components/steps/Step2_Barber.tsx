@@ -55,7 +55,7 @@ export const Step2_Barber = ({
   return (
     <div className="">
       <div>
-        <h2 className="text-sm mb-3 text-neutral-800 font-light">
+        <h2 className="text-sm font-light mb-2">
           Heeft u een voorkeur voor een medewerker?
         </h2>
 
@@ -68,7 +68,7 @@ export const Step2_Barber = ({
             <div
               key={barber.name}
               className={clsx(
-                "w-full border-b border-gray-200 px-4 py-2 text-black flex items-center justify-start text-sm font-medium cursor-pointer transition",
+                "w-full border-b border-gray-200 px-4 py-2 flex items-center justify-start text-sm font-medium cursor-pointer transition",
                 value === barber.name
                   ? "bg-[#e9207e] text-white border-pink-100"
                   : "hover:bg-pink-50"
