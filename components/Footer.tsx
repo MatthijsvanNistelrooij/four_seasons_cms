@@ -59,7 +59,12 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <OpeningHours />
+            <div>
+              <h3 className="font-semibold mb-4 text-[#e9207e]">
+                Openingstijden & contact
+              </h3>
+              <OpeningHours />
+            </div>
           </div>
         </div>
       </footer>

@@ -5,13 +5,13 @@ const PricingSection = () => {
   return (
     <div>
       <section className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-14 bg-[#e9207e]">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-56 gap-12 lg:gap-12">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-24 md:py-16 lg:py-56 gap-12 lg:gap-12">
           <div className="w-full">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.5 }} // Trigger once when 50% in view
+              viewport={{ once: true, amount: 0.5 }}
               className="w-full h-full"
             >
               <h2 className="text-4xl font-bold mb-20 text-center text-white">

@@ -4,15 +4,10 @@ type OpeningHoursProps = {
   text?: string
 }
 
-const OpeningHours: React.FC<OpeningHoursProps> = ({ text }) => {
-  const colorClass = text ?? "text-[#e9207e]"
-
+const OpeningHours: React.FC<OpeningHoursProps> = () => {
   return (
     <div>
       <div style={{ fontFamily: "sans-serif" }}>
-        <h3 className={`font-semibold mb-4 ${colorClass} `}>
-          Openingstijden & contact
-        </h3>
         <ul className="space-y-1">
           <li>
             <span className="font-bold"> Ma:</span> 12:00 – 18:00

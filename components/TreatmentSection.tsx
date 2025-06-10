@@ -11,7 +11,7 @@ const TreatmentSection = () => {
     <div>
       <section className="w-full bg-[#eaeaea]">
         <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
-          <div className="w-full h-[330px]">
+          <div className="w-full h-[330px] mb-5">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -54,7 +54,7 @@ const TreatmentSection = () => {
               <Link href={"/behandelingen"}>
                 <Button
                   style={{ fontFamily: "sans-serif" }}
-                  className="group h-15 w-48 cursor-pointer bg-black hover:bg-gray-900 text-white text-xl flex items-center gap-2 rounded-full mt-5 overflow-hidden relative px-4 py-2"
+                  className="group h-15 w-48 cursor-pointer bg-black text-white text-xl flex items-center gap-2 rounded-full mt-5 overflow-hidden relative px-4 py-2"
                 >
                   <span className="relative h-5 w-5 overflow-hidden">
                     <span className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-6">

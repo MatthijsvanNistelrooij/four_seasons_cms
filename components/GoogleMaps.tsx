@@ -32,7 +32,10 @@ const GoogleMaps = () => {
             viewport={{ once: true, amount: 0.5 }}
             className="text-white w-full space-y-4"
           >
-            <h1 className="text-xl lg:text-3xl font-medium font-sans">
+            <h1
+              className="text-xl lg:text-3xl font-medium font-sans"
+              style={{ fontFamily: "var(--font-roboto-slab)" }}
+            >
               Openingstijden & Contact
             </h1>
             <OpeningHours />
