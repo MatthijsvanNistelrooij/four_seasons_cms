@@ -15,13 +15,13 @@ export default function AboutPage() {
   return (
     <main className="">
       <section
-        className="relative w-full h-[60vh] md:h-[70vh] bg-center bg-cover"
+        className="relative w-full min-h-[40vh] md:h-[80vh] bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         <div className="relative z-10 flex items-center h-full">
-          <div className="container mx-auto px-8 md:px-20 flex flex-col text-white gap-12">
+          <div className="container mx-auto px-8 md:px-20 flex flex-col text-white py-20 gap-12">
             <motion.div
               initial={{ opacity: 0, scale: 1 }}
               whileInView={{ opacity: 1, scale: 1 }}
