@@ -139,7 +139,7 @@ const BeautyPage = () => {
             viewport={{ once: true, amount: 0.25 }}
             className="w-full h-full"
           >
-            <div className="bg-[#e9207e] text-white p-5 w-full py-14 lg:py-24 rounded-xl flex flex-col text-center justify-center">
+            <div className="bg-[#e9207e] text-white space-y-5  p-5 w-full py-14 lg:py-24 rounded-xl flex flex-col text-center justify-center">
               <h3 className="font-semibold mb-4 text-white">
                 Openingstijden & contact
               </h3>
