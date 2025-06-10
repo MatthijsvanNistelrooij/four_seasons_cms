@@ -87,7 +87,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-[#eaeaea] min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-5 lg:gap-12">
           <div className="flex flex-col xl:flex-row gap-4 w-full">
             <motion.div
               initial={{ opacity: 0, scale: 1 }}
@@ -96,7 +96,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.5 }}
               className="w-full h-full"
             >
-              <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
+              <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow">
                 <Image
                   src={petros}
                   alt="Team member 1"
@@ -112,7 +112,7 @@ export default function AboutPage() {
               viewport={{ once: true, amount: 0.5 }}
               className="w-full h-full"
             >
-              <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow-xl">
+              <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden shadow">
                 <Image
                   src={olga}
                   alt="Team member 2"
@@ -127,7 +127,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
-            className="w-full flex flex-col justify-start"
+            className="w-full flex flex-col justify-start mb-20"
           >
             <div className="w-full flex flex-col justify-start">
               <h2
