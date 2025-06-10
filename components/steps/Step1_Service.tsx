@@ -174,11 +174,11 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
         </div>
 
         {!atTop && (
-          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-200 to-transparent pointer-events-none z-10" />
+          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-300 to-transparent pointer-events-none z-10" />
         )}
 
         {!atBottom && (
-          <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-gray-200 to-transparent pointer-events-none z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-gray-300 to-transparent pointer-events-none z-10" />
         )}
       </div>
 

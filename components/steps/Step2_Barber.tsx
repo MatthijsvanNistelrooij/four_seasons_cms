@@ -17,9 +17,9 @@ type Props = {
 }
 
 const barberOptions = [
-  { name: "Geen voorkeur", img: avatar },
   { name: "Botros", img: petros, categories: ["knippen"] },
   { name: "Olga", img: olga, categories: ["manicure", "huidverzorging"] },
+  { name: "Geen voorkeur", img: avatar },
 ]
 
 export const Step2_Barber = ({
@@ -79,9 +79,9 @@ export const Step2_Barber = ({
               )}
               onClick={() => onChange(barber.name)}
             >
-              <div className="bg-gray-200 rounded mr-4">
+              <div className="bg-gray-200 mr-4">
                 <Image
-                  className="rounded-xl"
+                  className=""
                   src={barber.img}
                   width={80}
                   height={80}

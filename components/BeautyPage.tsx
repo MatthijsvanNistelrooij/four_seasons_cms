@@ -123,21 +123,21 @@ const BeautyPage = () => {
             viewport={{ once: true, amount: 0.25 }}
             className="w-full h-full"
           >
-            <div className="bg-[#e9207e] text-white space-y-5  p-5 w-full py-14 lg:py-24 rounded-xl flex flex-col text-center justify-center">
-              <h3 className="font-semibold mb-4 text-white">
-                Openingstijden & contact
-              </h3>
-              <OpeningHours text="white" />
-              <div className="flex flex-col gap-4 p-1 lg:p-5 mt-10">
+            <div className="bg-[#e9207e] text-white space-y-15 p-5 pb-20 w-full rounded-xl flex flex-col text-center justify-center">
+              <div className="flex flex-col gap-4 p-1 lg:p-5">
                 <Video
                   muted
                   autoPlay
                   loop
                   playsInline
                   src={video_3}
-                  className="object-cover rounded-lg shadow-xl"
+                  className="object-cover rounded-xl shadow-xl"
                 />
               </div>
+              <h3 className="font-semibold lg:text-2xl mb-5 text-white">
+                Openingstijden & contact
+              </h3>
+              <OpeningHours text="white" />
             </div>
           </motion.div>
         </div>
