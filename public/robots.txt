@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://four-seasons-cms.vercel.app/
+
+# Sitemaps
+Sitemap: https://four-seasons-cms.vercel.app/sitemap.xml

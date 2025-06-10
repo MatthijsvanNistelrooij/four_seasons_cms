@@ -13,14 +13,14 @@ const InfoSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.5 }}
-            className="w-full h-full"
+            className="w-full h-full p-5 bg-[#e9207e] rounded-md shadow-xl flex flex-col justify-center text-center"
           >
             <Image
               src={logo_header}
               alt="logo"
               width={1400}
               height={1400}
-              className="object-cover h-[250px] lg:h-[350px] rounded-md shadow-xl"
+              className="object-cover h-[250px] lg:h-[350px]"
             />
           </motion.div>
         </div>

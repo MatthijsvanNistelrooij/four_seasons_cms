@@ -105,6 +105,7 @@ const Appointments = () => {
             className={`border bg-white text-gray-400 hover:text-gray-800 cursor-pointer hover:bg-white ${
               filter === null ? "border border-gray-200 text-gray-800" : ""
             }`}
+            size={"sm"}
             variant={filter === null ? "outline" : "default"}
             onClick={() => setFilter(null)}
           >
@@ -114,12 +115,13 @@ const Appointments = () => {
             .filter((barber) => barber?.trim() !== "")
             .map((barber) => (
               <Button
-                className={`border bg-white text-gray-400  hover:text-gray-800 cursor-pointer hover:bg-white ${
+                className={`border bg-white text-gray-400 hover:text-gray-800 cursor-pointer hover:bg-white ${
                   filter === barber
                     ? "border border-gray-200 text-gray-800 "
                     : ""
                 }`}
                 key={barber}
+                size={"sm"}
                 variant={filter === barber ? "outline" : "default"}
                 onClick={() => setFilter(barber)}
               >

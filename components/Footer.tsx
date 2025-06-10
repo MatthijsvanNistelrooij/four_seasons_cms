@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import logo from "../public/logo.png"
+import logo from "../public/assets/logo_header.png"
 import OpeningHours from "./OpeningHours"
 import matp from "../public/matp.png"
 
@@ -13,7 +13,7 @@ const Footer = () => {
       >
         <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
           <div className="flex-shrink-0 flex flex-col">
-            <div className="bg-[#e9207e] p-10 py-20 max-w-xs flex justify-center">
+            <div className="bg-[#e9207e] p-10 py-10 max-w-xs flex justify-center">
               <Image
                 src={logo}
                 alt="Logo"
