@@ -52,7 +52,7 @@ export const createAppointment = async (appointmentData: {
     const appointment = await databases.createDocument(
       appwriteConfig.databaseId,
       appwriteConfig.appointmentsCollectionId,
-      ID.unique(), // generate new id here
+      ID.unique(),
       {
         name: appointmentData.name,
         service: appointmentData.service,

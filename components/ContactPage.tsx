@@ -17,10 +17,10 @@ const ContactPage = () => {
 
     emailjs
       .sendForm(
-        "your_service_id", // replace with your actual EmailJS Service ID
-        "your_template_id", // replace with your EmailJS Template ID
+        process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
+        process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE!,
         form.current,
-        "your_public_key" // replace with your EmailJS Public Key
+        process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY!
       )
       .then(() => {
         setLoading(false)
@@ -67,7 +67,7 @@ const ContactPage = () => {
               <label className="block text-sm mb-1">Naam</label>
               <input
                 type="text"
-                name="user_name"
+                name="from_name"
                 required
                 className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
@@ -76,7 +76,7 @@ const ContactPage = () => {
               <label className="block text-sm mb-1">E-mail</label>
               <input
                 type="email"
-                name="user_email"
+                name="from_email"
                 required
                 className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
@@ -85,7 +85,7 @@ const ContactPage = () => {
               <label className="block text-sm mb-1">Telefoonnummer</label>
               <input
                 type="tel"
-                name="user_phone"
+                name="from_phone"
                 className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
             </div>
