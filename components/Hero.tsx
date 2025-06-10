@@ -9,8 +9,8 @@ import { CalendarRange, Phone, ChevronLeft, ChevronRight } from "lucide-react"
 import hero1 from "../public/assets/barber4.jpg"
 import hero2 from "../public/assets/hero_4.jpg"
 import hero3 from "../public/photos/skin_care_1.jpeg"
-import manicure from "../public/assets/hero_2.jpg"
-import naildesigns from "../public/assets/nails_banner.jpg"
+import manicure from "../public/assets/nails_1.png"
+import naildesigns from "../public/photos/nails_2.jpeg"
 import Link from "next/link"
 
 const slides = [
@@ -136,7 +136,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="text-left text-xl lg:text-2xl max-w-xl"
             >
-              <h1 className="leading-[2.2rem] md:leading-[2.6rem] md:mt-4">
+              <h1 className="leading-[2.3rem] md:leading-[2.7rem] md:mt-4">
                 <span className="bg-[rgba(0,0,0,0.3)] inline p-1">
                   {slides[index].subtext}
                 </span>
