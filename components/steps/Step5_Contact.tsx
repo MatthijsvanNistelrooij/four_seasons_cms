@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Input } from "../ui/input"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Checkbox } from "../ui/checkbox"
+import { DialogDescription } from "@radix-ui/react-dialog"
 
 type Props = {
   name: string
@@ -42,7 +43,9 @@ export const Step5_Contact = ({
 
   return (
     <div className="">
-      <h2 className="text-sm font-light mb-2">Uw contactgegevens</h2>
+      <DialogDescription className="m-2 text-sm">
+        Uw contactgegevens
+      </DialogDescription>
       <div className="flex flex-col p-5 gap-1 bg-white border rounded">
         <label className="font-bold text-gray-700 text-sm ml-1">Naam</label>
         <Input

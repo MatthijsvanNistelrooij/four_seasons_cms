@@ -4,6 +4,7 @@ import { addDays, isSameDay, format } from "date-fns"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { startOfWeek, endOfWeek, isWithinInterval, addWeeks } from "date-fns"
 import { nl } from "date-fns/locale" // NL locale importeren
+import { DialogDescription } from "@radix-ui/react-dialog"
 
 type Props = {
   date: Date | null
@@ -73,7 +74,9 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
 
   return (
     <div>
-      <h2 className="text-sm font-light mb-2">Wanneer wilt u langskomen?</h2>
+      <DialogDescription className="m-2 text-sm">
+        Wanneer wilt u langskomen?
+      </DialogDescription>
       <div className="relative">
         <div
           ref={scrollRef}
@@ -96,7 +99,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
                   className={`w-full border-b pl-4 py-3 cursor-pointer transition ${
                     date && isSameDay(date, d)
                       ? "bg-[#e9207e] text-white"
-                      : "hover:bg-pink-50"
+                      : "hover:bg-gray-100"
                   }`}
                   onClick={() => onDateChange(d)}
                 >
@@ -120,7 +123,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
                   className={`w-full pl-4 border-b py-3 cursor-pointer transition ${
                     date && isSameDay(date, d)
                       ? "bg-[#e9207e] text-white"
-                      : "hover:bg-pink-50"
+                      : "hover:bg-gray-100"
                   }`}
                   onClick={() => onDateChange(d)}
                 >
@@ -144,7 +147,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
                   className={`w-full pl-4 border-b py-3 cursor-pointer transition ${
                     date && isSameDay(date, d)
                       ? "bg-[#e9207e] text-white"
-                      : "hover:bg-pink-50"
+                      : "hover:bg-gray-100"
                   }`}
                   onClick={() => onDateChange(d)}
                 >

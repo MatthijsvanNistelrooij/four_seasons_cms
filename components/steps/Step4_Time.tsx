@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import { format, setHours, setMinutes } from "date-fns"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { DialogDescription } from "@radix-ui/react-dialog"
 
 type Props = {
   time: string
@@ -46,7 +47,9 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
 
   return (
     <div>
-      <h2 className="text-sm font-light mb-2">Kies een tijd</h2>
+      <DialogDescription className="m-2 text-sm">
+        Kies een tijd
+      </DialogDescription>
       <div className="relative">
         <div
           ref={scrollRef}
@@ -57,7 +60,7 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
             <div
               key={slot}
               className={`w-full border-b px-4 py-3 cursor-pointer transition ${
-                time === slot ? "bg-[#e9207e] text-white" : "hover:bg-pink-50"
+                time === slot ? "bg-[#e9207e] text-white" : "hover:bg-gray-100"
               }`}
               onClick={() => onTimeChange(slot)}
             >

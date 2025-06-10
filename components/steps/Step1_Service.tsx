@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import clsx from "clsx"
 import { ChevronRight } from "lucide-react"
+import { DialogDescription } from "@radix-ui/react-dialog"
 
 type Props = {
   value: string
@@ -96,9 +97,9 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
 
   return (
     <div>
-      <h2 className="text-sm font-light mb-2">
+      <DialogDescription className="m-2 text-sm">
         Voor welke behandeling wilt u een afspraak maken?
-      </h2>
+      </DialogDescription>
       <div className="relative overflow-y-auto rounded bg-white border border-gray-200">
         <div ref={listRef} className="overflow-y-auto max-h-96">
           {/* Knippen */}
@@ -114,7 +115,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                   "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
-                    : "hover:bg-pink-100"
+                    : "hover:bg-gray-100"
                 )}
               >
                 <span>{service.name}</span>
@@ -138,7 +139,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                   "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
-                    : "hover:bg-pink-50"
+                    : "hover:bg-gray-100"
                 )}
               >
                 <span>{service.name}</span>
@@ -162,7 +163,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                   "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
-                    : "hover:bg-pink-50"
+                    : "hover:bg-gray-100"
                 )}
               >
                 <span>{service.name}</span>
