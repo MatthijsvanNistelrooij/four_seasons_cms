@@ -27,7 +27,7 @@ export default function InfoPage() {
               className="w-full h-full"
             >
               <h2
-                className="text-xl lg:text-3xl md:text-3xl text-center font-bold mb-4"
+                className="text-xl lg:text-3xl md:text-2xl text-start font-bold mb-4"
                 style={{ fontFamily: "var(--font-roboto-slab)" }}
               >
                 Klaar om te stralen? Boek nu een afspraak bij onze kapsalon met
@@ -40,8 +40,8 @@ export default function InfoPage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
+      <section className="bg-white min-h-[30vh] flex flex-col justify-center py-10 lg:py-20">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -73,8 +73,8 @@ export default function InfoPage() {
         </div>
       </section>
 
-      <section className="bg-white text-white">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
+      <section className="bg-white min-h-[30vh] flex flex-col justify-center py-10 lg:py-20">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -122,8 +122,8 @@ export default function InfoPage() {
         </div>
       </section>
 
-      <section className="bg-[#6d6d6a] text-white">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
+      <section className="bg-[#6d6d6a] min-h-[30vh] flex flex-col justify-center py-10 lg:py-20">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -133,17 +133,12 @@ export default function InfoPage() {
           >
             <div className="space-y-6 w-full flex justfy-center text-center flex-col py-18">
               <h2
-                className="text-xl lg:text-4xl font-semibold text-white text-center text-shadow-lg"
+                className="text-xl lg:text-3xl font-semibold text-white text-center text-shadow-lg"
                 style={{ fontFamily: "var(--font-roboto-slab)" }}
               >
                 De ultieme beauty ervaring bij kapsalon Four Seasons
               </h2>
-              <p
-                className="text-base flex flex-col text-white leading-relaxed text-center text-shadow-lg"
-                style={{
-                  textShadow: "2px 2px 4px rgba(0, 0, 0, 0.45)",
-                }}
-              >
+              <p className="text-base flex flex-col text-white leading-relaxed text-center ">
                 Bij Kapsalon Four Seasons in Groningen geloven we dat de
                 perfecte beauty behandeling begint bij een gezonde basis. Daarom
                 bieden we naast onze haarbehandelingen ook een scala aan
