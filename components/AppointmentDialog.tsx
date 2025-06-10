@@ -123,7 +123,7 @@ export function AppointmentDialog({
       <DialogContent className="sm:max-w-lg !bg-[#eaeaea] !rounded-xl border-none min-h-[620px] select-none">
         <DialogHeader className="">
           <DialogTitle>Afspraak boeken</DialogTitle>
-          <DialogDescription>Stap {step} van 6</DialogDescription>
+          <DialogDescription className="text-[#e9207e]">Stap {step} van 6</DialogDescription>
         </DialogHeader>
 
         <div className="py-1">
