@@ -33,6 +33,20 @@ const Appointments = () => {
   const [deletingAppointment, setDeletingAppointment] =
     useState<Appointment | null>(null)
 
+  const [sortField, setSortField] = useState<"date" | "time" | null>(null)
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc")
+
+  const handleSort = (field: "date" | "time") => {
+    if (sortField === field) {
+      // Toggle direction if already sorting by the same field
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc")
+    } else {
+      // Otherwise sort ascending on new field
+      setSortField(field)
+      setSortDirection("asc")
+    }
+  }
+
   useEffect(() => {
     async function fetchAppointments() {
       try {
@@ -82,12 +96,37 @@ const Appointments = () => {
   const itemsPerPage = 10
   const [currentPage, setCurrentPage] = useState(1)
 
-  const paginatedAppointments = filteredAppointments.slice(
+  const totalPages = Math.ceil(filteredAppointments.length / itemsPerPage)
+
+  const sortedAppointments = [...filteredAppointments].sort((a, b) => {
+    if (!sortField) return 0
+
+    const aValue = a[sortField]
+    const bValue = b[sortField]
+
+    if (sortField === "time") {
+      // Use arbitrary date to compare time
+      const aTime = new Date(`1970-01-01T${aValue}`)
+      const bTime = new Date(`1970-01-01T${bValue}`)
+      return sortDirection === "asc"
+        ? aTime.getTime() - bTime.getTime()
+        : bTime.getTime() - aTime.getTime()
+    }
+
+    if (sortField === "date") {
+      const aDate = new Date(aValue)
+      const bDate = new Date(bValue)
+      return sortDirection === "asc"
+        ? aDate.getTime() - bDate.getTime()
+        : bDate.getTime() - aDate.getTime()
+    }
+
+    return 0
+  })
+  const paginatedAppointments = sortedAppointments.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   )
-
-  const totalPages = Math.ceil(filteredAppointments.length / itemsPerPage)
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
@@ -135,8 +174,28 @@ const Appointments = () => {
               <TableRow>
                 <TableHead>Naam</TableHead>
                 <TableHead>Service</TableHead>
-                <TableHead>Datum</TableHead>
-                <TableHead>Tijd</TableHead>
+                <TableHead
+                  onClick={() => handleSort("date")}
+                  className="cursor-pointer"
+                >
+                  Datum{" "}
+                  {sortField === "date"
+                    ? sortDirection === "asc"
+                      ? "↑"
+                      : "↓"
+                    : ""}
+                </TableHead>
+                <TableHead
+                  onClick={() => handleSort("time")}
+                  className="cursor-pointer"
+                >
+                  Tijd{" "}
+                  {sortField === "time"
+                    ? sortDirection === "asc"
+                      ? "↑"
+                      : "↓"
+                    : ""}
+                </TableHead>
                 <TableHead>Email</TableHead>
                 <TableHead>Telefoon</TableHead>
                 <TableHead />
