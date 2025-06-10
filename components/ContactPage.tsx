@@ -35,10 +35,10 @@ const ContactPage = () => {
   }
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-[#eaeaea] py-10 lg:py-40 px-4">
+    <section className="min-h-screen flex flex-col items-center justify-center bg-[#eaeaea] py-10 lg:py-40 px-8 md:px-20">
       <div className="mb-14 space-y-5">
         <h2
-          className="lg:text-4xl text-gray-800 font-semibold text-center max-w-2xl"
+          className="text-2xl lg:text-4xl text-gray-800 font-semibold text-center max-w-2xl"
           style={{ fontFamily: "var(--font-roboto-slab)" }}
         >
           Benieuwd wat we voor jou kunnen betekenen?
@@ -48,7 +48,7 @@ const ContactPage = () => {
         </p>
       </div>
 
-      <div className="container mx-auto px-8 md:px-20 flex justify-center flex-col lg:flex-row gap-5 max-w-4xl">
+      <div className="container mx-auto md:px-20 flex justify-center flex-col lg:flex-row gap-5 max-w-4xl">
         <div className="md:col-span-2 bg-white rounded-xl shadow-md p-8 w-full">
           <h2
             className="text-2xl font-semibold mb-6"
