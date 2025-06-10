@@ -159,11 +159,13 @@ const Appointments = () => {
                         setEditingAppointment(appt)
                         setIsDialogOpen(true)
                       }}
+                      size={"sm"}
                       className="p-0 bg-transparent text-gray-800 hover:bg-white cursor-pointer m-0"
                     >
                       <Edit size={12} />
                     </Button>
                     <Button
+                      size={"sm"}
                       className="p-0 bg-transparent text-red-500 hover:bg-white cursor-pointer m-0"
                       onClick={() => {
                         setDeletingAppointment(appt)
