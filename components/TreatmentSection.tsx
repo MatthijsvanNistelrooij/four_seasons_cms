@@ -9,8 +9,8 @@ import { motion } from "framer-motion"
 const TreatmentSection = () => {
   return (
     <div>
-      <section className="w-full bg-[#eaeaea]">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
+      <section className="bg-[#eaeaea] min-h-[20vh] flex flex-col justify-center py-10 lg:py-20">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
           <div className="w-full h-[330px] mb-5">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}

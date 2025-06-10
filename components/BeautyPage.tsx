@@ -47,8 +47,8 @@ const BeautyPage = () => {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-24 gap-12 lg:gap-12">
+      <section className="bg-white min-h-[20vh] flex flex-col justify-center">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-20 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -57,7 +57,7 @@ const BeautyPage = () => {
             className="w-full h-full"
           >
             <h2
-              className="text-xl lg:text-3xl font-semibold text-black"
+              className="text-xl lg:text-3xl font-semibold text-black mb-5"
               style={{ fontFamily: "var(--font-roboto-slab)" }}
             >
               Ons geheim? De perfecte combinatie van haar- en
@@ -98,8 +98,8 @@ const BeautyPage = () => {
         </div>
       </section> */}
 
-      <section className="bg-white text-white mb-20">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-24 gap-12 lg:gap-12">
+      <section className="bg-white min-h-[20vh] flex flex-col justify-center mb-20">
+        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

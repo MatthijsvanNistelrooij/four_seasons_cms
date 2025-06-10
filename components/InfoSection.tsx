@@ -5,9 +5,9 @@ import { motion } from "framer-motion"
 
 const InfoSection = () => {
   return (
-    <section className="w-full bg-white">
-      <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-48 gap-12 lg:gap-12">
-        <div className="w-full h-[220px] mb-5">
+    <section className="bg-white min-h-[20vh] flex flex-col justify-center py-10 lg:py-20">
+      <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
+        <div className="w-full">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
