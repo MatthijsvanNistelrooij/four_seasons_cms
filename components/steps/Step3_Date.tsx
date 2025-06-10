@@ -90,7 +90,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
 
             <div className="overflow-hidden">
               {groupedDates.dezeWeek.length === 0 && (
-                <p className="text-gray-800 ">Geen beschikbare dagen</p>
+                <p className="text-gray-800">Geen beschikbare dagen</p>
               )}
               {groupedDates.dezeWeek.map((d) => (
                 <div

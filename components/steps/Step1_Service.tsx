@@ -118,7 +118,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                 )}
               >
                 <span>{service.name}</span>
-                <span className="text-sm">{service.price}</span>
+                <span className="text-lg font-light">{service.price}</span>
               </div>
             ))}
           </div>
@@ -142,7 +142,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                 )}
               >
                 <span>{service.name}</span>
-                <span className="text-sm">{service.price}</span>
+                <span className="text-lg font-light">{service.price}</span>
               </div>
             ))}
           </div>
@@ -166,7 +166,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                 )}
               >
                 <span>{service.name}</span>
-                <span className="text-sm">{service.price}</span>
+                <span className="text-lg font-light">{service.price}</span>
               </div>
             ))}
           </div>
