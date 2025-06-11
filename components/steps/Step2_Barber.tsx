@@ -55,14 +55,14 @@ export const Step2_Barber = ({
   return (
     <div className="">
       <div>
-      <h3 className="m-2 text-sm font-light">
+        <h3 className="m-2 text-sm font-light">
           Heeft u een voorkeur voor een medewerker?
         </h3>
 
         <RadioGroup
           value={value}
           onValueChange={onChange}
-          className="flex flex-col overflow-y-auto bg-gray-50 min-h-96 gap-0 text-sm font-bold border border-gray-200"
+          className="flex flex-col overflow-y-auto bg-gray-50 min-h-96 gap-0 text-sm font-bold border border-gray-200 rounded-xl"
         >
           {filteredBarbers.map((barber) => (
             <div

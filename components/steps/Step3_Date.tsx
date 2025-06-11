@@ -73,16 +73,13 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
 
   return (
     <div>
-      <h3 className="m-2 text-sm font-light">
-        Wanneer wilt u langskomen?
-      </h3>
+      <h3 className="m-2 text-sm font-light">Wanneer wilt u langskomen?</h3>
       <div className="relative">
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex flex-col max-h-96 overflow-y-auto space-y-5 bg-white text-sm font-semibold relative border"
+          className="flex flex-col max-h-96 overflow-y-auto space-y-5 bg-white text-sm font-semibold relative border rounded-xl"
         >
-          {/* DEZE WEEK */}
           <div>
             <h4 className="px-4 py-2 font-light mt-3 border-b border-gray-200 flex justify-center">
               DEZE WEEK

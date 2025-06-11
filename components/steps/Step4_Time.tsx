@@ -51,7 +51,7 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex flex-col border border-gray-200 max-h-96 overflow-y-auto bg-white text-sm font-semibold"
+          className="flex flex-col border border-gray-200 max-h-96 overflow-y-auto bg-white text-sm font-semibold rounded-xl"
         >
           {timeSlots.map((slot) => (
             <div
