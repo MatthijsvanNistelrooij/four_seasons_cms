@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { addDays, isSameDay, format } from "date-fns"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { startOfWeek, endOfWeek, isWithinInterval, addWeeks } from "date-fns"
-import { nl } from "date-fns/locale" // NL locale importeren
+import { nl } from "date-fns/locale"
 
 type Props = {
   date: Date | null
@@ -14,8 +14,7 @@ type Props = {
 
 export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   const [error, setError] = useState("")
-  const [showTopShadow, setShowTopShadow] = useState(false)
-  const [showBottomShadow, setShowBottomShadow] = useState(false)
+
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const availableDates = Array.from({ length: 21 }, (_, i) =>
@@ -34,10 +33,6 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   const handleScroll = () => {
     const container = scrollRef.current
     if (!container) return
-
-    const { scrollTop, scrollHeight, clientHeight } = container
-    setShowTopShadow(scrollTop > 0)
-    setShowBottomShadow(scrollTop + clientHeight < scrollHeight - 1)
   }
 
   useEffect(() => {
@@ -48,7 +43,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
     const now = new Date()
 
     const dezeWeekStart = now
-    const dezeWeekEnd = endOfWeek(now, { weekStartsOn: 1 }) // zondag einde week, week start maandag
+    const dezeWeekEnd = endOfWeek(now, { weekStartsOn: 1 })
 
     const komendeWeekStart = addWeeks(startOfWeek(now, { weekStartsOn: 1 }), 1)
     const komendeWeekEnd = endOfWeek(komendeWeekStart, { weekStartsOn: 1 })
@@ -74,7 +69,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   return (
     <div>
       <h3 className="m-2 text-sm font-light">Wanneer wilt u langskomen?</h3>
-      <div className="relative">
+      <div className="relative rounded-xl border">
         <div
           ref={scrollRef}
           onScroll={handleScroll}
@@ -153,13 +148,6 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
             </div>
           </div>
         </div>
-        {/* Shadows */}
-        {showTopShadow && (
-          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-300 to-transparent pointer-events-none" />
-        )}
-        {showBottomShadow && (
-          <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-gray-300 to-transparent pointer-events-none" />
-        )}
       </div>
 
       {error && <p className="text-red-500 text-sm mt-2">{error}</p>}

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import clsx from "clsx"
 import { ChevronRight } from "lucide-react"
 
@@ -58,26 +58,7 @@ const services = [
 
 export const Step1_Service = ({ value, onChange, onNext }: Props) => {
   const [error, setError] = useState("")
-  const [atTop, setAtTop] = useState(true)
-  const [atBottom, setAtBottom] = useState(false)
   const listRef = useRef<HTMLDivElement | null>(null)
-
-  const handleScroll = () => {
-    const el = listRef.current
-    if (!el) return
-
-    setAtTop(el.scrollTop === 0)
-    setAtBottom(el.scrollTop + el.clientHeight >= el.scrollHeight - 1)
-  }
-
-  useEffect(() => {
-    const el = listRef.current
-    if (!el) return
-
-    handleScroll()
-    el.addEventListener("scroll", handleScroll)
-    return () => el.removeEventListener("scroll", handleScroll)
-  }, [])
 
   const handleNext = () => {
     if (!value) {
@@ -108,7 +89,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                 key={service.name}
                 onClick={() => onChange(service.name)}
                 className={clsx(
-                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
+                  "w-full border-b border-gray-200 px-4 py-2 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
                     : "hover:bg-[#f6f6f6]"
@@ -166,14 +147,6 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
             ))}
           </div>
         </div>
-
-        {!atTop && (
-          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-300 to-transparent pointer-events-none z-10" />
-        )}
-
-        {!atBottom && (
-          <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-gray-300 to-transparent pointer-events-none z-10" />
-        )}
       </div>
 
       {error && <p className="text-red-500 text-sm mt-3">{error}</p>}
