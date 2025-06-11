@@ -12,10 +12,18 @@ const TopNav = () => {
     <div className="bg-[#e9207e] z-50 hidden md:block">
       <div className="container mx-auto relative flex items-center justify-between py-3 md:px-20 px-8">
         <div className="flex gap-4">
-          <Link href={"https://www.facebook.com/kapsalonfourseasons/"}>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href={"https://www.facebook.com/kapsalonfourseasons/"}
+          >
             <FaFacebookF className="text-white font-bold cursor-pointer hover:text-black" />
           </Link>
-          <Link href={"https://www.instagram.com/olga_beautyfs/"}>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href={"https://www.instagram.com/olga_beautyfs/"}
+          >
             <FaInstagram className="text-white font-bold cursor-pointer hover:text-black" />
           </Link>
         </div>
