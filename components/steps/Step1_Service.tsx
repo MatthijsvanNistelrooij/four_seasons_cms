@@ -97,8 +97,8 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
   return (
     <div>
       <h3 className="m-2 text-sm font-light">Welke behandeling wenst u?</h3>
-      <div className="relative overflow-y-auto rounded-xl bg-white border border-gray-200">
-        <div ref={listRef} className="overflow-y-auto max-h-96">
+      <div className="relative overflow-y-auto rounded-xl bg-white overflow-hidden">
+        <div ref={listRef} className="overflow-y-auto max-h-96 ">
           <div>
             <h4 className="px-4 py-2 font-semibold mt-3 border-b border-gray-200 flex justify-center">
               Knippen
