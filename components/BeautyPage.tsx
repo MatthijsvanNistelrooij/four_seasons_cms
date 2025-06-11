@@ -120,8 +120,8 @@ const BeautyPage = () => {
           <motion.div
             initial={{ opacity: 0, scale: 1 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0 }}
             className="w-full h-full"
           >
             <div className="bg-[#e9207e] text-white space-y-5 pb-20 w-full rounded-xl flex flex-col text-center justify-center gap-10">
