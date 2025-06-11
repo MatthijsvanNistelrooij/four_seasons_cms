@@ -47,11 +47,11 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
   return (
     <div>
       <h3 className="m-2 text-sm font-light">Voorkeurstijd</h3>
-      <div className="relative">
+      <div className="relative rounded-xl overflow-hidden">
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex flex-col border border-gray-200 max-h-96 overflow-y-auto bg-white text-sm font-semibold rounded"
+          className="flex flex-col border border-gray-200 max-h-96 overflow-y-auto bg-white text-sm font-semibold rounded-xl"
         >
           {timeSlots.map((slot) => (
             <div

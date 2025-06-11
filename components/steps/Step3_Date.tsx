@@ -74,11 +74,11 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   return (
     <div>
       <h3 className="m-2 text-sm font-light">Wanneer wilt u langskomen?</h3>
-      <div className="relative rounded-xl">
+      <div className="relative rounded-xl  overflow-hidden">
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex flex-col max-h-96 overflow-y-auto space-y-5 bg-white text-sm font-semibold relative border rounded"
+          className="flex flex-col max-h-96 overflow-y-auto space-y-5 bg-white text-sm font-semibold relative border rounded-xl"
         >
           <div>
             <h4 className="px-4 py-2 font-light mt-3 border-b border-gray-200 flex justify-center">
@@ -153,12 +153,11 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
             </div>
           </div>
         </div>
-
         {showTopShadow && (
-          <div className="rounded-xl absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-300 to-transparent pointer-events-none z-10" />
+          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-300 to-transparent pointer-events-none z-10" />
         )}
         {showBottomShadow && (
-          <div className="rounded-xl absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-gray-300 to-transparent pointer-events-none z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-gray-300 to-transparent pointer-events-none z-10" />
         )}
       </div>
 
