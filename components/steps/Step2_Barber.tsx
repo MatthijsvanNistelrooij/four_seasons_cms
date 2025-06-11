@@ -68,16 +68,16 @@ export const Step2_Barber = ({
             <div
               key={barber.name}
               className={clsx(
-                "w-full border-b border-gray-200 px-4 py-2 flex items-center justify-start text-sm font-medium cursor-pointer transition",
+                "w-full border-b border-gray-200 rounded-xl px-4 py-2 flex items-center justify-start text-sm font-medium cursor-pointer transition",
                 value === barber.name
                   ? "bg-[#e9207e] text-white border-pink-100"
                   : "hover:bg-[#f6f6f6]"
               )}
               onClick={() => onChange(barber.name)}
             >
-              <div className="bg-gray-200 mr-4 h-full">
+              <div className="bg-gray-200 mr-4 h-full rounded">
                 <Image
-                  className="object-cover"
+                  className="object-cover rounded"
                   src={barber.img}
                   width={60}
                   height={60}

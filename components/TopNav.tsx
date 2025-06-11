@@ -3,6 +3,7 @@ import { useState } from "react"
 
 import { FaFacebookF, FaInstagram } from "react-icons/fa"
 import { AppointmentDialog } from "./AppointmentDialog"
+import Link from "next/link"
 
 const TopNav = () => {
   const [openDialog, setOpenDialog] = useState(false)
@@ -11,9 +12,12 @@ const TopNav = () => {
     <div className="bg-[#e9207e] z-50 hidden md:block">
       <div className="container mx-auto relative flex items-center justify-between py-3 md:px-20 px-8">
         <div className="flex gap-4">
-          
-          <FaFacebookF className="text-white font-bold cursor-pointer hover:text-black" />
-          <FaInstagram className="text-white font-bold cursor-pointer hover:text-black" />
+          <Link href={"https://www.facebook.com/kapsalonfourseasons/"}>
+            <FaFacebookF className="text-white font-bold cursor-pointer hover:text-black" />
+          </Link>
+          <Link href={"https://www.instagram.com/olga_beautyfs/"}>
+            <FaInstagram className="text-white font-bold cursor-pointer hover:text-black" />
+          </Link>
         </div>
         <div className="absolute left-1/2 transform -translate-x-1/2">
           <AppointmentDialog
