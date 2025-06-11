@@ -177,7 +177,7 @@ export default function AboutPage() {
                 is in de gezondheid en schoonheid van je haar. Wil je ook mooi
                 glanzend haar hebben? Maak snel een afspraak hieronder.
               </p>
-              <div className="my-10">
+              <div className="">
                 <AppointmentDialog
                   title="Maak een afspraak"
                   open={openDialog}

@@ -72,7 +72,7 @@ export function AppointmentDialog({
         phone: formData.phone,
         time: formData.time,
         barber: formData.barber,
-        date: fullDate.toISOString(), 
+        date: fullDate.toISOString(),
       })
 
       console.log("Afspraak bevestigd ✅", newAppointment)
@@ -86,7 +86,7 @@ export function AppointmentDialog({
         email: "",
         phone: "",
       })
-      onOpenChange(false) 
+      onOpenChange(false)
       setStep(1)
     } catch (error) {
       console.error("Failed to submit appointment", error)
@@ -116,14 +116,16 @@ export function AppointmentDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogTrigger asChild>
-        <Button className="bg-[#e9207e] hover:bg-[#e9207e]  p-8 rounded-full text-white font-bold shadow-none text-md cursor-pointer">
+        <Button className="bg-[#e9207e] hover:bg-[#e9207e] p-8 rounded-full text-white font-bold shadow-none text-md cursor-pointer">
           {title}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-lg !bg-[#efefef] !rounded-xl p-3 lg:p-6 border-none min-h-[620px] select-none text-gray-800">
+      <DialogContent className="!bg-[#ececec] !rounded-xl border-none p-3 lg:p-6 min-h-[620px] select-none text-gray-800">
         <DialogHeader>
           <DialogTitle>Afspraak boeken</DialogTitle>
-          <DialogDescription className="text-gray-700">Stap {step} van 6</DialogDescription>
+          <DialogDescription className="text-gray-700">
+            Stap {step} van 6
+          </DialogDescription>
         </DialogHeader>
 
         <div className="py-1">
