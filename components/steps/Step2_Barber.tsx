@@ -71,7 +71,7 @@ export const Step2_Barber = ({
                 "w-full border-b border-gray-200 px-4 py-2 flex items-center justify-start text-sm font-medium cursor-pointer transition",
                 value === barber.name
                   ? "bg-[#e9207e] text-white border-pink-100"
-                  : "hover:bg-[#f6f6f6]"
+                    : "hover:bg-gray-100"
               )}
               onClick={() => onChange(barber.name)}
             >

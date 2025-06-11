@@ -57,7 +57,7 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
             <div
               key={slot}
               className={`w-full border-b px-4 py-3 cursor-pointer transition ${
-                time === slot ? "bg-[#e9207e] text-white" : "hover:bg-[#f6f6f6]"
+                time === slot ? "bg-[#e9207e] text-white" : "hover:bg-gray-100"
               }`}
               onClick={() => onTimeChange(slot)}
             >

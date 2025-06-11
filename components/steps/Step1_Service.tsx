@@ -111,7 +111,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                   "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
-                    : "hover:bg-[#f6f6f6]"
+                    : "hover:bg-gray-100"
                 )}
               >
                 <span>{service.name}</span>
@@ -134,7 +134,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                   "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
-                    : "hover:bg-[#f6f6f6]"
+                    : "hover:bg-gray-100"
                 )}
               >
                 <span>{service.name}</span>
@@ -157,7 +157,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                   "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
-                    : "hover:bg-[#f6f6f6]"
+                    : "hover:bg-gray-100"
                 )}
               >
                 <span>{service.name}</span>

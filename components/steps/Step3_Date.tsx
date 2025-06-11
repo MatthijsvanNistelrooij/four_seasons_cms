@@ -95,7 +95,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
                   className={`w-full border-b pl-4 py-3 cursor-pointer transition ${
                     date && isSameDay(date, d)
                       ? "bg-[#e9207e] text-white"
-                      : "hover:bg-[#f6f6f6]"
+                      : "hover:bg-gray-100"
                   }`}
                   onClick={() => onDateChange(d)}
                 >
