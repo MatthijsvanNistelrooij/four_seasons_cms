@@ -45,7 +45,7 @@ export const Step5_Contact = ({
       <h3 className="m-2 text-sm font-light">
         Uw contactgegevens
       </h3>
-      <div className="flex flex-col p-5 gap-1 bg-white border rounded-xl">
+      <div className="flex flex-col p-5 gap-1 bg-white border rounded">
         <label className="font-bold text-gray-700 text-sm ml-1">Naam</label>
         <Input
           type="text"

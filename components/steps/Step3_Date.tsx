@@ -14,7 +14,8 @@ type Props = {
 
 export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   const [error, setError] = useState("")
-
+  const [showTopShadow, setShowTopShadow] = useState(false)
+  const [showBottomShadow, setShowBottomShadow] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const availableDates = Array.from({ length: 21 }, (_, i) =>
@@ -33,6 +34,10 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   const handleScroll = () => {
     const container = scrollRef.current
     if (!container) return
+
+    const { scrollTop, scrollHeight, clientHeight } = container
+    setShowTopShadow(scrollTop > 0)
+    setShowBottomShadow(scrollTop + clientHeight < scrollHeight - 1)
   }
 
   useEffect(() => {
@@ -43,7 +48,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
     const now = new Date()
 
     const dezeWeekStart = now
-    const dezeWeekEnd = endOfWeek(now, { weekStartsOn: 1 })
+    const dezeWeekEnd = endOfWeek(now, { weekStartsOn: 1 }) // zondag einde week, week start maandag
 
     const komendeWeekStart = addWeeks(startOfWeek(now, { weekStartsOn: 1 }), 1)
     const komendeWeekEnd = endOfWeek(komendeWeekStart, { weekStartsOn: 1 })
@@ -69,11 +74,11 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   return (
     <div>
       <h3 className="m-2 text-sm font-light">Wanneer wilt u langskomen?</h3>
-      <div className="relative rounded-xl border">
+      <div className="relative rounded-xl">
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex flex-col max-h-96 overflow-y-auto space-y-5 bg-white text-sm font-semibold relative border rounded-xl"
+          className="flex flex-col max-h-96 overflow-y-auto space-y-5 bg-white text-sm font-semibold relative border rounded"
         >
           <div>
             <h4 className="px-4 py-2 font-light mt-3 border-b border-gray-200 flex justify-center">
@@ -148,6 +153,13 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
             </div>
           </div>
         </div>
+
+        {showTopShadow && (
+          <div className="rounded-xl absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-300 to-transparent pointer-events-none z-10" />
+        )}
+        {showBottomShadow && (
+          <div className="rounded-xl absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-gray-300 to-transparent pointer-events-none z-10" />
+        )}
       </div>
 
       {error && <p className="text-red-500 text-sm mt-2">{error}</p>}

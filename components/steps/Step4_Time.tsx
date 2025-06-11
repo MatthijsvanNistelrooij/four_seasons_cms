@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { format, setHours, setMinutes } from "date-fns"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -12,7 +12,8 @@ type Props = {
 
 export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
   const [error, setError] = useState("")
-
+  const [showTopShadow, setShowTopShadow] = useState(false)
+  const [showBottomShadow, setShowBottomShadow] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const timeSlots = Array.from({ length: 17 }, (_, i) => {
@@ -30,13 +31,27 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
     onNext()
   }
 
+  const handleScroll = () => {
+    const container = scrollRef.current
+    if (!container) return
+
+    const { scrollTop, scrollHeight, clientHeight } = container
+    setShowTopShadow(scrollTop > 0)
+    setShowBottomShadow(scrollTop + clientHeight < scrollHeight - 1)
+  }
+
+  useEffect(() => {
+    handleScroll()
+  }, [])
+
   return (
     <div>
       <h3 className="m-2 text-sm font-light">Voorkeurstijd</h3>
       <div className="relative">
         <div
           ref={scrollRef}
-          className="flex flex-col border border-gray-200 max-h-96 overflow-y-auto bg-white text-sm font-semibold rounded-xl"
+          onScroll={handleScroll}
+          className="flex flex-col border border-gray-200 max-h-96 overflow-y-auto bg-white text-sm font-semibold rounded"
         >
           {timeSlots.map((slot) => (
             <div
@@ -50,6 +65,14 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
             </div>
           ))}
         </div>
+
+        {/* Shadows */}
+        {showTopShadow && (
+          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-300 to-transparent pointer-events-none" />
+        )}
+        {showBottomShadow && (
+          <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-gray-300 to-transparent pointer-events-none" />
+        )}
       </div>
 
       {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
