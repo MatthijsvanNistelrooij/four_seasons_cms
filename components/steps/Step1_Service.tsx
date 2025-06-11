@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import clsx from "clsx"
 import { ChevronRight } from "lucide-react"
-import { DialogDescription } from "@radix-ui/react-dialog"
 
 type Props = {
   value: string
@@ -75,7 +74,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
     const el = listRef.current
     if (!el) return
 
-    handleScroll() // Initialize once
+    handleScroll()
     el.addEventListener("scroll", handleScroll)
     return () => el.removeEventListener("scroll", handleScroll)
   }, [])
@@ -97,12 +96,9 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
 
   return (
     <div>
-      <DialogDescription className="m-2 text-sm font-light">
-        Welke behandeling wenst u?
-      </DialogDescription>
-      <div className="relative overflow-y-auto rounded bg-white border border-gray-200">
+      <h3 className="m-2 text-sm font-light">Welke behandeling wenst u?</h3>
+      <div className="relative overflow-y-auto rounded-xl bg-white border border-gray-200">
         <div ref={listRef} className="overflow-y-auto max-h-96">
-          {/* Knippen */}
           <div>
             <h4 className="px-4 py-2 font-semibold mt-3 border-b border-gray-200 flex justify-center">
               Knippen
@@ -115,7 +111,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                   "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
-                    : "hover:bg-gray-100"
+                    : "hover:bg-[#f6f6f6]"
                 )}
               >
                 <span>{service.name}</span>
@@ -126,7 +122,6 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
 
           <div className="my-6" />
 
-          {/* Huidverzorging */}
           <div>
             <h4 className="px-4 py-2 font-semibold border-b border-gray-200 flex justify-center">
               Huidverzorging
@@ -139,7 +134,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                   "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
-                    : "hover:bg-gray-100"
+                    : "hover:bg-[#f6f6f6]"
                 )}
               >
                 <span>{service.name}</span>
@@ -150,7 +145,6 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
 
           <div className="my-6" />
 
-          {/* Manicure */}
           <div>
             <h4 className="px-4 py-2 font-semibold border-b border-gray-200 flex justify-center">
               Manicure
@@ -163,7 +157,7 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
                   "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
                   value === service.name
                     ? "bg-[#e9207e] text-white"
-                    : "hover:bg-gray-100"
+                    : "hover:bg-[#f6f6f6]"
                 )}
               >
                 <span>{service.name}</span>

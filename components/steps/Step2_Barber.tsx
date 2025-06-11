@@ -7,7 +7,6 @@ import Image from "next/image"
 import petros from "../../public/assets/petros.png"
 import avatar from "../../public/assets/avatar.png"
 import olga from "../../public/assets/olga.png"
-import { DialogDescription } from "@radix-ui/react-dialog"
 
 type Props = {
   value: string
@@ -56,9 +55,9 @@ export const Step2_Barber = ({
   return (
     <div className="">
       <div>
-      <DialogDescription className="m-2 text-sm font-light">
+      <h3 className="m-2 text-sm font-light">
           Heeft u een voorkeur voor een medewerker?
-        </DialogDescription>
+        </h3>
 
         <RadioGroup
           value={value}
@@ -72,7 +71,7 @@ export const Step2_Barber = ({
                 "w-full border-b border-gray-200 px-4 py-2 flex items-center justify-start text-sm font-medium cursor-pointer transition",
                 value === barber.name
                   ? "bg-[#e9207e] text-white border-pink-100"
-                  : "hover:bg-gray-100"
+                  : "hover:bg-[#f6f6f6]"
               )}
               onClick={() => onChange(barber.name)}
             >

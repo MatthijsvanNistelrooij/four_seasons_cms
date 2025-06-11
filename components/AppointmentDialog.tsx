@@ -116,14 +116,14 @@ export function AppointmentDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogTrigger asChild>
-        <Button className="bg-[#e9207e] hover:bg-pink-600 p-8 rounded-full text-white font-bold shadow-none text-md cursor-pointer">
+        <Button className="bg-[#e9207e] hover:bg-[#e9207e]  p-8 rounded-full text-white font-bold shadow-none text-md cursor-pointer">
           {title}
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-lg !bg-[#f6f6f6] !rounded-xl p-3 lg:p-6 border-none min-h-[620px] select-none">
+      <DialogContent className="sm:max-w-lg !bg-[#e7e7e7] !rounded-xl p-3 lg:p-6 border-none min-h-[620px] select-none text-gray-800">
         <DialogHeader>
           <DialogTitle>Afspraak boeken</DialogTitle>
-          <DialogDescription>Stap {step} van 6</DialogDescription>
+          <DialogDescription className="text-gray-700">Stap {step} van 6</DialogDescription>
         </DialogHeader>
 
         <div className="py-1">

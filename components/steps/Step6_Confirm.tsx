@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Check, ChevronLeft, Loader2 } from "lucide-react"
-import { DialogDescription } from "@radix-ui/react-dialog"
 
 type FormDataType = {
   service: string
@@ -16,7 +15,7 @@ type FormDataType = {
 interface Props {
   data: FormDataType
   onBack: () => void
-  onSubmit: () => Promise<void> // make sure the parent function returns a Promise
+  onSubmit: () => Promise<void>
 }
 
 export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
@@ -35,9 +34,7 @@ export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
   return (
     <div>
       <div className="max-w-3xl mx-auto">
-        <DialogDescription className="m-2 text-sm font-light">
-          Bevestig uw afspraak
-        </DialogDescription>
+        <h3 className="m-2 text-sm font-light">Bevestig uw afspraak</h3>
 
         <div className="rounded bg-white p-4 space-y-6 border border-gray-200">
           <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 text-base text-neutral-800">
