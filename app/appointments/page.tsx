@@ -1,5 +1,3 @@
-// app/appointments/page.tsx (or any server component)
-
 import React from "react"
 
 import { Appointment } from "@/types"
@@ -43,7 +41,6 @@ async function getAllAppointments(): Promise<Appointment[]> {
 const AppointmentsPage = async () => {
   const appointmentsRaw = await getAllAppointments()
 
-  // Optional: map or transform if needed
   const appointments: Appointment[] = appointmentsRaw.map((item) => ({
     $id: item.$id,
     $createdAt: item.$createdAt,

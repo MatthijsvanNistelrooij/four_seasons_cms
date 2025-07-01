@@ -11,7 +11,7 @@ const GoogleMaps = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.5 }} // Trigger once when 50% in view
+            viewport={{ once: true, amount: 0.5 }}
             className="w-full h-[350px] lg:h-[600px]"
           >
             <iframe

@@ -110,7 +110,7 @@ const Appointments = ({ initialAppointments }: AppointmentsProps) => {
           a.$id === updatedAppointment.$id ? updatedAppointment : a
         )
       )
-      setIsDialogOpen(false) // optionally close dialog on success
+      setIsDialogOpen(false)
     } catch (err) {
       console.error("Failed to update", err)
     }

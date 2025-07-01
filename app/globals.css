@@ -3,11 +3,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ::-webkit-scrollbar {
-  display: none;
-}
- */
-
 @layer components {
   .max-container {
     max-width: 1520px;
@@ -20,9 +15,6 @@
   }
 }
 
-/* :root {
-  --font-roboto-slab: "Roboto Slab", serif;
-} */
 
 body {
   @apply antialiased;
