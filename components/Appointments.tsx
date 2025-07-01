@@ -1,11 +1,7 @@
 "use client"
-import {
-  deleteAppointment,
-  getAllAppointments,
-  updateAppointment,
-} from "@/appwrite"
+import { deleteAppointment, updateAppointment } from "@/appwrite"
 import { Appointment } from "@/types"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import {
   Table,
   TableBody,
@@ -21,8 +17,15 @@ import { EditAppointmentDialog } from "./EditAppointmentDialog"
 import { DeleteAppointmentDialog } from "./DeleteAppointmentDialog"
 import Pagination from "./Pagination"
 
-const Appointments = () => {
-  const [appointments, setAppointments] = useState<Appointment[]>([])
+type AppointmentsProps = {
+  initialAppointments: Appointment[]
+}
+
+const Appointments = ({ initialAppointments }: AppointmentsProps) => {
+  console.log("initialAppointments", initialAppointments)
+
+  const [appointments, setAppointments] =
+    useState<Appointment[]>(initialAppointments)
   const [filter, setFilter] = useState<string | null>(null)
 
   const [editingAppointment, setEditingAppointment] =
@@ -38,40 +41,12 @@ const Appointments = () => {
 
   const handleSort = (field: "date" | "time") => {
     if (sortField === field) {
-      // Toggle direction if already sorting by the same field
       setSortDirection(sortDirection === "asc" ? "desc" : "asc")
     } else {
-      // Otherwise sort ascending on new field
       setSortField(field)
       setSortDirection("asc")
     }
   }
-
-  useEffect(() => {
-    async function fetchAppointments() {
-      try {
-        const allAppointmentsRaw = await getAllAppointments()
-        const allAppointments: Appointment[] = allAppointmentsRaw.map(
-          (item) => ({
-            $id: item.$id,
-            $createdAt: item.$createdAt,
-            $updatedAt: item.$updatedAt,
-            name: item.name,
-            service: item.service,
-            date: item.date,
-            email: item.email,
-            phone: item.phone,
-            time: item.time,
-            barber: item.barber,
-          })
-        )
-        setAppointments(allAppointments)
-      } catch (err) {
-        console.error(err)
-      }
-    }
-    fetchAppointments()
-  }, [appointments])
 
   const filteredAppointments = filter
     ? appointments.filter((a) => a.barber === filter)
@@ -105,7 +80,6 @@ const Appointments = () => {
     const bValue = b[sortField]
 
     if (sortField === "time") {
-      // Use arbitrary date to compare time
       const aTime = new Date(`1970-01-01T${aValue}`)
       const bTime = new Date(`1970-01-01T${bValue}`)
       return sortDirection === "asc"
@@ -127,6 +101,20 @@ const Appointments = () => {
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   )
+
+  const handleEditAppointment = async (updatedAppointment: Appointment) => {
+    try {
+      await updateAppointment(updatedAppointment.$id, updatedAppointment)
+      setAppointments((prev) =>
+        prev.map((a) =>
+          a.$id === updatedAppointment.$id ? updatedAppointment : a
+        )
+      )
+      setIsDialogOpen(false) // optionally close dialog on success
+    } catch (err) {
+      console.error("Failed to update", err)
+    }
+  }
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
@@ -253,18 +241,7 @@ const Appointments = () => {
         appointment={editingAppointment}
         isOpen={isDialogOpen}
         onClose={() => setIsDialogOpen(false)}
-        onSave={async (updatedAppointment) => {
-          try {
-            await updateAppointment(updatedAppointment.$id, updatedAppointment)
-            setAppointments((prev) =>
-              prev.map((a) =>
-                a.$id === updatedAppointment.$id ? updatedAppointment : a
-              )
-            )
-          } catch (err) {
-            console.error("Failed to update", err)
-          }
-        }}
+        onSave={handleEditAppointment}
       />
       <DeleteAppointmentDialog
         appointment={deletingAppointment}

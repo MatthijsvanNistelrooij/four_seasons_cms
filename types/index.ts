@@ -7,4 +7,6 @@ export interface Appointment {
   phone: string
   time: string
   barber: string
+  $createdAt: string
+  $updatedAt: string
 }
