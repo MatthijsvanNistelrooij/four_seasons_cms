@@ -68,15 +68,14 @@ export const createAppointment = async (appointmentData: {
       process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
       process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE!,
       {
+        to_email: appointmentData.email, // ← target customer
         name: appointmentData.name,
         service: appointmentData.service,
         date: appointmentData.date,
         time: appointmentData.time,
-        email: appointmentData.email,
         phone: appointmentData.phone,
         barber: appointmentData.barber,
       },
-
       process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
     )
 
@@ -84,17 +83,16 @@ export const createAppointment = async (appointmentData: {
       process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
       process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE!,
       {
+        to_email: process.env.NEXT_PUBLIC_EMAIL_ADDRESS, // ← target admin
         name: appointmentData.name,
         service: appointmentData.service,
         date: appointmentData.date,
         time: appointmentData.time,
-        email: process.env.NEXT_PUBLIC_EMAIL_ADDRESS,
         phone: appointmentData.phone,
         barber: appointmentData.barber,
       },
       process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
     )
-
     return appointment
   } catch (error) {
     console.error("Failed to create appointment:", error)

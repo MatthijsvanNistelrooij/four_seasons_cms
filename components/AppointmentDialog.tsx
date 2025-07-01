@@ -62,7 +62,11 @@ export function AppointmentDialog({
   }
 
   function formatDateDutch(date: Date): string {
-    const options = { day: "2-digit", month: "2-digit", year: "numeric" } as const
+    const options = {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    } as const
     return date.toLocaleDateString("nl-NL", options)
   }
 
@@ -78,7 +82,7 @@ export function AppointmentDialog({
         phone: formData.phone,
         time: formData.time,
         barber: formData.barber,
-        date: formattedDate, // <-- formatted Dutch date string
+        date: formattedDate,
       })
 
       console.log("Afspraak bevestigd ✅", newAppointment)
