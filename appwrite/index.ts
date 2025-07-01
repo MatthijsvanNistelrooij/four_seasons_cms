@@ -73,9 +73,11 @@ export const createAppointment = async (appointmentData: {
         service: appointmentData.service,
         date: appointmentData.date,
         time: appointmentData.time,
+        email: appointmentData.email,
         phone: appointmentData.phone,
         barber: appointmentData.barber,
       },
+
       process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
     )
 
@@ -88,11 +90,13 @@ export const createAppointment = async (appointmentData: {
         service: appointmentData.service,
         date: appointmentData.date,
         time: appointmentData.time,
+        email: appointmentData.email,
         phone: appointmentData.phone,
         barber: appointmentData.barber,
       },
       process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
     )
+
     return appointment
   } catch (error) {
     console.error("Failed to create appointment:", error)
