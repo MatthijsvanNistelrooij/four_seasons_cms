@@ -5,12 +5,9 @@ import { appwriteConfig } from "@/appwrite/config"
 const databaseId = appwriteConfig.databaseId
 const collectionId = appwriteConfig.appointmentsCollectionId
 
-export async function PUT(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function PUT(request: NextRequest) {
   try {
-    const id = params.id
+    const id = request.nextUrl.pathname.split("/").pop() // Extract id from URL
     const data = await request.json()
 
     if (!id || !data) {
@@ -26,12 +23,10 @@ export async function PUT(
   }
 }
 
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(request: NextRequest) {
   try {
-    const id = params.id
+    const id = request.nextUrl.pathname.split("/").pop()
+
     if (!id) {
       return NextResponse.json({ error: "Missing appointment ID" }, { status: 400 })
     }
