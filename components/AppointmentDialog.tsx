@@ -61,8 +61,14 @@ export function AppointmentDialog({
     return combined
   }
 
+  function formatDateDutch(date: Date): string {
+    const options = { day: "2-digit", month: "2-digit", year: "numeric" } as const
+    return date.toLocaleDateString("nl-NL", options)
+  }
+
   const handleSubmit = async () => {
     const fullDate = combineDateAndTime(new Date(formData.date), formData.time)
+    const formattedDate = formatDateDutch(fullDate)
 
     try {
       const newAppointment = await createAppointment({
@@ -72,7 +78,7 @@ export function AppointmentDialog({
         phone: formData.phone,
         time: formData.time,
         barber: formData.barber,
-        date: fullDate.toISOString(),
+        date: formattedDate, // <-- formatted Dutch date string
       })
 
       console.log("Afspraak bevestigd ✅", newAppointment)
