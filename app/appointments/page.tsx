@@ -41,6 +41,8 @@ async function getAllAppointments(): Promise<Appointment[]> {
 const AppointmentsPage = async () => {
   const appointmentsRaw = await getAllAppointments()
 
+  console.log("appointmentsRaw", appointmentsRaw)
+
   const appointments: Appointment[] = appointmentsRaw.map((item) => ({
     $id: item.$id,
     $createdAt: item.$createdAt,
