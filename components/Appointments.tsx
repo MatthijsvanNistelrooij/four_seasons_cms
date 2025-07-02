@@ -69,7 +69,7 @@ const Appointments = () => {
       }
     }
     fetchAppointments()
-  }, [appointments])
+  }, [])
 
   const filteredAppointments = filter
     ? appointments.filter((a) => a.barber === filter)
