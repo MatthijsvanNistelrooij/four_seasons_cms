@@ -29,7 +29,7 @@ const TopNav = () => {
         </div>
         <div className="absolute left-1/2 transform -translate-x-1/2">
           <AppointmentDialog
-            title="Klik hier om een afspraak te maken"
+            title="Klik hier om een afspraak te maken..."
             open={openDialog}
             onOpenChange={setOpenDialog}
           />
