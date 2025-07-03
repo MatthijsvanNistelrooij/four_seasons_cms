@@ -9,6 +9,12 @@ export const services = [
   /// KNIPPEN
   { name: "Heren knippen", price: "€ 28,50", category: "knippen" },
   { name: "Dames kort haar knippen", price: "€ 28,50", category: "knippen" },
+  {
+    name: "Dames half-lang haar knippen",
+    price: "€ 32,50",
+    category: "knippen",
+  },
+  { name: "Dames lang haar knippen", price: "€ 37,50", category: "knippen" },
 
   /// COSMETOLOGIE
   {
