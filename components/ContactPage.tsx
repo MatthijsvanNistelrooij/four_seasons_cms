@@ -18,7 +18,7 @@ const ContactPage = () => {
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
-        process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE!,
+        process.env.NEXT_PUBLIC_EMAIL_JS_CONTACT_TEMPLATE!,
         form.current,
         process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY!
       )
@@ -67,7 +67,7 @@ const ContactPage = () => {
               <label className="block text-sm mb-1">Naam</label>
               <input
                 type="text"
-                name="from_name"
+                name="name"
                 required
                 className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
@@ -91,6 +91,11 @@ const ContactPage = () => {
                 className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500"
               />
             </div>
+            <input
+              type="hidden"
+              name="to_email"
+              value={process.env.NEXT_PUBLIC_EMAIL_JS_CONTACT_TEMPLATE}
+            />
 
             <Button
               type="submit"

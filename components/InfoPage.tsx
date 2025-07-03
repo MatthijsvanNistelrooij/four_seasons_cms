@@ -5,6 +5,7 @@ import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { treatmentSections } from "@/constants"
 
 export default function InfoPage() {
   const [openDialog, setOpenDialog] = useState(false)
@@ -40,36 +41,109 @@ export default function InfoPage() {
         </div>
       </section>
 
-      <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 1 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.25 }}
-            className="w-full h-full"
+      <section className="bg-white py-16">
+        <div className="container mx-auto px-8 md:px-20">
+          <h2
+            className="text-xl lg:text-3xl font-semibold text-black text-center mb-10"
+            style={{ fontFamily: "var(--font-roboto-slab)" }}
           >
-            <h2
-              className="text-xl lg:text-3xl font-semibold text-black"
-              style={{ fontFamily: "var(--font-roboto-slab)" }}
-            > 
-              Ervaren kapper bij Reitemakersrijge Groningen 
-            </h2>
-            <p className="text-base text-gray-800 leading-relaxed mt-5">
-              Welkom bij Four Seasons in Groningen gelegen aan het
-              Reitemakersrijge! Onze kapsalon biedt een breed scala aan
-              haarbehandelingen voor zowel mannen als vrouwen. Of je nu op zoek
-              bent naar een frisse knipbeurt, of een speciale kleurbehandeling,
-              bij ons ben je aan het juiste adres. Ons ervaren team van
-              haarstylisten staat klaar om je te adviseren en te helpen bij het
-              kiezen van de perfecte behandeling die bij jouw wensen past. Naast
-              de haarbehandelingen binnen onze kapsalon bieden we ook nog
-              gezichtsbehandelingen, het plaatsen van wimperextensions,
-              wenkbrauwbehandelingen en visagie aan. Ontdek hieronder onze
-              behandelingen en maak vandaag nog een afspraak om te genieten van
-              een professionele kapperservaring bij Four Seasons.
-            </p>
-          </motion.div>
+            Onze Behandelingen
+          </h2>
+
+          <div className="space-y-10">
+            {treatmentSections.map((section) => (
+              <div key={section.title}>
+                <h3 className="text-lg font-bold mb-2 text-[#e9207e]">
+                  {section.title}
+                </h3>
+                <ul className="list-disc pl-5 space-y-1 text-gray-800">
+                  {section.items.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-12 flex justify-center" />
+      </section>
+
+      <section className="bg-[#eaeaea] py-16 text-black">
+        <div className="container mx-auto px-8 md:px-20">
+          <h2
+            className="text-xl lg:text-3xl font-semibold text-center mb-10"
+            style={{ fontFamily: "var(--font-roboto-slab)" }}
+          >
+            Wat levert onze behandeling op?
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-800 text-sm leading-relaxed">
+            <article className="space-y-3">
+              <h3 className="text-lg font-semibold">
+                🌿 Laminatie van Wimpers
+              </h3>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Natuurlijke lift en krul van de wimpers</li>
+                <li>Visuele verlenging en toename van de dichtheid</li>
+                <li>Voeding en versterking dankzij keratine en vitaminen</li>
+                <li>Langdurig effect - tot 6-8 weken</li>
+                <li>Tijdbesparend - geen dagelijkse mascara nodig</li>
+              </ul>
+            </article>
+
+            <article className="space-y-3">
+              <h3 className="text-lg font-semibold">
+                🎯 Voordelen van Wenkbrauwlaminering
+              </h3>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Zorgt voor perfecte vorm en fixatie van de haartjes</li>
+                <li>Verzorgde look zonder gel en wax</li>
+                <li>Versterkt en voedt de wenkbrauwen</li>
+                <li>Geen schade aan de haartjes</li>
+                <li>Langdurig effect - tot 6 weken</li>
+              </ul>
+            </article>
+
+            <article className="space-y-3">
+              <h3 className="text-lg font-semibold">
+                💧 HydraFacial Technologie
+              </h3>
+              <p>
+                Dit innovatieve huidverzorgingssysteem lost diverse problemen
+                op:
+              </p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Vertraagt veroudering</li>
+                <li>Vermindert fijne lijntjes</li>
+                <li>Vernauwt poriën</li>
+                <li>Verbetert huidtextuur en kleur</li>
+                <li>Lost hyperpigmentatieproblemen op</li>
+                <li>Helpt zonschade herstellen</li>
+                <li>Elimineert een vette, acnegevoelige huid</li>
+                <li>Elimineert rosacea</li>
+              </ul>
+              <p className="mt-2">
+                Snelle, effectieve en langdurige resultaten zijn direct na de
+                behandeling zichtbaar.
+              </p>
+            </article>
+
+            <article className="space-y-3">
+              <h3 className="text-lg font-semibold">🔬 Chemische Peelings</h3>
+              <p>De peelingprocedure wordt uitgevoerd voor:</p>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Behandeling van post-acne en littekens</li>
+                <li>Behandeling van acne (witte en zwarte comedonen)</li>
+                <li>Vergrote poriën</li>
+                <li>Verminderen of elimineren van fijne rimpeltjes</li>
+                <li>Behandeling van droge huidgedeelten</li>
+                <li>Behandeling bij pigmentatiestoornissen</li>
+                <li>Verbeteren van structuur en kleur van de huid</li>
+              </ul>
+            </article>
+          </div>
+
+          <div className="mt-12 flex justify-center" />
         </div>
       </section>
 
@@ -119,41 +193,6 @@ export default function InfoPage() {
               <OpeningHours text="white" />
             </div>
           </motion.div>{" "}
-        </div>
-      </section>
-
-      <section className="bg-[#6d6d6a] min-h-[20vh] flex flex-col justify-center py-10 lg:py-20">
-        <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 1 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.25 }}
-            className="w-full h-full"
-          >
-            <div className="space-y-6 w-full flex justfy-center text-center flex-col py-18">
-              <h2
-                className="text-xl lg:text-3xl font-semibold text-white text-center text-shadow-lg"
-                style={{ fontFamily: "var(--font-roboto-slab)" }}
-              >
-                De ultieme beauty ervaring bij kapsalon Four Seasons
-              </h2>
-              <p className="text-base flex flex-col text-white leading-relaxed text-center ">
-                Bij Kapsalon Four Seasons in Groningen geloven we dat de
-                perfecte beauty behandeling begint bij een gezonde basis. Daarom
-                bieden we naast onze haarbehandelingen ook een scala aan
-                schoonheidsbehandelingen aan. Of je nu op zoek bent naar een
-                ontspannende gezichtsbehandeling, een verjongende
-                huidbehandeling of een professionele make-up sessie, wij hebben
-                alles in huis om jouw schoonheid naar een hoger niveau te
-                tillen. Onze schoonheidsspecialiste is getraind in de nieuwste
-                technieken en werkt uitsluitend met hoogwaardige producten. Bij
-                Kapsalon Four Seasons kun je rekenen op een professionele en
-                persoonlijke service, zodat jij je na elke behandeling stralend
-                en vol zelfvertrouwen voelt.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
     </main>

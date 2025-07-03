@@ -52,7 +52,7 @@ export const createAppointment = async (appointmentData: {
 
     await emailjs.send(
       process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
-      process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE!,
+      process.env.NEXT_PUBLIC_EMAIL_JS_APPOINTMENT_TEMPLATE!,
       {
         to_email: appointmentData.email,
         name: appointmentData.name,
@@ -69,7 +69,7 @@ export const createAppointment = async (appointmentData: {
 
     await emailjs.send(
       process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
-      process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE!,
+      process.env.NEXT_PUBLIC_EMAIL_JS_APPOINTMENT_TEMPLATE!,
       {
         to_email: process.env.NEXT_PUBLIC_EMAIL_ADDRESS,
         name: appointmentData.name,

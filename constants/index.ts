@@ -210,3 +210,58 @@ export const services = [
     category: "manicure",
   },
 ]
+
+
+export const treatmentSections = [
+  {
+    title: "Gezichtscosmetologie",
+    items: [
+      "Specialistische consultatie",
+      "Gezichtsreiniging en andere gebieden (gezicht / rug / decolleté)",
+      "Handmatige, mechanische reiniging – comedonen, milia, acne-verzorging",
+      "Aanbevolen aanvullende verzorging door specialist na reiniging",
+    ]
+  },
+  {
+    title: "Gezichtsmassage",
+    items: [
+      "Lymfedrainage, myofasciaal, lifting",
+      "Verjongingsmassage - stimulatie van de huidstructuur en -elasticiteit"
+    ]
+  },
+  {
+    title: "HydraFacial & Hardwareverzorging",
+    items: [
+      "Basisprocedure voor diep huidvoorbereiding (reiniging, peeling, hydratatie, stimulatie)",
+      "Verjongingsprotocol met exfoliatie, serum en optioneel masker",
+      "Pigmentbehandeling – dermabrasie, serums, vitaminen",
+      "Diamond microdermabrasie, Jessner peelings, glycolzuur, retinol",
+      "Glyco 3 peel – alternatief voor injectie, effect van carboxytherapie"
+    ]
+  },
+  {
+    title: "Manicure",
+    items: [
+      "Hardware manicure, gecombineerde manicure",
+      "Gelnagelverlenging en design",
+      "Verzorgende hand- en voetbehandelingen voor verjonging",
+      "Groot aanbod lakken, coatings en spa-behandelingen"
+    ]
+  },
+  {
+    title: "Wimpers & Wenkbrauwen",
+    items: [
+      "Laminatie van wimpers en wenkbrauwen voor langdurige verzorging",
+      "Natuurlijke lift en krul met keratine en vitaminen",
+      "Versteviging zonder schade, resultaat tot 6-8 weken"
+    ]
+  },
+  {
+    title: "Huidproblemen & Peelings",
+    items: [
+      "Behandeling van acne, post-acne littekens en grove poriën",
+      "Verminderen van rimpels, pigmentatie en ruwe huid",
+      "Herstel van huidtextuur, hydratatie en kleur"
+    ]
+  }
+]
