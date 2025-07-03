@@ -2,59 +2,13 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import clsx from "clsx"
 import { ChevronRight } from "lucide-react"
+import { services } from "@/constants"
 
 type Props = {
   value: string
   onChange: (value: string) => void
   onNext: (category: string) => void
 }
-
-const services = [
-  { name: "Heren knippen", price: "€ 28,50", category: "knippen" },
-  { name: "Dames kort haar knippen", price: "€ 28,50", category: "knippen" },
-  {
-    name: "Dames half-lang haar knippen",
-    price: "€ 32,50",
-    category: "knippen",
-  },
-  { name: "Dames lang haar knippen", price: "€ 37,50", category: "knippen" },
-
-  { name: "Huidverzorging", price: "€45,00", category: "huidverzorging" },
-  {
-    name: "Vacuüm gezichtsreiniging",
-    price: "€50,00",
-    category: "huidverzorging",
-  },
-  {
-    name: "SOS schoonheidsprocedures",
-    price: "€55,00",
-    category: "huidverzorging",
-  },
-  { name: "Darsonval", price: "€40,00", category: "huidverzorging" },
-  {
-    name: "Liftende gezichtsmassage",
-    price: "€60,00",
-    category: "huidverzorging",
-  },
-  {
-    name: "Sculpturale gezichtsmassage",
-    price: "€65,00",
-    category: "huidverzorging",
-  },
-  {
-    name: "Anti-aging gezichtsmassage",
-    price: "€70,00",
-    category: "huidverzorging",
-  },
-  { name: "Pellen", price: "€35,00", category: "huidverzorging" },
-  { name: "Manicuristische diensten", price: "€40,00", category: "manicure" },
-  { name: "Correctie van nagelcoating", price: "€30,00", category: "manicure" },
-  { name: "Basismanicure", price: "€25,00", category: "manicure" },
-  { name: "Franse manicure", price: "€30,00", category: "manicure" },
-  { name: "Spa manicure", price: "€45,00", category: "manicure" },
-  { name: "Lak en biab-coating", price: "€50,00", category: "manicure" },
-  { name: "Nagel ontwerp", price: "€35,00", category: "manicure" },
-]
 
 export const Step1_Service = ({ value, onChange, onNext }: Props) => {
   const [error, setError] = useState("")
@@ -65,7 +19,6 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
   const handleScroll = () => {
     const el = listRef.current
     if (!el) return
-
     setAtTop(el.scrollTop === 0)
     setAtBottom(el.scrollTop + el.clientHeight >= el.scrollHeight - 1)
   }
@@ -73,7 +26,6 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
   useEffect(() => {
     const el = listRef.current
     if (!el) return
-
     handleScroll()
     el.addEventListener("scroll", handleScroll)
     return () => el.removeEventListener("scroll", handleScroll)
@@ -90,87 +42,73 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
     onNext(category)
   }
 
-  const knippen = services.filter((s) => s.category === "knippen")
-  const huidverzorging = services.filter((s) => s.category === "huidverzorging")
-  const manicure = services.filter((s) => s.category === "manicure")
+  // Group services by category
+  const groupedServices: Record<string, typeof services> = services.reduce(
+    (acc, service) => {
+      if (!acc[service.category]) {
+        acc[service.category] = []
+      }
+      acc[service.category].push(service)
+      return acc
+    },
+    {} as Record<string, typeof services>
+  )
+
+  const formatCategoryLabel = (category: string) => {
+    return (
+      category.charAt(0).toUpperCase() + category.slice(1).replace("-", " ")
+    )
+  }
 
   return (
     <div>
       <h3 className="m-2 text-sm font-light">Welke behandeling wenst u?</h3>
-      <div className="relative overflow-y-auto rounded-xl bg-white overflow-hidden border">
-        <div ref={listRef} className="overflow-y-auto max-h-96 ">
-          <div>
-            <h4 className="px-4 py-2 font-semibold mt-3 border-b border-gray-200 flex justify-center">
-              Knippen
-            </h4>
-            {knippen.map((service) => (
-              <div
-                key={service.name}
-                onClick={() => onChange(service.name)}
-                className={clsx(
-                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
-                  value === service.name
-                    ? "bg-[#e9207e] text-white"
-                    : "hover:bg-gray-100"
-                )}
-              >
-                <span>{service.name}</span>
-                <span className="text-lg font-light">{service.price}</span>
-              </div>
-            ))}
-          </div>
 
-          <div className="my-6" />
-
-          <div>
-            <h4 className="px-4 py-2 font-semibold border-b border-gray-200 flex justify-center">
-              Huidverzorging
-            </h4>
-            {huidverzorging.map((service) => (
-              <div
-                key={service.name}
-                onClick={() => onChange(service.name)}
-                className={clsx(
-                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
-                  value === service.name
-                    ? "bg-[#e9207e] text-white"
-                    : "hover:bg-gray-100"
-                )}
-              >
-                <span>{service.name}</span>
-                <span className="text-lg font-light">{service.price}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="my-6" />
-
-          <div>
-            <h4 className="px-4 py-2 font-semibold border-b border-gray-200 flex justify-center">
-              Manicure
-            </h4>
-            {manicure.map((service) => (
-              <div
-                key={service.name}
-                onClick={() => onChange(service.name)}
-                className={clsx(
-                  "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
-                  value === service.name
-                    ? "bg-[#e9207e] text-white"
-                    : "hover:bg-gray-100"
-                )}
-              >
-                <span>{service.name}</span>
-                <span className="text-lg font-light">{service.price}</span>
-              </div>
-            ))}
-          </div>
+      <div className="relative overflow-y-auto rounded-xl bg-white border">
+        <div ref={listRef} className="overflow-y-auto max-h-96">
+          {Object.entries(groupedServices).map(([category, items]) => (
+            <div key={category}>
+              <h4 className="px-4 py-2 font-semibold mt-5 border-b border-gray-200 flex justify-center">
+                {formatCategoryLabel(category)}
+              </h4>
+              {items.map((service) => (
+                <div
+                  key={service.name}
+                  onClick={() => onChange(service.name)}
+                  className={clsx(
+                    "w-full border-b border-gray-200 px-4 py-3 flex justify-between items-center cursor-pointer transition text-sm font-medium",
+                    value === service.name
+                      ? "bg-[#e9207e] text-white"
+                      : "hover:bg-gray-100"
+                  )}
+                >
+                  <span className="max-w-[70%]">{service.name}</span>
+                  <div className="flex flex-col items-end text-right">
+                    <span className="text-lg font-light flex">
+                      {service.price}
+                    </span>
+                    {service.time && (
+                      <span
+                        className={clsx(
+                          "text-xs -mt-1",
+                          value === service.name
+                            ? "text-white"
+                            : "text-gray-400"
+                        )}
+                      >
+                        {service.time}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
 
         {!atTop && (
           <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-300 to-transparent pointer-events-none z-10" />
         )}
-
         {!atBottom && (
           <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-t from-gray-300 to-transparent pointer-events-none z-10" />
         )}
