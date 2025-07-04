@@ -152,21 +152,8 @@ export default function InfoPage() {
             viewport={{ once: true, amount: 0.25 }}
             className="w-full h-full"
           >
-            <div className="space-y-6 w-full max-w-xl mt-15">
-              <h2
-                className="text-xl lg:text-2xl font-semibold text-black"
-                style={{ fontFamily: "var(--font-roboto-slab)" }}
-              >
-                Ervaren kapper bij Reitemakersrijge
-              </h2>
-              <div className="text-base flex flex-col text-gray-800 leading-7">
-                <p>Dames kort haar knippen € 28,50</p>
-                <p>Dames half-lang haar knippen € 32,50</p>
-                <p>Dames lang haar knippen € 37,50</p>
-                <p>Heren knippen € 28,50</p>
-              </div>
-
-              <div className="my-10">
+            <div className="space-y-6 w-full max-w-xl mt-5">
+              <div className="my-1">
                 <AppointmentDialog
                   title="Maak een afspraak"
                   open={openDialog}
