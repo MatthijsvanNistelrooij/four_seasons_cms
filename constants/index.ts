@@ -207,6 +207,24 @@ export const services = [
     category: "wenkbrauwen",
   },
 
+  /// LIPOSUCTIE
+  {
+    name: "Laser Liposuctie",
+    price: "€ 50,00",
+    time: "30 minuten",
+    category: "liposuctie",
+  },
+  {
+    name: "Laser Liposuctie + Cavitation",
+    price: "€ 80,00",
+    category: "liposuctie",
+  },
+  {
+    name: "Laser Liposuctie + RF Body Lifting",
+    price: "€ 80,00",
+    category: "liposuctie",
+  },
+
   /// MANICURE
   { name: "Manicuristische diensten", price: "€ 40,00", category: "manicure" },
   {
