@@ -1,15 +1,52 @@
+import hero1 from "../public/assets/barber4.jpg"
+import hero2 from "../public/assets/hero_4.jpg"
+import hero3 from "../public/images/skin_care_1.png"
+import manicure from "../public/assets/nails_1.png"
+import naildesigns from "../public/images/face_massage_2.png"
+
 export const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Over", path: "/about" },
+  { name: "Over", path: "/over-ons" },
   { name: "Behandelingen", path: "/behandelingen" },
   { name: "Beauty", path: "/beauty" },
+]
+
+export const slides = [
+  {
+    image: hero1,
+    heading: "Kapsalon Four Seasons",
+    subtext:
+      "Dames & herenkapper - Persoonlijke aandacht - 35+ jaar ervaring - Gespecialiseerd in opsteken, föhnen, stylen, verven, highlights en balayages",
+  },
+  {
+    image: hero2,
+    heading: "Gezichtsmassage",
+    subtext:
+      "Ontspan en geniet van een luxueuze gezichtsbehandeling in Groningen",
+  },
+  {
+    image: hero3,
+    heading: "Beauty behandelingen",
+    subtext:
+      "Ontspan en geniet van een luxueuze gezichtsbehandeling in Groningen",
+  },
+  {
+    image: manicure,
+    heading: "Manicure behandelingen",
+    subtext:
+      "Ontspan en geniet van een luxueuze manicure behandeling in Groningen",
+  },
+  {
+    image: naildesigns,
+    heading: "Nagel ontwerpen",
+    subtext: "Verwen jezelf met de mooiste nagel ontwerpen",
+  },
 ]
 
 export const services = [
   /// KNIPPEN
   { name: "Heren knippen", price: "€ 28,50", category: "knippen" },
   { name: "Dames kort haar knippen", price: "€ 28,50", category: "knippen" },
-
 
   /// COSMETOLOGIE
   {
@@ -206,7 +243,6 @@ export const services = [
   },
 ]
 
-
 export const treatmentSections = [
   {
     title: "Gezichtscosmetologie",
@@ -215,14 +251,14 @@ export const treatmentSections = [
       "Gezichtsreiniging en andere gebieden (gezicht / rug / decolleté)",
       "Handmatige, mechanische reiniging – comedonen, milia, acne-verzorging",
       "Aanbevolen aanvullende verzorging door specialist na reiniging",
-    ]
+    ],
   },
   {
     title: "Gezichtsmassage",
     items: [
       "Lymfedrainage, myofasciaal, lifting",
-      "Verjongingsmassage - stimulatie van de huidstructuur en -elasticiteit"
-    ]
+      "Verjongingsmassage - stimulatie van de huidstructuur en -elasticiteit",
+    ],
   },
   {
     title: "HydraFacial & Hardwareverzorging",
@@ -231,8 +267,8 @@ export const treatmentSections = [
       "Verjongingsprotocol met exfoliatie, serum en optioneel masker",
       "Pigmentbehandeling – dermabrasie, serums, vitaminen",
       "Diamond microdermabrasie, Jessner peelings, glycolzuur, retinol",
-      "Glyco 3 peel – alternatief voor injectie, effect van carboxytherapie"
-    ]
+      "Glyco 3 peel – alternatief voor injectie, effect van carboxytherapie",
+    ],
   },
   {
     title: "Manicure",
@@ -240,23 +276,23 @@ export const treatmentSections = [
       "Hardware manicure, gecombineerde manicure",
       "Gelnagelverlenging en design",
       "Verzorgende hand- en voetbehandelingen voor verjonging",
-      "Groot aanbod lakken, coatings en spa-behandelingen"
-    ]
+      "Groot aanbod lakken, coatings en spa-behandelingen",
+    ],
   },
   {
     title: "Wimpers & Wenkbrauwen",
     items: [
       "Laminatie van wimpers en wenkbrauwen voor langdurige verzorging",
       "Natuurlijke lift en krul met keratine en vitaminen",
-      "Versteviging zonder schade, resultaat tot 6-8 weken"
-    ]
+      "Versteviging zonder schade, resultaat tot 6-8 weken",
+    ],
   },
   {
     title: "Huidproblemen & Peelings",
     items: [
       "Behandeling van acne, post-acne littekens en grove poriën",
       "Verminderen van rimpels, pigmentatie en ruwe huid",
-      "Herstel van huidtextuur, hydratatie en kleur"
-    ]
-  }
+      "Herstel van huidtextuur, hydratatie en kleur",
+    ],
+  },
 ]

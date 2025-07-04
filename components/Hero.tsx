@@ -6,44 +6,8 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { CalendarRange, Phone, ChevronLeft, ChevronRight } from "lucide-react"
 
-import hero1 from "../public/assets/barber4.jpg"
-import hero2 from "../public/assets/hero_4.jpg"
-import hero3 from "../public/images/skin_care_1.png"
-import manicure from "../public/assets/nails_1.png"
-import naildesigns from "../public/images/face_massage_2.png"
 import Link from "next/link"
-
-const slides = [
-  {
-    image: hero1,
-    heading: "Kapsalon Four Seasons",
-    subtext:
-      "Dames & herenkapper - Persoonlijke aandacht - 35+ jaar ervaring - Gespecialiseerd in opsteken, föhnen, stylen, verven, highlights en balayages",
-  },
-  {
-    image: hero2,
-    heading: "Gezichtsmassage",
-    subtext:
-      "Ontspan en geniet van een luxueuze gezichtsbehandeling in Groningen",
-  },
-  {
-    image: hero3,
-    heading: "Beauty behandelingen",
-    subtext:
-      "Ontspan en geniet van een luxueuze gezichtsbehandeling in Groningen",
-  },
-  {
-    image: manicure,
-    heading: "Manicure behandelingen",
-    subtext:
-      "Ontspan en geniet van een luxueuze manicure behandeling in Groningen",
-  },
-  {
-    image: naildesigns,
-    heading: "Nagel ontwerpen",
-    subtext: "Verwen jezelf met de mooiste nagel ontwerpen",
-  },
-]
+import { slides } from "@/constants"
 
 type HeroProps = {
   onOpenDialog: () => void
