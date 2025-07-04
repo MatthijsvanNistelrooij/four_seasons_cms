@@ -2,7 +2,6 @@ import { useEffect } from "react"
 
 export default function InstagramEmbed() {
   useEffect(() => {
-    // Instagram script opnieuw laden wanneer component wordt geladen
     const script = document.createElement("script")
     script.setAttribute("src", "//www.instagram.com/embed.js")
     script.setAttribute("async", "")
