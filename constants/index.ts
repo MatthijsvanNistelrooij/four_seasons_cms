@@ -192,21 +192,6 @@ export const services = [
     category: "lichaamsmassage",
   },
 
-  /// WENKBRAUWEN & WIMPERS
-  { name: "Wenkbrauwen modelleren", price: "€ 30,00", category: "wenkbrauwen" },
-  { name: "Wenkbrauwen lamineren", price: "€ 40,00", category: "wenkbrauwen" },
-  { name: "Wimper lamineren", price: "€ 45,00", category: "wimpers" },
-  {
-    name: "Wenkbrauwcorrectie en -voorbereiding",
-    price: "€ 45,00",
-    category: "wenkbrauwen",
-  },
-  {
-    name: "Wenkbrauwen corrigeren met pincet/hars + verven",
-    price: "€ 35,00",
-    category: "wenkbrauwen",
-  },
-
   /// LIPOSUCTIE
   {
     name: "Laser Liposuctie",
@@ -223,6 +208,21 @@ export const services = [
     name: "Laser Liposuctie + RF Body Lifting",
     price: "€ 80,00",
     category: "liposuctie",
+  },
+
+  /// WENKBRAUWEN & WIMPERS
+  { name: "Wenkbrauwen modelleren", price: "€ 30,00", category: "wenkbrauwen" },
+  { name: "Wenkbrauwen lamineren", price: "€ 40,00", category: "wenkbrauwen" },
+  { name: "Wimper lamineren", price: "€ 45,00", category: "wimpers" },
+  {
+    name: "Wenkbrauwcorrectie en -voorbereiding",
+    price: "€ 45,00",
+    category: "wenkbrauwen",
+  },
+  {
+    name: "Wenkbrauwen corrigeren met pincet/hars + verven",
+    price: "€ 35,00",
+    category: "wenkbrauwen",
   },
 
   /// MANICURE
