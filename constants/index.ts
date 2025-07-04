@@ -194,18 +194,18 @@ export const services = [
 
   /// LIPOSUCTIE
   {
-    name: "Laser Liposuctie",
+    name: "Laser liposuctie",
     price: "€ 50,00",
     time: "30 minuten",
     category: "liposuctie",
   },
   {
-    name: "Laser Liposuctie + Cavitation",
+    name: "Laser liposuctie + cavitation",
     price: "€ 80,00",
     category: "liposuctie",
   },
   {
-    name: "Laser Liposuctie + RF Body Lifting",
+    name: "Laser liposuctie + RF body lifting",
     price: "€ 80,00",
     category: "liposuctie",
   },
