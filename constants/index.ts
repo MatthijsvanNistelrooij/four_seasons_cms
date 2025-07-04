@@ -1,8 +1,8 @@
-import hero1 from "../public/assets/barber4.jpg"
-import hero2 from "../public/assets/hero_4.jpg"
-import hero3 from "../public/images/skin_care_1.png"
-import manicure from "../public/assets/nails_1.png"
-import naildesigns from "../public/images/face_massage_2.png"
+import hero_1 from "../public/assets/hero_1.jpg"
+import hero_2 from "../public/assets/hero_2.png"
+import hero_3 from "../public/assets/hero_3.png"
+import hero_4 from "../public/assets/hero_4.png"
+import hero_5 from "../public/assets/hero_5.jpg"
 
 export const navLinks = [
   { name: "Home", path: "/" },
@@ -13,31 +13,31 @@ export const navLinks = [
 
 export const slides = [
   {
-    image: hero1,
+    image: hero_1,
     heading: "Kapsalon Four Seasons",
     subtext:
       "Dames & herenkapper - Persoonlijke aandacht - 35+ jaar ervaring - Gespecialiseerd in opsteken, föhnen, stylen, verven, highlights en balayages",
   },
   {
-    image: hero2,
+    image: hero_2,
     heading: "Gezichtsmassage",
     subtext:
       "Ontspan en geniet van een luxueuze gezichtsbehandeling in Groningen",
   },
   {
-    image: hero3,
+    image: hero_3,
     heading: "Beauty behandelingen",
     subtext:
       "Ontspan en geniet van een luxueuze gezichtsbehandeling in Groningen",
   },
   {
-    image: manicure,
+    image: hero_4,
     heading: "Manicure behandelingen",
     subtext:
       "Ontspan en geniet van een luxueuze manicure behandeling in Groningen",
   },
   {
-    image: naildesigns,
+    image: hero_5,
     heading: "Nagel ontwerpen",
     subtext: "Verwen jezelf met de mooiste nagel ontwerpen",
   },
