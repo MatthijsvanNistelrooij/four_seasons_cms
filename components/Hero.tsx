@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { CalendarRange, Phone, ChevronLeft, ChevronRight } from "lucide-react"
+import { CalendarRange, ChevronLeft, ChevronRight, Mail } from "lucide-react"
 
 import Link from "next/link"
 import { slides } from "@/constants"
@@ -129,7 +129,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                       className="bg-[#e9207e] hover:bg-pink-600 p-6 transition-transform w-48 md:w-64 font-bold duration-200 
                       rounded-full text-sm md:text-lg tracking-widest cursor-pointer hover:-translate-y-0.5 hover:shadow-pink-600 hover:shadow"
                     >
-                      <Phone className="w-4 h-4" /> {contactText}
+                      <Mail className="w-4 h-4" /> {contactText}
                     </Button>
                   </Link>
                 </div>

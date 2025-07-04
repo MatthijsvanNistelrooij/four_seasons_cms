@@ -1,12 +1,11 @@
-import { useEffect } from "react"
-
 export default function InstagramEmbed() {
-  useEffect(() => {
-    const script = document.createElement("script")
-    script.setAttribute("src", "//www.instagram.com/embed.js")
-    script.setAttribute("async", "")
-    document.body.appendChild(script)
-  }, [])
+  // useEffect(() => {
+  //   const script = document.createElement("script")
+  //   script.setAttribute("src", "//www.instagram.com/embed.js")
+  //   script.setAttribute("async", "")
+  //   document.body.appendChild(script)
+  // }, [])
+
   return (
     <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
       <div className="container mx-auto px-8 md:px-20 h-full">

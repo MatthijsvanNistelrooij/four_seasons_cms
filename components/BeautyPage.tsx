@@ -16,7 +16,7 @@ const BeautyPage = () => {
   return (
     <main className="">
       <section
-        className="relative w-full min-h-[30vh] md:h-[60vh] flex justify-center bg-center bg-cover"
+        className="relative w-full min-h-[30vh] md:h-[80vh] bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
         <div className="absolute inset-0 bg-black opacity-70"></div>

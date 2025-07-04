@@ -1,6 +1,6 @@
 "use client"
 
-import hero from "../public/images/face_massage_2.png"
+import hero from "../public/assets/hero_3.png"
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
 import { useState } from "react"
@@ -13,10 +13,10 @@ export default function InfoPage() {
   return (
     <main className="">
       <section
-        className="relative w-full min-h-[30vh] md:h-[50vh] bg-center bg-cover"
+        className="relative w-full min-h-[30vh] md:h-[80vh] bg-center bg-cover"
         style={{ backgroundImage: `url(${hero.src})` }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-70"></div>
 
         <div className="relative z-10 flex items-center h-full">
           <div className="container mx-auto px-8 md:px-20 flex flex-col py-20 text-white gap-12">
