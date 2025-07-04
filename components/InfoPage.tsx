@@ -1,6 +1,6 @@
 "use client"
 
-import hero from "../public/photos/face_massage_2.jpeg"
+import hero from "../public/images/face_massage_2.png"
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
 import { useState } from "react"
@@ -28,7 +28,7 @@ export default function InfoPage() {
               className="w-full h-full"
             >
               <h2
-                className="text-xl lg:text-3xl md:text-2xl text-start font-bold mb-4"
+                className="text-xl lg:text-3xl md:text-2xl text-center font-bold mb-4"
                 style={{ fontFamily: "var(--font-roboto-slab)" }}
               >
                 Klaar om te stralen? Boek nu een afspraak bij onze kapsalon met
@@ -79,9 +79,7 @@ export default function InfoPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-800 text-sm leading-relaxed">
             <article className="space-y-3">
-              <h3 className="text-lg font-semibold">
-                🌿 Laminatie van Wimpers
-              </h3>
+              <h3 className="text-lg font-semibold">Laminatie van Wimpers</h3>
               <ul className="list-disc list-inside space-y-1">
                 <li>Natuurlijke lift en krul van de wimpers</li>
                 <li>Visuele verlenging en toename van de dichtheid</li>
@@ -93,7 +91,7 @@ export default function InfoPage() {
 
             <article className="space-y-3">
               <h3 className="text-lg font-semibold">
-                🎯 Voordelen van Wenkbrauwlaminering
+                Voordelen van Wenkbrauwlaminering
               </h3>
               <ul className="list-disc list-inside space-y-1">
                 <li>Zorgt voor perfecte vorm en fixatie van de haartjes</li>
@@ -105,9 +103,7 @@ export default function InfoPage() {
             </article>
 
             <article className="space-y-3">
-              <h3 className="text-lg font-semibold">
-                💧 HydraFacial Technologie
-              </h3>
+              <h3 className="text-lg font-semibold">HydraFacial Technologie</h3>
               <p>
                 Dit innovatieve huidverzorgingssysteem lost diverse problemen
                 op:
@@ -129,7 +125,7 @@ export default function InfoPage() {
             </article>
 
             <article className="space-y-3">
-              <h3 className="text-lg font-semibold">🔬 Chemische Peelings</h3>
+              <h3 className="text-lg font-semibold">Chemische Peelings</h3>
               <p>De peelingprocedure wordt uitgevoerd voor:</p>
               <ul className="list-disc list-inside space-y-1">
                 <li>Behandeling van post-acne en littekens</li>

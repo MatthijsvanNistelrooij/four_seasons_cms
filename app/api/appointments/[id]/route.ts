@@ -7,7 +7,7 @@ const collectionId = appwriteConfig.appointmentsCollectionId
 
 export async function PUT(request: NextRequest) {
   try {
-    const id = request.nextUrl.pathname.split("/").pop() // Extract id from URL
+    const id = request.nextUrl.pathname.split("/").pop()
     const data = await request.json()
 
     if (!id || !data) {

@@ -8,9 +8,9 @@ import { CalendarRange, Phone, ChevronLeft, ChevronRight } from "lucide-react"
 
 import hero1 from "../public/assets/barber4.jpg"
 import hero2 from "../public/assets/hero_4.jpg"
-import hero3 from "../public/photos/skin_care_1.jpeg"
+import hero3 from "../public/images/skin_care_1.png"
 import manicure from "../public/assets/nails_1.png"
-import naildesigns from "../public/photos/nails_2.jpeg"
+import naildesigns from "../public/images/face_massage_2.png"
 import Link from "next/link"
 
 const slides = [

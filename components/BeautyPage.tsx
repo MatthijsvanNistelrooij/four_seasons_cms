@@ -1,7 +1,7 @@
 "use client"
 
 import hero from "../public/assets/hero_4.jpg"
-import skincare from "../public/photos/skin_care_2.jpeg"
+import skincare from "../public/images/skin_care_1.png"
 
 import OpeningHours from "./OpeningHours"
 import { AppointmentDialog } from "./AppointmentDialog"
