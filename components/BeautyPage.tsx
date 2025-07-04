@@ -1,6 +1,6 @@
 "use client"
 
-import hero from "../public/assets/hero_4.jpg"
+import hero from "../public/assets/hero_2.png"
 import skincare from "../public/images/skin_care_1.png"
 
 import OpeningHours from "./OpeningHours"
