@@ -31,9 +31,20 @@ const OpeningHours: React.FC<OpeningHoursProps> = () => {
             <span className="font-bold">Zo: </span>Gesloten
           </li>
           <li className="mt-4">
-            Tel:{" "}
-            <a href="tel:0630717774" className="underline">
-              06 307 17774
+            Tel:
+            <a href="tel:+31 6 38565652" className="underline">
+              +31 6 38 56 56 52
+            </a>
+          </li>
+          <li className="mt-4 mb-5">
+            Whatsapp:
+            <a href="tel:+380 67 970 2181" className="underline">
+              +380 67 970 2181
+            </a>
+          </li>
+          <li>
+            <a href="mailto:olgamarykey@ukr.net" className="underline">
+              olgamarykey@ukr.net
             </a>
           </li>
           <li>
