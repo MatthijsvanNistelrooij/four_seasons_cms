@@ -11,7 +11,7 @@ const Footer = () => {
         className="bg-black text-white py-24"
         style={{ fontFamily: "sans-serif" }}
       >
-        <div className="container mx-auto px-8 md:px-20 flex flex-col md:flex-row gap-12">
+        <div className="container mx-auto px-8 md:px-20 flex flex-col lg:flex-row gap-12">
           <div className="flex-shrink-0 flex flex-col">
             <Link href={"/"}>
               <div className="bg-[#e9207e] p-10 py-15 max-w-xs flex justify-center">
@@ -29,7 +29,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-end flex-1 gap-12">
+          <div className="flex flex-col lg:flex-row justify-end flex-1 gap-12">
             <div>
               <h3 className="font-semibold mb-4 text-[#e9207e]">Pagina’s</h3>
               <ul className="space-y-2">
