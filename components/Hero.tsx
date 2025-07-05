@@ -101,7 +101,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
               className="text-left text-xl lg:text-2xl max-w-xl"
             >
               <h1 className="leading-[2.3rem] md:leading-[2.7rem] md:mt-4">
-                <span className="bg-[rgba(0,0,0,0.3)] inline p-1">
+                <span className="bg-[rgba(0,0,0,0.5)] inline p-1">
                   {slides[index].subtext}
                 </span>
               </h1>
