@@ -9,7 +9,6 @@ import GoogleMaps from "@/components/GoogleMaps"
 import InfoSection from "@/components/InfoSection"
 import TreatmentSection from "@/components/TreatmentSection"
 import ShopSection from "@/components/ShopSection"
-import PricingSection from "@/components/PricingSection"
 import Head from "next/head"
 
 export default function Home() {
@@ -30,7 +29,7 @@ export default function Home() {
       <ShopSection />
       <GoogleMaps />
       <GoogleReviews />
-      <PricingSection />
+
       <div className="hidden">
         <AppointmentDialog
           open={openDialog}
