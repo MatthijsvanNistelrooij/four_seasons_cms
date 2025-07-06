@@ -1,4 +1,4 @@
-import hero_1 from "../public/assets/hero_1.jpg"
+import hero_1 from "../public/assets/four_seasons.jpeg"
 import hero_2 from "../public/assets/hero_2.png"
 import hero_3 from "../public/assets/hero_3.png"
 import hero_4 from "../public/assets/hero_4.jpg"
