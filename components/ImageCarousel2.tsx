@@ -4,14 +4,14 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-const images = [1, 2, 3, 4, 5, 6].map((i) => `/images/nails_${i}.jpeg`)
+const images = [1, 2, 3, 4, 5, 6].map((i) => `/images/photo_${i}.jpg`)
 
 const clampIndex = (i: number) => {
   const len = images.length
   return (i + len) % len
 }
 
-const CenteredImageCarousel = () => {
+const ImageCarousel2 = () => {
   const [centerIndex, setCenterIndex] = useState(0)
 
   const leftIndex = clampIndex(centerIndex - 1)
@@ -75,4 +75,4 @@ const CenteredImageCarousel = () => {
   )
 }
 
-export default CenteredImageCarousel
+export default ImageCarousel2

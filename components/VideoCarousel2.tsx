@@ -51,17 +51,19 @@ const VideoCarousel2 = () => {
   )
 
   return (
-    <div className="w-full flex justify-center items-center py-20">
-      <div className="relative flex items-center gap-6">
-        <VideoBox
-          src={videos[leftIndex]}
-          onClick={() => slideTo(centerIndex - 1)}
-        />
-        <VideoBox src={videos[centerIndex]} isCenter />
-        <VideoBox
-          src={videos[rightIndex]}
-          onClick={() => slideTo(centerIndex + 1)}
-        />
+    <div className="w-full overflow-hidden">
+      <div className="w-full flex justify-center items-center py-20">
+        <div className="relative flex items-center gap-6">
+          <VideoBox
+            src={videos[leftIndex]}
+            onClick={() => slideTo(centerIndex - 1)}
+          />
+          <VideoBox src={videos[centerIndex]} isCenter />
+          <VideoBox
+            src={videos[rightIndex]}
+            onClick={() => slideTo(centerIndex + 1)}
+          />
+        </div>
       </div>
     </div>
   )
