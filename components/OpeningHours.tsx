@@ -41,7 +41,7 @@ const OpeningHours: React.FC<OpeningHoursProps> = () => {
             </a>
           </li>
           <li className="mt-4 font-semibold mb-10">
-            Whatsapp:
+            Whatsapp:{" "}
             <a href="tel:+380 67 970 2181" className="underline:none">
               +380 67 970 2181
             </a>
