@@ -24,7 +24,18 @@ const CenteredImageCarousel = () => {
   return (
     <div className="w-full overflow-hidden">
       <div className="w-full flex justify-center items-center py-20">
-        <div className="relative flex items-center gap-6">
+        <motion.div
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          onDragEnd={(event, info) => {
+            if (info.offset.x < -50) {
+              slideTo(centerIndex + 1)
+            } else if (info.offset.x > 50) {
+              slideTo(centerIndex - 1)
+            }
+          }}
+          className="relative flex items-center gap-6"
+        >
           <motion.div
             onClick={() => slideTo(centerIndex - 1)}
             whileHover={{ scale: 1.05 }}
@@ -69,7 +80,7 @@ const CenteredImageCarousel = () => {
             />
             <div className="absolute inset-0 bg-white/50 group-hover:bg-white/0 transition duration-300 pointer-events-none" />
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
