@@ -64,7 +64,7 @@ const Footer = () => {
               <h3 className="font-semibold mb-4 text-[#e9207e]">
                 Openingstijden & contact
               </h3>
-              <OpeningHours />
+              <OpeningHours  />
             </div>
           </div>
         </div>

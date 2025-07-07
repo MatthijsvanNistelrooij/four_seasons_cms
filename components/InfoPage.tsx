@@ -185,7 +185,7 @@ export default function InfoPage() {
                 <h3 className="font-semibold mb-6 text-white text-xl">
                   Openingstijden & contact
                 </h3>
-                <OpeningHours text="white" />
+                <OpeningHours text="white" center={true} />
               </div>
             </motion.div>{" "}
           </div>

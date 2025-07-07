@@ -38,7 +38,7 @@ const GoogleMaps = () => {
             >
               Openingstijden & Contact
             </h1>
-            <OpeningHours />
+            <OpeningHours center={false} />
           </motion.div>
         </div>
       </section>

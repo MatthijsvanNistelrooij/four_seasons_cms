@@ -175,7 +175,7 @@ const BeautyPage = () => {
                 >
                   Openingstijden & contact
                 </h3>
-                <OpeningHours text="white" />
+                <OpeningHours text="white" center={true} />
               </div>
             </motion.div>
           </div>

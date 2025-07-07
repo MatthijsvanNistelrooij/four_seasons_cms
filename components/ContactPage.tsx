@@ -57,7 +57,7 @@ const ContactPage = () => {
           </p>
         </div>
 
-        <div className="container mx-auto md:px-20 flex justify-center flex-col lg:flex-row gap-5 max-w-4xl">
+        <div className="container mx-auto md:px-20 flex justify-center flex-col lg:flex-row gap-5 max-w-5xl">
           <div className="md:col-span-2 bg-white rounded-xl shadow-md p-8 w-full">
             <h2
               className="text-2xl font-semibold mb-6"
@@ -127,7 +127,7 @@ const ContactPage = () => {
             <h3 className="font-semibold mb-6 text-white text-xl">
               Openingstijden & contact
             </h3>
-            <OpeningHours text="white" />
+            <OpeningHours text="white" center={false} />
             <div className="w-full h-[400px] lg:h-[200px] mt-15">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d252.76340790475925!2d6.561769514987872!3d53.21515910574965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c9cd28d615ca8b%3A0x665498987f6ab9d4!2sKapsalon%20Four%20Seasons!5e1!3m2!1sen!2snl!4v1749164707339!5m2!1sen!2snl"
