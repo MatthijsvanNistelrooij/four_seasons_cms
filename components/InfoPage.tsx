@@ -81,7 +81,7 @@ export default function InfoPage() {
         <section className="bg-[#eaeaea] py-16 text-black">
           <div className="container mx-auto px-8 md:px-20">
             <h2
-              className="text-xl lg:text-3xl font-semibold text-center mb-10"
+              className="text-xl lg:text-3xl font-semibold text-center mb-20"
               style={{ fontFamily: "var(--font-roboto-slab)" }}
             >
               Wat levert onze behandeling op?

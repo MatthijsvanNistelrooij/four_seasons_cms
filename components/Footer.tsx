@@ -24,7 +24,7 @@ const Footer = () => {
                 />
               </div>
             </Link>
-            <div className="flex w-44 mt-12">
+            <div className="flex w-44 mt-5">
               Copyright © 2025 Kapsalon Four Seasons All rights reserved.
             </div>
           </div>
