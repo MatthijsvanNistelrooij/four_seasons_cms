@@ -30,30 +30,40 @@ const OpeningHours: React.FC<OpeningHoursProps> = () => {
           <li>
             <span className="font-bold">Zo: </span>Gesloten
           </li>
-          <li className="mt-4">
-            Tel:
-            <a href="tel:+31 6 38565652" className="underline">
-              +31 6 38 56 56 52
+          <li className="mt-4 font-semibold">
+            <a href="+31 630717774" className="underline:none">
+              tel. +31 630 717774
             </a>
           </li>
-          <li className="mt-4 mb-5">
+          <li className="mt-4 font-semibold">
+            <a href="tel:+31 6 38565652" className="underline:none">
+              tel. +31 6 38 56 56 52
+            </a>
+          </li>
+          <li className="mt-4 font-semibold mb-10">
             Whatsapp:
-            <a href="tel:+380 67 970 2181" className="underline">
+            <a href="tel:+380 67 970 2181" className="underline:none">
               +380 67 970 2181
             </a>
           </li>
           <li>
-            <a href="mailto:olgamarykey@ukr.net" className="underline">
+            <a href="mailto:olgamarykey@ukr.net" className="underline:none">
               olgamarykey@ukr.net
             </a>
           </li>
           <li>
-            <a href="mailto:nl.butterfly@hotmail.com" className="underline">
+            <a
+              href="mailto:nl.butterfly@hotmail.com"
+              className="underline:none"
+            >
               nl.butterfly@hotmail.com
             </a>
           </li>
           <li>
-            <a href="mailto:nl.fourseasons@gmail.com" className="underline">
+            <a
+              href="mailto:nl.fourseasons@gmail.com"
+              className="underline:none"
+            >
               nl.fourseasons@gmail.com
             </a>
           </li>

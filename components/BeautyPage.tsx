@@ -10,6 +10,11 @@ import { motion } from "framer-motion"
 import video_3 from "../videos/video_3.mp4"
 import Video from "next-video"
 import Head from "next/head"
+import ImageCarousel from "./ImageCarousel"
+import PhotoCarousel from "./PhotoCarousel"
+import VideoCarousel from "./VideoCarousel"
+import VideoCarousel2 from "./VideoCarousel2"
+import InstagramEmbed from "./InstagramEmbed"
 
 const BeautyPage = () => {
   const [openDialog, setOpenDialog] = useState(false)
@@ -68,6 +73,22 @@ const BeautyPage = () => {
             </div>
           </div>
         </section>
+        <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
+          <VideoCarousel />
+        </section>
+
+        <section className="bg-[#eaeaea]  min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
+          <ImageCarousel />
+        </section>
+        <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
+          <PhotoCarousel />
+        </section>
+
+        <section className="bg-[#eaeaea]  min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
+          <VideoCarousel2 />
+        </section>
+
+        <InstagramEmbed />
 
         <section className="bg-white min-h-[70vh] flex flex-col justify-center mb-20">
           <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-20 gap-12 lg:gap-12">
