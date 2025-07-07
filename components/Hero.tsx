@@ -47,7 +47,6 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
 
   return (
     <section className="relative bg-black overflow-hidden w-full flex flex-col justify-center min-h-[80vh] xl:h-[80vh]">
-      {/* Static background image (not affected by drag) */}
       <motion.div
         key={`bg-${index}`}
         initial={{ opacity: 0 }}
@@ -64,7 +63,6 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
         />
       </motion.div>
 
-      {/* Foreground content with drag gesture */}
       <motion.div
         key={`slide-${index}`}
         drag="x"
@@ -103,7 +101,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
             >
               <motion.h1
                 key={`heading-${index}`}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-4xl lg:text-6xl font-bold mb-2"
@@ -128,9 +126,9 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
               <div className="mt-6 md:mt-8">
                 <motion.div
                   key={`contact-${index}`}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
                 >
                   <div className="flex flex-col md:flex-row gap-2">
                     <Button
