@@ -37,7 +37,7 @@ const OpeningHours: React.FC<OpeningHoursProps> = () => {
           </li>
           <li className="mt-1 font-semibold">
             <a href="tel:+31 6 38565652" className="underline:none">
-              tel. +31 6 38 56 56 52
+              tel. +31 6 385 656 52
             </a>
           </li>
           <li className="mt-4 font-semibold mb-10">
