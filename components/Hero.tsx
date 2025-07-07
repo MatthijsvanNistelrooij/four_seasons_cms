@@ -99,7 +99,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                 key={`heading-${index}`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
                 className="text-4xl lg:text-6xl font-bold mb-2"
               >
                 {slides[index].heading}
@@ -109,7 +109,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                 key={`sub-${index}`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
+                transition={{ duration: 1, delay: 1.2 }}
                 className="text-left text-xl lg:text-2xl max-w-xl"
               >
                 <h1 className="leading-[2.3rem] md:leading-[2.7rem] md:mt-4">
@@ -124,7 +124,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                   key={`contact-${index}`}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1 }}
+                  transition={{ duration: 1, delay: 1.8 }}
                 >
                   <div className="flex flex-col md:flex-row gap-2">
                     <Button
@@ -138,7 +138,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                     <Link href={"/contact"}>
                       <Button
                         style={{ fontFamily: "sans-serif" }}
-                        className="bg-[#e9207e] hover:bg-pink-600 p-6 transition-transform w-48 md:w-64 font-bold duration-200 
+                        className="bg-[#e9207e] hover:bg-pink-600 flex p-6 transition-transform w-40 md:w-56 font-bold duration-200 
                       rounded-full text-sm md:text-lg tracking-widest cursor-pointer hover:-translate-y-0.5 hover:shadow-pink-600 hover:shadow"
                       >
                         <Mail className="w-4 h-4" /> {contactText}
