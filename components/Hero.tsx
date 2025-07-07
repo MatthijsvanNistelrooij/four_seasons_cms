@@ -48,7 +48,13 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
   return (
     <section className="relative bg-black overflow-hidden w-full flex flex-col justify-center min-h-[80vh] xl:h-[80vh]">
       {/* Static background image (not affected by drag) */}
-      <div className="absolute inset-0 z-0">
+      <motion.div
+        key={`bg-${index}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="absolute inset-0 z-0 bg-black"
+      >
         <Image
           src={slides[index].image}
           alt="Slide"
@@ -56,7 +62,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
           className="object-cover opacity-40"
           priority
         />
-      </div>
+      </motion.div>
 
       {/* Foreground content with drag gesture */}
       <motion.div
@@ -99,7 +105,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                 key={`heading-${index}`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-4xl lg:text-6xl font-bold mb-2"
               >
                 {slides[index].heading}
