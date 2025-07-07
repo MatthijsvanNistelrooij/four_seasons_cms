@@ -113,7 +113,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                 key={`sub-${index}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3}}
+                transition={{ duration: 0.5, delay: 0.5}}
                 className="text-left text-xl lg:text-2xl max-w-xl"
               >
                 <h1 className="leading-[2.3rem] md:leading-[2.7rem] mt-2">
