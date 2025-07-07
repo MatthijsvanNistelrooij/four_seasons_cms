@@ -63,6 +63,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         className="w-full h-full"
+        style={{ touchAction: "pan-y" }}
       >
         <div className="absolute inset-0 z-0">
           <Image
