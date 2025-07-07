@@ -103,7 +103,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                 key={`heading-${index}`}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-4xl lg:text-6xl font-bold mb-2"
               >
                 {slides[index].heading}
