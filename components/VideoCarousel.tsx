@@ -53,7 +53,18 @@ const VideoCarousel = () => {
   return (
     <div className="w-full overflow-hidden">
       <div className="w-full flex justify-center items-center py-20">
-        <div className="relative flex items-center gap-6">
+        <motion.div
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          onDragEnd={(event, info) => {
+            if (info.offset.x < -50) {
+              slideTo(centerIndex + 1)
+            } else if (info.offset.x > 50) {
+              slideTo(centerIndex - 1)
+            }
+          }}
+          className="relative flex items-center gap-6"
+        >
           <VideoBox
             src={videos[leftIndex]}
             onClick={() => slideTo(centerIndex - 1)}
@@ -63,7 +74,7 @@ const VideoCarousel = () => {
             src={videos[rightIndex]}
             onClick={() => slideTo(centerIndex + 1)}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   )
