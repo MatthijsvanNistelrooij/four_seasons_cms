@@ -126,7 +126,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
               <div className="mt-8 md:mt-8">
                 <motion.div
                   key={`contact-${index}`}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                 >
