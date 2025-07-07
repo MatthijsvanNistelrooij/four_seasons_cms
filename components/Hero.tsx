@@ -47,6 +47,18 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
 
   return (
     <section className="relative bg-black overflow-hidden w-full flex flex-col justify-center min-h-[80vh] xl:h-[80vh]">
+      {/* Static background image (not affected by drag) */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={slides[index].image}
+          alt="Slide"
+          fill
+          className="object-cover opacity-40"
+          priority
+        />
+      </div>
+
+      {/* Foreground content with drag gesture */}
       <motion.div
         key={`slide-${index}`}
         drag="x"
@@ -59,22 +71,9 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
           }
         }}
         whileTap={{ scale: 1 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        className="w-full h-full"
+        className="relative z-10 w-full h-full"
         style={{ touchAction: "pan-y" }}
       >
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={slides[index].image}
-            alt="Slide"
-            fill
-            className="object-cover opacity-40"
-            priority
-          />
-        </div>
-
         <div className="flex container w-full h-full mx-auto items-center py-4 px-8 md:px-20">
           <div className="w-full">
             <button
@@ -151,24 +150,25 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
             </div>
           </div>
         </div>
+
+        <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-20 flex gap-5">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setIndex(i)
+                startAutoSlide()
+              }}
+              className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
+                index === i
+                  ? "border-2 border-white bg-transparent"
+                  : "bg-gray-800 border-2 border-transparent"
+              }`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
       </motion.div>
-      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-20 flex gap-5">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => {
-              setIndex(i)
-              startAutoSlide()
-            }}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
-              index === i
-                ? "border-2 border-white bg-transparent"
-                : "bg-gray-800 border-2 border-transparent"
-            }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
     </section>
   )
 }
