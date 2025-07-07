@@ -81,11 +81,11 @@ const BeautyPage = () => {
           <ImageCarousel />
         </section>
         <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
-          <PhotoCarousel />
+          <VideoCarousel2 />
         </section>
 
         <section className="bg-[#eaeaea]  min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
-          <VideoCarousel2 />
+          <PhotoCarousel />
         </section>
 
         <InstagramEmbed />
@@ -181,7 +181,7 @@ const BeautyPage = () => {
           </div>
         </section>
         <section
-          className="relative w-full min-h-[30vh] md:h-[60vh] flex justify-center bg-center bg-cover"
+          className="relative w-full min-h-[30vh] md:h-[100vh] flex justify-center bg-center bg-cover"
           style={{ backgroundImage: `url(${skincare.src})` }}
         >
           <div className="absolute inset-0 bg-black opacity-70"></div>

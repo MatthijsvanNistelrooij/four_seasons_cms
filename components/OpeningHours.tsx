@@ -30,19 +30,19 @@ const OpeningHours: React.FC<OpeningHoursProps> = () => {
           <li>
             <span className="font-bold">Zo: </span>Gesloten
           </li>
-          <li className="mt-4 font-semibold">
+          <li className="mt-10 font-semibold">
             <a href="+31 630717774" className="underline:none">
               tel. +31 6 307 17774
             </a>
           </li>
           <li className="mt-1 font-semibold">
             <a href="tel:+31 6 38565652" className="underline:none">
-              tel. +31 6 385 656 52
+              tel. +31 6 385 65652
             </a>
           </li>
           <li className="mt-4 font-semibold mb-10">
             Whatsapp:{" "}
-            <a href="tel:+380 67 970 2181" className="underline:none">
+            <a href="tel:+380 679702181" className="underline:none">
               +380 67 970 2181
             </a>
           </li>
