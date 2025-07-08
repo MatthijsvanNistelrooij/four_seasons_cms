@@ -7,6 +7,8 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { treatmentSections } from "@/constants"
 import Head from "next/head"
+import VideoCarousel2 from "./VideoCarousel2"
+import VideoCarousel from "./VideoCarousel"
 
 export default function InfoPage() {
   const [openDialog, setOpenDialog] = useState(false)
@@ -60,19 +62,24 @@ export default function InfoPage() {
               Onze Behandelingen
             </h1>
 
-            <div className="space-y-10">
-              {treatmentSections.map((section) => (
-                <div key={section.title}>
-                  <h3 className="text-lg font-bold mb-2 text-[#e9207e]">
-                    {section.title}
-                  </h3>
-                  <ul className="list-disc pl-5 space-y-1 text-gray-800">
-                    {section.items.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 text-gray-800 text-sm leading-relaxed">
+              <div className="space-y-10">
+                {treatmentSections.map((section) => (
+                  <div key={section.title}>
+                    <h3 className="text-lg font-bold mb-2 text-[#e9207e]">
+                      {section.title}
+                    </h3>
+                    <ul className="list-disc pl-5 space-y-1 text-gray-800">
+                      {section.items.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="">
+                <VideoCarousel />
+              </div>
             </div>
           </div>
           <div className="mt-12 flex justify-center" />
@@ -87,7 +94,7 @@ export default function InfoPage() {
               Wat levert onze behandeling op?
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-800 text-sm leading-relaxed">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 text-gray-800 text-sm leading-relaxed">
               <article className="space-y-3">
                 <h3 className="text-lg font-semibold">Laminatie van Wimpers</h3>
                 <ul className="list-disc list-inside space-y-1">
@@ -164,8 +171,9 @@ export default function InfoPage() {
               viewport={{ once: true, amount: 0.25 }}
               className="w-full h-full"
             >
-              <div className="space-y-6 w-full max-w-xl mt-5">
-                <div className="my-1">
+              <div className="space-y-2 w-full justify-center max-w-xl">
+                <VideoCarousel2 />
+                <div className="flex justify-center">
                   <AppointmentDialog
                     title="Maak een afspraak"
                     open={openDialog}

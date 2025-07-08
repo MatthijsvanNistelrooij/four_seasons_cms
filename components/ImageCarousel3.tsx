@@ -4,14 +4,14 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-const images = [1, 2, 3, 4, 5, 6].map((i) => `/images/photo_${i}.jpg`)
+const images = [1, 2, 3, 4, 5, 6].map((i) => `/images/eyes_${i}.jpeg`)
 
 const clampIndex = (i: number) => {
   const len = images.length
   return (i + len) % len
 }
 
-const ImageCarousel2 = () => {
+const CenteredImageCarousel3 = () => {
   const [centerIndex, setCenterIndex] = useState(0)
 
   const leftIndex = clampIndex(centerIndex - 1)
@@ -22,7 +22,7 @@ const ImageCarousel2 = () => {
   }
 
   return (
-    <div className="w-full overflow-hidden bg-[#eaeaea]">
+    <div className="w-full overflow-hidden">
       <div className="w-full flex justify-center items-center pb-20">
         <motion.div
           drag="x"
@@ -89,4 +89,4 @@ const ImageCarousel2 = () => {
   )
 }
 
-export default ImageCarousel2
+export default CenteredImageCarousel3
