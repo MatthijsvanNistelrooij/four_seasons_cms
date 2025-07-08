@@ -22,7 +22,7 @@ const CenteredImageCarousel3 = () => {
   }
 
   return (
-    <div className="w-full overflow-hidden">
+    <section className="bg-white min-h-[15vh] flex flex-col justify-center pb-10 lg:pb-20">
       <div className="w-full flex justify-center items-center pb-20">
         <motion.div
           drag="x"
@@ -85,7 +85,7 @@ const CenteredImageCarousel3 = () => {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+    </section>
   )
 }
 
