@@ -22,8 +22,8 @@ const CenteredImageCarousel = () => {
   }
 
   return (
-    <section className="bg-white min-h-[15vh] flex flex-col justify-center pb-10 lg:py-20">
-      <div className="w-full flex justify-center items-center py-20 overflow-x-scroll">
+    <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-20 overflow-hidden w-full">
+      <div className="w-full flex justify-center items-center py-10">
         <motion.div
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}

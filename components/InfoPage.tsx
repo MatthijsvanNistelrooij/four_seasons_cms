@@ -171,8 +171,7 @@ export default function InfoPage() {
               viewport={{ once: true, amount: 0.25 }}
               className="w-full h-full"
             >
-              <div className="space-y-2 w-full justify-center max-w-xl">
-                <VideoCarousel2 />
+              <div className="space-y-2 w-full max-w-xl">
                 <div className="flex justify-center">
                   <AppointmentDialog
                     title="Maak een afspraak"
@@ -180,6 +179,7 @@ export default function InfoPage() {
                     onOpenChange={setOpenDialog}
                   />
                 </div>
+                <VideoCarousel2 />
               </div>
             </motion.div>
             <motion.div

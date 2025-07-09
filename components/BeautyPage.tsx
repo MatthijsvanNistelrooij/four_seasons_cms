@@ -61,7 +61,7 @@ const BeautyPage = () => {
 
         <section className="bg-[#eaeaea] min-h-[15vh] flex flex-col justify-center">
           <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-20 gap-12 lg:gap-12">
-            {/* <ImageCarousel2 /> */}
+            <ImageCarousel2 />
             <motion.div
               initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -95,8 +95,6 @@ const BeautyPage = () => {
         </section>
 
         <ImageCarousel />
-        <ImageCarousel2 />
-        {/* <ImageCarousel3 /> */}
 
         <section className="bg-[#eaeaea] min-h-[70vh] flex flex-col justify-center">
           <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-20 gap-12 lg:gap-12">
