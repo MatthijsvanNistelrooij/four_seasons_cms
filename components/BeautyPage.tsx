@@ -9,8 +9,8 @@ import { motion } from "framer-motion"
 import video_3 from "../videos/video_3.mp4"
 import Video from "next-video"
 import ImageCarousel from "./ImageCarousel"
-import ImageCarousel2 from "./ImageCarousel2"
-import ImageCarousel3 from "./ImageCarousel3"
+// import ImageCarousel2 from "./ImageCarousel2"
+// import ImageCarousel3 from "./ImageCarousel3"
 import Header from "./Header"
 import InstagramEmbed from "./InstagramEmbed"
 import NextHeader from "./shared/NextHeader"
@@ -54,13 +54,13 @@ const BeautyPage = () => {
                 </p>
               </div>
             </motion.div>
-            <ImageCarousel3 />
+            {/* <ImageCarousel3 /> */}
           </div>
         </section>
 
         <section className="bg-[#eaeaea] min-h-[15vh] flex flex-col justify-center mb-20">
           <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-20 gap-12 lg:gap-12">
-            <ImageCarousel2 />
+            {/* <ImageCarousel2 /> */}
             <motion.div
               initial={{ opacity: 1, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
