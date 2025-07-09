@@ -32,7 +32,7 @@ const VideoCarousel = () => {
     <motion.div
       onClick={onClick}
       whileHover={!isCenter ? { scale: 1.05 } : undefined}
-      className={`relative overflow-hidden shadow-2xl rounded-xl transition duration-300 ${
+      className={`relative overflow-hidden shadow-2xl shadow-white rounded-xl transition duration-300 ${
         isCenter ? "w-80 h-150" : "w-40 h-72 cursor-pointer group"
       }`}
     >
