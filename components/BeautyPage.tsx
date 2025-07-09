@@ -8,25 +8,20 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import video_3 from "../videos/video_3.mp4"
 import Video from "next-video"
-import Head from "next/head"
 import ImageCarousel from "./ImageCarousel"
 import ImageCarousel2 from "./ImageCarousel2"
 import ImageCarousel3 from "./ImageCarousel3"
 import Header from "./Header"
 import InstagramEmbed from "./InstagramEmbed"
+import NextHeader from "./shared/NextHeader"
 
 const BeautyPage = () => {
   const [openDialog, setOpenDialog] = useState(false)
 
   return (
     <>
-      <Head>
-        <title>Beauty | Kapsalon Four Seasons Groningen</title>
-        <meta
-          name="description"
-          content="Leer ons team kennen en ontdek waarom Kapsalon Four Seasons in Groningen dé plek is voor haar- en schoonheidsbehandelingen."
-        />
-      </Head>
+      <NextHeader />
+
       <main className="">
         <Header />
 

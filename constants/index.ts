@@ -3,6 +3,8 @@ import hero_2 from "../public/assets/hero_2.png"
 import hero_3 from "../public/assets/hero_3.png"
 import hero_4 from "../public/assets/hero_4.jpg"
 import hero_5 from "../public/assets/hero_5.jpg"
+import logo_header from "@/public/assets/logo_header.png"
+import treatment_1 from "@/public/assets/treatment_1.png"
 
 export const navLinks = [
   { name: "Home", path: "/" },
@@ -312,5 +314,26 @@ export const treatmentSections = [
       "Verminderen van rimpels, pigmentatie en ruwe huid",
       "Herstel van huidtextuur, hydratatie en kleur",
     ],
+  },
+]
+
+export const pageSections = [
+  {
+    id: "section-1",
+    heading: "Ervaren dames & herenkapper in Groningen",
+    description:
+      "Bij ons kun je terecht voor een professionele en betaalbare knipbeurt. Wil je een nieuwe look uitproberen? Wij staan voor je klaar met een passend advies. Ook als je jouw haar wil laten bijwerken of gewoon wilt ontspannen met een kappersbehandeling, helpen we je graag. Als vertrouwde kapper in Groningen, begrijpen we dat jouw tijd kostbaar is. De combinatie van ruim 35 jaar ervaring en persoonlijke aandacht, maken het mogelijk om snel en efficiënt te werken zonder afbreuk te doen aan de kwaliteit. Dat maakt onze kapsalon zo uniek én gezellig!",
+    image: logo_header,
+    bgColor: "white",
+    imageLeft: false,
+  },
+  {
+    id: "section-2",
+    heading: "Ook voor beauty behandelingen",
+    description:
+      "Je gezicht weer laten stralen? Wees klaar voor elke gelegenheid met onze beauty behandelingen. U bent bij ons aan het juiste adres voor harsen, wimpers kleuren, tijdelijke wimpers, lamineren van de wimpers en wenkbrauwen, make-up. liftende gezichtmassages, gezichtsverzorgingen en wenkbrauw ontwerpen.",
+    image: treatment_1,
+    bgColor: "#eaeaea",
+    imageLeft: false,
   },
 ]

@@ -9,20 +9,15 @@ import GoogleMaps from "@/components/GoogleMaps"
 import InfoSection from "@/components/InfoSection"
 import TreatmentSection from "@/components/TreatmentSection"
 import ShopSection from "@/components/ShopSection"
-import Head from "next/head"
+import NextHeader from "@/components/shared/NextHeader"
 
 export default function Home() {
   const [openDialog, setOpenDialog] = useState(false)
 
   return (
     <div className="text-black flex flex-col justify-center">
-      <Head>
-        <title>Welkom | Kapsalon Four Seasons Groningen</title>
-        <meta
-          name="description"
-          content="Leer ons team kennen en ontdek waarom Kapsalon Four Seasons in Groningen dé plek is voor haar- en schoonheidsbehandelingen."
-        />
-      </Head>
+      <NextHeader />
+
       <Hero onOpenDialog={() => setOpenDialog(true)} />
       <InfoSection />
       <TreatmentSection />
