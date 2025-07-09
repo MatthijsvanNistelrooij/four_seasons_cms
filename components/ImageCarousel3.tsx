@@ -11,7 +11,7 @@ const clampIndex = (i: number) => {
   return (i + len) % len
 }
 
-const CenteredImageCarousel3 = () => {
+const ImageCarousel3 = () => {
   const [centerIndex, setCenterIndex] = useState(0)
 
   const leftIndex = clampIndex(centerIndex - 1)
@@ -22,8 +22,8 @@ const CenteredImageCarousel3 = () => {
   }
 
   return (
-    <section className="bg-white min-h-[15vh] flex flex-col justify-center pb-10 lg:pb-20">
-      <div className="w-full flex justify-center items-center pb-20">
+    <section className="bg-white min-h-[15vh] flex flex-col justify-center pb-10 lg:py-20">
+      <div className="w-full flex justify-center items-center py-20 overflow-x-scroll">
         <motion.div
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
@@ -89,4 +89,4 @@ const CenteredImageCarousel3 = () => {
   )
 }
 
-export default CenteredImageCarousel3
+export default ImageCarousel3

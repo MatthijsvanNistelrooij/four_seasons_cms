@@ -51,8 +51,8 @@ const VideoCarousel2 = () => {
   )
 
   return (
-    <section className="bg-white min-h-[15vh] flex flex-col justify-center pb-10 overflow-hidden">
-      <div className="w-full flex justify-center items-center">
+    <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-20 overflow-hidden">
+      <div className="w-full flex justify-center items-center py-10">
         <motion.div
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}

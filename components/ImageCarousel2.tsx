@@ -22,8 +22,8 @@ const ImageCarousel2 = () => {
   }
 
   return (
-    <section className="bg-[#eaeaea] min-h-[15vh] flex flex-col justify-center pb-10 lg:pb-20">
-      <div className="w-full flex justify-center items-center pb-20">
+    <section className="bg-[#eaeaea] min-h-[15vh] flex flex-col justify-center pb-10 lg:py-20">
+      <div className="w-full flex justify-center items-center py-20">
         <motion.div
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
