@@ -11,9 +11,9 @@ import Video from "next-video"
 import Head from "next/head"
 import ImageCarousel from "./ImageCarousel"
 import ImageCarousel2 from "./ImageCarousel2"
-import InstagramEmbed from "./InstagramEmbed"
 import ImageCarousel3 from "./ImageCarousel3"
 import Header from "./Header"
+import InstagramEmbed from "./InstagramEmbed"
 
 const BeautyPage = () => {
   const [openDialog, setOpenDialog] = useState(false)
@@ -99,7 +99,6 @@ const BeautyPage = () => {
         </section>
 
         <ImageCarousel />
-        <InstagramEmbed />
 
         <section className="bg-[#eaeaea] min-h-[70vh] flex flex-col justify-center">
           <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-20 gap-12 lg:gap-12">
@@ -170,6 +169,7 @@ const BeautyPage = () => {
           </div>
         </section>
 
+        <InstagramEmbed />
         <section
           className="relative w-full min-h-[30vh] md:h-[100vh] flex justify-center bg-center bg-cover"
           style={{ backgroundImage: `url(${skincare.src})` }}

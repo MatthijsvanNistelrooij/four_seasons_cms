@@ -195,7 +195,7 @@ export default function InfoPage() {
                 </h3>
                 <OpeningHours text="white" center={true} />
               </div>
-            </motion.div>{" "}
+            </motion.div>
           </div>
         </section>
       </main>
