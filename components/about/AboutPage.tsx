@@ -1,14 +1,14 @@
 "use client"
 
 import Image from "next/image"
-import hero from "../public/assets/barber.jpg"
-import OpeningHours from "./OpeningHours"
-import { AppointmentDialog } from "./AppointmentDialog"
+import hero from "../../public/assets/barber.jpg"
+import OpeningHours from "../shared/OpeningHours"
+import { AppointmentDialog } from "../modals/AppointmentDialog"
 import { useState } from "react"
-import petros from "../public/assets/petros.png"
-import olga from "../public/assets/olga.png"
+import petros from "../../public/assets/petros.png"
+import olga from "../../public/assets/olga.png"
 import { motion } from "framer-motion"
-import NextHeader from "./shared/NextHeader"
+import NextHeader from "../shared/NextHeader"
 
 export default function AboutPage() {
   const [openDialog, setOpenDialog] = useState(false)

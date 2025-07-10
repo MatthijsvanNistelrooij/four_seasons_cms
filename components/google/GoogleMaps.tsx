@@ -1,5 +1,5 @@
 import React from "react"
-import OpeningHours from "./OpeningHours"
+import OpeningHours from "../shared/OpeningHours"
 import { motion } from "framer-motion"
 
 const GoogleMaps = () => {

@@ -1,20 +1,20 @@
 "use client"
 
-import skincare from "../public/images/skin_care_1.png"
+import skincare from "../../public/images/skin_care_1.png"
 
-import OpeningHours from "./OpeningHours"
-import { AppointmentDialog } from "./AppointmentDialog"
+import OpeningHours from "../shared/OpeningHours"
+import { AppointmentDialog } from "../modals/AppointmentDialog"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import video_3 from "../videos/video_3.mp4"
+import video_3 from "../../videos/video_3.mp4"
 import Video from "next-video"
-import ImageCarousel from "./ImageCarousel"
-import ImageCarousel3 from "./ImageCarousel3"
-import ImageCarousel2 from "./ImageCarousel2"
+import ImageCarousel from "../image/ImageCarousel"
+import ImageCarousel3 from "../image/ImageCarousel3"
+import ImageCarousel2 from "../image/ImageCarousel2"
 
 import Header from "./Header"
 import InstagramEmbed from "./InstagramEmbed"
-import NextHeader from "./shared/NextHeader"
+import NextHeader from "../shared/NextHeader"
 
 const BeautyPage = () => {
   const [openDialog, setOpenDialog] = useState(false)

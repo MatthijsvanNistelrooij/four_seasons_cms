@@ -1,14 +1,14 @@
 "use client"
 
-import Hero from "@/components/Hero"
+import Hero from "@/components/home/Hero"
 import { useState } from "react"
-import { AppointmentDialog } from "@/components/AppointmentDialog"
+import { AppointmentDialog } from "@/components/modals/AppointmentDialog"
 
-import GoogleReviews from "@/components/GoogleReviews"
-import GoogleMaps from "@/components/GoogleMaps"
-import InfoSection from "@/components/InfoSection"
-import TreatmentSection from "@/components/TreatmentSection"
-import ShopSection from "@/components/ShopSection"
+import GoogleReviews from "@/components/google/GoogleReviews"
+import GoogleMaps from "@/components/google/GoogleMaps"
+import InfoSection from "@/components/home/InfoSection"
+import TreatmentSection from "@/components/home/TreatmentSection"
+import ShopSection from "@/components/home/ShopSection"
 import NextHeader from "@/components/shared/NextHeader"
 
 export default function Home() {

@@ -2,7 +2,7 @@
 import { useState } from "react"
 
 import { FaFacebookF, FaInstagram } from "react-icons/fa"
-import { AppointmentDialog } from "../AppointmentDialog"
+import { AppointmentDialog } from "../modals/AppointmentDialog"
 import Link from "next/link"
 
 const TopNav = () => {

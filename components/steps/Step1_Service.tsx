@@ -42,7 +42,6 @@ export const Step1_Service = ({ value, onChange, onNext }: Props) => {
     onNext(category)
   }
 
-  // Group services by category
   const groupedServices: Record<string, typeof services> = services.reduce(
     (acc, service) => {
       if (!acc[service.category]) {

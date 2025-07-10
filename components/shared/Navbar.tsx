@@ -1,6 +1,6 @@
 import Link from "next/link"
 import React, { useState } from "react"
-import logo from "../public/assets/kapsalon-four-seasons-groningen.png"
+import logo from "../../public/assets/kapsalon-four-seasons-groningen.png"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { navLinks } from "@/constants"

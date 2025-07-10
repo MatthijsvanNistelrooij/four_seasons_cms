@@ -1,4 +1,4 @@
-import BeautyPage from "@/components/BeautyPage"
+import BeautyPage from "@/components/beauty/BeautyPage"
 import React from "react"
 
 const Beauty = () => {

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import React from "react"
-import logo_header from "../public/assets/logo_header.png"
+import logo_header from "../../public/assets/logo_header.png"
 import { motion } from "framer-motion"
 
 const InfoSection = () => {

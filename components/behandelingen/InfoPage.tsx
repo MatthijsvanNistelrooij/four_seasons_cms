@@ -1,13 +1,13 @@
 "use client"
 
-import hero from "../public/assets/hero_3.png"
-import OpeningHours from "./OpeningHours"
+import hero from "../../public/assets/hero_3.png"
+import OpeningHours from "../shared/OpeningHours"
 import { motion } from "framer-motion"
 import { treatmentSections } from "@/constants"
-import VideoCarousel2 from "./VideoCarousel2"
-import VideoCarousel from "./VideoCarousel"
-import NextHeader from "./shared/NextHeader"
-import { AppointmentDialog } from "./AppointmentDialog"
+import VideoCarousel2 from "../video/VideoCarousel2"
+import VideoCarousel from "../video/VideoCarousel"
+import NextHeader from "../shared/NextHeader"
+import { AppointmentDialog } from "../modals/AppointmentDialog"
 import { useState } from "react"
 
 export default function InfoPage() {

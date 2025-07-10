@@ -1,6 +1,6 @@
 import Image from "next/image"
 import React from "react"
-import shop from "../public/assets/shop.png"
+import shop from "../../public/assets/shop.png"
 import { motion } from "framer-motion"
 
 const ShopSection = () => {

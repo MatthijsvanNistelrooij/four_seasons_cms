@@ -11,12 +11,12 @@ import {
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 
-import { Step6_Confirm } from "./steps/Step6_Confirm"
-import { Step1_Service } from "./steps/Step1_Service"
-import { Step2_Barber } from "./steps/Step2_Barber"
-import { Step3_Date } from "./steps/Step3_Date"
-import { Step4_Time } from "./steps/Step4_Time"
-import { Step5_Contact } from "./steps/Step5_Contact"
+import { Step6_Confirm } from "../steps/Step6_Confirm"
+import { Step1_Service } from "../steps/Step1_Service"
+import { Step2_Barber } from "../steps/Step2_Barber"
+import { Step3_Date } from "../steps/Step3_Date"
+import { Step4_Time } from "../steps/Step4_Time"
+import { Step5_Contact } from "../steps/Step5_Contact"
 import { createAppointment } from "@/appwrite"
 
 type AppointmentDialogProps = {
@@ -128,7 +128,9 @@ export function AppointmentDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogTrigger asChild>
-        <Button className={`bg-[#e9207e] ${hover} p-8 rounded-full text-white font-bold shadow-none text-md cursor-pointer`}>
+        <Button
+          className={`bg-[#e9207e] ${hover} p-8 rounded-full text-white font-bold shadow-none text-md cursor-pointer`}
+        >
           {title}
         </Button>
       </DialogTrigger>

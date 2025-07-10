@@ -1,8 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
-import logo from "../public/assets/logo_header.png"
+import logo from "../../public/assets/logo_header.png"
 import OpeningHours from "./OpeningHours"
-import matp from "../public/matp.png"
+import matp from "../../public/matp.png"
 
 const Footer = () => {
   return (
@@ -64,7 +64,7 @@ const Footer = () => {
               <h3 className="font-semibold mb-4 text-[#e9207e]">
                 Openingstijden & contact
               </h3>
-              <OpeningHours  />
+              <OpeningHours />
             </div>
           </div>
         </div>

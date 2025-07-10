@@ -14,11 +14,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import SignOutButton from "./SignOutButton"
+import SignOutButton from "../SignOutButton"
 import { Button } from "@/components/ui/button"
 import { Edit, Trash } from "lucide-react"
-import { EditAppointmentDialog } from "./EditAppointmentDialog"
-import { DeleteAppointmentDialog } from "./DeleteAppointmentDialog"
+import { EditAppointmentDialog } from "../modals/EditAppointmentDialog"
+import { DeleteAppointmentDialog } from "../modals/DeleteAppointmentDialog"
 import Pagination from "./Pagination"
 
 const Appointments = () => {

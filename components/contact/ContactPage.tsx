@@ -1,9 +1,9 @@
 "use client"
 import React, { useRef, useState } from "react"
 import emailjs from "@emailjs/browser"
-import OpeningHours from "./OpeningHours"
-import { Button } from "./ui/button"
-import NextHeader from "./shared/NextHeader"
+import OpeningHours from "../shared/OpeningHours"
+import { Button } from "../ui/button"
+import NextHeader from "../shared/NextHeader"
 
 const ContactPage = () => {
   const form = useRef<HTMLFormElement | null>(null)
