@@ -25,6 +25,7 @@ export default function Home() {
       <GoogleReviews />
       <div className="hidden">
         <AppointmentDialog
+          hover="hover:bg-pink-300"
           open={openDialog}
           onOpenChange={setOpenDialog}
           title="MAAK EEN AFSPRAAK"
