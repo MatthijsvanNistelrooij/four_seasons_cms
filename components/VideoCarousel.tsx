@@ -63,7 +63,7 @@ const VideoCarousel = () => {
               slideTo(centerIndex - 1)
             }
           }}
-          className="relative flex items-center gap-6"
+          className="relative flex items-center gap-2"
         >
           <VideoBox
             src={videos[leftIndex]}

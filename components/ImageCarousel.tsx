@@ -34,7 +34,7 @@ const CenteredImageCarousel = () => {
               slideTo(centerIndex - 1)
             }
           }}
-          className="relative flex items-center gap-6"
+          className="relative flex items-center gap-2"
         >
           <motion.div
             onClick={() => slideTo(centerIndex - 1)}

@@ -8,20 +8,15 @@ import { useState } from "react"
 import petros from "../public/assets/petros.png"
 import olga from "../public/assets/olga.png"
 import { motion } from "framer-motion"
-import Head from "next/head"
+import NextHeader from "./shared/NextHeader"
 
 export default function AboutPage() {
   const [openDialog, setOpenDialog] = useState(false)
 
   return (
     <>
-      <Head>
-        <title>Over ons | Kapsalon Four Seasons Groningen</title>
-        <meta
-          name="description"
-          content="Leer ons team kennen en ontdek waarom Kapsalon Four Seasons in Groningen dé plek is voor haar- en schoonheidsbehandelingen."
-        />
-      </Head>
+      <NextHeader />
+
       <main className="">
         <section
           className="relative w-full min-h-[30vh] md:h-[80vh] bg-center bg-cover"
@@ -189,6 +184,7 @@ export default function AboutPage() {
                 </p>
                 <div className="my-20">
                   <AppointmentDialog
+                    hover="hover:bg-pink-500"
                     title="Maak een afspraak"
                     open={openDialog}
                     onOpenChange={setOpenDialog}

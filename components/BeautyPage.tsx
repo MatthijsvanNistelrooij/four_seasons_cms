@@ -125,6 +125,7 @@ const BeautyPage = () => {
 
                 <div>
                   <AppointmentDialog
+                    hover="hover:bg-pink-500"
                     title="Maak een afspraak"
                     open={openDialog}
                     onOpenChange={setOpenDialog}

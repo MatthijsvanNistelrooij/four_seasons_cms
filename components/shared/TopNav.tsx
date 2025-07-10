@@ -2,7 +2,7 @@
 import { useState } from "react"
 
 import { FaFacebookF, FaInstagram } from "react-icons/fa"
-import { AppointmentDialog } from "./AppointmentDialog"
+import { AppointmentDialog } from "../AppointmentDialog"
 import Link from "next/link"
 
 const TopNav = () => {
@@ -29,6 +29,7 @@ const TopNav = () => {
         </div>
         <div className="absolute left-1/2 transform -translate-x-1/2">
           <AppointmentDialog
+            hover="hover:bg-[#e9207e]"
             title="Klik hier om een afspraak te maken"
             open={openDialog}
             onOpenChange={setOpenDialog}

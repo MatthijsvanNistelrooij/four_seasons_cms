@@ -1,7 +1,7 @@
 "use client"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
-import TopNav from "@/components/TopNav"
+import TopNav from "@/components/shared/TopNav"
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -17,14 +17,12 @@ export default function Home() {
   return (
     <div className="text-black flex flex-col justify-center">
       <NextHeader />
-
       <Hero onOpenDialog={() => setOpenDialog(true)} />
       <InfoSection />
       <TreatmentSection />
       <ShopSection />
       <GoogleMaps />
       <GoogleReviews />
-
       <div className="hidden">
         <AppointmentDialog
           open={openDialog}

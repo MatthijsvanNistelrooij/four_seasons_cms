@@ -2,26 +2,21 @@
 
 import hero from "../public/assets/hero_3.png"
 import OpeningHours from "./OpeningHours"
-import { AppointmentDialog } from "./AppointmentDialog"
-import { useState } from "react"
 import { motion } from "framer-motion"
 import { treatmentSections } from "@/constants"
-import Head from "next/head"
 import VideoCarousel2 from "./VideoCarousel2"
 import VideoCarousel from "./VideoCarousel"
+import NextHeader from "./shared/NextHeader"
+import { AppointmentDialog } from "./AppointmentDialog"
+import { useState } from "react"
 
 export default function InfoPage() {
   const [openDialog, setOpenDialog] = useState(false)
 
   return (
     <>
-      <Head>
-        <title>Behandelingen | Kapsalon Four Seasons Groningen</title>
-        <meta
-          name="description"
-          content="Leer ons team kennen en ontdek waarom Kapsalon Four Seasons in Groningen dé plek is voor haar- en schoonheidsbehandelingen."
-        />
-      </Head>
+      <NextHeader />
+
       <main className="">
         <section
           className="relative w-full min-h-[30vh] md:h-[80vh] bg-center bg-cover"
@@ -79,6 +74,14 @@ export default function InfoPage() {
               </div>
               <div className="">
                 <VideoCarousel />
+                <div className="flex justify-center mt-10">
+                  <AppointmentDialog
+                    hover="hover:bg-pink-500"
+                    title="Maak een afspraak"
+                    open={openDialog}
+                    onOpenChange={setOpenDialog}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -162,40 +165,19 @@ export default function InfoPage() {
           </div>
         </section>
 
-        <section className="bg-white min-h-[20vh] flex flex-col justify-center py-10 lg:py-20">
-          <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 gap-12 lg:gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.25 }}
-              className="w-full h-full"
-            >
-              <div className="space-y-2 w-full max-w-xl">
-                <div className="flex justify-center">
-                  <AppointmentDialog
-                    title="Maak een afspraak"
-                    open={openDialog}
-                    onOpenChange={setOpenDialog}
-                  />
-                </div>
+        <section className="bg-white py-16">
+          <div className="container mx-auto px-8 md:px-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 text-gray-800 text-sm leading-relaxed">
+              <div className="">
                 <VideoCarousel2 />
               </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 1 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, amount: 0.25 }}
-              className="w-full h-full"
-            >
               <div className="bg-[#e9207e] text-white p-5 w-full py-14 lg:py-24 rounded-xl flex flex-col text-center justify-center mb-20">
                 <h3 className="font-semibold mb-6 text-white text-xl">
                   Openingstijden & contact
                 </h3>
                 <OpeningHours text="white" center={true} />
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>

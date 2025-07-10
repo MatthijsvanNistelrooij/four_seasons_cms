@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react"
 import emailjs from "@emailjs/browser"
 import OpeningHours from "./OpeningHours"
 import { Button } from "./ui/button"
-import Head from "next/head"
+import NextHeader from "./shared/NextHeader"
 
 const ContactPage = () => {
   const form = useRef<HTMLFormElement | null>(null)
@@ -37,13 +37,8 @@ const ContactPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Contact | Kapsalon Four Seasons Groningen</title>
-        <meta
-          name="description"
-          content="Leer ons team kennen en ontdek waarom Kapsalon Four Seasons in Groningen dé plek is voor haar- en schoonheidsbehandelingen."
-        />
-      </Head>
+      <NextHeader />
+
       <section className="min-h-screen flex flex-col items-center justify-center bg-[#eaeaea] py-10 lg:py-40 px-8 md:px-20">
         <div className="mb-24 space-y-5">
           <h2

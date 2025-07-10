@@ -51,7 +51,7 @@ const VideoCarousel2 = () => {
   )
 
   return (
-    <section className="bg-white min-h-[5vh] flex flex-col justify-center py-5 lg:py-5 overflow-hidden">
+    <section className="bg-white min-h-[15vh] flex flex-col justify-center py-5 overflow-hidden">
       <div className="w-full flex justify-center items-center py-5">
         <motion.div
           drag="x"
@@ -63,7 +63,7 @@ const VideoCarousel2 = () => {
               slideTo(centerIndex - 1)
             }
           }}
-          className="relative flex items-center gap-6"
+          className="relative flex items-center gap-2"
         >
           <VideoBox
             src={videos[leftIndex]}
