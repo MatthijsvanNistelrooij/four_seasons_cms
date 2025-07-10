@@ -25,7 +25,6 @@ const BeautyPage = () => {
 
       <main className="">
         <Header />
-
         <section className="bg-white min-h-[15vh] flex flex-col justify-center">
           <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-20 gap-12 lg:gap-12">
             <motion.div
@@ -40,22 +39,25 @@ const BeautyPage = () => {
                   className="text-xl md:text-2xl lg:text-3xl font-semibold text-black"
                   style={{ fontFamily: "var(--font-roboto-slab)" }}
                 >
-                  Perfect gevormde wenkbrauwen in Groningen: laat je natuurlijke
-                  schoonheid naar voren brengen
+                  De ultieme beauty ervaring bij kapsalon Four Seasons
                 </h2>
                 <p className="text-base text-gray-800 leading-7 mb-15">
-                  Wij weten als geen ander dat perfect gevormde wenkbrauwen de
-                  sleutel zijn tot een verzorgde uitstraling. Onze getrainde
-                  schoonheidsspecialisten bieden een breed scala aan wenkbrauw
-                  behandelingen aan, waaronder waxen, threading en verven. Wij
-                  accentueren de natuurlijke vorm van jouw wenkbrauwen om jouw
-                  gezicht perfect te complementeren en te laten stralen. Of je
-                  nu op zoek bent naar een subtiele of dramatische verandering,
-                  ons team staat klaar om jouw wenkbrauwen perfect te vormen.
+                  Bij Kapsalon Four Seasons in Groningen geloven we dat de
+                  perfecte beauty behandeling begint bij een gezonde basis.
+                  Daarom bieden we naast onze haarbehandelingen ook een scala
+                  aan schoonheidsbehandelingen aan. Of je nu op zoek bent naar
+                  een ontspannende gezichtsbehandeling, een verjongende
+                  huidbehandeling of een professionele make-up sessie, wij
+                  hebben alles in huis om jouw schoonheid naar een hoger niveau
+                  te tillen. Onze schoonheidsspecialiste is getraind in de
+                  nieuwste technieken en werkt uitsluitend met hoogwaardige
+                  producten. Bij Kapsalon Four Seasons kun je rekenen op een
+                  professionele en persoonlijke service, zodat jij je na elke
+                  behandeling stralend en vol zelfvertrouwen voelt.
                 </p>
               </div>
             </motion.div>
-            <ImageCarousel3 />
+            <ImageCarousel />
           </div>
         </section>
 
@@ -94,7 +96,38 @@ const BeautyPage = () => {
           </div>
         </section>
 
-        <ImageCarousel />
+        <section className="bg-white min-h-[15vh] flex flex-col justify-center">
+          <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-20 gap-12 lg:gap-12">
+            <motion.div
+              initial={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.25 }}
+              className="w-full flex flex-col justify-start"
+            >
+              <div className="space-y-6 w-full max-w-xl mr-22">
+                <h2
+                  className="text-xl md:text-2xl lg:text-3xl font-semibold text-black"
+                  style={{ fontFamily: "var(--font-roboto-slab)" }}
+                >
+                  Perfect gevormde wenkbrauwen in Groningen: laat je natuurlijke
+                  schoonheid naar voren brengen
+                </h2>
+                <p className="text-base text-gray-800 leading-7 mb-15">
+                  Wij weten als geen ander dat perfect gevormde wenkbrauwen de
+                  sleutel zijn tot een verzorgde uitstraling. Onze getrainde
+                  schoonheidsspecialisten bieden een breed scala aan wenkbrauw
+                  behandelingen aan, waaronder waxen, threading en verven. Wij
+                  accentueren de natuurlijke vorm van jouw wenkbrauwen om jouw
+                  gezicht perfect te complementeren en te laten stralen. Of je
+                  nu op zoek bent naar een subtiele of dramatische verandering,
+                  ons team staat klaar om jouw wenkbrauwen perfect te vormen.
+                </p>
+              </div>
+            </motion.div>
+            <ImageCarousel3 />
+          </div>
+        </section>
 
         <section className="bg-[#eaeaea] min-h-[70vh] flex flex-col justify-center">
           <div className="flex flex-col lg:flex-row container mx-auto items-stretch px-8 md:px-20 py-12 md:py-16 lg:py-20 gap-12 lg:gap-12">
