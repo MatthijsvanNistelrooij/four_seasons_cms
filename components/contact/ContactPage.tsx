@@ -53,7 +53,7 @@ const ContactPage = () => {
         </div>
 
         <div className="container mx-auto md:px-20 flex justify-center flex-col lg:flex-row gap-5 max-w-5xl">
-          <div className="md:col-span-2 bg-white rounded-xl shadow-md p-8 w-full">
+          <div className="md:col-span-2 bg-white rounded-xl shadow-md p-8 w-full h-1/2">
             <h2
               className="text-2xl font-semibold mb-6"
               style={{ fontFamily: "var(--font-roboto-slab)" }}
