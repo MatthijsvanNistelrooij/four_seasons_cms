@@ -39,7 +39,7 @@ const ImageCarousel2 = () => {
           <motion.div
             onClick={() => slideTo(centerIndex - 1)}
             whileHover={{ scale: 1.05 }}
-            className="cursor-pointer w-40 h-72 relative shadow-2xl shadow-white rounded-xl overflow-hidden transition duration-300 group"
+            className="cursor-pointer w-40 h-72 relative rounded-xl overflow-hidden transition duration-300 group"
           >
             <Image
               src={images[leftIndex]}
@@ -54,7 +54,7 @@ const ImageCarousel2 = () => {
           <motion.div
             key={centerIndex}
             layout
-            className="w-80 h-140 relative shadow-2xl shadow-white rounded-xl overflow-hidden"
+            className="w-80 h-140 relative rounded-xl overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
@@ -72,7 +72,7 @@ const ImageCarousel2 = () => {
           <motion.div
             onClick={() => slideTo(centerIndex + 1)}
             whileHover={{ scale: 1.05 }}
-            className="cursor-pointer w-40 h-72 relative shadow-2xl shadow-white rounded-xl overflow-hidden transition duration-300 group"
+            className="cursor-pointer w-40 h-72 relative rounded-xl overflow-hidden transition duration-300 group"
           >
             <Image
               src={images[rightIndex]}
