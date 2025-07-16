@@ -76,7 +76,7 @@ const Footer = () => {
           href={"https://www.matthijsvannistelrooij.nl"}
           className="flex text-xs text-black hover:text-gray-500"
         >
-          Powered by:
+          Powered by
           <Image
             src={matp}
             width={18}
