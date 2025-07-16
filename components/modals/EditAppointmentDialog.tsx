@@ -52,11 +52,13 @@ export const EditAppointmentDialog = ({
           <input
             className="border p-2 rounded"
             value={formData.name}
+            placeholder="Naam"
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
           <input
             className="border p-2 rounded"
             value={formData.service}
+            placeholder="Dienst (bijv. knippen, kleuren)"
             onChange={(e) =>
               setFormData({ ...formData, service: e.target.value })
             }
@@ -64,6 +66,7 @@ export const EditAppointmentDialog = ({
           <input
             className="border p-2 rounded"
             value={formData.phone}
+            placeholder="Telefoonnummer"
             onChange={(e) =>
               setFormData({ ...formData, phone: e.target.value })
             }
@@ -72,11 +75,13 @@ export const EditAppointmentDialog = ({
             className="border p-2 rounded"
             type="date"
             value={formData.date}
+            placeholder="Datum"
             onChange={(e) => setFormData({ ...formData, date: e.target.value })}
           />
           <input
             className="border p-2 rounded"
             value={formData.time}
+            placeholder="Tijd (bijv. 14:00)"
             onChange={(e) => setFormData({ ...formData, time: e.target.value })}
           />
           <Button
