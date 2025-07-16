@@ -163,7 +163,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
               setIndex(i)
               startAutoSlide()
             }}
-            className={`w-3 h-3 flex items-center justify-center rounded-full transition-all duration-300 ${
+            className={`w-3 h-3 flex items-center justify-center rounded-full transition-all duration-300 cursor-pointer ${
               index === i
                 ? "border-2 border-white"
                 : "border-2 border-transparent"
