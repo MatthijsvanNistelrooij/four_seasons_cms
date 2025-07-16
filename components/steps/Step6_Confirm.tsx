@@ -37,7 +37,7 @@ export const Step6_Confirm = ({ data, onBack, onSubmit }: Props) => {
         <h3 className="m-2 text-sm font-light">Bevestig uw afspraak</h3>
 
         <div className="rounded-xl bg-white p-4 space-y-6 border border-gray-200">
-          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 text-base text-neutral-800">
+          <dl className="gap-x-10 gap-y-6 text-base text-neutral-800">
             <div className="space-y-5 pb-12">
               <label className="font-bold text-sm ml-1">Type afspraak</label>
               <div className="ml-1 text-sm">{service || "-"}</div>
