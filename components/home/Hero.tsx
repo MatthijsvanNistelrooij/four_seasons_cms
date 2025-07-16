@@ -113,7 +113,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                 key={`sub-${index}`}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4}}
+                transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-left text-xl lg:text-2xl max-w-xl"
               >
                 <h1 className="leading-[2.3rem] md:leading-[2.7rem] mt-2">
@@ -163,13 +163,19 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
               setIndex(i)
               startAutoSlide()
             }}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
+            className={`w-3 h-3 flex items-center justify-center rounded-full transition-all duration-300 ${
               index === i
-                ? "border-2 border-white bg-transparent"
-                : "bg-gray-800 border-2 border-transparent"
+                ? "border-2 border-white"
+                : "border-2 border-transparent"
             }`}
             aria-label={`Go to slide ${i + 1}`}
-          />
+          >
+            <span
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === i ? "bg-transparent" : "bg-gray-500"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </section>

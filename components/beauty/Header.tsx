@@ -1,44 +1,66 @@
 import React from "react"
 import { motion } from "framer-motion"
-import hero from "../../public/assets/beauty.jpg"
+import Image, { StaticImageData } from "next/image"
 
-const Header = () => {
+type HeaderProps = {
+  image: StaticImageData
+  headerText?: string
+  subText?: string
+  opacity?: string
+  textCenter: boolean
+}
+
+const Header = ({
+  image,
+  headerText,
+  subText,
+  opacity,
+  textCenter,
+}: HeaderProps) => {
   return (
-    <section
-      className="relative w-full min-h-[30vh] md:h-[80vh] bg-center bg-cover"
-      style={{ backgroundImage: `url(${hero.src})` }}
-    >
-      <div className="absolute inset-0 bg-black opacity-70"></div>
+    <>
+      <section className="relative bg-black overflow-hidden w-full flex flex-col justify-center min-h-[80vh] xl:h-[80vh]">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="absolute inset-0 z-0 bg-black"
+        >
+          <Image
+            src={image}
+            alt="Slide"
+            fill
+            className={`object-cover ${opacity}`}
+            priority
+          />
+        </motion.div>
 
-      <div className="relative z-10 flex items-center h-full">
-        <div className="container mx-auto px-8 md:px-20 flex flex-col py-20 text-white gap-12">
-          <motion.div
-            initial={{ opacity: 0, scale: 1 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.25 }}
-            className="w-full h-full space-y-5"
-          >
-            <h2
-              className="text-xl md:text-2xl lg:md:text-3xl font-bold mb-4"
-              style={{ fontFamily: "var(--font-roboto-slab)" }}
+        <div className="relative z-10 flex items-center h-full">
+          <div className="container mx-auto px-8 md:px-20 flex flex-col py-20 text-white gap-12">
+            <motion.div
+              initial={{ opacity: 0, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.25 }}
+              className="w-full h-full space-y-5"
             >
-              Je gezicht weer laten stralen met schoonheidsbehandelingen in
-              Groningen
-            </h2>
+              <h2
+                className={`text-xl md:text-2xl lg:md:text-3xl font-bold mb-4 ${
+                  textCenter ? "text-center" : ""
+                }`}
+                style={{ fontFamily: "var(--font-roboto-slab)" }}
+              >
+                {headerText}
+              </h2>
 
-            <p className="md:text-md leading-relaxed tracking-wide font-bold">
-              Onze diensten: Huidverzorging, vacuüm gezichtsreiniging, SOS
-              schoonheidsprocedures, darsonval, liftende gezichtsmassage,
-              sculpturale gezichtsmassage, anti-aging gezichtsmassage, pellen,
-              manicuristische diensten, correctie van nagelcoating,
-              basismanicure, Franse manicure, spa manicure, lak en biab-coating,
-              nagel ontwerp
-            </p>
-          </motion.div>
+              <p className="md:text-md leading-relaxed tracking-wide font-bold">
+                {subText}
+              </p>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 

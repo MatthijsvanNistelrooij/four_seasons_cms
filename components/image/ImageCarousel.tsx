@@ -11,7 +11,7 @@ const clampIndex = (i: number) => {
   return (i + len) % len
 }
 
-const CenteredImageCarousel = () => {
+const ImageCarousel = () => {
   const [centerIndex, setCenterIndex] = useState(0)
 
   const leftIndex = clampIndex(centerIndex - 1)
@@ -87,4 +87,4 @@ const CenteredImageCarousel = () => {
   )
 }
 
-export default CenteredImageCarousel
+export default ImageCarousel
