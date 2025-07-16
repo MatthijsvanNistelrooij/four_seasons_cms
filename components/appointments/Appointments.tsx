@@ -220,9 +220,9 @@ const Appointments = () => {
                   <TableCell>
                     {new Date(appt.date).toLocaleDateString("nl-NL")}
                   </TableCell>
-                  <TableCell>{appt.time}</TableCell>
-                  <TableCell>{appt.email}</TableCell>
-                  <TableCell>{appt.phone}</TableCell>
+                  <TableCell>{appt.time ? appt.time : "-"}</TableCell>
+                  <TableCell>{appt.email ? appt.email : "-"}</TableCell>
+                  <TableCell>{appt.phone ? appt.phone : "-"}</TableCell>
                   <TableCell className="flex justify-end">
                     <Button
                       onClick={() => {
