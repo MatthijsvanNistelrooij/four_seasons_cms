@@ -63,6 +63,13 @@ export const EditAppointmentDialog = ({
           />
           <input
             className="border p-2 rounded"
+            value={formData.phone}
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
+          />
+          <input
+            className="border p-2 rounded"
             type="date"
             value={formData.date}
             onChange={(e) => setFormData({ ...formData, date: e.target.value })}
