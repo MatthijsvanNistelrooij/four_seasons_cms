@@ -4,9 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-const images = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(
-  (i) => `/images/nails_${i}.jpeg`
-)
+const images = [1, 2, 3, 4, 5, 7, 8, 9].map((i) => `/images/nails_${i}.jpeg`)
 
 const clampIndex = (i: number) => {
   const len = images.length
