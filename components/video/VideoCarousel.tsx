@@ -2,39 +2,10 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import Video from "next-video"
 
-import video4 from "../../videos/video_4.MOV.json"
-import video5 from "../../videos/video_5.MOV.json"
-import video6 from "../../videos/video_6.MOV.json"
-import video7 from "../../videos/video_7.MOV.json"
-import video8 from "../../videos/video_8.MOV.json"
-import video9 from "../../videos/video_9.MOV.json"
-import video10 from "../../videos/video_10.MOV.json"
-import video11 from "../../videos/video_11.MOV.json"
-import video13 from "../../videos/video_13.MOV.json"
-import video14 from "../../videos/video_14.MOV.json"
-import video15 from "../../videos/video_15.MOV.json"
-import video16 from "../../videos/video_16.MOV.json"
-import video17 from "../../videos/video_17.MOV.json"
-import video18 from "../../videos/video_18.MOV.json"
-
-const videos = [
-  video4,
-  video5,
-  video6,
-  video7,
-  video8,
-  video9,
-  video10,
-  video11,
-  video13,
-  video14,
-  video15,
-  video16,
-  video17,
-  video18,
-]
+const videos = [1, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18].map(
+  (i) => `/videos/video_${i}.mp4`
+)
 
 const clampIndex = (i: number) => {
   const len = videos.length
@@ -56,36 +27,34 @@ const VideoCarousel = () => {
     isCenter = false,
     onClick,
   }: {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    src: any
+    src: string
     isCenter?: boolean
     onClick?: () => void
   }) => (
     <motion.div
       onClick={onClick}
       whileHover={!isCenter ? { scale: 1.05 } : undefined}
-      className={`relative rounded-2xl overflow-hidden transition duration-300 ${
-        isCenter ? "w-80 h-[38rem]" : "w-40 h-72 cursor-pointer group"
+      className={`relative overflow-hidden rounded-xl transition duration-300 ${
+        isCenter ? "w-80 h-140" : "w-40 h-72 cursor-pointer group"
       }`}
     >
-      <Video
-        muted
+      <video
+        src={src}
         autoPlay
         loop
-        preload="auto"
+        muted
         playsInline
-        src={src}
-        className="w-full h-full object-cover shadow-xl rounded-2xl"
+        className="w-full h-full object-cover"
       />
       {!isCenter && (
-        <div className="absolute rounded-2xl inset-0 bg-white/50 group-hover:bg-white/0 transition duration-300 pointer-events-none" />
+        <div className="absolute inset-0 bg-white/50 group-hover:bg-white/0 transition duration-300 pointer-events-none" />
       )}
     </motion.div>
   )
 
   return (
     <section className="bg-white min-h-[15vh] flex flex-col justify-center py-5 overflow-hidden">
-      <div className="w-full flex justify-center items-center pb-5">
+      <div className="w-full flex justify-center items-center py-5">
         <motion.div
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
