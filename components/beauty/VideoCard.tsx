@@ -1,6 +1,6 @@
 import React from "react"
 import OpeningHours from "../shared/OpeningHours"
-import video_3 from "../../videos/video_3.mp4"
+import video_3 from "../../videos/video_1.mp4"
 import Video from "next-video"
 
 const VideoCard = () => {
