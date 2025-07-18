@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 
-const videos = [3, 1, 2, 12].map((i) => `/videos/video_${i}.mp4`)
+const videos = [3, 1, 2].map((i) => `/videos/video_${i}.mp4`)
 
 const clampIndex = (i: number) => {
   const len = videos.length
