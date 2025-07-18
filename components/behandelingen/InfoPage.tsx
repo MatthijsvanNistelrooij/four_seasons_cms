@@ -74,6 +74,7 @@ export default function InfoPage() {
               </div>
               <div className="">
                 <VideoCarousel />
+
                 <div className="flex justify-center mt-10">
                   <AppointmentDialog
                     hover="hover:bg-pink-500"

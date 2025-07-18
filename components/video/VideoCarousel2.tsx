@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 
-const videos = [1, 2, 3].map((i) => `/videos/video_${i}.mp4`)
+const videos = [3, 1, 2, 12].map((i) => `/videos/video_${i}.mp4`)
 
 const clampIndex = (i: number) => {
   const len = videos.length
@@ -32,7 +32,7 @@ const VideoCarousel2 = () => {
     <motion.div
       onClick={onClick}
       whileHover={!isCenter ? { scale: 1.05 } : undefined}
-      className={`relative overflow-hidden shadow-2xl shadow-white rounded-xl transition duration-300 ${
+      className={`relative overflow-hidden rounded-xl transition duration-300 ${
         isCenter ? "w-80 h-140" : "w-40 h-72 cursor-pointer group"
       }`}
     >

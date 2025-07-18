@@ -4,7 +4,9 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-const images = [1, 2, 3, 4, 5, 6].map((i) => `/images/nails_${i}.jpeg`)
+const images = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(
+  (i) => `/images/nails_${i}.jpeg`
+)
 
 const clampIndex = (i: number) => {
   const len = images.length
@@ -22,7 +24,7 @@ const ImageCarousel = () => {
   }
 
   return (
-    <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-0 overflow-hidden w-full">
+    <section className="bg-[#eaeaea] min-h-[15vh] flex flex-col justify-center py-10 lg:py-0 overflow-hidden w-full">
       <div className="w-full flex justify-center items-center py-10 lg:pt-0 pb-10 lg:pb-20">
         <motion.div
           drag="x"
@@ -39,12 +41,13 @@ const ImageCarousel = () => {
           <motion.div
             onClick={() => slideTo(centerIndex - 1)}
             whileHover={{ scale: 1.05 }}
-            className="cursor-pointer w-40 h-72 relative shadow-2xl shadow-white rounded-xl overflow-hidden transition duration-300 group"
+            className="cursor-pointer w-40 h-72 relative rounded-xl overflow-hidden transition duration-300 group"
           >
             <Image
               src={images[leftIndex]}
               alt="left"
               fill
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 300px, 100vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-white/50 group-hover:bg-white/0 transition duration-300 pointer-events-none" />
@@ -53,7 +56,7 @@ const ImageCarousel = () => {
           <motion.div
             key={centerIndex}
             layout
-            className="w-80 h-140 relative shadow-2xl shadow-white rounded-xl overflow-hidden"
+            className="w-80 h-140 relative rounded-xl overflow-hidden"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
@@ -63,6 +66,7 @@ const ImageCarousel = () => {
               src={images[centerIndex]}
               alt="center"
               fill
+              sizes="(min-width: 1024px) 400px, (min-width: 640px) 300px, 100vw"
               className="object-cover"
             />
           </motion.div>
@@ -70,7 +74,7 @@ const ImageCarousel = () => {
           <motion.div
             onClick={() => slideTo(centerIndex + 1)}
             whileHover={{ scale: 1.05 }}
-            className="cursor-pointer w-40 h-72 relative shadow-2xl shadow-white rounded-xl overflow-hidden transition duration-300 group"
+            className="cursor-pointer w-40 h-72 relative rounded-xl overflow-hidden transition duration-300 group"
           >
             <Image
               src={images[rightIndex]}

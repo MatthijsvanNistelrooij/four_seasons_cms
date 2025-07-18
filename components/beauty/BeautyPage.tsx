@@ -6,15 +6,16 @@ import { motion } from "framer-motion"
 import { AppointmentDialog } from "../modals/AppointmentDialog"
 import { useState } from "react"
 
-import ImageCarousel from "../image/ImageCarousel"
-import ImageCarousel3 from "../image/ImageCarousel3"
-import ImageCarousel2 from "../image/ImageCarousel2"
 import beauty from "../../public/assets/beauty.jpg"
+
 import Header from "./Header"
 import InstagramEmbed from "./InstagramEmbed"
 import NextHeader from "../shared/NextHeader"
 import PageSection from "../shared/PageSection"
 import VideoCard from "./VideoCard"
+import ImageCarousel from "../image/ImageCarousel"
+import ImageCarousel4 from "../image/ImageCarousel4"
+import ImageCarousel3 from "../image/ImageCarousel3"
 
 const BeautyPage = () => {
   const [openDialog, setOpenDialog] = useState(false)
@@ -35,6 +36,7 @@ const BeautyPage = () => {
                    basismanicure, Franse manicure, spa manicure, lak en
                    biab-coating, nagel ontwerp"
       />
+
       <PageSection
         heading="De ultieme beauty ervaring bij kapsalon Four Seasons"
         description="            Bij Kapsalon Four Seasons in Groningen geloven we dat de
@@ -49,7 +51,7 @@ const BeautyPage = () => {
                 Kapsalon Four Seasons kun je rekenen op een professionele en
                 persoonlijke service, zodat jij je na elke behandeling stralend
                 en vol zelfvertrouwen voelt."
-        Carousel={<ImageCarousel />}
+        Carousel={<ImageCarousel4 />}
       />
 
       <PageSection
@@ -62,7 +64,7 @@ const BeautyPage = () => {
         een nauwkeurige afwerking. Laat jezelf verwennen met een spa-manicure 
         of geef je nagels extra stevigheid met een BIAB-coating. Kom langs en 
         ervaar hoe mooie nagels bijdragen aan jouw uitstraling!"
-        Carousel={<ImageCarousel2 />}
+        Carousel={<ImageCarousel />}
         bgColor={"bg-[#eaeaea]"}
         imageLeft={true}
       />
@@ -104,6 +106,7 @@ const BeautyPage = () => {
           />
         }
       />
+
       <InstagramEmbed />
 
       <section
