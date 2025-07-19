@@ -8,7 +8,7 @@ import { useState } from "react"
 
 import beauty from "../../public/assets/beauty.jpg"
 
-import Header from "./Header"
+import Header from "../shared/Header"
 import InstagramEmbed from "./InstagramEmbed"
 import NextHeader from "../shared/NextHeader"
 import PageSection from "../shared/PageSection"
@@ -25,6 +25,7 @@ const BeautyPage = () => {
       <NextHeader />
 
       <Header
+        bold={true}
         opacity={"opacity-50"}
         image={beauty}
         textCenter={false}

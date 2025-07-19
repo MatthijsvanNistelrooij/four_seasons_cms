@@ -2,13 +2,13 @@
 
 import hero from "../../public/assets/hero_3.png"
 import OpeningHours from "../shared/OpeningHours"
-import { motion } from "framer-motion"
 import { treatmentSections } from "@/constants"
 import VideoCarousel2 from "../video/VideoCarousel2"
 import VideoCarousel from "../video/VideoCarousel"
 import NextHeader from "../shared/NextHeader"
 import { AppointmentDialog } from "../modals/AppointmentDialog"
 import { useState } from "react"
+import Header from "../shared/Header"
 
 export default function InfoPage() {
   const [openDialog, setOpenDialog] = useState(false)
@@ -18,35 +18,20 @@ export default function InfoPage() {
       <NextHeader />
 
       <main className="">
-        <section
-          className="relative w-full min-h-[30vh] md:h-[80vh] bg-center bg-cover"
-          style={{ backgroundImage: `url(${hero.src})` }}
-        >
-          <div className="absolute inset-0 bg-black opacity-70"></div>
-
-          <div className="relative z-10 flex items-center h-full">
-            <div className="container mx-auto px-8 md:px-20 flex flex-col py-20 text-white gap-12">
-              <motion.div
-                initial={{ opacity: 0, scale: 1 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.25 }}
-                className="w-full h-full"
-              >
-                <h1
-                  className="text-xl lg:text-3xl md:text-2xl text-center font-bold mb-4"
-                  style={{ fontFamily: "var(--font-roboto-slab)" }}
-                >
-                  Klaar om te stralen? Boek nu een afspraak bij onze kapsalon
-                  met
-                  <br />
-                  schoonheidsspecialiste in Groningen en ontdek onze exclusieve
-                  behandelingen
-                </h1>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        <Header
+          bold={false}
+          opacity={"opacity-40"}
+          image={hero}
+          textCenter={true}
+          headerText={
+            <>
+              Klaar om te stralen? Boek nu een afspraak bij onze kapsalon met
+              <br />
+              schoonheidsspecialiste in Groningen en ontdek onze exclusieve
+              behandelingen
+            </>
+          }
+        />
 
         <section className="bg-white py-16">
           <div className="container mx-auto px-8 md:px-20">

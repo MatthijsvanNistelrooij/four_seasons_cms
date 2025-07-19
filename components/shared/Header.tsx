@@ -4,10 +4,11 @@ import Image, { StaticImageData } from "next/image"
 
 type HeaderProps = {
   image: StaticImageData
-  headerText?: string
-  subText?: string
+  headerText?: React.ReactNode
+  subText?: React.ReactNode
   opacity?: string
   textCenter: boolean
+  bold: boolean
 }
 
 const Header = ({
@@ -15,6 +16,7 @@ const Header = ({
   headerText,
   subText,
   opacity,
+  bold,
   textCenter,
 }: HeaderProps) => {
   return (
@@ -45,7 +47,7 @@ const Header = ({
               className="w-full h-full space-y-5"
             >
               <h2
-                className={`text-xl md:text-2xl lg:md:text-3xl font-bold mb-4 ${
+                className={`text-xl md:text-2xl lg:md:text-3xl  font-bold mb-4 ${
                   textCenter ? "text-center" : ""
                 }`}
                 style={{ fontFamily: "var(--font-roboto-slab)" }}
@@ -53,7 +55,11 @@ const Header = ({
                 {headerText}
               </h2>
 
-              <p className="md:text-md leading-relaxed tracking-wide font-bold">
+              <p
+                className={`md:text-md leading-relaxed ${
+                  bold ? "font-bold tracking-wide" : ""
+                }`}
+              >
                 {subText}
               </p>
             </motion.div>
