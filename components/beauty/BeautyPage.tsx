@@ -5,7 +5,7 @@ import { AppointmentDialog } from "../modals/AppointmentDialog"
 import { useState } from "react"
 import beauty from "../../public/assets/beauty.jpg"
 import Header from "../shared/Header"
-import InstagramEmbed from "./InstagramEmbed"
+// import InstagramEmbed from "./InstagramEmbed"
 import NextHeader from "../shared/NextHeader"
 import PageSection from "../shared/PageSection"
 import VideoCard from "./VideoCard"
@@ -68,7 +68,7 @@ const BeautyPage = () => {
         }
       />
 
-      <InstagramEmbed />
+      {/* <InstagramEmbed /> */}
 
       <Header
         bold={true}

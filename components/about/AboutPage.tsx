@@ -10,6 +10,7 @@ import olga from "../../public/assets/olga.png"
 import { motion } from "framer-motion"
 import NextHeader from "../shared/NextHeader"
 import Header from "../shared/Header"
+import { aboutPageVariables } from "@/constants"
 
 export default function AboutPage() {
   const [openDialog, setOpenDialog] = useState(false)
@@ -24,22 +25,8 @@ export default function AboutPage() {
           opacity={"opacity-40"}
           image={hero}
           textCenter={false}
-          headerText={
-            <>
-              Welkom bij Four Seasons: <br />
-              De kapper in Groningen die weet wat je nodig hebt!
-            </>
-          }
-          subText={
-            <>
-              Wij zitten al meer dan 35 jaar in het vak en hebben veel ervaring
-              met het knippen, kleuren en stijlen van haar. Daarnaast bieden we
-              ook tal van schoonheidsbehandelingen aan.
-              <br />
-              Wil jij helemaal herboren weer naar buiten lopen? Dan ben je bij
-              ons aan het juiste adres! Kom je snel een keer langs?
-            </>
-          }
+          headerText={aboutPageVariables.headerText}
+          subText={aboutPageVariables.subText}
         />
 
         <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-20">
@@ -196,6 +183,7 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </section>
+
       </main>
     </>
   )

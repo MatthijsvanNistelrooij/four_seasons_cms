@@ -341,3 +341,10 @@ export const infoPageVariables = {
   headerText:
     "Klaar om te stralen? Boek nu een afspraak bij onze kapsalon met schoonheidsspecialiste in Groningen en ontdek onze exclusieve behandelingen",
 }
+
+export const aboutPageVariables = {
+  headerText:
+    "Welkom bij Four Seasons: De kapper in Groningen die weet wat je nodig hebt!",
+  subText:
+    "Wij zitten al meer dan 35 jaar in het vak en hebben veel ervaring met het knippen, kleuren en stijlen van haar. Daarnaast bieden we ook tal van schoonheidsbehandelingen aan. Wil jij helemaal herboren weer naar buiten lopen? Dan ben je bij ons aan het juiste adres! Kom je snel een keer langs?",
+}
