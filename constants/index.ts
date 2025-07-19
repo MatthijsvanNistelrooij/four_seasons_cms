@@ -3,8 +3,6 @@ import hero_2 from "../public/assets/hero_2.png"
 import hero_3 from "../public/assets/hero_3.png"
 import hero_4 from "../public/assets/hero_4.jpg"
 import hero_5 from "../public/assets/hero_5.jpg"
-import logo_header from "@/public/assets/logo_header.png"
-import treatment_1 from "@/public/assets/treatment_1.png"
 
 export const navLinks = [
   { name: "Home", path: "/" },
@@ -317,23 +315,29 @@ export const treatmentSections = [
   },
 ]
 
-export const pageSections = [
-  {
-    id: "section-1",
-    heading: "Ervaren dames & herenkapper in Groningen",
-    description:
-      "Bij ons kun je terecht voor een professionele en betaalbare knipbeurt. Wil je een nieuwe look uitproberen? Wij staan voor je klaar met een passend advies. Ook als je jouw haar wil laten bijwerken of gewoon wilt ontspannen met een kappersbehandeling, helpen we je graag. Als vertrouwde kapper in Groningen, begrijpen we dat jouw tijd kostbaar is. De combinatie van ruim 35 jaar ervaring en persoonlijke aandacht, maken het mogelijk om snel en efficiënt te werken zonder afbreuk te doen aan de kwaliteit. Dat maakt onze kapsalon zo uniek én gezellig!",
-    image: logo_header,
-    bgColor: "white",
-    imageLeft: false,
-  },
-  {
-    id: "section-2",
-    heading: "Ook voor beauty behandelingen",
-    description:
-      "Je gezicht weer laten stralen? Wees klaar voor elke gelegenheid met onze beauty behandelingen. U bent bij ons aan het juiste adres voor harsen, wimpers kleuren, tijdelijke wimpers, lamineren van de wimpers en wenkbrauwen, make-up. liftende gezichtmassages, gezichtsverzorgingen en wenkbrauw ontwerpen.",
-    image: treatment_1,
-    bgColor: "#eaeaea",
-    imageLeft: false,
-  },
-]
+export const beautyPageVariables = {
+  headerText:
+    "Je gezicht weer laten stralen met schoonheidsbehandelingen in Groningen",
+  subText:
+    "Onze diensten: Huidverzorging, vacuüm gezichtsreiniging, SOS schoonheidsprocedures, darsonval, liftende gezichtsmassage, sculpturale gezichtsmassage, anti-aging gezichtsmassage, pellen, manicuristische diensten, correctie van nagelcoating, basismanicure, Franse manicure, spamanicure, lak en biab-coating, nagel ontwerp",
+  sectionTitle1: "De ultieme beauty ervaring bij kapsalon Four Seasons",
+  sectionDescription1:
+    "Bij Kapsalon Four Seasons in Groningen geloven we dat de perfecte beauty behandeling begint bij een gezonde basis. Daarom bieden we naast onze haarbehandelingen ook een scala aan schoonheidsbehandelingen aan. Of je nu op zoek bent naar een ontspannende gezichtsbehandeling, een verjongende huidbehandeling of een professionele make-up sessie, wij hebben alles in huis om jouw schoonheid naar een hoger niveau te tillen. Onze schoonheidsspecialiste is getraind in de nieuwste technieken en werkt uitsluitend met hoogwaardige producten. Bij Kapsalon Four Seasons kun je rekenen op een professionele en persoonlijke service, zodat jij je na elke behandeling stralend en vol zelfvertrouwen voelt.",
+  sectionTitle2:
+    "Perfect verzorgde nagels in Groningen: straal tot in de vingertoppen",
+  sectionDescription2:
+    " Bij Four Seasons ben je aan het juiste adres voor professionele nagelverzorging en stijlvolle nagelstyling. Of je nu kiest voor een klassieke manicure, een verzorgde French manicure of een opvallend nagelontwerp, wij zorgen ervoor dat jouw handen er altijd tiptop uitzien. Onze specialisten werken met hoogwaardige producten en nemen de tijd voor een nauwkeurige afwerking. Laat jezelf verwennen met een spa-manicure of geef je nagels extra stevigheid met een BIAB-coating. Kom langs en ervaar hoe mooie nagels bijdragen aan jouw uitstraling!",
+  sectionTitle3:
+    "Perfect gevormde wenkbrauwen in Groningen: laat je natuurlijke schoonheid naar voren brengen",
+  sectionDescription3:
+    "Wij weten als geen ander dat perfect gevormde wenkbrauwen de sleutel zijn tot een verzorgde uitstraling. Onze getrainde schoonheidsspecialisten bieden een breed scala aan wenkbrauw behandelingen aan, waaronder waxen, threading en verven. Wij accentueren de natuurlijke vorm van jouw wenkbrauwen om jouw gezicht perfect te complementeren en te laten stralen. Of je nu op zoek bent naar een subtiele of dramatische verandering, ons team staat klaar om jouw wenkbrauwen perfect te vormen.",
+  sectionTitle4:
+    "Ontspan en geniet van een luxueuze gezichtsbehandeling in Groningen",
+  sectionDescription4:
+    "Heb je een speciale gelegenheid waarvoor je er stralend wil uitzien? Onze visagiste staat klaar om een prachtige make-up look te maken die volledig is afgestemd op jouw wensen. Je kan kiezen om langs te komen in onze zaak aan het Reitemakersrijge of laat onze visagiste bij je thuis komen.Benieuwd wat we voor jou kunnen betekenen? Neem vandaag nog contact met ons op.",
+}
+
+export const infoPageVariables = {
+  headerText:
+    "Klaar om te stralen? Boek nu een afspraak bij onze kapsalon met schoonheidsspecialiste in Groningen en ontdek onze exclusieve behandelingen",
+}

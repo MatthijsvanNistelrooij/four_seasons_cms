@@ -9,6 +9,7 @@ import NextHeader from "../shared/NextHeader"
 import { AppointmentDialog } from "../modals/AppointmentDialog"
 import { useState } from "react"
 import Header from "../shared/Header"
+import { infoPageVariables } from "@/constants"
 
 export default function InfoPage() {
   const [openDialog, setOpenDialog] = useState(false)
@@ -23,14 +24,7 @@ export default function InfoPage() {
           opacity={"opacity-40"}
           image={hero}
           textCenter={true}
-          headerText={
-            <>
-              Klaar om te stralen? Boek nu een afspraak bij onze kapsalon met
-              <br />
-              schoonheidsspecialiste in Groningen en ontdek onze exclusieve
-              behandelingen
-            </>
-          }
+          headerText={infoPageVariables.headerText}
         />
 
         <section className="bg-white py-16">

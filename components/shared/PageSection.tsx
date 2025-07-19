@@ -1,21 +1,21 @@
 "use client"
 
 import { motion } from "framer-motion"
-import React from "react"
+import React, { ReactNode } from "react"
 
 type PageSectionProps = {
-  heading: string
-  description: string
-  Carousel?: React.ReactNode
+  title: string | ReactNode
+  description?: string | ReactNode
+  media?: React.ReactNode
   bgColor?: string
   imageLeft?: boolean
   CTA?: React.ReactNode
 }
 
 const PageSection = ({
-  heading,
+  title,
   description,
-  Carousel,
+  media,
   bgColor = "bg-white",
   imageLeft = false,
   CTA,
@@ -43,7 +43,7 @@ const PageSection = ({
                   className="text-xl md:text-2xl lg:text-3xl font-semibold text-black"
                   style={{ fontFamily: "var(--font-roboto-slab)" }}
                 >
-                  {heading}
+                  {title}
                 </h2>
                 <p className="text-base text-gray-800 leading-7 mb-15">
                   {description}
@@ -51,7 +51,7 @@ const PageSection = ({
                 <p>{CTA}</p>
               </div>
             </motion.div>
-            {Carousel}
+            {media}
           </div>
         </div>
       </section>

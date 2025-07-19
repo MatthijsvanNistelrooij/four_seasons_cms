@@ -1,11 +1,11 @@
-import React from "react"
+import React, { ReactNode } from "react"
 import { motion } from "framer-motion"
 import Image, { StaticImageData } from "next/image"
 
 type HeaderProps = {
   image: StaticImageData
-  headerText?: React.ReactNode
-  subText?: React.ReactNode
+  headerText: string | ReactNode
+  subText?: string | ReactNode
   opacity?: string
   textCenter: boolean
   bold: boolean
