@@ -17,7 +17,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <NextHeader />
+      <NextHeader title="About" />
 
       <main className="">
         <Header

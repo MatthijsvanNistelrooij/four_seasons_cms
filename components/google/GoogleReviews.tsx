@@ -1,4 +1,4 @@
-"use client" // only needed if you're using Next.js 13+ App Router
+"use client"
 
 import { useEffect } from "react"
 import { motion } from "framer-motion"

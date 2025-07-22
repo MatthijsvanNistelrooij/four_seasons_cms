@@ -16,7 +16,7 @@ export default function InfoPage() {
 
   return (
     <>
-      <NextHeader />
+      <NextHeader title="Behandelingen" />
 
       <main className="">
         <Header

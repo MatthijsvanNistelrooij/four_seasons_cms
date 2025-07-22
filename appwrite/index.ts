@@ -91,33 +91,6 @@ export const createAppointment = async (appointmentData: {
   }
 }
 
-// export const updateAppointment = async (id: string, data: Appointment) => {
-//   try {
-//     await databases.updateDocument(
-//       appwriteConfig.databaseId,
-//       appwriteConfig.appointmentsCollectionId,
-//       id,
-//       data
-//     )
-//   } catch (error) {
-//     console.error("Failed to update appointment:", error)
-//     throw error
-//   }
-// }
-
-// export const deleteAppointment = async (id: string) => {
-//   try {
-//     await databases.deleteDocument(
-//       appwriteConfig.databaseId,
-//       appwriteConfig.appointmentsCollectionId,
-//       id
-//     )
-//   } catch (error) {
-//     console.error("Failed to delete appointment:", error)
-//     throw error
-//   }
-// }
-
 export const updateAppointment = async (id: string, data: Appointment) => {
   const res = await fetch(`/api/appointments/${id}`, {
     method: "PUT",

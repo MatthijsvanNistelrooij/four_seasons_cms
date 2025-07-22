@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className="text-black flex flex-col justify-center">
-      <NextHeader />
+      <NextHeader title="Home" />
       <Hero onOpenDialog={() => setOpenDialog(true)} />
       <InfoSection />
       <TreatmentSection />
