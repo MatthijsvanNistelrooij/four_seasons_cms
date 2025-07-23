@@ -111,9 +111,9 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
 
               <motion.div
                 key={`sub-${index}`}
-                initial={{ opacity: 0, y: 0 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
                 className="text-left text-xl lg:text-2xl max-w-xl"
               >
                 <h1 className="leading-[2.3rem] md:leading-[2.7rem] mt-2">
