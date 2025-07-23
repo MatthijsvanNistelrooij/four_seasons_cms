@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const videos = [3, 1, 2].map((i) => `/videos/video_${i}.mp4`)
 
@@ -51,7 +52,7 @@ const VideoCarousel2 = () => {
   )
 
   return (
-    <section className="bg-white min-h-[15vh] flex flex-col justify-center py-5 overflow-hidden">
+    <section className="bg-white min-h-[15vh] flex flex-col justify-center py-5 overflow-hidden relative">
       <div className="w-full flex justify-center items-center py-5">
         <motion.div
           drag="x"
@@ -75,6 +76,11 @@ const VideoCarousel2 = () => {
             onClick={() => slideTo(centerIndex + 1)}
           />
         </motion.div>
+      </div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-2 text-gray-500 text-sm">
+        <ChevronLeft className="w-4 h-4" />
+        Swipe to explore
+        <ChevronRight className="w-4 h-4" />
       </div>
     </section>
   )
