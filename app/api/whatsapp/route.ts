@@ -18,15 +18,9 @@ export async function POST(req: NextRequest) {
   try {
     const messageBody = `❗ Nieuwe afspraak:\n 👤 Naam: ${name}\n 📱 Tel: ${phone} \n 📅 Datum: ${formattedDate} \n 🕒 Tijd: ${time} \n 💇 Dienst: ${service}`
 
-    const isKnippen = service.toLowerCase().includes("knippen")
-
-    const to = isKnippen
-      ? process.env.WHATSAPP_NUMBER! 
-      : process.env.WHATSAPP_NUMBER_2! 
-
     await client.messages.create({
       from: "whatsapp:+14155238886",
-      to,
+      to: process.env.WHATSAPP_NUMBER_2!,
       body: messageBody,
     })
 
