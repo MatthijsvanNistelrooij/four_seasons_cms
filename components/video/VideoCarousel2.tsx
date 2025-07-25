@@ -1,25 +1,55 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import Loading from "../shared/Loading"
+import Swipe from "../shared/Swipe"
 
 const videos = [3, 1, 2].map((i) => `/videos/video_${i}.mp4`)
 
-const clampIndex = (i: number) => {
-  const len = videos.length
-  return (i + len) % len
+const clampIndex = (i: number) => (i + videos.length) % videos.length
+
+const preloadVideos = (urls: string[]) => {
+  urls.forEach((url) => {
+    const vid = document.createElement("video")
+    vid.src = url
+    vid.preload = "auto"
+    vid.muted = true
+    vid.playsInline = true
+    vid.load()
+  })
 }
 
 const VideoCarousel2 = () => {
   const [centerIndex, setCenterIndex] = useState(0)
+  const [videoReady, setVideoReady] = useState(false)
 
-  const leftIndex = clampIndex(centerIndex - 1)
-  const rightIndex = clampIndex(centerIndex + 1)
+  useEffect(() => {
+    preloadVideos(videos)
+  }, [])
 
   const slideTo = (index: number) => {
+    setVideoReady(false)
     setCenterIndex(clampIndex(index))
   }
+
+  const centerVideoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    const video = centerVideoRef.current
+    if (!video) return
+
+    const checkReady = () => {
+      if (video.readyState >= 3) {
+        setVideoReady(true)
+      } else {
+        // Retry after a short delay
+        setTimeout(checkReady, 100)
+      }
+    }
+
+    checkReady()
+  }, [centerIndex])
 
   const VideoBox = ({
     src,
@@ -30,29 +60,40 @@ const VideoCarousel2 = () => {
     isCenter?: boolean
     onClick?: () => void
   }) => (
-    <motion.div
+    <div
       onClick={onClick}
-      whileHover={!isCenter ? { scale: 1.05 } : undefined}
-      className={`relative overflow-hidden rounded-xl transition duration-300 ${
+      className={`relative overflow-hidden rounded-xl transition-all duration-300 ${
         isCenter ? "w-80 h-140" : "w-40 h-72 cursor-pointer group"
       }`}
     >
       <video
+        ref={isCenter ? centerVideoRef : undefined}
         src={src}
         autoPlay
         loop
         muted
         playsInline
-        className="w-full h-full object-cover"
+        preload="auto"
+        className={`w-full h-full object-cover ${
+          !videoReady && isCenter ? "opacity-0" : "opacity-100"
+        } transition-opacity duration-300`}
       />
       {!isCenter && (
         <div className="absolute inset-0 bg-white/50 group-hover:bg-white/0 transition duration-300 pointer-events-none" />
       )}
-    </motion.div>
+      {!videoReady && isCenter && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white/20 text-sm text-gray-600">
+          <Loading />
+        </div>
+      )}
+    </div>
   )
 
+  const leftIndex = clampIndex(centerIndex - 1)
+  const rightIndex = clampIndex(centerIndex + 1)
+
   return (
-    <section className="bg-white min-h-[15vh] flex flex-col justify-center py-5 overflow-hidden relative">
+    <section className="bg-white min-h-[15vh] flex flex-col justify-center items-center py-5 overflow-hidden relative">
       <div className="w-full flex justify-center items-center py-5">
         <motion.div
           drag="x"
@@ -77,11 +118,7 @@ const VideoCarousel2 = () => {
           />
         </motion.div>
       </div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-2 text-gray-500 text-sm">
-        <ChevronLeft className="w-4 h-4" />
-        Swipe to explore
-        <ChevronRight className="w-4 h-4" />
-      </div>
+      <Swipe />
     </section>
   )
 }

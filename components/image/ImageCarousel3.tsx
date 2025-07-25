@@ -1,8 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Swipe from "../shared/Swipe"
+import Loading from "../shared/Loading"
 
 const images = [1, 2, 3, 4, 5, 6].map((i) => `/images/eyes_${i}.jpeg`)
 
@@ -13,6 +15,7 @@ const clampIndex = (i: number) => {
 
 const ImageCarousel3 = () => {
   const [centerIndex, setCenterIndex] = useState(0)
+  const [imageReady, setImageReady] = useState(false)
 
   const leftIndex = clampIndex(centerIndex - 1)
   const rightIndex = clampIndex(centerIndex + 1)
@@ -21,9 +24,13 @@ const ImageCarousel3 = () => {
     setCenterIndex(clampIndex(index))
   }
 
+  useEffect(() => {
+    setImageReady(false)
+  }, [centerIndex])
+
   return (
-    <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-0 overflow-hidden w-full">
-      <div className="w-full flex justify-center items-center py-10 lg:pt-0 pb-10 lg:pb-20">
+    <section className="bg-white min-h-[15vh] flex flex-col justify-center py-10 lg:py-0 overflow-hidden w-full relative">
+      <div className="w-full flex justify-center items-center lg:pb-10">
         <motion.div
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
@@ -65,8 +72,17 @@ const ImageCarousel3 = () => {
               alt="center"
               fill
               sizes="(min-width: 1024px) 400px, (min-width: 640px) 300px, 100vw"
-              className="object-cover"
+              onLoad={() => setImageReady(true)}
+              className={`object-cover transition-opacity duration-300 ${
+                imageReady ? "opacity-100" : "opacity-0"
+              }`}
             />
+
+            {!imageReady && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white text-sm text-gray-600 z-10">
+                <Loading />
+              </div>
+            )}
           </motion.div>
 
           <motion.div
@@ -85,6 +101,7 @@ const ImageCarousel3 = () => {
           </motion.div>
         </motion.div>
       </div>
+      <Swipe />
     </section>
   )
 }

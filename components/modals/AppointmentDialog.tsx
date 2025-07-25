@@ -88,7 +88,23 @@ export function AppointmentDialog({
       })
 
       console.log("Afspraak bevestigd ✅", newAppointment)
+
+      await fetch("/api/whatsapp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          time: formData.time,
+          date: formData.date,
+          service: formData.service,
+        }),
+      })
+
       alert("Afspraak succesvol geboekt!")
+
       setFormData({
         service: "",
         barber: "",
@@ -102,6 +118,7 @@ export function AppointmentDialog({
       setStep(1)
     } catch (error) {
       console.error("Failed to submit appointment", error)
+      alert("Er is iets misgegaan bij het boeken van de afspraak.")
     }
   }
 
