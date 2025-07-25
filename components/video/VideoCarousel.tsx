@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import Loading from "../shared/Loading"
 import Swipe from "../shared/Swipe"
 
-const videos = [4, 1, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18].map(
+const videos = [4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18].map(
   (i) => `/videos/video_${i}.mp4`
 )
 
