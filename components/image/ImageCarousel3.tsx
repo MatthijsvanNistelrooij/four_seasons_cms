@@ -101,7 +101,10 @@ const ImageCarousel3 = () => {
           </motion.div>
         </motion.div>
       </div>
-      <Swipe />
+      <Swipe
+        slideLeft={() => slideTo(centerIndex - 1)}
+        slideRight={() => slideTo(centerIndex + 1)}
+      />
     </section>
   )
 }

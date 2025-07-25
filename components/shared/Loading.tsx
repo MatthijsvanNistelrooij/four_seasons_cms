@@ -2,7 +2,7 @@ import React from "react"
 
 const Loading = () => {
   return (
-    <div className="flex items-center justify-center h-80 space-x-1 bg-gray-100 rounded-lg p-3 w-40">
+    <div className="flex items-center justify-center h-full space-x-1 bg-gray-100 rounded-lg p-3 w-full">
       {[...Array(5)].map((_, i) => (
         <div
           key={i}
