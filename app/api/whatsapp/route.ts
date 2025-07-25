@@ -21,11 +21,11 @@ export async function POST(req: NextRequest) {
     const isKnippen = service.toLowerCase().includes("knippen")
 
     const to = isKnippen
-      ? process.env.WHATSAPP_NUMBER! 
-      : process.env.WHATSAPP_NUMBER_2! 
+      ? process.env.BOTROS_WHATSAPP! 
+      : process.env.OLGA_WHATSAPP! 
 
     await client.messages.create({
-      from: process.env.TWILIO_WHATSAPP_NUMBER!,
+      from: process.env.TWILIO_WHATSAPP!,
       to,
       body: messageBody,
     })
