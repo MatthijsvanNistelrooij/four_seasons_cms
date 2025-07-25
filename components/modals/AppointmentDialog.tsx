@@ -169,6 +169,8 @@ export function AppointmentDialog({
           )}
           {step === 4 && (
             <Step4_Time
+              selectedService={formData.service}
+              selectedDate={new Date(formData.date)}
               time={formData.time}
               onNext={next}
               onBack={back}

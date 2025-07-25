@@ -2,19 +2,40 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import { format, setHours, setMinutes } from "date-fns"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import {
+  getBlockedTimesForDateAndService,
+  useFetchAppointments,
+} from "@/hooks/useFetchAppointments"
 
 type Props = {
+  selectedDate: Date
   time: string
+  selectedService: string
   onTimeChange: (value: string) => void
   onNext: () => void
   onBack: () => void
 }
 
-export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
+export const Step4_Time = ({
+  time,
+  onTimeChange,
+  onNext,
+  onBack,
+  selectedDate,
+  selectedService,
+}: Props) => {
   const [error, setError] = useState("")
   const [showTopShadow, setShowTopShadow] = useState(false)
   const [showBottomShadow, setShowBottomShadow] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
+
+  const { appointments } = useFetchAppointments()
+
+  const blockedTimes = getBlockedTimesForDateAndService(
+    appointments,
+    selectedDate,
+    selectedService
+  )
 
   const timeSlots = Array.from({ length: 17 }, (_, i) => {
     const hour = 9 + Math.floor(i / 2)
@@ -53,20 +74,37 @@ export const Step4_Time = ({ time, onTimeChange, onNext, onBack }: Props) => {
           onScroll={handleScroll}
           className="flex flex-col border border-gray-200 max-h-96 overflow-y-auto bg-white text-sm font-semibold rounded-xl"
         >
-          {timeSlots.map((slot) => (
-            <div
-              key={slot}
-              className={`w-full border-b px-4 py-3 cursor-pointer transition ${
-                time === slot ? "bg-[#e9207e] text-white" : "hover:bg-gray-100"
-              }`}
-              onClick={() => onTimeChange(slot)}
-            >
-              {slot}
-            </div>
-          ))}
+          {timeSlots.map((slot) => {
+            const isBooked = blockedTimes.includes(slot)
+
+            return (
+              <div
+                key={slot}
+                className={`w-full border-b px-4 py-3 transition select-none
+                ${
+                  isBooked ? "text-gray-400 bg-gray-100 cursor-not-allowed" : ""
+                }
+                ${
+                  !isBooked && time === slot
+                    ? "bg-[#e9207e] text-white cursor-pointer"
+                    : ""
+                }
+                ${
+                  !isBooked && time !== slot
+                    ? "hover:bg-gray-100 cursor-pointer"
+                    : ""
+                }
+              `}
+                onClick={() => {
+                  if (!isBooked) onTimeChange(slot)
+                }}
+              >
+                {slot}
+              </div>
+            )
+          })}
         </div>
 
-        {/* Shadows */}
         {showTopShadow && (
           <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-300 to-transparent pointer-events-none" />
         )}
