@@ -72,59 +72,22 @@ export function AppointmentDialog({
   //   return date.toLocaleDateString("nl-NL", options)
   // }
 
-  // const handleSubmit = async () => {
-  //   const fullDate = combineDateAndTime(new Date(formData.date), formData.time)
-  //   const formattedDate = formatDateDutch(fullDate)
-
-  //   try {
-  //     const newAppointment = await createAppointment({
-  //       name: formData.name,
-  //       service: formData.service,
-  //       email: formData.email,
-  //       phone: formData.phone,
-  //       time: formData.time,
-  //       barber: formData.barber,
-  //       date: formattedDate,
-  //     })
-
-  //     console.log("Afspraak bevestigd ✅", newAppointment)
-
-  //     await fetch("/api/whatsapp", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         name: formData.name,
-  //         phone: formData.phone,
-  //         time: formData.time,
-  //         date: formData.date,
-  //         service: formData.service,
-  //       }),
-  //     })
-
-  //     alert("Afspraak succesvol geboekt!")
-
-  //     setFormData({
-  //       service: "",
-  //       barber: "",
-  //       date: "",
-  //       time: "",
-  //       name: "",
-  //       email: "",
-  //       phone: "",
-  //     })
-  //     onOpenChange(false)
-  //     setStep(1)
-  //   } catch (error) {
-  //     console.error("Failed to submit appointment", error)
-  //     alert("Er is iets misgegaan bij het boeken van de afspraak.")
-  //   }
-  // }
-
   const handleSubmit = async () => {
+    // const fullDate = combineDateAndTime(new Date(formData.date), formData.time)
+    // const formattedDate = formatDateDutch(fullDate)
+
     try {
-      console.log("WhatsApp testmodus 🚀")
+      // const newAppointment = await createAppointment({
+      //   name: formData.name,
+      //   service: formData.service,
+      //   email: formData.email,
+      //   phone: formData.phone,
+      //   time: formData.time,
+      //   barber: formData.barber,
+      //   date: formattedDate,
+      // })
+
+      // console.log("Afspraak bevestigd ✅", newAppointment)
 
       await fetch("/api/whatsapp", {
         method: "POST",
@@ -140,7 +103,19 @@ export function AppointmentDialog({
         }),
       })
 
-      alert("WhatsApp testbericht verzonden!")
+      alert("Afspraak succesvol geboekt!")
+
+      setFormData({
+        service: "",
+        barber: "",
+        date: "",
+        time: "",
+        name: "",
+        email: "",
+        phone: "",
+      })
+      onOpenChange(false)
+      setStep(1)
     } catch (error) {
       console.error("Failed to submit appointment", error)
       alert("Er is iets misgegaan bij het boeken van de afspraak.")
@@ -178,7 +153,7 @@ export function AppointmentDialog({
       </DialogTrigger>
       <DialogContent className="!bg-gray-100 !rounded-xl border-none p-3 lg:p-6 min-h-[620px] select-none text-gray-800">
         <DialogHeader>
-          <DialogTitle>Afspraak boeken TEST</DialogTitle>
+          <DialogTitle>Afspraak boeken</DialogTitle>
           <DialogDescription className="text-gray-700">
             Stap {step} van 6
           </DialogDescription>
