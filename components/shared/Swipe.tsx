@@ -11,7 +11,7 @@ const Swipe = ({ slideLeft, slideRight }: SwipeProps) => {
     <div
       className="absolute bottom-20 left-1/2 -translate-x-1/2 flex 
                       items-center gap-2 text-gray-50 text-sm select-none
-                      px-1 py-1 bg-black/40 rounded-md whitespace-nowrap"
+                      px-1.5 py-1 bg-black/40 rounded-md whitespace-nowrap"
     >
       <ChevronLeft className="w-4 h-4 cursor-pointer" onClick={slideLeft} />
       Swipe to explore
