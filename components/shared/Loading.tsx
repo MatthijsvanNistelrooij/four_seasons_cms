@@ -2,8 +2,32 @@ import React from "react"
 
 const Loading = () => {
   return (
-    <div className="flex flex-col gap-4 items-center justify-center h-96 text-white text-xl space-x-3">
-      <div className="w-6 h-6 border-2 border-gray-800 border-t-transparent rounded-full animate-spin"></div>
+    <div className="flex items-center justify-center h-80 space-x-1 bg-gray-100 rounded-lg p-3 w-40">
+      {[...Array(5)].map((_, i) => (
+        <div
+          key={i}
+          className="bg-gray-200 rounded w-2"
+          style={{
+            height: "12px",
+            animation: `bounce 1.2s ease-in-out infinite`,
+            animationDelay: `${i * 0.5}s`,
+          }}
+        />
+      ))}
+
+      <style jsx>{`
+        @keyframes bounce {
+          0%,
+          100% {
+            transform: translateY(0);
+            background-color: #9ca3af; /* gray-400 */
+          }
+          50% {
+            transform: translateY(-8px);
+            background-color: #6b7280; /* gray-600 */
+          }
+        }
+      `}</style>
     </div>
   )
 }
