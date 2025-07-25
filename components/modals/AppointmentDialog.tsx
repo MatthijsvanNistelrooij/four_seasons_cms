@@ -178,7 +178,7 @@ export function AppointmentDialog({
       </DialogTrigger>
       <DialogContent className="!bg-gray-100 !rounded-xl border-none p-3 lg:p-6 min-h-[620px] select-none text-gray-800">
         <DialogHeader>
-          <DialogTitle>Afspraak boeken</DialogTitle>
+          <DialogTitle>Afspraak boeken TEST</DialogTitle>
           <DialogDescription className="text-gray-700">
             Stap {step} van 6
           </DialogDescription>
