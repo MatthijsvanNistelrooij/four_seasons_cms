@@ -43,7 +43,6 @@ const VideoCarousel2 = () => {
       if (video.readyState >= 3) {
         setVideoReady(true)
       } else {
-        // Retry after a short delay
         setTimeout(checkReady, 100)
       }
     }
