@@ -17,7 +17,7 @@ import { Step2_Barber } from "../steps/Step2_Barber"
 import { Step3_Date } from "../steps/Step3_Date"
 import { Step4_Time } from "../steps/Step4_Time"
 import { Step5_Contact } from "../steps/Step5_Contact"
-// import { createAppointment } from "@/appwrite"
+import { createAppointment } from "@/appwrite"
 
 type AppointmentDialogProps = {
   title: string
@@ -51,43 +51,43 @@ export function AppointmentDialog({
     setFormData((prev) => ({ ...prev, [key]: value }))
   }
 
-  // function combineDateAndTime(date: Date, timeString: string): Date {
-  //   const [hours, minutes] = timeString.split(":").map(Number)
-  //   const combined = new Date(date)
+  function combineDateAndTime(date: Date, timeString: string): Date {
+    const [hours, minutes] = timeString.split(":").map(Number)
+    const combined = new Date(date)
 
-  //   combined.setHours(hours)
-  //   combined.setMinutes(minutes)
-  //   combined.setSeconds(0)
-  //   combined.setMilliseconds(0)
+    combined.setHours(hours)
+    combined.setMinutes(minutes)
+    combined.setSeconds(0)
+    combined.setMilliseconds(0)
 
-  //   return combined
-  // }
+    return combined
+  }
 
-  // function formatDateDutch(date: Date): string {
-  //   const options = {
-  //     day: "2-digit",
-  //     month: "2-digit",
-  //     year: "numeric",
-  //   } as const
-  //   return date.toLocaleDateString("nl-NL", options)
-  // }
+  function formatDateDutch(date: Date): string {
+    const options = {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    } as const
+    return date.toLocaleDateString("nl-NL", options)
+  }
 
   const handleSubmit = async () => {
-    // const fullDate = combineDateAndTime(new Date(formData.date), formData.time)
-    // const formattedDate = formatDateDutch(fullDate)
+    const fullDate = combineDateAndTime(new Date(formData.date), formData.time)
+    const formattedDate = formatDateDutch(fullDate)
 
     try {
-      // const newAppointment = await createAppointment({
-      //   name: formData.name,
-      //   service: formData.service,
-      //   email: formData.email,
-      //   phone: formData.phone,
-      //   time: formData.time,
-      //   barber: formData.barber,
-      //   date: formattedDate,
-      // })
+      const newAppointment = await createAppointment({
+        name: formData.name,
+        service: formData.service,
+        email: formData.email,
+        phone: formData.phone,
+        time: formData.time,
+        barber: formData.barber,
+        date: formattedDate,
+      })
 
-      // console.log("Afspraak bevestigd ✅", newAppointment)
+      console.log("Afspraak bevestigd ✅", newAppointment)
 
       await fetch("/api/whatsapp", {
         method: "POST",
