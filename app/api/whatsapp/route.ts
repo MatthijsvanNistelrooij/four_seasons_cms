@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
       : process.env.WHATSAPP_NUMBER_2! 
 
     await client.messages.create({
-      from: "whatsapp:+14155238886",
+      from: process.env.TWILIO_WHATSAPP_NUMBER!,
       to,
       body: messageBody,
     })
