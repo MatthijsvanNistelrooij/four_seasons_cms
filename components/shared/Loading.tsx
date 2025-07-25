@@ -20,11 +20,11 @@ const Loading = () => {
           0%,
           100% {
             transform: translateY(0);
-            background-color: #9ca3af; /* gray-400 */
+            background-color: #e9208a;
           }
           50% {
             transform: translateY(-8px);
-            background-color: #6b7280; /* gray-600 */
+            background-color: #e9207e; 
           }
         }
       `}</style>
