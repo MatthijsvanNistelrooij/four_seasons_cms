@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
   }).format(new Date(date))
 
   try {
-    const messageBody = `❗ Nieuwe afspraak:\n 👤 Naam: ${name}\n 📱 Tel: ${phone} \n 📅 Datum: ${formattedDate} \n 🕒 Tijd: ${time} \n 💇 Dienst: ${service}`
+    const messageBody = `✅ Nieuwe afspraak:\n 👤 Naam: ${name}\n 📱 Tel: ${phone} \n 📅 Datum: ${formattedDate} \n 🕒 Tijd: ${time} \n 💇 Dienst: ${service}`
 
     const isKnippen = service.toLowerCase().includes("knippen")
 
