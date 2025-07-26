@@ -45,7 +45,6 @@ const VideoCarousel = () => {
       if (video.readyState >= 3) {
         setVideoReady(true)
       } else {
-
         setTimeout(checkReady, 100)
       }
     }
@@ -64,9 +63,7 @@ const VideoCarousel = () => {
   }) => (
     <div
       onClick={onClick}
-      className={`relative overflow-hidden rounded-xl transition-all duration-300 ${
-        isCenter ? "w-80 h-140" : "w-40 h-72 cursor-pointer group"
-      }`}
+      className={`relative overflow-hidden rounded-xl transition-all duration-300 w-80 h-140 cursor-pointer group`}
     >
       <video
         ref={isCenter ? centerVideoRef : undefined}
@@ -76,9 +73,9 @@ const VideoCarousel = () => {
         muted
         playsInline
         preload="auto"
-        className={`w-full h-full object-cover ${
-          !videoReady && isCenter ? "opacity-0" : "opacity-100"
-        } transition-opacity duration-300`}
+        className={`w-full h-full object-cover transition-opacity duration-300 ${
+          videoReady && isCenter ? "opacity-100" : "opacity-0"
+        }`}
       />
       {!isCenter && (
         <div className="absolute inset-0 bg-white/50 group-hover:bg-white/0 transition duration-300 pointer-events-none" />
