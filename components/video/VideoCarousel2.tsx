@@ -73,9 +73,9 @@ const VideoCarousel2 = () => {
         muted
         playsInline
         preload="auto"
-        className={`w-full h-full object-cover transition-opacity duration-300 ${
-          videoReady && isCenter ? "opacity-100" : "opacity-0"
-        }`}
+        className={`w-full h-full object-cover ${
+          !videoReady ? "opacity-0" : "opacity-100"
+        } transition-opacity duration-300`}
       />
       {!isCenter && (
         <div className="absolute inset-0 bg-white/50 group-hover:bg-white/0 transition duration-300 pointer-events-none" />
