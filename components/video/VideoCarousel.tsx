@@ -80,7 +80,7 @@ const VideoCarousel = () => {
         } transition-opacity duration-300`}
       />
       {!isCenter && (
-        <div className="absolute inset-0 bg-white/50 group-hover:bg-white/0 transition duration-300 pointer-events-none" />
+        <div className="absolute inset-0 bg-white/70 group-hover:bg-white/0 transition duration-300 pointer-events-none" />
       )}
       {!videoReady && isCenter && (
         <div className="absolute inset-0 flex items-center justify-center bg-white/20 text-sm text-gray-600">
