@@ -67,11 +67,15 @@ export const createAppointment = async (appointmentData: {
       process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
     )
 
+    const isKnippen = appointmentData.service.toLowerCase().includes("knippen")
+
     await emailjs.send(
       process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
       process.env.NEXT_PUBLIC_EMAIL_JS_APPOINTMENT_TEMPLATE!,
       {
-        to_email: process.env.NEXT_PUBLIC_EMAIL_ADDRESS,
+        to_email: isKnippen
+          ? process.env.EMAIL_ADDRESS_BOTROS!
+          : process.env.EMAIL_ADDRESS_OLGA!,
         name: appointmentData.name,
         service: appointmentData.service,
         date: appointmentData.date,
