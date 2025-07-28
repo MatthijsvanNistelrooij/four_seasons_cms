@@ -45,8 +45,6 @@ const Appointments = () => {
     }
   }
 
-  console.log(appointments)
-
   useEffect(() => {
     async function fetchAppointments() {
       try {

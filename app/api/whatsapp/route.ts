@@ -16,22 +16,27 @@ export async function POST(req: NextRequest) {
   }).format(new Date(date))
 
   try {
-    const messageBody = `✅ Nieuwe afspraak:\n 👤 Naam: ${name}\n 📱 Tel: ${phone} \n 📅 Datum: ${formattedDate} \n 🕒 Tijd: ${time} \n 💇 Dienst: ${service}`
-
     const isKnippen = service.toLowerCase().includes("knippen")
 
     const to = isKnippen
-      ? process.env.BOTROS_WHATSAPP! 
-      : process.env.OLGA_WHATSAPP! 
+      ? process.env.BOTROS_WHATSAPP!
+      : process.env.OLGA_WHATSAPP!
 
     await client.messages.create({
       from: process.env.TWILIO_WHATSAPP!,
       to,
-      body: messageBody,
+      contentSid: process.env.TWILIO_TEMPLATE_SID!,
+      contentVariables: JSON.stringify({
+        1: name,
+        2: phone,
+        3: formattedDate,
+        4: time,
+        5: service,
+      }),
     })
 
     return NextResponse.json({ success: true })
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     console.error(err)
     return NextResponse.json({ error: err.message }, { status: 500 })
