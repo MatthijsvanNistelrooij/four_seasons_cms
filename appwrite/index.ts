@@ -69,24 +69,41 @@ export const createAppointment = async (appointmentData: {
 
     const isKnippen = appointmentData.service.toLowerCase().includes("knippen")
 
-    await emailjs.send(
-      process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
-      process.env.NEXT_PUBLIC_EMAIL_JS_APPOINTMENT_TEMPLATE!,
-      {
-        to_email: isKnippen
-          ? process.env.EMAIL_ADDRESS_BOTROS!
-          : process.env.EMAIL_ADDRESS_OLGA!,
-        name: appointmentData.name,
-        service: appointmentData.service,
-        date: appointmentData.date,
-        time: appointmentData.time,
-        email: appointmentData.email,
+    if (isKnippen) {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
+        process.env.NEXT_PUBLIC_EMAIL_JS_APPOINTMENT_TEMPLATE!,
+        {
+          to_email: process.env.NEXT_PUBLIC_EMAIL_ADDRESS_BOTROS!,
+          name: appointmentData.name,
+          service: appointmentData.service,
+          date: appointmentData.date,
+          time: appointmentData.time,
+          email: appointmentData.email,
 
-        phone: appointmentData.phone,
-        barber: appointmentData.barber,
-      },
-      process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
-    )
+          phone: appointmentData.phone,
+          barber: appointmentData.barber,
+        },
+        process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
+      )
+    } else {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
+        process.env.NEXT_PUBLIC_EMAIL_JS_APPOINTMENT_TEMPLATE!,
+        {
+          to_email: process.env.NEXT_PUBLIC_EMAIL_ADDRESS_OLGA!,
+          name: appointmentData.name,
+          service: appointmentData.service,
+          date: appointmentData.date,
+          time: appointmentData.time,
+          email: appointmentData.email,
+
+          phone: appointmentData.phone,
+          barber: appointmentData.barber,
+        },
+        process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
+      )
+    }
 
     return appointment
   } catch (error) {
