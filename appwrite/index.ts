@@ -72,7 +72,7 @@ export const createAppointment = async (appointmentData: {
     if (isKnippen) {
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
-        process.env.NEXT_PUBLIC_EMAIL_JS_APPOINTMENT_TEMPLATE!,
+        process.env.NEXT_PUBLIC_EMAIL_JS_CONFIRM_APPOINTMENT_TEMPLATE!,
         {
           to_email: process.env.NEXT_PUBLIC_EMAIL_ADDRESS_BOTROS!,
           name: appointmentData.name,
@@ -80,7 +80,6 @@ export const createAppointment = async (appointmentData: {
           date: appointmentData.date,
           time: appointmentData.time,
           email: appointmentData.email,
-
           phone: appointmentData.phone,
           barber: appointmentData.barber,
         },
@@ -89,7 +88,7 @@ export const createAppointment = async (appointmentData: {
     } else {
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE!,
-        process.env.NEXT_PUBLIC_EMAIL_JS_APPOINTMENT_TEMPLATE!,
+        process.env.NEXT_PUBLIC_EMAIL_JS_CONFIRM_APPOINTMENT_TEMPLATE!,
         {
           to_email: process.env.NEXT_PUBLIC_EMAIL_ADDRESS_OLGA!,
           name: appointmentData.name,
@@ -97,7 +96,6 @@ export const createAppointment = async (appointmentData: {
           date: appointmentData.date,
           time: appointmentData.time,
           email: appointmentData.email,
-
           phone: appointmentData.phone,
           barber: appointmentData.barber,
         },
