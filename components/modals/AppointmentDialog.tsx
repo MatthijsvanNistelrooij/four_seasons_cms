@@ -119,7 +119,7 @@ export function AppointmentDialog({
       setStep(1)
     } catch (error) {
       console.error("Failed to submit appointment", error)
-      alert("Er is iets misgegaan bij het boeken van de afspraak.")
+      toast.error("Er is iets misgegaan. Probeer het opnieuw.")
     }
   }
 
