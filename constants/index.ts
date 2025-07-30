@@ -228,11 +228,7 @@ export const services = [
   /// MANICURE
   { name: "Manicuristische diensten", price: "€ 40,00", category: "manicure" },
   { name: "Oekraïense manicure", price: "€ 40,00", category: "manicure" },
-  {
-    name: "Complexe Oekraïense manicure (combi + gellak coating)",
-    price: "€ 60,00",
-    category: "manicure",
-  },
+
   {
     name: "Manicure en gellak",
     price: "€ 55,00",
@@ -250,6 +246,11 @@ export const services = [
   { name: "Spa manicure", price: "€ 45,00", category: "manicure" },
   { name: "Lak en biab-coating", price: "€ 50,00", category: "manicure" },
   { name: "Nagel ontwerp", price: "€ 35,00", category: "manicure" },
+  {
+    name: "Complexe Oekraïense manicure (combi + gellak coating)",
+    price: "€ 60,00",
+    category: "manicure",
+  },
   {
     name: "Complexe manicure (combi + gellak coating)",
     price: "€ 55,00",
