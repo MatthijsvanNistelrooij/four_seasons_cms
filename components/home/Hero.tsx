@@ -51,7 +51,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
         key={`bg-${index}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 2, ease: "easeOut" }}
         className="absolute inset-0 z-0 bg-black"
       >
         <Image
