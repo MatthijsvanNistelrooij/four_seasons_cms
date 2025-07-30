@@ -226,23 +226,16 @@ export const services = [
   },
 
   /// MANICURE
-  { name: "Manicuristische diensten", price: "€ 40,00", category: "manicure" },
   {
-    name: "Manicure en gellak",
-    price: "€ 55,00",
+    name: "Nagelverlenging in kleur + manicure",
+    price: "€ 89,00",
     category: "manicure",
   },
   {
-    name: "Correctie van nagelcoating",
-    price: "€ 30,00",
+    name: "Naakte nagelverlengingen + manicure",
+    price: "€ 79,00",
     category: "manicure",
   },
-  { name: "Basismanicure", price: "€ 25,00", category: "manicure" },
-  { name: "Franse manicure", price: "€ 30,00", category: "manicure" },
-  { name: "Spa manicure", price: "€ 45,00", category: "manicure" },
-  { name: "Lak en biab-coating", price: "€ 50,00", category: "manicure" },
-  { name: "Nagel ontwerp", price: "€ 35,00", category: "manicure" },
-  { name: "Oekraïense manicure", price: "€ 40,00", category: "manicure" },
   {
     name: "Complexe Oekraïense manicure (combi + gellak coating)",
     price: "€ 60,00",
@@ -254,22 +247,31 @@ export const services = [
     category: "manicure",
   },
   {
-    name: "Naakte nagelverlengingen + manicure",
-    price: "€ 79,00",
+    name: "Manicure en gellak",
+    price: "€ 55,00",
     category: "manicure",
   },
-  {
-    name: "Nagelverlenging in kleur + manicure",
-    price: "€ 89,00",
-    category: "manicure",
-  },
-  { name: "Gellak coating", price: "€ 45,00", category: "manicure" },
-  { name: "Gellak verwijderen", price: "€ 29,00", category: "manicure" },
+  { name: "Lak en biab-coating", price: "€ 50,00", category: "manicure" },
+  { name: "Spa manicure", price: "€ 45,00", category: "manicure" },
+  { name: "Oekraïense manicure", price: "€ 40,00", category: "manicure" },
+  { name: "Manicuristische diensten", price: "€ 40,00", category: "manicure" },
+  { name: "Nagel ontwerp", price: "€ 35,00", category: "manicure" },
   {
     name: "Verwijderen van verlengde nagels",
     price: "€ 32,00",
     category: "manicure",
   },
+  { name: "Franse manicure", price: "€ 30,00", category: "manicure" },
+
+  {
+    name: "Correctie van nagelcoating",
+    price: "€ 30,00",
+    category: "manicure",
+  },
+  { name: "Basismanicure", price: "€ 25,00", category: "manicure" },
+
+  { name: "Gellak coating", price: "€ 45,00", category: "manicure" },
+  { name: "Gellak verwijderen", price: "€ 29,00", category: "manicure" },
 ]
 
 export const treatmentSections = [
