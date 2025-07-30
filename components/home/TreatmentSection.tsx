@@ -1,6 +1,6 @@
 import Image from "next/image"
 import React from "react"
-import treatment_1 from "../../public/images/face_massage_1.jpeg"
+import beauty from "../../public/assets/beauty.jpg"
 import { Button } from "../ui/button"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
@@ -20,7 +20,7 @@ const TreatmentSection = () => {
               className="w-full h-full"
             >
               <Image
-                src={treatment_1}
+                src={beauty}
                 alt="logo"
                 width={1400}
                 height={1400}
