@@ -21,7 +21,7 @@ const Header = ({
 }: HeaderProps) => {
   return (
     <>
-      <section className="relative bg-black overflow-hidden w-full flex flex-col justify-center min-h-[80vh] xl:h-[80vh]">
+      <section className="relative bg-black overflow-hidden w-full flex flex-col justify-center min-h-[15vh] xl:h-[80vh]">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
