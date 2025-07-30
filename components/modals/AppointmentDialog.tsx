@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
+import { toast } from "sonner"
 
 import { Step6_Confirm } from "../steps/Step6_Confirm"
 import { Step1_Service } from "../steps/Step1_Service"
@@ -103,7 +104,7 @@ export function AppointmentDialog({
         }),
       })
 
-      alert("Afspraak succesvol geboekt!")
+      toast.success("Afspraak succesvol aangemaakt!")
 
       setFormData({
         service: "",
@@ -118,7 +119,7 @@ export function AppointmentDialog({
       setStep(1)
     } catch (error) {
       console.error("Failed to submit appointment", error)
-      alert("Er is iets misgegaan bij het boeken van de afspraak.")
+      toast.error("Er is iets misgegaan. Probeer het opnieuw.")
     }
   }
 

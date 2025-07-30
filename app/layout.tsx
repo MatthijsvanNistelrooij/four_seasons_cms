@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Roboto_Slab } from "next/font/google"
 import "./globals.css"
 import { AuthProvider } from "@/context/AuthContext"
+import { Toaster } from "sonner"
 
 const robotoSlab = Roboto_Slab({
   variable: "--font-roboto-slab",
@@ -21,7 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${robotoSlab.variable} antialiased`}>
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          {children}
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   )
