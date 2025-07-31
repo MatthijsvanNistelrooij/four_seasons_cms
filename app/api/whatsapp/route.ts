@@ -52,9 +52,6 @@ export async function POST(req: NextRequest) {
 
     const end = new Date(start.getTime() + 30 * 60 * 1000)
 
-    console.log("date:", date, "time:", time)
-    console.log("start date:", start, "is valid?", !isNaN(start.getTime()))
-
     const dag = dagen[start.getDay()]
     const dagNummer = start.getDate()
     const maand = maanden[start.getMonth()]
