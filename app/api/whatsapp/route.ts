@@ -1,5 +1,30 @@
 import { NextRequest, NextResponse } from "next/server"
 import twilio from "twilio"
+import { generateGoogleCalendarLink } from "./generateGoogleCalendarLink"
+
+const dagen = [
+  "zondag",
+  "maandag",
+  "dinsdag",
+  "woensdag",
+  "donderdag",
+  "vrijdag",
+  "zaterdag",
+]
+const maanden = [
+  "januari",
+  "februari",
+  "maart",
+  "april",
+  "mei",
+  "juni",
+  "juli",
+  "augustus",
+  "september",
+  "oktober",
+  "november",
+  "december",
+]
 
 export async function POST(req: NextRequest) {
   const accountSid = process.env.TWILIO_SID!
@@ -8,19 +33,38 @@ export async function POST(req: NextRequest) {
 
   const { name, time, service, date, phone } = await req.json()
 
-  const formattedDate = new Intl.DateTimeFormat("nl-NL", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  }).format(new Date(date))
-
   try {
     const isKnippen = service.toLowerCase().includes("knippen")
 
     const to = isKnippen
       ? process.env.BOTROS_WHATSAPP!
       : process.env.OLGA_WHATSAPP!
+
+    // Haal alleen de datum (yyyy-mm-dd) zonder tijd
+    const justDate = date.split("T")[0]
+    const start = new Date(`${justDate}T${time}`)
+
+    if (isNaN(start.getTime())) {
+      throw new Error(`Ongeldige startdatum: ${justDate}T${time}`)
+    }
+
+    const end = new Date(start.getTime() + 30 * 60 * 1000) // 30 minuten
+
+    console.log("date:", date, "time:", time)
+    console.log("start date:", start, "is valid?", !isNaN(start.getTime()))
+
+    const calendarLink = generateGoogleCalendarLink({
+      title: `${service} met ${name}`,
+      startDateTime: start,
+      endDateTime: end,
+      description: `Afspraak met ${name} (${phone}) - ${service}`,
+    })
+
+    const dag = dagen[start.getDay()]
+    const dagNummer = start.getDate()
+    const maand = maanden[start.getMonth()]
+
+    const formattedDate = `${dag} ${dagNummer} ${maand} ${calendarLink}`
 
     await client.messages.create({
       from: process.env.TWILIO_WHATSAPP!,
@@ -36,7 +80,7 @@ export async function POST(req: NextRequest) {
     })
 
     return NextResponse.json({ success: true })
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     console.error(err)
     return NextResponse.json({ error: err.message }, { status: 500 })
