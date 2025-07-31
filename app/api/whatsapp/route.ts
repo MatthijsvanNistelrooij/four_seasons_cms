@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from "next/server"
 import twilio from "twilio"
-import { generateGoogleCalendarLink } from "./generateGoogleCalendarLink"
+import {
+  generateGoogleCalendarLink,
+  shortenUrl,
+} from "./generateGoogleCalendarLink"
 
 const dagen = [
   "zondag",
@@ -40,7 +43,6 @@ export async function POST(req: NextRequest) {
       ? process.env.BOTROS_WHATSAPP!
       : process.env.OLGA_WHATSAPP!
 
-    // Haal alleen de datum (yyyy-mm-dd) zonder tijd
     const justDate = date.split("T")[0]
     const start = new Date(`${justDate}T${time}`)
 
@@ -48,10 +50,14 @@ export async function POST(req: NextRequest) {
       throw new Error(`Ongeldige startdatum: ${justDate}T${time}`)
     }
 
-    const end = new Date(start.getTime() + 30 * 60 * 1000) // 30 minuten
+    const end = new Date(start.getTime() + 30 * 60 * 1000)
 
     console.log("date:", date, "time:", time)
     console.log("start date:", start, "is valid?", !isNaN(start.getTime()))
+
+    const dag = dagen[start.getDay()]
+    const dagNummer = start.getDate()
+    const maand = maanden[start.getMonth()]
 
     const calendarLink = generateGoogleCalendarLink({
       title: `${service} met ${name}`,
@@ -60,11 +66,9 @@ export async function POST(req: NextRequest) {
       description: `Afspraak met ${name} (${phone}) - ${service}`,
     })
 
-    const dag = dagen[start.getDay()]
-    const dagNummer = start.getDate()
-    const maand = maanden[start.getMonth()]
+    const shortLink = await shortenUrl(calendarLink)
 
-    const formattedDate = `${dag} ${dagNummer} ${maand} ${calendarLink}`
+    const formattedDate = `${dag} ${dagNummer} ${maand} ${shortLink}`
 
     await client.messages.create({
       from: process.env.TWILIO_WHATSAPP!,

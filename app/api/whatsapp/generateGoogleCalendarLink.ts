@@ -11,10 +11,7 @@ export function generateGoogleCalendarLink({
   description: string
   location?: string
 }) {
-  const format = (date: Date) =>
-    date
-      .toISOString()
-      .replace(/[-:]|\.\d{3}/g, "") // Google Calendar expects YYYYMMDDTHHMMSSZ
+  const format = (date: Date) => date.toISOString().replace(/[-:]|\.\d{3}/g, "")
 
   const link = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
     title
@@ -25,4 +22,11 @@ export function generateGoogleCalendarLink({
   }`
 
   return link
+}
+
+export async function shortenUrl(longUrl: string): Promise<string> {
+  const response = await fetch(
+    `https://tinyurl.com/api-create.php?url=${encodeURIComponent(longUrl)}`
+  )
+  return await response.text()
 }
