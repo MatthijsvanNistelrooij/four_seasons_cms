@@ -91,7 +91,7 @@ const Appointments = () => {
     }
   }
 
-  const itemsPerPage = 20
+  const itemsPerPage = 40
   const [currentPage, setCurrentPage] = useState(1)
 
   const totalPages = Math.ceil(filteredAppointments.length / itemsPerPage)
