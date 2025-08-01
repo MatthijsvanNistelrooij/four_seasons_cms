@@ -11,7 +11,13 @@ export function generateGoogleCalendarLink({
   description: string
   location?: string
 }) {
-  const format = (date: Date) => date.toISOString().replace(/[-:]|\.\d{3}/g, "")
+  const format = (date: Date) =>
+    `${date.getUTCFullYear()}${String(date.getUTCMonth() + 1).padStart(
+      2,
+      "0"
+    )}${String(date.getUTCDate()).padStart(2, "0")}T${String(
+      date.getUTCHours()
+    ).padStart(2, "0")}${String(date.getUTCMinutes()).padStart(2, "0")}00Z`
 
   const link = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
     title

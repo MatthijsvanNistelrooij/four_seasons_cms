@@ -44,7 +44,11 @@ export async function POST(req: NextRequest) {
       : process.env.OLGA_WHATSAPP!
 
     const justDate = date.split("T")[0]
-    const start = new Date(`${justDate}T${time}`)
+
+    const [year, month, day] = justDate.split("-").map(Number)
+    const [hours, minutes] = time.split(":").map(Number)
+
+    const start = new Date(year, month - 1, day, hours, minutes)
 
     if (isNaN(start.getTime())) {
       throw new Error(`Ongeldige startdatum: ${justDate}T${time}`)
