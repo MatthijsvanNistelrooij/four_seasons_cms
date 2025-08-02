@@ -71,6 +71,23 @@ export async function POST(req: NextRequest) {
 
     const formattedDate = `${dag} ${dagNummer} ${maand} ${shortLink}`
 
+    // MOCK
+    // console.log("📦 WhatsApp message payload:")
+    // console.log({
+    //   to,
+    //   contentVariables: {
+    //     1: name,
+    //     2: phone,
+    //     3: formattedDate,
+    //     4: time,
+    //     5: service,
+    //   },
+    //   calendarLink,
+    //   shortLink,
+    //   start: start.toISOString(),
+    //   end: end.toISOString(),
+    // })
+
     await client.messages.create({
       from: process.env.TWILIO_WHATSAPP!,
       to,

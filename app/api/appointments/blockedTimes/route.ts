@@ -11,7 +11,6 @@ export async function POST(request: Request) {
     const { date, service } = await request.json()
     const allAppointments = await getAllAppointments()
 
-    // Filter op dag en service, en haal alleen date, time en service op
     const blockedTimes = allAppointments
       .filter((appt) => isSameDay(parseISO(appt.date), new Date(date)))
       .filter((appt) => {

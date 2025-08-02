@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
-import { addDays, isSameDay, format } from "date-fns"
+import { isSameDay, format } from "date-fns"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { startOfWeek, endOfWeek, isWithinInterval, addWeeks } from "date-fns"
 import { nl } from "date-fns/locale"
+import { DateTime } from "luxon"
 
 type Props = {
   date: Date | null
@@ -19,7 +20,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const availableDates = Array.from({ length: 21 }, (_, i) =>
-    addDays(new Date(), i)
+    DateTime.now().setZone("Europe/Amsterdam").plus({ days: i }).toJSDate()
   )
 
   const handleNext = () => {
