@@ -1,26 +1,49 @@
 import { NextRequest, NextResponse } from "next/server"
-import { Client, Databases } from "appwrite"
+import { Client } from "appwrite"
 import { appwriteConfig } from "@/appwrite/config"
+import { parseISO, isSameDay } from "date-fns"
+import { getAllAppointments } from "@/appwrite"
 
 const client = new Client()
   .setEndpoint(appwriteConfig.endpointUrl)
   .setProject(appwriteConfig.projectId)
+client.headers = {
+  "X-Appwrite-Key": appwriteConfig.apiKey,
+  "X-Appwrite-Project": appwriteConfig.projectId,
+}
 
-const databases = new Databases(client)
+const isKnipService = (service: string) =>
+  service === "Heren knippen" || service === "Dames kort haar knippen"
 
-const databaseId = appwriteConfig.databaseId
-const collectionId = appwriteConfig.appointmentsCollectionId
-
-export async function GET(request: NextRequest) {
-  console.log(request)
+export async function POST(request: NextRequest) {
   try {
-    const response = await databases.listDocuments(databaseId, collectionId)
-    return NextResponse.json(response.documents, { status: 200 })
-  } catch (error) {
-    console.error("Failed to fetch appointments:", error)
-    return NextResponse.json(
-      { error: "Failed to fetch appointments" },
-      { status: 500 }
-    )
+    const { date, service } = await request.json()
+
+    // Haal alle afspraken direct op via je helper, niet via fetch!
+    const allAppointmentsRaw = await getAllAppointments()
+
+    const blockedTimes = allAppointmentsRaw
+      .filter((appt) => isSameDay(parseISO(appt.date), new Date(date)))
+      .filter((appt) => {
+        const existingIsKnip = isKnipService(appt.service)
+        const newIsKnip = isKnipService(service)
+        return existingIsKnip === newIsKnip
+      })
+      .map((appt) => appt.time)
+
+    return NextResponse.json({ blockedTimes })
+  } catch (err) {
+    console.error("Failed to fetch blocked times:", err)
+    return NextResponse.json({ error: "Server error" }, { status: 500 })
+  }
+}
+
+export async function GET() {
+  try {
+    const appointments = await getAllAppointments()
+    return NextResponse.json(appointments, { status: 200 })
+  } catch (err) {
+    console.error("Failed to fetch appointments:", err)
+    return NextResponse.json({ error: "Server error" }, { status: 500 })
   }
 }

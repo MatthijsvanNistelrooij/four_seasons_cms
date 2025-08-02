@@ -2,10 +2,7 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import { format, setHours, setMinutes } from "date-fns"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import {
-  getBlockedTimesForDateAndService,
-  useFetchAppointments,
-} from "@/hooks/useFetchAppointments"
+import { useFetchBlockedTimes } from "@/hooks/useFetchBlockedTimes"
 
 type Props = {
   selectedDate: Date
@@ -29,11 +26,8 @@ export const Step4_Time = ({
   const [showBottomShadow, setShowBottomShadow] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  const { appointments } = useFetchAppointments()
-
-  const blockedTimes = getBlockedTimesForDateAndService(
-    appointments,
-    selectedDate,
+  const { blockedTimes, loading, error: fetchError } = useFetchBlockedTimes(
+    selectedDate.toISOString(),
     selectedService
   )
 
@@ -65,6 +59,9 @@ export const Step4_Time = ({
     handleScroll()
   }, [])
 
+  if (loading) return <p>Laden...</p>
+  if (fetchError) return <p className="text-red-500">{fetchError}</p>
+
   return (
     <div>
       <h3 className="m-2 text-sm font-light">Voorkeurstijd</h3>
@@ -81,19 +78,9 @@ export const Step4_Time = ({
               <div
                 key={slot}
                 className={`w-full border-b px-4 py-3 transition select-none
-                ${
-                  isBooked ? "text-gray-400 bg-gray-100 cursor-not-allowed" : ""
-                }
-                ${
-                  !isBooked && time === slot
-                    ? "bg-[#e9207e] text-white cursor-pointer"
-                    : ""
-                }
-                ${
-                  !isBooked && time !== slot
-                    ? "hover:bg-gray-100 cursor-pointer"
-                    : ""
-                }
+                ${isBooked ? "text-gray-400 bg-gray-100 cursor-not-allowed" : ""}
+                ${!isBooked && time === slot ? "bg-[#e9207e] text-white cursor-pointer" : ""}
+                ${!isBooked && time !== slot ? "hover:bg-gray-100 cursor-pointer" : ""}
               `}
                 onClick={() => {
                   if (!isBooked) onTimeChange(slot)

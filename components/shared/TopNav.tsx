@@ -1,14 +1,11 @@
 "use client"
 import { useState } from "react"
-
 import { FaFacebookF, FaInstagram } from "react-icons/fa"
 import { AppointmentDialog } from "../modals/AppointmentDialog"
 import Link from "next/link"
-// import { LanguageSelector } from "./LanguageSelector"
 
 const TopNav = () => {
   const [openDialog, setOpenDialog] = useState(false)
-  // const [locale, setLocale] = useState("en")
 
   return (
     <div className="bg-[#e9207e] z-50 block">
@@ -37,7 +34,6 @@ const TopNav = () => {
             onOpenChange={setOpenDialog}
           />
         </div>
-        {/* <LanguageSelector currentLocale={locale} onSelect={setLocale} /> */}
       </div>
     </div>
   )

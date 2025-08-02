@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import twilio from "twilio"
+// import twilio from "twilio"
 import {
   generateGoogleCalendarLink,
   shortenUrl,
@@ -30,9 +30,9 @@ const maanden = [
 ]
 
 export async function POST(req: NextRequest) {
-  const accountSid = process.env.TWILIO_SID!
-  const authToken = process.env.TWILIO_TOKEN!
-  const client = twilio(accountSid, authToken)
+  // const accountSid = process.env.TWILIO_SID!
+  // const authToken = process.env.TWILIO_TOKEN!
+  // const client = twilio(accountSid, authToken)
 
   const { name, time, service, date, phone } = await req.json()
 
@@ -71,18 +71,35 @@ export async function POST(req: NextRequest) {
 
     const formattedDate = `${dag} ${dagNummer} ${maand} ${shortLink}`
 
-    await client.messages.create({
-      from: process.env.TWILIO_WHATSAPP!,
+    // MOCK
+    console.log("📦 WhatsApp message payload:")
+    console.log({
       to,
-      contentSid: process.env.TWILIO_TEMPLATE_SID!,
-      contentVariables: JSON.stringify({
+      contentVariables: {
         1: name,
         2: phone,
         3: formattedDate,
         4: time,
         5: service,
-      }),
+      },
+      calendarLink,
+      shortLink,
+      start: start.toISOString(),
+      end: end.toISOString(),
     })
+
+    // await client.messages.create({
+    //   from: process.env.TWILIO_WHATSAPP!,
+    //   to,
+    //   contentSid: process.env.TWILIO_TEMPLATE_SID!,
+    //   contentVariables: JSON.stringify({
+    //     1: name,
+    //     2: phone,
+    //     3: formattedDate,
+    //     4: time,
+    //     5: service,
+    //   }),
+    // })
 
     return NextResponse.json({ success: true })
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
