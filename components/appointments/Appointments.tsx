@@ -34,7 +34,7 @@ const Appointments = () => {
     useState<Appointment | null>(null)
 
   const [sortField, setSortField] = useState<"date" | "time" | null>(null)
-  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc")
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("desc")
 
   const handleSort = (field: "date" | "time") => {
     if (sortField === field) {
@@ -97,7 +97,9 @@ const Appointments = () => {
   const totalPages = Math.ceil(filteredAppointments.length / itemsPerPage)
 
   const sortedAppointments = [...filteredAppointments].sort((a, b) => {
-    if (!sortField) return 0
+    if (!sortField) {
+      return new Date(b.$createdAt).getTime() - new Date(a.$createdAt).getTime()
+    }
 
     const aValue = a[sortField]
     const bValue = b[sortField]
@@ -120,6 +122,7 @@ const Appointments = () => {
 
     return 0
   })
+
   const paginatedAppointments = sortedAppointments.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
