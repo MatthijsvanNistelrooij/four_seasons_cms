@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import { isSameDay, format } from "date-fns"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { startOfWeek, endOfWeek, isWithinInterval, addWeeks } from "date-fns"
 import { nl } from "date-fns/locale"
 import { DateTime } from "luxon"
 
@@ -46,27 +45,30 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   }, [])
 
   function groupDatesByWeek(dates: Date[]) {
-    const now = new Date()
+    const now = DateTime.now().setZone("Europe/Amsterdam")
 
-    const dezeWeekStart = now
-    const dezeWeekEnd = endOfWeek(now, { weekStartsOn: 1 }) // zondag einde week, week start maandag
+    const dezeWeekStart = now.set({ weekday: 1 }).startOf("day") // maandag 00:00
+    const dezeWeekEnd = dezeWeekStart.plus({ days: 6 }).endOf("day") // zondag 23:59:59
 
-    const komendeWeekStart = addWeeks(startOfWeek(now, { weekStartsOn: 1 }), 1)
-    const komendeWeekEnd = endOfWeek(komendeWeekStart, { weekStartsOn: 1 })
+    const komendeWeekStart = dezeWeekStart.plus({ weeks: 1 }).startOf("day")
+    const komendeWeekEnd = komendeWeekStart.plus({ days: 6 }).endOf("day")
 
-    const overTweeWeekStart = addWeeks(startOfWeek(now, { weekStartsOn: 1 }), 2)
-    const overTweeWeekEnd = endOfWeek(overTweeWeekStart, { weekStartsOn: 1 })
+    const overTweeWeekStart = dezeWeekStart.plus({ weeks: 2 }).startOf("day")
+    const overTweeWeekEnd = overTweeWeekStart.plus({ days: 6 }).endOf("day")
 
     return {
-      dezeWeek: dates.filter((d) =>
-        isWithinInterval(d, { start: dezeWeekStart, end: dezeWeekEnd })
-      ),
-      komendeWeek: dates.filter((d) =>
-        isWithinInterval(d, { start: komendeWeekStart, end: komendeWeekEnd })
-      ),
-      overTweeWeek: dates.filter((d) =>
-        isWithinInterval(d, { start: overTweeWeekStart, end: overTweeWeekEnd })
-      ),
+      dezeWeek: dates.filter((d) => {
+        const dt = DateTime.fromJSDate(d).setZone("Europe/Amsterdam")
+        return dt >= dezeWeekStart && dt <= dezeWeekEnd
+      }),
+      komendeWeek: dates.filter((d) => {
+        const dt = DateTime.fromJSDate(d).setZone("Europe/Amsterdam")
+        return dt >= komendeWeekStart && dt <= komendeWeekEnd
+      }),
+      overTweeWeek: dates.filter((d) => {
+        const dt = DateTime.fromJSDate(d).setZone("Europe/Amsterdam")
+        return dt >= overTweeWeekStart && dt <= overTweeWeekEnd
+      }),
     }
   }
 
