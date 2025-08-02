@@ -4,12 +4,14 @@ import { useState } from "react"
 import { FaFacebookF, FaInstagram } from "react-icons/fa"
 import { AppointmentDialog } from "../modals/AppointmentDialog"
 import Link from "next/link"
+// import { LanguageSelector } from "./LanguageSelector"
 
 const TopNav = () => {
   const [openDialog, setOpenDialog] = useState(false)
+  // const [locale, setLocale] = useState("en")
 
   return (
-    <div className="bg-[#e9207e] z-50 hidden md:block">
+    <div className="bg-[#e9207e] z-50 block">
       <div className="container mx-auto relative flex items-center justify-between py-3 md:px-20 px-8">
         <div className="flex gap-4">
           <Link
@@ -35,7 +37,7 @@ const TopNav = () => {
             onOpenChange={setOpenDialog}
           />
         </div>
-        <div className="w-10" />
+        {/* <LanguageSelector currentLocale={locale} onSelect={setLocale} /> */}
       </div>
     </div>
   )
