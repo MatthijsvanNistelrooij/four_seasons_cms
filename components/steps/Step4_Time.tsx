@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { format, setHours, setMinutes } from "date-fns"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useFetchBlockedTimes } from "@/hooks/useFetchBlockedTimes"
+import { DateTime } from "luxon"
 
 type Props = {
   selectedDate: Date
@@ -26,8 +27,12 @@ export const Step4_Time = ({
   const [showBottomShadow, setShowBottomShadow] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
 
+  const dateForApi = DateTime.fromJSDate(selectedDate)
+    .setZone("Europe/Amsterdam")
+    .toISODate() 
+
   const { blockedTimes, loading, error: fetchError } = useFetchBlockedTimes(
-    selectedDate.toISOString(),
+    dateForApi!,
     selectedService
   )
 
