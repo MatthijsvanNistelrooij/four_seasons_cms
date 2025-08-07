@@ -32,7 +32,7 @@ const Pagination = ({
       <Button
         onClick={onNext}
         disabled={disabled || currentPage === totalPages}
-        className="p-0 bg-transparent text-gray-800 hover:bg-gray-100 m-0"
+        className="p-0 bg-transparent text-gray-800 hover:bg-gray-100 m-0 cursor-pointer"
       >
         <ChevronRight />
       </Button>
