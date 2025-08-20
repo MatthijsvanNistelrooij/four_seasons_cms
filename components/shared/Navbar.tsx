@@ -96,7 +96,7 @@ const Navbar = () => {
             href="/beauty"
             className="py-2 text-lg font-bold w-full text-pink-600 hover:text-black"
           >
-            Manicure, Eyebrow and eyelash lamination, Body massage.
+            Manicure. Eyebrow and eyelash lamination. Body massage.
           </Link>
 
           <Link
