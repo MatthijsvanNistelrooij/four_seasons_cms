@@ -81,7 +81,7 @@ const Navbar = () => {
             href="/over-ons"
             className="py-2 text-lg font-bold w-full text-pink-600 hover:text-black"
           >
-            Over
+            About
           </Link>
           <Link
             onClick={() => setIsOpen(false)}

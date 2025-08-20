@@ -6,7 +6,7 @@ import hero_5 from "../public/assets/hero_5.jpg"
 
 export const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Over", path: "/over-ons" },
+  { name: "About", path: "/over-ons" },
   { name: "Cosmetology", path: "/behandelingen" },
   { name: "Manicure", path: "/beauty" },
 ]
