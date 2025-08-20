@@ -7,8 +7,8 @@ import hero_5 from "../public/assets/hero_5.jpg"
 export const navLinks = [
   { name: "Home", path: "/" },
   { name: "Over", path: "/over-ons" },
-  { name: "Behandelingen", path: "/behandelingen" },
-  { name: "Beauty", path: "/beauty" },
+  { name: "Cosmetology", path: "/behandelingen" },
+  { name: "Manicure", path: "/beauty" },
 ]
 
 export const slides = [

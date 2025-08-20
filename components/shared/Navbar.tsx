@@ -88,14 +88,15 @@ const Navbar = () => {
             href="/behandelingen"
             className="py-2 text-lg font-bold w-full text-pink-600 hover:text-black"
           >
-            Behandelingen
+            Cosmetology, Facial cleansing. Facial massage. Facial peeling. RF
+            face lifting. Body cavitation
           </Link>
           <Link
             onClick={() => setIsOpen(false)}
             href="/beauty"
             className="py-2 text-lg font-bold w-full text-pink-600 hover:text-black"
           >
-            Beauty
+            Manicure, Eyebrow and eyelash lamination, Body massage.
           </Link>
 
           <Link
