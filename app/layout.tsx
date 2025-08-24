@@ -3,6 +3,7 @@ import { Roboto_Slab } from "next/font/google"
 import "./globals.css"
 import { AuthProvider } from "@/context/AuthContext"
 import { Toaster } from "sonner"
+import { Analytics } from "@vercel/analytics/next"
 
 const robotoSlab = Roboto_Slab({
   variable: "--font-roboto-slab",
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`${robotoSlab.variable} antialiased`}>
         <AuthProvider>
           {children}
+          <Analytics />
           <Toaster />
         </AuthProvider>
       </body>
