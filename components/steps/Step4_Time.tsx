@@ -29,12 +29,13 @@ export const Step4_Time = ({
 
   const dateForApi = DateTime.fromJSDate(selectedDate)
     .setZone("Europe/Amsterdam")
-    .toISODate() 
+    .toISODate()
 
-  const { blockedTimes, loading, error: fetchError } = useFetchBlockedTimes(
-    dateForApi!,
-    selectedService
-  )
+  const {
+    blockedTimes,
+    loading,
+    error: fetchError,
+  } = useFetchBlockedTimes(dateForApi!, selectedService)
 
   const timeSlots = Array.from({ length: 17 }, (_, i) => {
     const hour = 9 + Math.floor(i / 2)
@@ -64,7 +65,6 @@ export const Step4_Time = ({
     handleScroll()
   }, [])
 
-  if (loading) return <p>Laden...</p>
   if (fetchError) return <p className="text-red-500">{fetchError}</p>
 
   return (
@@ -76,25 +76,41 @@ export const Step4_Time = ({
           onScroll={handleScroll}
           className="flex flex-col border border-gray-200 max-h-96 overflow-y-auto bg-white text-sm font-semibold rounded-xl"
         >
-          {timeSlots.map((slot) => {
-            const isBooked = blockedTimes.includes(slot)
+          {loading ? (
+            <div className="flex justify-center items-center py-10 text-gray-500">
+              Laden...
+            </div>
+          ) : (
+            timeSlots.map((slot) => {
+              const isBooked = blockedTimes.includes(slot)
 
-            return (
-              <div
-                key={slot}
-                className={`w-full border-b px-4 py-3 transition select-none
-                ${isBooked ? "text-gray-400 bg-gray-100 cursor-not-allowed" : ""}
-                ${!isBooked && time === slot ? "bg-[#e9207e] text-white cursor-pointer" : ""}
-                ${!isBooked && time !== slot ? "hover:bg-gray-100 cursor-pointer" : ""}
+              return (
+                <div
+                  key={slot}
+                  className={`w-full border-b px-4 py-3 transition select-none
+                ${
+                  isBooked ? "text-gray-400 bg-gray-100 cursor-not-allowed" : ""
+                }
+                ${
+                  !isBooked && time === slot
+                    ? "bg-[#e9207e] text-white cursor-pointer"
+                    : ""
+                }
+                ${
+                  !isBooked && time !== slot
+                    ? "hover:bg-gray-100 cursor-pointer"
+                    : ""
+                }
               `}
-                onClick={() => {
-                  if (!isBooked) onTimeChange(slot)
-                }}
-              >
-                {slot}
-              </div>
-            )
-          })}
+                  onClick={() => {
+                    if (!isBooked) onTimeChange(slot)
+                  }}
+                >
+                  {slot}
+                </div>
+              )
+            })
+          )}
         </div>
 
         {showTopShadow && (
