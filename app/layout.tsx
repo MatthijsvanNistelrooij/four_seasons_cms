@@ -25,8 +25,8 @@ export default function RootLayout({
       <body className={`${robotoSlab.variable} antialiased`}>
         <AuthProvider>
           {children}
-          <Analytics />
           <Toaster />
+          <Analytics />
         </AuthProvider>
       </body>
     </html>
