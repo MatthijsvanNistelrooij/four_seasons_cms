@@ -77,7 +77,7 @@ export const Step4_Time = ({
           className="flex flex-col border border-gray-200 max-h-96 overflow-y-auto bg-white text-sm font-semibold rounded-xl"
         >
           {loading ? (
-            <div className="flex justify-center items-center py-10 text-gray-500">
+            <div className="flex justify-center min-h-[50vh] items-center py-10 text-gray-500">
               Laden...
             </div>
           ) : (
