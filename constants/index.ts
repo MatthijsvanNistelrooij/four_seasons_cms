@@ -192,6 +192,18 @@ export const services = [
     category: "lichaamsmassage",
   },
 
+  /// CARBOXYTHERAPIE
+  { name: "Carboxytherapie", price: "€ 70,00", category: "cosmetologie" },
+
+  /// HYDRA PEN
+  { name: "Hydra Pen", price: "€ 75,00", category: "cosmetologie" },
+
+  /// MAKE UP
+  { name: "Make up – Klassiek", price: "€ 65,00", category: "makeup" },
+  { name: "Make up – Kersttijd", price: "€ 85,00", category: "makeup" },
+  { name: "Make up – Voor Kinderen", price: "€ 55,00", category: "makeup" },
+  { name: "Make up – Wedding", price: "€ 120,00", category: "makeup" },
+
   /// LIPOSUCTIE
   {
     name: "Laser liposuctie",

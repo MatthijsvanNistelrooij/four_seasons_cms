@@ -89,14 +89,14 @@ const Navbar = () => {
             className="py-2 text-lg font-bold w-full text-pink-600 hover:text-black"
           >
             Cosmetology. Facial cleansing. Facial massage. Facial peeling. RF
-            face lifting. Body cavitation.
+            face lifting. Body cavitation. Carboxytherapy. Hydra Pen.
           </Link>
           <Link
             onClick={() => setIsOpen(false)}
             href="/beauty"
             className="py-2 text-lg font-bold w-full text-pink-600 hover:text-black"
           >
-            Manicure. Eyebrow and eyelash lamination. Body massage.
+            Make Up. Manicure. Eyebrow and eyelash lamination. Body massage.
           </Link>
 
           <Link
