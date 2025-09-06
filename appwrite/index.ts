@@ -2,6 +2,7 @@ import { Client, Account, Databases, ID } from "appwrite"
 import { appwriteConfig } from "../appwrite/config"
 import { Appointment } from "@/types"
 import emailjs from "@emailjs/browser"
+import { Query } from "node-appwrite"
 
 const client = new Client()
   .setEndpoint(appwriteConfig.endpointUrl)
@@ -16,7 +17,8 @@ export const getAllAppointments = async () => {
   try {
     const response = await databases.listDocuments(
       appwriteConfig.databaseId,
-      appwriteConfig.appointmentsCollectionId
+      appwriteConfig.appointmentsCollectionId,
+      [Query.limit(100)]
     )
     return response.documents
   } catch (error) {
@@ -24,7 +26,6 @@ export const getAllAppointments = async () => {
     return []
   }
 }
-
 export const createAppointment = async (appointmentData: {
   name: string
   service: string

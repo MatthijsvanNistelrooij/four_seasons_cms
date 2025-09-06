@@ -91,7 +91,7 @@ const Appointments = () => {
     }
   }
 
-  const itemsPerPage = 10
+  const itemsPerPage = 50
   const [currentPage, setCurrentPage] = useState(1)
 
   const totalPages = Math.ceil(filteredAppointments.length / itemsPerPage)
@@ -186,6 +186,7 @@ const Appointments = () => {
           <Table>
             <TableHeader>
               <TableRow>
+                <TableHead>#</TableHead>
                 <TableHead>Naam</TableHead>
                 <TableHead>Service</TableHead>
                 <TableHead
@@ -216,8 +217,9 @@ const Appointments = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {paginatedAppointments.map((appt) => (
+              {paginatedAppointments.map((appt, idx) => (
                 <TableRow key={appt.$id}>
+                  <TableCell>{idx}</TableCell>
                   <TableCell>{appt.name}</TableCell>
                   <TableCell>{appt.service}</TableCell>
                   <TableCell>
