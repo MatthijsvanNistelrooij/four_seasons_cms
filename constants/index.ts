@@ -201,7 +201,7 @@ export const services = [
   /// MAKE UP
   { name: "Make up – Klassiek", price: "€ 65,00", category: "makeup" },
   { name: "Make up – Kersttijd", price: "€ 85,00", category: "makeup" },
-  { name: "Make up – Voor Kinderen", price: "€ 55,00", category: "makeup" },
+  { name: "Make up – Kinderen", price: "€ 55,00", category: "makeup" },
   { name: "Make up – Wedding", price: "€ 120,00", category: "makeup" },
 
   /// LIPOSUCTIE
