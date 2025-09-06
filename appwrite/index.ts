@@ -18,7 +18,7 @@ export const getAllAppointments = async () => {
     const response = await databases.listDocuments(
       appwriteConfig.databaseId,
       appwriteConfig.appointmentsCollectionId,
-      [Query.limit(100)]
+      [Query.orderDesc("$id"), Query.limit(100)]
     )
     return response.documents
   } catch (error) {
