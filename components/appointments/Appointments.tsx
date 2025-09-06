@@ -186,7 +186,6 @@ const Appointments = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>#</TableHead>
                 <TableHead>Naam</TableHead>
                 <TableHead>Service</TableHead>
                 <TableHead
@@ -217,9 +216,8 @@ const Appointments = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {paginatedAppointments.map((appt, idx) => (
+              {paginatedAppointments.map((appt) => (
                 <TableRow key={appt.$id}>
-                  <TableCell>{idx}</TableCell>
                   <TableCell>{appt.name}</TableCell>
                   <TableCell>{appt.service}</TableCell>
                   <TableCell>
