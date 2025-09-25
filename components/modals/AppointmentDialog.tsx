@@ -158,7 +158,7 @@ export function AppointmentDialog({
       <DialogContent className="!bg-gray-100 !rounded-xl border-none p-3 lg:p-6 min-h-[620px] select-none text-gray-800">
         <DialogHeader>
           {maintenanceMode ? (
-            <div className="text-center mt-40">
+            <div className="text-center mt-20">
               <DialogTitle>Onderhoud bezig</DialogTitle>
 
               <DialogDescription className="text-gray-700 mt-10">
