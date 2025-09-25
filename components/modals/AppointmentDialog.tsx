@@ -19,6 +19,7 @@ import { Step3_Date } from "../steps/Step3_Date"
 import { Step4_Time } from "../steps/Step4_Time"
 import { Step5_Contact } from "../steps/Step5_Contact"
 import { createAppointment } from "@/appwrite"
+import { Wrench } from "lucide-react"
 
 type AppointmentDialogProps = {
   title: string
@@ -33,6 +34,8 @@ export function AppointmentDialog({
   hover,
   onOpenChange,
 }: AppointmentDialogProps) {
+  const maintenanceMode = true // ← zet dit tijdelijk op true tijdens onderhoud
+
   const [step, setStep] = useState(1)
 
   const next = () => setStep((s) => Math.min(s + 1, 6))
@@ -154,72 +157,94 @@ export function AppointmentDialog({
       </DialogTrigger>
       <DialogContent className="!bg-gray-100 !rounded-xl border-none p-3 lg:p-6 min-h-[620px] select-none text-gray-800">
         <DialogHeader>
-          <DialogTitle>Afspraak boeken</DialogTitle>
-          <DialogDescription className="text-gray-700">
-            Stap {step} van 6
-          </DialogDescription>
+          {maintenanceMode ? (
+            <div className="text-center">
+              <DialogTitle>Onderhoud bezig</DialogTitle>
+
+              <DialogDescription className="text-gray-700 mt-10">
+                We zijn momenteel bezig met onderhoud aan de database.
+                <br />
+                Afspraken boeken is tijdelijk niet mogelijk.
+                <br />
+                Probeer het later opnieuw.
+                <div className="flex justify-center mt-10">
+                  <Wrench className="h-16 w-16 text-[#e9207e]" />{" "}
+                  {/* groter en gecentreerd */}
+                </div>
+              </DialogDescription>
+            </div>
+          ) : (
+            <>
+              <DialogTitle>Afspraak boeken</DialogTitle>
+              <DialogDescription className="text-gray-700">
+                Stap {step} van 6
+              </DialogDescription>
+            </>
+          )}
         </DialogHeader>
 
-        <div className="py-1">
-          {step === 1 && (
-            <Step1_Service
-              value={formData.service}
-              onNext={next}
-              onChange={(v) => updateFormData("service", v)}
-            />
-          )}
-          {step === 2 && (
-            <Step2_Barber
-              value={formData.barber}
-              onNext={next}
-              onBack={back}
-              onChange={(v) => updateFormData("barber", v)}
-              category={formData.service}
-            />
-          )}
-          {step === 3 && (
-            <Step3_Date
-              date={formData.date ? new Date(formData.date) : null}
-              onNext={next}
-              onBack={back}
-              onDateChange={(v) => updateFormData("date", v.toISOString())}
-            />
-          )}
-          {step === 4 && (
-            <Step4_Time
-              selectedService={formData.service}
-              selectedDate={new Date(formData.date)}
-              time={formData.time}
-              onNext={next}
-              onBack={back}
-              onTimeChange={(v) => updateFormData("time", v)}
-            />
-          )}
-          {step === 5 && (
-            <Step5_Contact
-              name={formData.name}
-              email={formData.email}
-              phone={formData.phone}
-              onNameChange={(v) => updateFormData("name", v)}
-              onEmailChange={(v) => updateFormData("email", v)}
-              onPhoneChange={(v) => updateFormData("phone", v)}
-              rememberData={rememberData}
-              setRememberData={setRememberData}
-              onNext={next}
-              onBack={back}
-            />
-          )}
-          {step === 6 && (
-            <Step6_Confirm
-              data={{
-                ...formData,
-                date: new Date(formData.date),
-              }}
-              onBack={back}
-              onSubmit={handleSubmit}
-            />
-          )}
-        </div>
+        {!maintenanceMode && (
+          <div className="py-1">
+            {step === 1 && (
+              <Step1_Service
+                value={formData.service}
+                onNext={next}
+                onChange={(v) => updateFormData("service", v)}
+              />
+            )}
+            {step === 2 && (
+              <Step2_Barber
+                value={formData.barber}
+                onNext={next}
+                onBack={back}
+                onChange={(v) => updateFormData("barber", v)}
+                category={formData.service}
+              />
+            )}
+            {step === 3 && (
+              <Step3_Date
+                date={formData.date ? new Date(formData.date) : null}
+                onNext={next}
+                onBack={back}
+                onDateChange={(v) => updateFormData("date", v.toISOString())}
+              />
+            )}
+            {step === 4 && (
+              <Step4_Time
+                selectedService={formData.service}
+                selectedDate={new Date(formData.date)}
+                time={formData.time}
+                onNext={next}
+                onBack={back}
+                onTimeChange={(v) => updateFormData("time", v)}
+              />
+            )}
+            {step === 5 && (
+              <Step5_Contact
+                name={formData.name}
+                email={formData.email}
+                phone={formData.phone}
+                onNameChange={(v) => updateFormData("name", v)}
+                onEmailChange={(v) => updateFormData("email", v)}
+                onPhoneChange={(v) => updateFormData("phone", v)}
+                rememberData={rememberData}
+                setRememberData={setRememberData}
+                onNext={next}
+                onBack={back}
+              />
+            )}
+            {step === 6 && (
+              <Step6_Confirm
+                data={{
+                  ...formData,
+                  date: new Date(formData.date),
+                }}
+                onBack={back}
+                onSubmit={handleSubmit}
+              />
+            )}
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   )
