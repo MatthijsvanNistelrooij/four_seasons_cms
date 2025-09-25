@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import twilio from "twilio"
-import {
-  generateGoogleCalendarLink,
-  shortenUrl,
-} from "./generateGoogleCalendarLink"
+import { generateGoogleCalendarLink } from "./generateGoogleCalendarLink"
 
 const dagen = [
   "zondag",
@@ -58,7 +55,11 @@ export async function POST(req: NextRequest) {
 
     const endDate = new Date(startDate.getTime() + 30 * 60 * 1000)
     // Bouw eindtijd ook als ISO zonder tijdzone
-    const endLocalISO = `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}T${String(endDate.getHours()).padStart(2, "0")}:${String(endDate.getMinutes()).padStart(2, "0")}`
+    const endLocalISO = `${endDate.getFullYear()}-${String(
+      endDate.getMonth() + 1
+    ).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}T${String(
+      endDate.getHours()
+    ).padStart(2, "0")}:${String(endDate.getMinutes()).padStart(2, "0")}`
 
     // Datum tekst voor WhatsApp
     const dag = dagen[startDate.getDay()]
@@ -73,9 +74,7 @@ export async function POST(req: NextRequest) {
       description: `Afspraak met ${name} (${phone}) - ${service}`,
     })
 
-    const shortLink = await shortenUrl(calendarLink)
-
-    const formattedDate = `${dag} ${dagNummer} ${maand} ${shortLink}`
+    const formattedDate = `${dag} ${dagNummer} ${maand}`
 
     console.log("📦 WhatsApp message payload:")
     console.log({
@@ -88,7 +87,6 @@ export async function POST(req: NextRequest) {
         5: service,
       },
       calendarLink,
-      shortLink,
       start: startDate.toISOString(),
       end: endDate.toISOString(),
     })
@@ -108,7 +106,7 @@ export async function POST(req: NextRequest) {
     })
 
     return NextResponse.json({ success: true })
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     console.error(err)
     return NextResponse.json({ error: err.message }, { status: 500 })

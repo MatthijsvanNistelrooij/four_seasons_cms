@@ -2,8 +2,8 @@ import { DateTime } from "luxon"
 
 export function generateGoogleCalendarLink({
   title,
-  startDateTime, // ISO string lokale tijd, bijv. "2025-08-15T12:00"
-  endDateTime,   // ISO string lokale tijd, bijv. "2025-08-15T12:30"
+  startDateTime,
+  endDateTime,
   description,
   location,
 }: {
@@ -29,10 +29,3 @@ export function generateGoogleCalendarLink({
   return url.toString()
 }
 
-export async function shortenUrl(longUrl: string): Promise<string> {
-  const response = await fetch(
-    `https://tinyurl.com/api-create.php?url=${encodeURIComponent(longUrl)}`
-  )
-  if (!response.ok) throw new Error("Failed to shorten URL")
-  return response.text()
-}
