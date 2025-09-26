@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     const justDate = date.split("T")[0]
     const startLocalISO = `${justDate}T${time}`
 
-    // Maak een Date object voor het gemak om eindtijd te berekenen
+    // Maak een Date object voor eindtijdberekening
     const [year, month, day] = justDate.split("-").map(Number)
     const [hours, minutes] = time.split(":").map(Number)
     const startDate = new Date(year, month - 1, day, hours, minutes)
@@ -54,19 +54,14 @@ export async function POST(req: NextRequest) {
     }
 
     const endDate = new Date(startDate.getTime() + 30 * 60 * 1000)
-    // Bouw eindtijd ook als ISO zonder tijdzone
-    const endLocalISO = `${endDate.getFullYear()}-${String(
-      endDate.getMonth() + 1
-    ).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}T${String(
-      endDate.getHours()
-    ).padStart(2, "0")}:${String(endDate.getMinutes()).padStart(2, "0")}`
+    const endLocalISO = `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}T${String(endDate.getHours()).padStart(2, "0")}:${String(endDate.getMinutes()).padStart(2, "0")}`
 
     // Datum tekst voor WhatsApp
     const dag = dagen[startDate.getDay()]
     const dagNummer = startDate.getDate()
     const maand = maanden[startDate.getMonth()]
 
-    // Genereer Google Calendar link met Luxon-conversie binnen die functie
+    // Genereer Google Calendar link
     const calendarLink = generateGoogleCalendarLink({
       title: `${service} met ${name}`,
       startDateTime: startLocalISO,
@@ -74,24 +69,24 @@ export async function POST(req: NextRequest) {
       description: `Afspraak met ${name} (${phone}) - ${service}`,
     })
 
-    const formattedDate = `${dag} ${dagNummer} ${maand}`
+    const formattedDate = `${dag} ${dagNummer} ${maand} ${calendarLink}`
 
-    console.log("📦 WhatsApp message payload:")
-    console.log({
-      to,
-      contentVariables: {
-        1: name,
-        2: phone,
-        3: formattedDate,
-        4: time,
-        5: service,
-      },
-      calendarLink,
-      start: startDate.toISOString(),
-      end: endDate.toISOString(),
-    })
+    // console.log("📦 WhatsApp message payload:")
+    // console.log({
+    //   to,
+    //   contentVariables: {
+    //     1: name,
+    //     2: phone,
+    //     3: formattedDate,
+    //     4: time,
+    //     5: service,
+    //   },
+    //   calendarLink,
+    //   start: startDate.toISOString(),
+    //   end: endDate.toISOString(),
+    // })
 
-    // Twilio bericht versturen
+    // Verstuur Twilio bericht
     await client.messages.create({
       from: process.env.TWILIO_WHATSAPP!,
       to,
@@ -106,7 +101,7 @@ export async function POST(req: NextRequest) {
     })
 
     return NextResponse.json({ success: true })
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     console.error(err)
     return NextResponse.json({ error: err.message }, { status: 500 })
