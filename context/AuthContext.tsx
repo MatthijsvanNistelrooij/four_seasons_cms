@@ -25,6 +25,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<Models.User<Models.Preferences> | null>(null)
   const [loading, setLoading] = useState(true)
 
+  console.log("account", account)
+
   useEffect(() => {
     const checkUser = async () => {
       try {
