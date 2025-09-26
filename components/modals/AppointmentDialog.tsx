@@ -34,8 +34,8 @@ export function AppointmentDialog({
   hover,
   onOpenChange,
 }: AppointmentDialogProps) {
-  const maintenanceMode = true // ← zet dit tijdelijk op true tijdens onderhoud
-
+  const maintenanceMode = false
+  
   const [step, setStep] = useState(1)
 
   const next = () => setStep((s) => Math.min(s + 1, 6))
