@@ -18,13 +18,10 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   const [showBottomShadow, setShowBottomShadow] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  // const availableDates = Array.from({ length: 21 }, (_, i) =>
-  //   DateTime.now().setZone("Europe/Amsterdam").plus({ days: i }).toJSDate()
-  // )
   const availableDates = Array.from({ length: 28 }, (_, i) =>
     DateTime.now().setZone("Europe/Amsterdam").plus({ days: i })
   )
-    .filter((dt) => dt.weekday !== 7) // zondag (7) eruit filteren
+    .filter((dt) => dt.weekday !== 7)
     .map((dt) => dt.toJSDate())
 
   const handleNext = () => {
