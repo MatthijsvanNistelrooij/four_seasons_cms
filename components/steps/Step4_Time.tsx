@@ -37,8 +37,8 @@ export const Step4_Time = ({
     error: fetchError,
   } = useFetchBlockedTimes(dateForApi!, selectedService)
 
-  const timeSlots = Array.from({ length: 17 }, (_, i) => {
-    const hour = 9 + Math.floor(i / 2)
+  const timeSlots = Array.from({ length: 19 }, (_, i) => {
+    const hour = 10 + Math.floor(i / 2)
     const minute = (i % 2) * 30
     return format(setMinutes(setHours(new Date(), hour), minute), "HH:mm")
   })
