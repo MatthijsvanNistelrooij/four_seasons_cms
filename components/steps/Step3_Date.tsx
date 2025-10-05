@@ -18,6 +18,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   const [showBottomShadow, setShowBottomShadow] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
 
+  // Genereer komende 28 dagen (geen zondagen)
   const availableDates = Array.from({ length: 28 }, (_, i) =>
     DateTime.now().setZone("Europe/Amsterdam").plus({ days: i })
   )
@@ -36,7 +37,6 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   const handleScroll = () => {
     const container = scrollRef.current
     if (!container) return
-
     const { scrollTop, scrollHeight, clientHeight } = container
     setShowTopShadow(scrollTop > 0)
     setShowBottomShadow(scrollTop + clientHeight < scrollHeight - 1)
@@ -48,14 +48,15 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
 
   function groupDatesByWeek(dates: Date[]) {
     const now = DateTime.now().setZone("Europe/Amsterdam")
+    const startOfThisWeek = now.set({ weekday: 1 }).startOf("day")
 
-    const dezeWeekStart = now.set({ weekday: 1 }).startOf("day") // maandag 00:00
-    const dezeWeekEnd = dezeWeekStart.plus({ days: 6 }).endOf("day") // zondag 23:59:59
+    const dezeWeekStart = startOfThisWeek
+    const dezeWeekEnd = dezeWeekStart.plus({ days: 6 }).endOf("day")
 
-    const komendeWeekStart = dezeWeekStart.plus({ weeks: 1 }).startOf("day")
+    const komendeWeekStart = startOfThisWeek.plus({ weeks: 1 }).startOf("day")
     const komendeWeekEnd = komendeWeekStart.plus({ days: 6 }).endOf("day")
 
-    const overTweeWeekStart = dezeWeekStart.plus({ weeks: 2 }).startOf("day")
+    const overTweeWeekStart = startOfThisWeek.plus({ weeks: 2 }).startOf("day")
     const overTweeWeekEnd = overTweeWeekStart.plus({ days: 6 }).endOf("day")
 
     return {
@@ -79,21 +80,19 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
   return (
     <div>
       <h3 className="m-2 text-sm font-light">Wanneer wilt u langskomen?</h3>
-      <div className="relative rounded-xl  overflow-hidden">
+
+      <div className="relative rounded-xl overflow-hidden">
         <div
           ref={scrollRef}
           onScroll={handleScroll}
           className="flex flex-col max-h-96 overflow-y-auto space-y-5 bg-white text-sm font-semibold relative border rounded-xl"
         >
-          <div>
-            <h4 className="px-4 py-2 font-light mt-3 border-b border-gray-200 flex justify-center">
-              DEZE WEEK
-            </h4>
-
-            <div className="overflow-hidden">
-              {groupedDates.dezeWeek.length === 0 && (
-                <p className="text-gray-800">Geen beschikbare dagen</p>
-              )}
+          {/* Deze week */}
+          {groupedDates.dezeWeek.length > 0 && (
+            <div>
+              <h4 className="px-4 py-2 font-light mt-3 border-b border-gray-200 flex justify-center">
+                DEZE WEEK
+              </h4>
               {groupedDates.dezeWeek.map((d) => (
                 <div
                   key={d.toDateString()}
@@ -108,16 +107,14 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
                 </div>
               ))}
             </div>
-          </div>
+          )}
 
-          <div>
-            <h4 className="px-4 py-2 mt-3 font-light border-b border-gray-200 flex justify-center">
-              VOLGENDE WEEK
-            </h4>
-            <div className="overflow-hidden">
-              {groupedDates.komendeWeek.length === 0 && (
-                <p className="text-gray-800">Geen beschikbare dagen</p>
-              )}
+          {/* Komende week */}
+          {groupedDates.komendeWeek.length > 0 && (
+            <div>
+              <h4 className="px-4 py-2 mt-3 font-light border-b border-gray-200 flex justify-center">
+                KOMENDE WEEK
+              </h4>
               {groupedDates.komendeWeek.map((d) => (
                 <div
                   key={d.toDateString()}
@@ -132,16 +129,14 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
                 </div>
               ))}
             </div>
-          </div>
+          )}
 
-          <div>
-            <h4 className="px-4 py-2 mt-3 font-light border-b border-gray-200 flex justify-center">
-              OVER TWEE WEKEN
-            </h4>
-            {groupedDates.overTweeWeek.length === 0 && (
-              <p className="text-gray-800">Geen beschikbare dagen</p>
-            )}
-            <div className="overflow-hidden">
+          {/* Volgende week */}
+          {groupedDates.overTweeWeek.length > 0 && (
+            <div>
+              <h4 className="px-4 py-2 mt-3 font-light border-b border-gray-200 flex justify-center">
+                VOLGENDE WEEK
+              </h4>
               {groupedDates.overTweeWeek.map((d) => (
                 <div
                   key={d.toDateString()}
@@ -156,8 +151,9 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
                 </div>
               ))}
             </div>
-          </div>
+          )}
         </div>
+
         {showTopShadow && (
           <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-b from-gray-300 to-transparent pointer-events-none z-10" />
         )}
