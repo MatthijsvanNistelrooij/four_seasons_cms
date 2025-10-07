@@ -91,7 +91,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
           {groupedDates.dezeWeek.length > 0 && (
             <div>
               <h4 className="px-4 py-2 font-light mt-3 border-b border-gray-200 flex justify-center">
-                DEZE WEEK
+                KOMENDE WEEK
               </h4>
               {groupedDates.dezeWeek.map((d) => (
                 <div
@@ -113,7 +113,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
           {groupedDates.komendeWeek.length > 0 && (
             <div>
               <h4 className="px-4 py-2 mt-3 font-light border-b border-gray-200 flex justify-center">
-                KOMENDE WEEK
+                VOLGENDE WEEK
               </h4>
               {groupedDates.komendeWeek.map((d) => (
                 <div
@@ -135,7 +135,7 @@ export const Step3_Date = ({ date, onDateChange, onNext, onBack }: Props) => {
           {groupedDates.overTweeWeek.length > 0 && (
             <div>
               <h4 className="px-4 py-2 mt-3 font-light border-b border-gray-200 flex justify-center">
-                VOLGENDE WEEK
+               OVER TWEE WEKEN
               </h4>
               {groupedDates.overTweeWeek.map((d) => (
                 <div
