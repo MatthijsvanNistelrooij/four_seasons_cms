@@ -2,6 +2,7 @@
 
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -34,8 +35,8 @@ export function AppointmentDialog({
   hover,
   onOpenChange,
 }: AppointmentDialogProps) {
-  const maintenanceMode = false
-  
+  const maintenanceMode = true
+
   const [step, setStep] = useState(1)
 
   const next = () => setStep((s) => Math.min(s + 1, 6))
@@ -156,22 +157,33 @@ export function AppointmentDialog({
         </Button>
       </DialogTrigger>
       <DialogContent className="!bg-gray-100 !rounded-xl border-none p-3 lg:p-6 min-h-[620px] select-none text-gray-800">
-        <DialogHeader>
+        <DialogHeader className="flex-1">
           {maintenanceMode ? (
-            <div className="text-center mt-20">
-              <DialogTitle>Onderhoud bezig</DialogTitle>
+            <div className="flex h-full flex-col items-center justify-center text-center px-6">
+              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#e9207e]/10">
+                <Wrench className="h-10 w-10 text-[#e9207e]" />
+              </div>
 
-              <DialogDescription className="text-gray-700 mt-10">
+              <DialogTitle className="text-2xl font-bold tracking-tight">
+                Onderhoud bezig
+              </DialogTitle>
+
+              <DialogDescription className="mt-4 max-w-md text-base leading-7 text-gray-600">
                 We zijn momenteel bezig met onderhoud aan de site.
                 <br />
                 Afspraken boeken is tijdelijk niet mogelijk.
                 <br />
                 Probeer het later opnieuw.
-                <div className="flex justify-center mt-10">
-                  <Wrench className="h-16 w-16 text-[#e9207e]" />{" "}
-                  {/* groter en gecentreerd */}
-                </div>
               </DialogDescription>
+
+              <DialogClose asChild>
+                <button
+                  type="button"
+                  className="mt-8 cursor-pointer rounded-full bg-white px-4 py-2 text-sm font-medium text-gray-500 shadow-sm ring-1 ring-black/5 transition hover:bg-gray-50"
+                >
+                  Terug naar de site
+                </button>
+              </DialogClose>
             </div>
           ) : (
             <>
