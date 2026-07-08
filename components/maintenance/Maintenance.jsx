@@ -14,7 +14,7 @@ const Maintenance = () => {
         />
 
         <h1 className="mb-6 text-3xl font-bold">
-          We zijn bezig met een verhuizing.
+          We zijn bezig met een verhuizing
         </h1>
 
         <p className="text-lg leading-relaxed">
