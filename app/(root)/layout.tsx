@@ -5,7 +5,7 @@ import Navbar from "@/components/shared/Navbar"
 import TopNav from "@/components/shared/TopNav"
 import Maintenance from "@/components/maintenance/Maintenance"
 
-const MAINTENANCE_MODE = false
+const MAINTENANCE_MODE = true
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   if (MAINTENANCE_MODE) {
