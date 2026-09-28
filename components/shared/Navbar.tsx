@@ -63,7 +63,7 @@ const Navbar = () => {
           className="hidden w-full text-sm 2xl:flex flex-col justify-end items-end text-right"
           style={{ fontFamily: "sans-serif" }}
         >
-          <div className="font-bold">Reitemakersrijge 3, </div>
+          <div className="font-bold">Westerhaven 12, </div>
           <div>Groningen</div>
         </div>
       </div>

@@ -1,39 +1,52 @@
 import { NextRequest, NextResponse } from "next/server"
-import { databases } from "@/appwrite"
-import { appwriteConfig } from "@/appwrite/config"
+import { requireAuthenticatedUser, supabaseAdmin } from "@/lib/supabase/server"
 
-const databaseId = appwriteConfig.databaseId
-const collectionId = appwriteConfig.appointmentsCollectionId
+const fields = ["name", "service", "date", "email", "phone", "time", "barber"] as const
 
-export async function PUT(request: NextRequest) {
+async function authorized(request: NextRequest) {
+  const user = await requireAuthenticatedUser(request)
+  return Boolean(user?.email_confirmed_at)
+}
+
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  if (!(await authorized(request))) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+  }
+
   try {
-    const id = request.nextUrl.pathname.split("/").pop()
-    const data = await request.json()
+    const { id } = await params
+    const body = await request.json() as Record<string, unknown>
+    const appointment = Object.fromEntries(
+      fields
+        .filter((field) => typeof body[field] === "string")
+        .map((field) => [field, field === "date" ? String(body[field]).slice(0, 10) : body[field]])
+    )
 
-    if (!id || !data) {
-      return NextResponse.json({ error: "Missing 'id' or 'data'" }, { status: 400 })
-    }
+    const { data, error } = await supabaseAdmin
+      .from("appointments")
+      .update(appointment)
+      .eq("id", id)
+      .select()
+      .single()
 
-    await databases.updateDocument(databaseId, collectionId, id, data)
-
-    return NextResponse.json({ message: "Appointment updated" }, { status: 200 })
+    if (error) throw error
+    return NextResponse.json(data)
   } catch (error) {
     console.error("Failed to update appointment:", error)
     return NextResponse.json({ error: "Failed to update appointment" }, { status: 500 })
   }
 }
 
-export async function DELETE(request: NextRequest) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  if (!(await authorized(request))) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+  }
+
   try {
-    const id = request.nextUrl.pathname.split("/").pop()
-
-    if (!id) {
-      return NextResponse.json({ error: "Missing appointment ID" }, { status: 400 })
-    }
-
-    await databases.deleteDocument(databaseId, collectionId, id)
-
-    return NextResponse.json({ message: "Appointment deleted" }, { status: 200 })
+    const { id } = await params
+    const { error } = await supabaseAdmin.from("appointments").delete().eq("id", id)
+    if (error) throw error
+    return NextResponse.json({ message: "Appointment deleted" })
   } catch (error) {
     console.error("Failed to delete appointment:", error)
     return NextResponse.json({ error: "Failed to delete appointment" }, { status: 500 })

@@ -1,7 +1,5 @@
-// app/api/appointments/blockedTimes/route.ts
 import { NextResponse } from "next/server"
-import { getAllAppointments } from "@/appwrite"
-import { parseISO, isSameDay } from "date-fns"
+import { supabaseAdmin } from "@/lib/supabase/server"
 
 const isKnipService = (service: string) =>
   service === "Heren knippen" || service === "Dames kort haar knippen"
@@ -9,24 +7,27 @@ const isKnipService = (service: string) =>
 export async function POST(request: Request) {
   try {
     const { date, service } = await request.json()
-    const allAppointments = await getAllAppointments()
+    if (typeof date !== "string" || typeof service !== "string") {
+      return NextResponse.json({ error: "Invalid request" }, { status: 400 })
+    }
 
-    const blockedTimes = allAppointments
-      .filter((appt) => isSameDay(parseISO(appt.date), new Date(date)))
-      .filter((appt) => {
-        const existingIsKnip = isKnipService(appt.service)
-        const newIsKnip = isKnipService(service)
-        return existingIsKnip === newIsKnip
-      })
-      .map((appt) => ({
-        date: appt.date,
-        time: appt.time,
-        service: appt.service,
+    const { data: appointments, error } = await supabaseAdmin
+      .from("appointments")
+      .select("date, time, service")
+      .eq("date", date.slice(0, 10))
+
+    if (error) throw error
+    const blockedTimes = (appointments ?? [])
+      .filter((appointment) => isKnipService(appointment.service) === isKnipService(service))
+      .map((appointment) => ({
+        date: appointment.date,
+        time: appointment.time,
+        service: appointment.service,
       }))
 
     return NextResponse.json({ blockedTimes })
-  } catch (err) {
-    console.error("Failed to fetch blocked times:", err)
+  } catch (error) {
+    console.error("Failed to fetch blocked times:", error)
     return NextResponse.json({ error: "Server error" }, { status: 500 })
   }
 }

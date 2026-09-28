@@ -2,12 +2,14 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { useSwipeable } from "react-swipeable"
 import { Button } from "@/components/ui/button"
 import { CalendarRange, ChevronLeft, ChevronRight, Mail } from "lucide-react"
 
 import Link from "next/link"
 import { slides } from "@/constants"
+import { SHOW_ONLINE_APPOINTMENTS } from "@/constants/features"
+import styles from "./Hero.module.css"
 
 type HeroProps = {
   onOpenDialog: () => void
@@ -15,6 +17,7 @@ type HeroProps = {
 
 const Hero = ({ onOpenDialog }: HeroProps) => {
   const [index, setIndex] = useState(0)
+  const [readyImage, setReadyImage] = useState<string | null>(null)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   const startAutoSlide = () => {
@@ -22,7 +25,7 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
 
     intervalRef.current = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length)
-    }, 5500)
+    }, 8500)
   }
 
   useEffect(() => {
@@ -42,39 +45,37 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
     startAutoSlide()
   }
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: goToNext,
+    onSwipedRight: goToPrevious,
+    delta: 50,
+  })
+
   const appointmentText = "MAAK EEN AFSPRAAK"
   const contactText = "CONTACT"
 
   return (
     <section className="relative bg-black overflow-hidden w-full flex flex-col justify-center min-h-[80vh] xl:h-[80vh]">
-      <motion.div
+      <div
         key={`bg-${index}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-        className="absolute inset-0 z-0 bg-black"
+        className={`absolute inset-0 z-0 ${styles.background} ${
+          readyImage === slides[index].image.src ? styles.ready : ""
+        }`}
+        aria-hidden="true"
       >
         <Image
           src={slides[index].image}
-          alt="Slide"
+          alt=""
           fill
-          className="object-cover opacity-40"
+          sizes="100vw"
+          className="object-cover"
           priority
+          onLoad={() => setReadyImage(slides[index].image.src)}
         />
-      </motion.div>
+      </div>
 
-      <motion.div
-        key={`slide-${index}`}
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        onDragEnd={(event, info) => {
-          if (info.offset.x < -50) {
-            goToNext()
-          } else if (info.offset.x > 50) {
-            goToPrevious()
-          }
-        }}
-        whileTap={{ scale: 1 }}
+      <div
+        {...swipeHandlers}
         className="relative z-10 w-full h-full"
         style={{ touchAction: "pan-y" }}
       >
@@ -99,46 +100,33 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
               className="relative z-10 flex flex-col items-start justify-center h-full text-white"
               style={{ fontFamily: "var(--font-roboto-slab)" }}
             >
-              <motion.h1
-                key={`heading-${index}`}
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 }}
+              <h1
                 className="text-4xl lg:text-6xl font-bold mb-2"
               >
                 {slides[index].heading}
-              </motion.h1>
+              </h1>
 
-              <motion.div
-                key={`sub-${index}`}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
+              <div
                 className="text-left text-xl lg:text-2xl max-w-xl"
               >
-                <h1 className="leading-[2.3rem] md:leading-[2.7rem] mt-2">
+                <p className="leading-[2.3rem] md:leading-[2.7rem] mt-2">
                   <span className="bg-[rgba(0,0,0,0.5)] inline p-1">
                     {slides[index].subtext}
                   </span>
-                </h1>
-              </motion.div>
+                </p>
+              </div>
 
               <div className="mt-6 md:mt-6">
-                <motion.div
-                  key={`contact-${index}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                >
+                <div>
                   <div className="flex flex-col md:flex-row gap-2">
-                    <Button
+                    {SHOW_ONLINE_APPOINTMENTS && <Button
                       style={{ fontFamily: "sans-serif" }}
                       onClick={onOpenDialog}
                       className="bg-[#e9207e] hover:bg-pink-600 w-full md:w-2/3 px-20 p-6 tracking-widest rounded-full text-white 
                     font-bold text-sm md:text-lg cursor-pointer transition transform hover:-translate-y-0.5 hover:shadow-pink-600 hover:shadow"
                     >
                       <CalendarRange className="w-4 h-4" /> {appointmentText}
-                    </Button>
+                    </Button>}
                     <Link href={"/contact"}>
                       <Button
                         style={{ fontFamily: "sans-serif" }}
@@ -149,12 +137,12 @@ const Hero = ({ onOpenDialog }: HeroProps) => {
                       </Button>
                     </Link>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
       <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-20 flex gap-5">
         {slides.map((_, i) => (
           <button

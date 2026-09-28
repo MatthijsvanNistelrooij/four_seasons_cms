@@ -12,7 +12,7 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
     if (!loading) {
       if (!user) {
         router.replace("/sign-in") 
-      } else if (user.emailVerification === false) {
+      } else if (!user.email_confirmed_at) {
         router.replace("/pending-approval") 
       }
     }
@@ -26,7 +26,7 @@ const ProtectedLayout = ({ children }: { children: React.ReactNode }) => {
     )
   }
 
-  if (!user || user.emailVerification === false) {
+  if (!user || !user.email_confirmed_at) {
     return null
   }
 

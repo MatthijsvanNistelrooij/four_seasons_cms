@@ -8,8 +8,7 @@ import Image from "next/image"
 import logo from "../../public/logo.png"
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
-import { account } from "@/appwrite"
-import { ID, Models } from "node-appwrite"
+import { supabase } from "@/lib/supabase/client"
 
 export default function SignUpForm() {
   const [name, setName] = useState("")
@@ -26,14 +25,15 @@ export default function SignUpForm() {
     e.preventDefault()
 
     try {
-      await account.create(ID.unique(), email, password, name)
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { data: { full_name: name } },
+      })
+      if (error) throw error
 
-      await account.createEmailPasswordSession(email, password)
-
-      const appwriteUser: Models.User<Models.Preferences> = await account.get()
-      setUser(appwriteUser)
-
-      router.push("/appointments")
+      setUser(data.user)
+      router.push(data.session ? "/appointments" : "/pending-approval")
     } catch (error) {
       console.error("Signup error:", error)
       alert("Failed to register: " + (error as Error).message)

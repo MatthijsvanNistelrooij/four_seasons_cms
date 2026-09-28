@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Roboto_Slab } from "next/font/google"
+// @ts-expect-error CSS side-effect imports are handled by Next.js.
 import "./globals.css"
 import { AuthProvider } from "@/context/AuthContext"
 import { Toaster } from "sonner"

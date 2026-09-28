@@ -5,10 +5,10 @@ import Navbar from "@/components/shared/Navbar"
 import TopNav from "@/components/shared/TopNav"
 import Maintenance from "@/components/maintenance/Maintenance"
 
-const MAINTENANCE_MODE = true
+import { SITE_MAINTENANCE_MODE } from "@/constants/features"
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  if (MAINTENANCE_MODE) {
+  if (SITE_MAINTENANCE_MODE) {
     return (
       <Maintenance />
     )

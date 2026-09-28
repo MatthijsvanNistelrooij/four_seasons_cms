@@ -3,7 +3,7 @@ import {
   deleteAppointment,
   getAllAppointments,
   updateAppointment,
-} from "@/appwrite"
+} from "@/lib/appointments"
 import { Appointment } from "@/types"
 import React, { useEffect, useState } from "react"
 import {
@@ -48,22 +48,7 @@ const Appointments = () => {
   useEffect(() => {
     async function fetchAppointments() {
       try {
-        const allAppointmentsRaw = await getAllAppointments()
-        const allAppointments: Appointment[] = allAppointmentsRaw.map(
-          (item) => ({
-            $id: item.$id,
-            $createdAt: item.$createdAt,
-            $updatedAt: item.$updatedAt,
-            name: item.name,
-            service: item.service,
-            date: item.date,
-            email: item.email,
-            phone: item.phone,
-            time: item.time,
-            barber: item.barber,
-          })
-        )
-        setAppointments(allAppointments)
+        setAppointments(await getAllAppointments())
       } catch (err) {
         console.error(err)
       }
@@ -80,9 +65,9 @@ const Appointments = () => {
   const handleDelete = async () => {
     if (!deletingAppointment) return
     try {
-      await deleteAppointment(deletingAppointment.$id)
+      await deleteAppointment(deletingAppointment.id)
       setAppointments((prev) =>
-        prev.filter((a) => a.$id !== deletingAppointment.$id)
+        prev.filter((a) => a.id !== deletingAppointment.id),
       )
       setDeletingAppointment(null)
       setIsDeleteDialogOpen(false)
@@ -98,7 +83,7 @@ const Appointments = () => {
 
   const sortedAppointments = [...filteredAppointments].sort((a, b) => {
     if (!sortField) {
-      return new Date(b.$createdAt).getTime() - new Date(a.$createdAt).getTime()
+      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
     }
 
     const aValue = a[sortField]
@@ -125,16 +110,16 @@ const Appointments = () => {
 
   const paginatedAppointments = sortedAppointments.slice(
     (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
+    currentPage * itemsPerPage,
   )
 
   const handleEditAppointment = async (updatedAppointment: Appointment) => {
     try {
-      await updateAppointment(updatedAppointment.$id, updatedAppointment)
+      await updateAppointment(updatedAppointment.id, updatedAppointment)
       setAppointments((prev) =>
         prev.map((a) =>
-          a.$id === updatedAppointment.$id ? updatedAppointment : a
-        )
+          a.id === updatedAppointment.id ? updatedAppointment : a,
+        ),
       )
       setIsDialogOpen(false)
     } catch (err) {
@@ -144,13 +129,13 @@ const Appointments = () => {
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
-      <aside className="w-full lg:w-48 bg-gray-100 p-4 border-b lg:border-b-0 lg:border-r sticky top-0 z-10">
+      <aside className="w-full lg:w-48 bg-white p-4 border-b lg:border-b-0 lg:border-r sticky top-0 z-10">
         <div className="flex items-center gap-4 ml-2 justify-end lg:justify-start">
           <SignOutButton />
         </div>
       </aside>
 
-      <main className="flex-1 p-6 overflow-x-auto">
+      <main className="flex-1 p-6 overflow-x-auto bg-gray-100">
         <h2 className="text-xl font-semibold mb-4">Afsprakenoverzicht</h2>
 
         <div className="flex gap-2 mb-4 flex-wrap">
@@ -182,77 +167,82 @@ const Appointments = () => {
               </Button>
             ))}
         </div>
-        <div className="border rounded overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Naam</TableHead>
-                <TableHead>Service</TableHead>
-                <TableHead
-                  onClick={() => handleSort("date")}
-                  className="cursor-pointer"
-                >
-                  Datum{" "}
-                  {sortField === "date"
-                    ? sortDirection === "asc"
-                      ? "↑"
-                      : "↓"
-                    : ""}
-                </TableHead>
-                <TableHead
-                  onClick={() => handleSort("time")}
-                  className="cursor-pointer"
-                >
-                  Tijd{" "}
-                  {sortField === "time"
-                    ? sortDirection === "asc"
-                      ? "↑"
-                      : "↓"
-                    : ""}
-                </TableHead>
-                <TableHead>Email</TableHead>
-                <TableHead>Telefoon</TableHead>
-                <TableHead />
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {paginatedAppointments.map((appt) => (
-                <TableRow key={appt.$id}>
-                  <TableCell>{appt.name}</TableCell>
-                  <TableCell>{appt.service}</TableCell>
-                  <TableCell>
-                    {new Date(appt.date).toLocaleDateString("nl-NL")}
-                  </TableCell>
-                  <TableCell>{appt.time ? appt.time : "-"}</TableCell>
-                  <TableCell>{appt.email ? appt.email : "-"}</TableCell>
-                  <TableCell>{appt.phone ? appt.phone : "-"}</TableCell>
-                  <TableCell className="flex justify-end">
-                    <Button
-                      onClick={() => {
-                        setEditingAppointment(appt)
-                        setIsDialogOpen(true)
-                      }}
-                      size={"sm"}
-                      className="p-0 bg-transparent text-gray-800 hover:bg-white cursor-pointer m-0"
-                    >
-                      <Edit size={12} />
-                    </Button>
-                    <Button
-                      size={"sm"}
-                      className="p-0 bg-transparent text-red-500 hover:bg-white cursor-pointer m-0"
-                      onClick={() => {
-                        setDeletingAppointment(appt)
-                        setIsDeleteDialogOpen(true)
-                      }}
-                    >
-                      <Trash size={12} />
-                    </Button>
-                  </TableCell>
+
+        {appointments.length === 0 ? (
+          <p className="text-gray-500 p-10 border rounded-xl">Geen afspraken gevonden.</p>
+        ) : (
+          <div className="border rounded overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Naam</TableHead>
+                  <TableHead>Service</TableHead>
+                  <TableHead
+                    onClick={() => handleSort("date")}
+                    className="cursor-pointer"
+                  >
+                    Datum{" "}
+                    {sortField === "date"
+                      ? sortDirection === "asc"
+                        ? "↑"
+                        : "↓"
+                      : ""}
+                  </TableHead>
+                  <TableHead
+                    onClick={() => handleSort("time")}
+                    className="cursor-pointer"
+                  >
+                    Tijd{" "}
+                    {sortField === "time"
+                      ? sortDirection === "asc"
+                        ? "↑"
+                        : "↓"
+                      : ""}
+                  </TableHead>
+                  <TableHead>Email</TableHead>
+                  <TableHead>Telefoon</TableHead>
+                  <TableHead />
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
+              </TableHeader>
+              <TableBody>
+                {paginatedAppointments.map((appt) => (
+                  <TableRow key={appt.id}>
+                    <TableCell>{appt.name}</TableCell>
+                    <TableCell>{appt.service}</TableCell>
+                    <TableCell>
+                      {new Date(appt.date).toLocaleDateString("nl-NL")}
+                    </TableCell>
+                    <TableCell>{appt.time ? appt.time : "-"}</TableCell>
+                    <TableCell>{appt.email ? appt.email : "-"}</TableCell>
+                    <TableCell>{appt.phone ? appt.phone : "-"}</TableCell>
+                    <TableCell className="flex justify-end gap-2">
+                      <Button
+                        onClick={() => {
+                          setEditingAppointment(appt)
+                          setIsDialogOpen(true)
+                        }}
+                        size={"sm"}
+                        className="p-0 bg-transparent text-gray-800 hover:bg-white cursor-pointer m-0"
+                      >
+                        <Edit size={12} />
+                      </Button>
+                      <Button
+                        size={"sm"}
+                        className="p-0 bg-transparent text-red-500 hover:bg-white cursor-pointer m-0"
+                        onClick={() => {
+                          setDeletingAppointment(appt)
+                          setIsDeleteDialogOpen(true)
+                        }}
+                      >
+                        <Trash size={12} />
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        )}
         {filteredAppointments.length > itemsPerPage && (
           <Pagination
             currentPage={currentPage}

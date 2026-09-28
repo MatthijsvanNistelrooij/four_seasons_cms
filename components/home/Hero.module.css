@@ -1,0 +1,23 @@
+.background {
+  opacity: 0;
+}
+
+.ready {
+  opacity: 0.4;
+  animation: reveal 2s ease-out;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ready {
+    animation: none;
+  }
+}

@@ -14,6 +14,7 @@ export function useFetchBlockedTimes(date: string, service: string) {
 
     async function fetchBlockedTimes() {
       try {
+        console.log("Fetching blocked times for date:", date, "and service:", service)
         const res = await fetch("/api/appointments/blockedTimes", {
           method: "POST",
           headers: { "Content-Type": "application/json" },

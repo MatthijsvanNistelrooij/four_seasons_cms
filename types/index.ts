@@ -1,5 +1,5 @@
 export interface Appointment {
-  $id: string
+  id: string
   name: string
   service: string
   date: string
@@ -7,6 +7,6 @@ export interface Appointment {
   phone: string
   time: string
   barber: string
-  $createdAt: string
-  $updatedAt: string
+  created_at: string
+  updated_at: string
 }

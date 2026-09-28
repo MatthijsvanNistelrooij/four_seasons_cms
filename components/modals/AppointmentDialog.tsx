@@ -19,8 +19,12 @@ import { Step2_Barber } from "../steps/Step2_Barber"
 import { Step3_Date } from "../steps/Step3_Date"
 import { Step4_Time } from "../steps/Step4_Time"
 import { Step5_Contact } from "../steps/Step5_Contact"
-import { createAppointment } from "@/appwrite"
+import { createAppointment } from "@/lib/appointments"
 import { Wrench } from "lucide-react"
+import {
+  APPOINTMENTS_MAINTENANCE_MODE,
+  SHOW_ONLINE_APPOINTMENTS,
+} from "@/constants/features"
 
 type AppointmentDialogProps = {
   title: string
@@ -29,14 +33,18 @@ type AppointmentDialogProps = {
   onOpenChange: (open: boolean) => void
 }
 
-export function AppointmentDialog({
+export function AppointmentDialog(props: AppointmentDialogProps) {
+  if (!SHOW_ONLINE_APPOINTMENTS) return null
+
+  return <AppointmentDialogContent {...props} />
+}
+
+function AppointmentDialogContent({
   title,
   open,
   hover,
   onOpenChange,
 }: AppointmentDialogProps) {
-  const maintenanceMode = true
-
   const [step, setStep] = useState(1)
 
   const next = () => setStep((s) => Math.min(s + 1, 6))
@@ -56,31 +64,7 @@ export function AppointmentDialog({
     setFormData((prev) => ({ ...prev, [key]: value }))
   }
 
-  function combineDateAndTime(date: Date, timeString: string): Date {
-    const [hours, minutes] = timeString.split(":").map(Number)
-    const combined = new Date(date)
-
-    combined.setHours(hours)
-    combined.setMinutes(minutes)
-    combined.setSeconds(0)
-    combined.setMilliseconds(0)
-
-    return combined
-  }
-
-  function formatDateDutch(date: Date): string {
-    const options = {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    } as const
-    return date.toLocaleDateString("nl-NL", options)
-  }
-
   const handleSubmit = async () => {
-    const fullDate = combineDateAndTime(new Date(formData.date), formData.time)
-    const formattedDate = formatDateDutch(fullDate)
-
     try {
       const newAppointment = await createAppointment({
         name: formData.name,
@@ -89,24 +73,10 @@ export function AppointmentDialog({
         phone: formData.phone,
         time: formData.time,
         barber: formData.barber,
-        date: formattedDate,
+        date: formData.date,
       })
 
       console.log("Afspraak bevestigd ✅", newAppointment)
-
-      await fetch("/api/whatsapp", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          time: formData.time,
-          date: formData.date,
-          service: formData.service,
-        }),
-      })
 
       toast.success("Afspraak succesvol aangemaakt!")
 
@@ -156,9 +126,12 @@ export function AppointmentDialog({
           {title}
         </Button>
       </DialogTrigger>
-      <DialogContent className="!bg-gray-100 !rounded-xl border-none p-3 lg:p-6 min-h-[620px] select-none text-gray-800">
+      <DialogContent
+        onOpenAutoFocus={(event) => event.preventDefault()}
+        className="!bg-gray-100 !rounded-xl border-none p-3 lg:p-6 min-h-[620px] select-none text-gray-800"
+      >
         <DialogHeader className="flex-1">
-          {maintenanceMode ? (
+          {APPOINTMENTS_MAINTENANCE_MODE ? (
             <div className="flex h-full flex-col items-center justify-center text-center px-6">
               <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#e9207e]/10">
                 <Wrench className="h-10 w-10 text-[#e9207e]" />
@@ -195,7 +168,7 @@ export function AppointmentDialog({
           )}
         </DialogHeader>
 
-        {!maintenanceMode && (
+        {!APPOINTMENTS_MAINTENANCE_MODE && (
           <div className="py-1">
             {step === 1 && (
               <Step1_Service

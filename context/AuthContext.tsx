@@ -1,7 +1,7 @@
 "use client"
 
-import { account } from "@/appwrite"
-import { Models } from "node-appwrite"
+import { supabase } from "@/lib/supabase/client"
+import type { User } from "@supabase/supabase-js"
 import React, {
   createContext,
   useContext,
@@ -12,33 +12,33 @@ import React, {
 
 // Define context value type
 type ContextType = {
-  user: Models.User<Models.Preferences> | null
+  user: User | null
   loading: boolean
   setUser: React.Dispatch<
-    React.SetStateAction<Models.User<Models.Preferences> | null>
+    React.SetStateAction<User | null>
   >
 }
 
 const AuthContext = createContext<ContextType | undefined>(undefined)
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<Models.User<Models.Preferences> | null>(null)
+  const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const checkUser = async () => {
-      try {
-        const appwriteUser = await account.get()
-        setUser(appwriteUser)
-      } catch (err) {
-        console.log("No logged in user:", err)
-        setUser(null)
-      } finally {
-        setLoading(false)
-      }
+      const { data } = await supabase.auth.getUser()
+      setUser(data.user)
+      setLoading(false)
     }
 
     checkUser()
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null)
+      setLoading(false)
+    })
+
+    return () => listener.subscription.unsubscribe()
   }, [])
 
   return (

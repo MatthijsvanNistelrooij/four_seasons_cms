@@ -4,6 +4,7 @@ import Image from "next/image"
 import hero from "../../public/assets/barber.jpg"
 import OpeningHours from "../shared/OpeningHours"
 import { AppointmentDialog } from "../modals/AppointmentDialog"
+import { SHOW_ONLINE_APPOINTMENTS } from "@/constants/features"
 import { useState } from "react"
 import petros from "../../public/assets/petros.png"
 import olga from "../../public/assets/olga.png"
@@ -155,9 +156,11 @@ export default function AboutPage() {
                   kapsel verlengen. Bij Kapsalon Four Seasons geloven we dat
                   investeren in goede haarproducten een investering is in de
                   gezondheid en schoonheid van je haar. Wil je ook mooi glanzend
-                  haar hebben? Maak snel een afspraak hieronder.
+                  haar hebben? {SHOW_ONLINE_APPOINTMENTS
+                    ? "Maak snel een afspraak hieronder."
+                    : "Neem contact met ons op om een afspraak te maken."}
                 </p>
-                <div className="my-20">
+                <div className={SHOW_ONLINE_APPOINTMENTS ? "my-20" : undefined}>
                   <AppointmentDialog
                     hover="hover:bg-pink-500"
                     title="Maak een afspraak"

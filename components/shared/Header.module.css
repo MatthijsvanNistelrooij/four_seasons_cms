@@ -1,0 +1,16 @@
+.ready {
+  animation: reveal 0.6s ease-out;
+}
+
+/* Fade to the image's existing opacity class, keeping its final brightness. */
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ready {
+    animation: none;
+  }
+}

@@ -3,13 +3,12 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { account } from "@/appwrite"
+import { supabase } from "@/lib/supabase/client"
 import { useAuth } from "@/context/AuthContext"
 import Image from "next/image"
 import logo from "../../public/logo.png"
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
-import { Models } from "node-appwrite"
 
 export default function SignInForm() {
   const [email, setEmail] = useState("")
@@ -25,10 +24,9 @@ export default function SignInForm() {
     e.preventDefault()
 
     try {
-      await account.createEmailPasswordSession(email, password)
-
-      const sessionUser: Models.User<Models.Preferences> = await account.get()
-      setUser(sessionUser)
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+      if (error) throw error
+      setUser(data.user)
 
       router.push("/appointments")
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

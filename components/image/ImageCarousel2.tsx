@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Swipe from "../shared/Swipe"
@@ -21,12 +21,9 @@ const ImageCarousel2 = () => {
   const rightIndex = clampIndex(centerIndex + 1)
 
   const slideTo = (index: number) => {
+    setImageReady(false)
     setCenterIndex(clampIndex(index))
   }
-
-  useEffect(() => {
-    setImageReady(false)
-  }, [centerIndex])
 
   return (
     <section className="bg-[#eaeaea] min-h-[15vh] flex flex-col justify-center py-10 lg:py-0 overflow-hidden w-full relative">

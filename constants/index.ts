@@ -359,7 +359,7 @@ export const beautyPageVariables = {
   sectionTitle4:
     "Ontspan en geniet van een luxueuze gezichtsbehandeling in Groningen",
   sectionDescription4:
-    "Heb je een speciale gelegenheid waarvoor je er stralend wil uitzien? Onze visagiste staat klaar om een prachtige make-up look te maken die volledig is afgestemd op jouw wensen. Je kan kiezen om langs te komen in onze zaak aan het Reitemakersrijge of laat onze visagiste bij je thuis komen.Benieuwd wat we voor jou kunnen betekenen? Neem vandaag nog contact met ons op.",
+    "Heb je een speciale gelegenheid waarvoor je er stralend wil uitzien? Onze visagiste staat klaar om een prachtige make-up look te maken die volledig is afgestemd op jouw wensen. Je kan kiezen om langs te komen in onze zaak aan Westerhaven 12 of laat onze visagiste bij je thuis komen.Benieuwd wat we voor jou kunnen betekenen? Neem vandaag nog contact met ons op.",
 }
 
 export const infoPageVariables = {

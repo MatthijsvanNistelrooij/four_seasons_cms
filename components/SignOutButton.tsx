@@ -1,5 +1,5 @@
 "use client"
-import { account } from "@/appwrite" // your initialized appwrite client
+import { supabase } from "@/lib/supabase/client"
 import { useAuth } from "@/context/AuthContext"
 import { Button } from "./ui/button"
 import { useRouter } from "next/navigation"
@@ -11,7 +11,8 @@ export default function SignOutButton() {
 
   const handleSignOut = async () => {
     try {
-      await account.deleteSession("current")
+      const { error } = await supabase.auth.signOut()
+      if (error) throw error
       setUser(null)
       router.push("/sign-in")
     } catch (error) {
